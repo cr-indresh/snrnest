@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNR NEST | BPO Hiring, Manpower, Website Solutions, Internships & Training</title>
+  <meta name="description" content="SNR NEST provides BPO hiring, manpower sourcing, website development, internship programs and training & placement solutions for businesses, students and job seekers.">
+  <meta name="keywords" content="BPO Hiring, Manpower Sourcing, Dark Store Management, Website Development, Corporate Internship, Tech Training, Placement Services, Bangalore, Hyderabad">
+  <meta name="author" content="SNR NEST">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SNR NEST — Building Careers. Empowering Businesses. Creating Opportunities.">
+  <meta property="og:description" content="Multi-service corporate ecosystem connecting talent, businesses, technology, education and careers.">
+  <meta property="og:site_name" content="SNR NEST">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a',
+              950: '#090d16',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#090d16] text-slate-200 antialiased selection:bg-blue-600 selection:text-white relative">
+
+  <!-- Ambient Glow Orbs -->
+  <div class="glow-orb glow-blue w-[500px] h-[500px] -top-32 -left-32"></div>
+  <div class="glow-orb glow-purple w-[600px] h-[600px] top-[40%] -right-40"></div>
+  <div class="glow-orb glow-emerald w-[500px] h-[500px] top-[75%] -left-32"></div>
+
+  <!-- ==========================================================================
+       1. GLOBAL NAVIGATION BAR
+       ========================================================================== -->
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/5 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 p-[1px] shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all">
+          <div class="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center">
+            <span class="font-heading font-black text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">SN</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl tracking-tight text-white group-hover:text-blue-400 transition-colors">SNR NEST</span>
+          <span class="hidden sm:block text-[10px] text-slate-400 font-medium tracking-wider uppercase">Talent • Tech • Careers</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/70 border border-white/10 backdrop-blur-md">
+        <a href="index.html" class="px-4 py-2 rounded-full text-sm font-medium text-white hover:text-blue-400 transition-colors">Home</a>
+        <a href="about.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white transition-colors">About</a>
+        
+        <!-- Services Dropdown Trigger -->
+        <div class="relative">
+          <button id="services-dropdown-toggle" class="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white transition-colors group">
+            <span>Services</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 group-hover:text-blue-400 transition-transform"></i>
+          </button>
+
+          <!-- Services Mega Menu -->
+          <div id="services-mega-menu" class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[720px] p-6 rounded-2xl bg-slate-950/95 border border-white/10 backdrop-blur-2xl shadow-2xl shadow-black/80 transition-all duration-200 z-50">
+            <div class="grid grid-cols-2 gap-3 mb-4">
+              
+              <!-- Mega Item 1: BPO Hiring -->
+              <a href="bpo-hiring.html" class="flex items-start gap-3.5 p-3.5 rounded-xl hover:bg-slate-900 border border-transparent hover:border-blue-500/30 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform shrink-0">
+                  <i data-lucide="headphones" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-heading font-bold text-sm text-white group-hover:text-blue-400 transition-colors">BPO Hiring</h4>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/15 text-blue-400 font-semibold">Jobs</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">Voice & Non-Voice client operations hiring</p>
+                </div>
+              </a>
+
+              <!-- Mega Item 2: Manpower Sourcing -->
+              <a href="manpower-sourcing.html" class="flex items-start gap-3.5 p-3.5 rounded-xl hover:bg-slate-900 border border-transparent hover:border-emerald-500/30 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform shrink-0">
+                  <i data-lucide="users" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-heading font-bold text-sm text-white group-hover:text-emerald-400 transition-colors">Manpower Sourcing</h4>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400 font-semibold">Staffing</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">Dark store, warehouse & retail operations</p>
+                </div>
+              </a>
+
+              <!-- Mega Item 3: Website Solutions -->
+              <a href="website-solutions.html" class="flex items-start gap-3.5 p-3.5 rounded-xl hover:bg-slate-900 border border-transparent hover:border-purple-500/30 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform shrink-0">
+                  <i data-lucide="layout" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-heading font-bold text-sm text-white group-hover:text-purple-400 transition-colors">Website Solutions</h4>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-purple-500/15 text-purple-400 font-semibold">Digital</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">High-impact corporate web engineering</p>
+                </div>
+              </a>
+
+              <!-- Mega Item 4: Internship -->
+              <a href="internship.html" class="flex items-start gap-3.5 p-3.5 rounded-xl hover:bg-slate-900 border border-transparent hover:border-amber-500/30 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform shrink-0">
+                  <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-heading font-bold text-sm text-white group-hover:text-amber-400 transition-colors">Internship</h4>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-400 font-semibold">Students</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">Industry project exposure & certificates</p>
+                </div>
+              </a>
+
+              <!-- Mega Item 5: Training & Placement -->
+              <a href="training-placement.html" class="col-span-2 flex items-start gap-3.5 p-3.5 rounded-xl hover:bg-slate-900 border border-transparent hover:border-rose-500/30 transition-all group">
+                <div class="w-10 h-10 rounded-lg bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform shrink-0">
+                  <i data-lucide="award" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-heading font-bold text-sm text-white group-hover:text-rose-400 transition-colors">Training & Placement</h4>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-rose-500/15 text-rose-400 font-semibold">Career Accelerator</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">AI, Python, Full Stack skills + 100% Placement assistance & interview rounds</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Mega Menu Footer Banner -->
+            <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Active Batches & Hiring Drives Live</span>
+              </span>
+              <a href="contact.html" class="text-blue-400 hover:text-blue-300 font-medium">Talk to an Advisor →</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="internship.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white transition-colors">Internship</a>
+        <a href="training-placement.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white transition-colors">Training</a>
+        <a href="careers.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white transition-colors">Careers</a>
+        <a href="contact.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <!-- Desktop CTAs -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="bpo-hiring.html" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white border border-white/10 hover:border-white/20 transition-all">
+          Find Opportunities
+        </a>
+        <button onclick="window.openAppModal('general')" class="px-5 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/35 transition-all">
+          Get Started
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:text-white" aria-label="Open Navigation Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md opacity-0 transition-opacity duration-300">
+    <div class="drawer-panel fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-slate-950 border-l border-white/10 p-6 flex flex-col justify-between translate-x-full transition-transform duration-300 overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-heading font-black text-white text-sm">SN</div>
+            <span class="font-heading font-bold text-white text-lg">SNR NEST</span>
+          </div>
+          <button id="close-drawer-btn" class="p-2 rounded-lg bg-slate-900 text-slate-400 hover:text-white">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <nav class="flex flex-col gap-1 text-sm font-medium">
+          <a href="index.html" class="px-3 py-2.5 rounded-lg text-white hover:bg-slate-900">Home</a>
+          <a href="about.html" class="px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-900">About SNR NEST</a>
+          
+          <!-- Mobile Services Submenu -->
+          <div>
+            <button id="mobile-services-toggle" class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-900">
+              <span>Our 5 Verticals</span>
+              <i data-lucide="chevron-down" class="accordion-arrow w-4 h-4 text-slate-400 transition-transform"></i>
+            </button>
+            <div id="mobile-services-list" class="hidden pl-4 pr-1 py-2 flex flex-col gap-1 border-l-2 border-blue-500/30 ml-3 mt-1">
+              <a href="bpo-hiring.html" class="px-2.5 py-1.5 rounded text-xs text-slate-300 hover:text-blue-400">1. BPO Hiring</a>
+              <a href="manpower-sourcing.html" class="px-2.5 py-1.5 rounded text-xs text-slate-300 hover:text-emerald-400">2. Manpower Sourcing</a>
+              <a href="website-solutions.html" class="px-2.5 py-1.5 rounded text-xs text-slate-300 hover:text-purple-400">3. Website Solutions</a>
+              <a href="internship.html" class="px-2.5 py-1.5 rounded text-xs text-slate-300 hover:text-amber-400">4. Internship Programs</a>
+              <a href="training-placement.html" class="px-2.5 py-1.5 rounded text-xs text-slate-300 hover:text-rose-400">5. Training & Placement</a>
+            </div>
+          </div>
+
+          <a href="internship.html" class="px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-900">Internships</a>
+          <a href="training-placement.html" class="px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-900">Training & Placement</a>
+          <a href="careers.html" class="px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-900">Careers Hub</a>
+          <a href="contact.html" class="px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-900">Contact Us</a>
+        </nav>
+      </div>
+
+      <div class="pt-6 border-t border-white/10 flex flex-col gap-3">
+        <button onclick="window.openAppModal('general'); document.getElementById('close-drawer-btn').click();" class="w-full py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-sm shadow-lg shadow-blue-500/25">
+          Get Started
+        </button>
+        <a href="bpo-hiring.html" class="w-full py-2.5 rounded-xl bg-slate-900 border border-white/10 text-center text-slate-300 font-semibold text-sm">
+          Find Opportunities
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       2. HERO SECTION (ALIGNED WITH WIREFRAME 1)
+       ========================================================================== -->
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-grid-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        
+        <!-- Left: Frosted Glass Container (Wireframe 1) -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel p-6 sm:p-10 rounded-3xl relative overflow-hidden shadow-2xl">
+            <div class="absolute -top-24 -right-24 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Eyebrow -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-wider uppercase mb-5">
+              <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+              <span>TALENT • TECHNOLOGY • CAREERS</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-white tracking-tight leading-[1.12] mb-4">
+              Connecting People, Businesses and <span class="gradient-text-blue">Opportunities.</span>
+            </h1>
+
+            <!-- Tagline -->
+            <p class="text-base sm:text-lg font-semibold text-blue-300 mb-4 font-heading">
+              "Building Careers. Empowering Businesses. Creating Opportunities."
+            </p>
+
+            <!-- Description Box (as depicted in Wireframe sketch) -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-slate-950/70 border border-white/10 mb-8">
+              <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                <strong class="text-white">SNR NEST</strong> delivers BPO hiring, manpower sourcing, website solutions, internships and training & placement services. A unified ecosystem connecting job seekers, students, and scaling enterprises.
+              </p>
+            </div>
+
+            <!-- Dual Action CTAs -->
+            <div class="flex flex-wrap items-center gap-4">
+              <a href="#verticals" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all flex items-center gap-2 group">
+                <span>Explore Our Services</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </a>
+
+              <a href="bpo-hiring.html" class="px-7 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-white/10 hover:border-white/20 text-white font-bold text-sm transition-all flex items-center gap-2">
+                <i data-lucide="search" class="w-4 h-4 text-blue-400"></i>
+                <span>Find an Opportunity</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Modern Ecosystem Visual & Floating Metric Badges -->
+        <div class="lg:col-span-5 relative">
+          
+          <!-- Central Ecosystem Card -->
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/15 relative z-10 shadow-2xl">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider">ECOSYSTEM HUB</span>
+            </div>
+
+            <!-- Dynamic Node Flow -->
+            <div class="space-y-3 font-heading font-bold text-sm">
+              <div class="p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-between">
+                <span class="flex items-center gap-2 text-blue-300">
+                  <i data-lucide="headphones" class="w-4 h-4 text-blue-400"></i>
+                  <span>BPO Hiring</span>
+                </span>
+                <span class="text-xs font-normal text-slate-400">Voice & Non-Voice</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-between">
+                <span class="flex items-center gap-2 text-emerald-300">
+                  <i data-lucide="truck" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Manpower Sourcing</span>
+                </span>
+                <span class="text-xs font-normal text-slate-400">Dark Stores & Logistics</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-between">
+                <span class="flex items-center gap-2 text-purple-300">
+                  <i data-lucide="code" class="w-4 h-4 text-purple-400"></i>
+                  <span>Website Solutions</span>
+                </span>
+                <span class="text-xs font-normal text-slate-400">Next.js & Design</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-between">
+                <span class="flex items-center gap-2 text-amber-300">
+                  <i data-lucide="briefcase" class="w-4 h-4 text-amber-400"></i>
+                  <span>Internship Programs</span>
+                </span>
+                <span class="text-xs font-normal text-slate-400">Live Projects</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-between">
+                <span class="flex items-center gap-2 text-rose-300">
+                  <i data-lucide="award" class="w-4 h-4 text-rose-400"></i>
+                  <span>Training & Placement</span>
+                </span>
+                <span class="text-xs font-normal text-slate-400">100% Assistance</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Stat Badge 1 -->
+          <div class="sm:absolute -top-6 -left-6 mt-4 sm:mt-0 p-4 rounded-2xl bg-slate-900/90 border border-white/10 backdrop-blur-xl shadow-xl flex items-center gap-3.5 z-20">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-lg font-black text-white font-heading">500+</div>
+              <div class="text-xs text-slate-400">Candidates Connected</div>
+            </div>
+          </div>
+
+          <!-- Floating Stat Badge 2 -->
+          <div class="sm:absolute -bottom-6 -right-6 mt-4 sm:mt-0 p-4 rounded-2xl bg-slate-900/90 border border-white/10 backdrop-blur-xl shadow-xl flex items-center gap-3.5 z-20">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+              <i data-lucide="building" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <div class="text-lg font-black text-white font-heading">100+</div>
+              <div class="text-xs text-slate-400">Hiring Requirements</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       3. CLIENT PARTNERS SLIDER MARQUEE (AS SPECIFIED IN WIREFRAME 1 MARGIN)
+       ========================================================================== -->
+  <section class="py-8 bg-slate-950/80 border-y border-white/5 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 mb-3 text-center">
+      <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">
+        Trusted Client Ecosystem & Hiring Partners
+      </span>
+    </div>
+    <div class="marquee-container">
+      <div id="client-marquee-track" class="marquee-track">
+        <!-- Injected dynamically via JS: Tata Elxsi, Concentrix, KreditBee, Stable Money, Axis Bank -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       4. FIVE BUSINESS VERTICALS ("WHAT WE DO")
+       ========================================================================== -->
+  <section id="verticals" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-bold uppercase tracking-wider mb-4">
+          Core Capabilities
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-white tracking-tight mb-4">
+          What We Do
+        </h2>
+        <p class="text-lg text-slate-400 font-medium">
+          Five focused services. One trusted partner.
+        </p>
+      </div>
+
+      <!-- Verticals Cards Grid -->
+      <div class="space-y-8">
+        
+        <!-- VERTICAL 01: BPO HIRING (WIREFRAME 1) -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 theme-bpo relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold px-2.5 py-1 rounded bg-blue-500/20 text-blue-400 uppercase">Service 01</span>
+                <span class="text-xs text-slate-400">Recruitment & Operations</span>
+              </div>
+              
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white font-heading mb-2">BPO Hiring</h3>
+              <p class="text-base font-semibold text-blue-400 mb-3">Find the right opportunity. Start your career.</p>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                We connect candidates with premier BPO & BPM organizations for voice, non-voice, customer support, and backend operations roles. Seamless candidate screening to immediate onboarding.
+              </p>
+
+              <!-- Role Chips -->
+              <div class="mb-6">
+                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Key Role Specializations:</span>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag-pill text-blue-300 bg-blue-500/10 border-blue-500/20">Voice Process</span>
+                  <span class="tag-pill text-blue-300 bg-blue-500/10 border-blue-500/20">Non-Voice Process</span>
+                  <span class="tag-pill text-blue-300 bg-blue-500/10 border-blue-500/20">Customer Support</span>
+                  <span class="tag-pill text-blue-300 bg-blue-500/10 border-blue-500/20">Back Office</span>
+                  <span class="tag-pill text-blue-300 bg-blue-500/10 border-blue-500/20">Telecalling</span>
+                  <span class="tag-pill text-blue-300 bg-blue-500/10 border-blue-500/20">Operations Lead</span>
+                </div>
+              </div>
+
+              <!-- Candidate Journey Banner -->
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-white/5 flex items-center justify-between text-xs text-slate-300 font-medium mb-6 overflow-x-auto gap-2">
+                <span>Candidates</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                <span>Screening</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                <span>Interview</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                <span>Selection</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                <span class="text-emerald-400 font-bold">Joining</span>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-4">
+                <a href="bpo-hiring.html" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all flex items-center gap-2 shadow-lg shadow-blue-500/20">
+                  <span>Explore BPO Jobs</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <button onclick="window.openAppModal('bpo-job')" class="px-6 py-3 rounded-xl bg-slate-900 border border-white/10 hover:border-white/20 text-slate-200 font-semibold text-sm transition-all">
+                  Instant Candidate Application
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Preview Box -->
+            <div class="lg:col-span-5 p-6 rounded-2xl bg-slate-950/90 border border-white/10">
+              <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
+                <span class="text-xs font-bold text-white uppercase font-heading">Partner Placement Drive</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs font-semibold">Active Hiring</span>
+              </div>
+              <div class="space-y-3 text-xs">
+                <div class="p-3 rounded-lg bg-slate-900/80 flex items-center justify-between">
+                  <div>
+                    <strong class="text-white block">Concentrix • Customer Support</strong>
+                    <span class="text-slate-400">Bangalore • ₹3.2 - ₹4.8 LPA</span>
+                  </div>
+                  <span class="px-2 py-1 rounded bg-blue-500/20 text-blue-400 font-bold">18 Openings</span>
+                </div>
+                <div class="p-3 rounded-lg bg-slate-900/80 flex items-center justify-between">
+                  <div>
+                    <strong class="text-white block">KreditBee • Chat & Operations</strong>
+                    <span class="text-slate-400">Bangalore • ₹2.8 - ₹3.8 LPA</span>
+                  </div>
+                  <span class="px-2 py-1 rounded bg-blue-500/20 text-blue-400 font-bold">25 Openings</span>
+                </div>
+                <div class="p-3 rounded-lg bg-slate-900/80 flex items-center justify-between">
+                  <div>
+                    <strong class="text-white block">Tata Elxsi • Back Office Analyst</strong>
+                    <span class="text-slate-400">Bangalore • ₹3.5 - ₹4.5 LPA</span>
+                  </div>
+                  <span class="px-2 py-1 rounded bg-blue-500/20 text-blue-400 font-bold">8 Openings</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- VERTICAL 02: MANPOWER SOURCING (WIREFRAME 1) -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 theme-manpower relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 uppercase">Service 02</span>
+                <span class="text-xs text-slate-400">Workforce & Operations</span>
+              </div>
+              
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white font-heading mb-2">Manpower Sourcing</h3>
+              <p class="text-base font-semibold text-emerald-400 mb-3">The right workforce for the right business.</p>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                We help enterprises, e-commerce fulfillment hubs, and dark stores find, screen, and deploy reliable on-ground manpower and shift supervisors for critical operational SLAs.
+              </p>
+
+              <!-- Solutions List (Wireframe 1) -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                <div class="flex items-center gap-2.5 text-xs text-slate-200">
+                  <div class="w-5 h-5 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">✓</div>
+                  <span>Picking & Packing Operations</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-xs text-slate-200">
+                  <div class="w-5 h-5 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">✓</div>
+                  <span>Dark Store Managers</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-xs text-slate-200">
+                  <div class="w-5 h-5 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">✓</div>
+                  <span>Shift In-Charge & Supervisors</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-xs text-slate-200">
+                  <div class="w-5 h-5 rounded bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">✓</div>
+                  <span>Warehouse Team Leads</span>
+                </div>
+              </div>
+
+              <!-- Workflow -->
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-white/5 flex items-center justify-between text-xs text-slate-300 font-medium mb-6 overflow-x-auto gap-2">
+                <span>Requirement</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+                <span>Sourcing</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+                <span>Screening</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+                <span>Selection</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+                <span class="text-emerald-400 font-bold">Deployment</span>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-4">
+                <button onclick="window.openAppModal('manpower-request')" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20">
+                  <span>Request Manpower</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+                <a href="manpower-sourcing.html" class="px-6 py-3 rounded-xl bg-slate-900 border border-white/10 hover:border-white/20 text-slate-200 font-semibold text-sm transition-all">
+                  View Industry Solutions
+                </a>
+              </div>
+            </div>
+
+            <!-- Dark Store Highlight Card (Wireframe 1) -->
+            <div class="lg:col-span-5 p-6 rounded-2xl bg-slate-950/90 border border-white/10">
+              <div class="flex items-center gap-2.5 text-emerald-400 font-heading font-bold text-sm mb-3">
+                <i data-lucide="zap" class="w-5 h-5"></i>
+                <span>Dark Store & Q-Commerce Hubs</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Rapid turnaround staffing for 10-minute grocery and instant delivery operations with complete shift rosters and background verification.
+              </p>
+              <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-300 space-y-1.5">
+                <div>⚡ <strong>Deployment Speed:</strong> 48 - 72 Hours</div>
+                <div>🛡️ <strong>Compliance:</strong> 100% Verified KYC & PF/ESI Ready</div>
+                <div>📊 <strong>Turnover Support:</strong> Zero-downtime roster refills</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- VERTICAL 03: WEBSITE SOLUTIONS (WIREFRAME 2) -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 theme-website relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold px-2.5 py-1 rounded bg-purple-500/20 text-purple-400 uppercase">Service 03</span>
+                <span class="text-xs text-slate-400">Digital Engineering</span>
+              </div>
+              
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white font-heading mb-2">Website Solutions</h3>
+              <p class="text-base font-semibold text-purple-400 mb-3">Turn your business into a digital experience.</p>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                We design and engineer bespoke, high-conversion, ultra-responsive digital websites and platforms that elevate your brand and drive business growth.
+              </p>
+
+              <!-- Tech Badges (Wireframe 2) -->
+              <div class="mb-6">
+                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Modern Technology Stack:</span>
+                <div class="flex flex-wrap gap-2 font-mono text-xs">
+                  <span class="px-2.5 py-1 rounded-md bg-purple-500/15 border border-purple-500/30 text-purple-300">Next.js</span>
+                  <span class="px-2.5 py-1 rounded-md bg-purple-500/15 border border-purple-500/30 text-purple-300">React</span>
+                  <span class="px-2.5 py-1 rounded-md bg-purple-500/15 border border-purple-500/30 text-purple-300">TypeScript</span>
+                  <span class="px-2.5 py-1 rounded-md bg-purple-500/15 border border-purple-500/30 text-purple-300">Tailwind CSS</span>
+                  <span class="px-2.5 py-1 rounded-md bg-purple-500/15 border border-purple-500/30 text-purple-300">Node.js</span>
+                </div>
+              </div>
+
+              <!-- Process -->
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-white/5 flex items-center justify-between text-xs text-slate-300 font-medium mb-6 overflow-x-auto gap-2">
+                <span>Discover</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-purple-400 shrink-0"></i>
+                <span>Design</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-purple-400 shrink-0"></i>
+                <span>Develop</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-purple-400 shrink-0"></i>
+                <span class="text-purple-400 font-bold">Launch</span>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-4">
+                <button onclick="window.openAppModal('website-quote')" class="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm transition-all flex items-center gap-2 shadow-lg shadow-purple-500/20">
+                  <span>Start Your Website</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+                <a href="website-solutions.html" class="px-6 py-3 rounded-xl bg-slate-900 border border-white/10 hover:border-white/20 text-slate-200 font-semibold text-sm transition-all">
+                  Explore Web Packages
+                </a>
+              </div>
+            </div>
+
+            <!-- Tech Mockup Preview (Wireframe 2) -->
+            <div class="lg:col-span-5 p-5 rounded-2xl bg-slate-950/90 border border-white/10 shadow-2xl">
+              <div class="flex items-center gap-1.5 pb-3 border-b border-white/10 mb-4">
+                <div class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
+                <div class="text-[10px] text-slate-500 font-mono ml-2">https://yourbrand.com</div>
+              </div>
+              <div class="space-y-2.5 text-xs text-slate-300">
+                <div class="h-16 rounded-xl bg-gradient-to-r from-purple-900/40 via-indigo-900/30 to-blue-900/40 border border-purple-500/20 flex items-center px-4">
+                  <span class="font-heading font-bold text-white">Ultra-Responsive High-Converting UI</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="p-3 rounded-lg bg-slate-900 border border-white/5">⚡ 99+ Lighthouse Score</div>
+                  <div class="p-3 rounded-lg bg-slate-900 border border-white/5">🔒 Enterprise Security</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- VERTICAL 04: INTERNSHIP (WIREFRAME 2) -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 theme-internship relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold px-2.5 py-1 rounded bg-amber-500/20 text-amber-400 uppercase">Service 04</span>
+                <span class="text-xs text-slate-400">Practical Learning</span>
+              </div>
+              
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white font-heading mb-2">Internship Programs</h3>
+              <p class="text-base font-semibold text-amber-400 mb-3">Learn by building. Grow through experience.</p>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                Industry-oriented corporate internship programs designed to help students, fresh graduates, and career switchers acquire hands-on project experience and verified credentials.
+              </p>
+
+              <!-- Tracks -->
+              <div class="mb-6">
+                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Internship Domains:</span>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag-pill text-amber-300 bg-amber-500/10 border-amber-500/20">HR & Recruitment</span>
+                  <span class="tag-pill text-amber-300 bg-amber-500/10 border-amber-500/20">Talent Acquisition</span>
+                  <span class="tag-pill text-amber-300 bg-amber-500/10 border-amber-500/20">Manpower Operations</span>
+                  <span class="tag-pill text-amber-300 bg-amber-500/10 border-amber-500/20">Digital Marketing</span>
+                  <span class="tag-pill text-amber-300 bg-amber-500/10 border-amber-500/20">BPO Hiring Support</span>
+                </div>
+              </div>
+
+              <!-- Journey -->
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-white/5 flex items-center justify-between text-xs text-slate-300 font-medium mb-6 overflow-x-auto gap-2">
+                <span>Internship</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                <span>Live Project</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                <span>Certificate</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                <span class="text-amber-400 font-bold">Career Launch</span>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-4">
+                <a href="internship.html" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition-all flex items-center gap-2 shadow-lg shadow-amber-500/20">
+                  <span>Explore Internships</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <button onclick="window.openAppModal('internship-apply')" class="px-6 py-3 rounded-xl bg-slate-900 border border-white/10 hover:border-white/20 text-slate-200 font-semibold text-sm transition-all">
+                  Apply for Track
+                </button>
+              </div>
+            </div>
+
+            <!-- Internship Perks Box -->
+            <div class="lg:col-span-5 p-6 rounded-2xl bg-slate-950/90 border border-white/10">
+              <span class="text-xs font-bold text-amber-400 uppercase font-heading block mb-3">Program Highlights</span>
+              <div class="space-y-3 text-xs text-slate-300">
+                <div class="flex items-start gap-2.5">
+                  <div class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">🎓</div>
+                  <div><strong>Letter of Recommendation (LOR)</strong> issued upon successful project delivery.</div>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <div class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">💼</div>
+                  <div><strong>Pre-Placement Offer (PPO)</strong> pipeline for high-performing interns.</div>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <div class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">🤝</div>
+                  <div><strong>1-on-1 Mentorship</strong> with experienced HR and operations leads.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- VERTICAL 05: TRAINING & PLACEMENT (WIREFRAME 2) -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 theme-training relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold px-2.5 py-1 rounded bg-rose-500/20 text-rose-400 uppercase">Service 05</span>
+                <span class="text-xs text-slate-400">Career Accelerator</span>
+              </div>
+              
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white font-heading mb-2">Training & Placement</h3>
+              <p class="text-base font-semibold text-rose-400 mb-3">Learn the skills. Become industry-ready. Get placed.</p>
+              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                We combine structured skill development with practical project labs, resume optimization, mock interviews, and dedicated corporate placement assistance.
+              </p>
+
+              <!-- 3-Stage Visual (Wireframe 2) -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-white/5 text-xs">
+                  <div class="text-rose-400 font-bold mb-1">01 — Training</div>
+                  <div class="text-slate-400">AI, Python, Full Stack & BPO Mastery</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-white/5 text-xs">
+                  <div class="text-rose-400 font-bold mb-1">02 — Career Prep</div>
+                  <div class="text-slate-400">ATS Resumes, Mocks & Aptitude</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-white/5 text-xs">
+                  <div class="text-rose-400 font-bold mb-1">03 — Placement</div>
+                  <div class="text-slate-400">50+ Partner Interview Referrals</div>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-4">
+                <a href="training-placement.html" class="px-6 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm transition-all flex items-center gap-2 shadow-lg shadow-rose-500/20">
+                  <span>Explore Training Programs</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <button onclick="window.openAppModal('course-enroll')" class="px-6 py-3 rounded-xl bg-slate-900 border border-white/10 hover:border-white/20 text-slate-200 font-semibold text-sm transition-all">
+                  Talk to a Career Advisor
+                </button>
+              </div>
+            </div>
+
+            <!-- Course Track Snapshot -->
+            <div class="lg:col-span-5 p-6 rounded-2xl bg-slate-950/90 border border-white/10">
+              <span class="text-xs font-bold text-rose-400 uppercase font-heading block mb-3">Top Enrolling Programs</span>
+              <div class="space-y-3 text-xs text-slate-300">
+                <div class="p-3 rounded-lg bg-slate-900 flex items-center justify-between">
+                  <span>Full Stack Web Development (16 Wks)</span>
+                  <span class="text-emerald-400 font-bold">100% Support</span>
+                </div>
+                <div class="p-3 rounded-lg bg-slate-900 flex items-center justify-between">
+                  <span>AI & Machine Learning (18 Wks)</span>
+                  <span class="text-emerald-400 font-bold">Live Labs</span>
+                </div>
+                <div class="p-3 rounded-lg bg-slate-900 flex items-center justify-between">
+                  <span>Python & Data Analytics (12 Wks)</span>
+                  <span class="text-emerald-400 font-bold">Power BI</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       5. COMING SOON / WE ARE EXPANDING (HIGHLIGHTED IN WIREFRAME 2)
+       ========================================================================== -->
+  <section class="py-20 relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Prominent Header Banner (Wireframe 2) -->
+      <div class="glass-panel p-8 sm:p-12 rounded-3xl text-center relative overflow-hidden mb-12 border-2 border-indigo-500/30">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-bold uppercase tracking-widest mb-4">
+          <span class="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span>
+          <span>FUTURE EXPANSION ROADMAP</span>
+        </div>
+        
+        <h2 class="text-3xl sm:text-5xl font-black font-heading text-white tracking-tight mb-4">
+          COMING SOON — <span class="gradient-text-purple">WE ARE EXPANDING</span>
+        </h2>
+        
+        <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          SNR NEST is scaling into next-generation technology academies, specialized enterprise banking compliance, and international offshore staffing hubs.
+        </p>
+      </div>
+
+      <!-- Expansion Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="glass-card rounded-2xl p-6 relative group hover:border-indigo-500/50">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
+            <i data-lucide="cloud" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block mb-1">Q3 Roadmap</span>
+          <h4 class="text-lg font-bold text-white mb-2 font-heading">Cloud & DevOps</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Enterprise training on AWS, Azure, Docker, Kubernetes & CI/CD infrastructure.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 relative group hover:border-indigo-500/50">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block mb-1">Q4 Roadmap</span>
+          <h4 class="text-lg font-bold text-white mb-2 font-heading">Generative AI</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Autonomous agent workflows, LLM fine-tuning, RAG, and business automations.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 relative group hover:border-indigo-500/50">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
+            <i data-lucide="shield" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block mb-1">Q4 Roadmap</span>
+          <h4 class="text-lg font-bold text-white mb-2 font-heading">FinTech Risk & AML</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Banking compliance, KYC verification, and fraud detection operations pipelines.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 relative group hover:border-indigo-500/50">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
+            <i data-lucide="globe" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block mb-1">Next Phase</span>
+          <h4 class="text-lg font-bold text-white mb-2 font-heading">Global IT Staffing</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">Connecting top Indian talent with global requirements in US, UK, and Middle East.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       6. ABOUT SNR NEST & INTERACTIVE ECOSYSTEM
+       ========================================================================== -->
+  <section class="py-24 relative bg-dot-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-bold uppercase tracking-wider mb-4">
+          Brand Architecture
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-white tracking-tight mb-4">
+          One platform. Multiple possibilities.
+        </h2>
+        <p class="text-base sm:text-lg text-slate-400 leading-relaxed">
+          SNR NEST operates as a central engine synchronizing recruitment, workforce deployment, modern digital technology, student internships, and career training.
+        </p>
+      </div>
+
+      <!-- Interactive Ecosystem Diagram -->
+      <div class="glass-card rounded-3xl p-8 sm:p-12 relative max-w-5xl mx-auto border border-white/15">
+        
+        <!-- Central Hub Node -->
+        <div class="flex justify-center mb-10">
+          <div class="px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-extrabold font-heading text-xl sm:text-2xl shadow-2xl shadow-blue-500/30 flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-white animate-ping"></div>
+            <span>SNR NEST (CENTRAL HUB)</span>
+          </div>
+        </div>
+
+        <!-- Connecting Lines Visual Representation -->
+        <div class="hidden sm:block w-full h-1 bg-gradient-to-r from-blue-500 via-emerald-500 via-purple-500 via-amber-500 to-rose-500 rounded-full mb-10 opacity-70"></div>
+
+        <!-- 5 Radiating Pillars -->
+        <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 text-center">
+          
+          <a href="bpo-hiring.html" class="p-4 rounded-xl bg-slate-900/80 border border-blue-500/30 hover:border-blue-400 hover:bg-slate-900 transition-all group">
+            <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <i data-lucide="headphones" class="w-4 h-4"></i>
+            </div>
+            <div class="font-heading font-bold text-white text-sm group-hover:text-blue-400">BPO Hiring</div>
+            <div class="text-[11px] text-slate-400 mt-1">Voice & Non-Voice</div>
+          </a>
+
+          <a href="manpower-sourcing.html" class="p-4 rounded-xl bg-slate-900/80 border border-emerald-500/30 hover:border-emerald-400 hover:bg-slate-900 transition-all group">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <i data-lucide="users" class="w-4 h-4"></i>
+            </div>
+            <div class="font-heading font-bold text-white text-sm group-hover:text-emerald-400">Manpower</div>
+            <div class="text-[11px] text-slate-400 mt-1">Dark Store & Ops</div>
+          </a>
+
+          <a href="website-solutions.html" class="p-4 rounded-xl bg-slate-900/80 border border-purple-500/30 hover:border-purple-400 hover:bg-slate-900 transition-all group">
+            <div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <i data-lucide="code" class="w-4 h-4"></i>
+            </div>
+            <div class="font-heading font-bold text-white text-sm group-hover:text-purple-400">Website</div>
+            <div class="text-[11px] text-slate-400 mt-1">Tech & Next.js</div>
+          </a>
+
+          <a href="internship.html" class="p-4 rounded-xl bg-slate-900/80 border border-amber-500/30 hover:border-amber-400 hover:bg-slate-900 transition-all group">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            </div>
+            <div class="font-heading font-bold text-white text-sm group-hover:text-amber-400">Internship</div>
+            <div class="text-[11px] text-slate-400 mt-1">Live Projects</div>
+          </a>
+
+          <a href="training-placement.html" class="p-4 rounded-xl bg-slate-900/80 border border-rose-500/30 hover:border-rose-400 hover:bg-slate-900 transition-all group">
+            <div class="w-8 h-8 rounded-lg bg-rose-500/20 text-rose-400 mx-auto mb-2 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <i data-lucide="award" class="w-4 h-4"></i>
+            </div>
+            <div class="font-heading font-bold text-white text-sm group-hover:text-rose-400">Training</div>
+            <div class="text-[11px] text-slate-400 mt-1">Placement Engine</div>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       7. WHY SNR NEST (6 ADVANTAGES)
+       ========================================================================== -->
+  <section class="py-24 relative bg-slate-950/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-bold uppercase tracking-wider mb-4">
+          The Competitive Edge
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-white tracking-tight mb-4">
+          Why Choose SNR NEST
+        </h2>
+        <p class="text-base sm:text-lg text-slate-400">
+          Built on trust, speed, and real-world execution across industries.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="glass-card rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-5">
+            <i data-lucide="network" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-white mb-2">Industry Connections</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Direct hiring partnerships with leading corporate leaders, FinTech unicorns, and enterprise BPO organizations.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-5">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-white mb-2">Practical Experience</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Real work on live client projects, warehouse floors, code repositories, and structured case studies.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-5">
+            <i data-lucide="compass" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-white mb-2">Career Support</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Complete career coaching with ATS resume tailoring, mock interviews, and personalized mentor advice.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5">
+            <i data-lucide="target" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-white mb-2">Business-Focused Solutions</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Rapid shift deployment for dark stores and conversion-optimized websites built for tangible ROI.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-5">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-white mb-2">Technology Expertise</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">Modern engineering stacks (Next.js, TypeScript, Cloud) delivering high-speed, secure digital products.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-7">
+          <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center mb-5">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold font-heading text-white mb-2">End-to-End Support</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">From first onboarding to day-1 joining and post-launch maintenance, we ensure continuous accountability.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       8. HOW IT WORKS (INTERACTIVE 4-TAB PROCESS)
+       ========================================================================== -->
+  <section class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-bold uppercase tracking-wider mb-4">
+          Streamlined Workflows
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-white tracking-tight mb-4">
+          How It Works
+        </h2>
+        <p class="text-base sm:text-lg text-slate-400">
+          Select your journey to see our step-by-step execution model.
+        </p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-2 max-w-2xl mx-auto mb-12 p-1.5 rounded-2xl bg-slate-900/80 border border-white/10">
+        <button class="process-tab-btn px-5 py-2.5 rounded-xl text-sm font-bold transition-all bg-blue-600 text-white shadow-lg shadow-blue-500/25" data-tab="candidates">
+          For Candidates
+        </button>
+        <button class="process-tab-btn px-5 py-2.5 rounded-xl text-sm font-bold transition-all bg-slate-900/60 text-slate-400 hover:text-white" data-tab="businesses">
+          For Businesses
+        </button>
+        <button class="process-tab-btn px-5 py-2.5 rounded-xl text-sm font-bold transition-all bg-slate-900/60 text-slate-400 hover:text-white" data-tab="students">
+          For Students
+        </button>
+        <button class="process-tab-btn px-5 py-2.5 rounded-xl text-sm font-bold transition-all bg-slate-900/60 text-slate-400 hover:text-white" data-tab="website">
+          For Website Clients
+        </button>
+      </div>
+
+      <!-- Tab Panels -->
+      <div class="glass-card rounded-3xl p-8 sm:p-12 max-w-5xl mx-auto border border-white/15">
+        
+        <!-- Panel 1: Candidates -->
+        <div class="process-tab-panel transition-all duration-300" data-panel="candidates">
+          <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 text-center">
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-blue-400 font-mono font-bold text-xs">01</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Discover</h4>
+              <p class="text-xs text-slate-400">Browse verified BPO voice & non-voice jobs</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-blue-400 font-mono font-bold text-xs">02</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Apply</h4>
+              <p class="text-xs text-slate-400">Submit profile with 1-click easy apply</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-blue-400 font-mono font-bold text-xs">03</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Prepare</h4>
+              <p class="text-xs text-slate-400">Quick screening & mock interview coaching</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-blue-400 font-mono font-bold text-xs">04</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Interview</h4>
+              <p class="text-xs text-slate-400">Direct interview round with hiring client</p>
+            </div>
+            <div class="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/30">
+              <span class="text-emerald-400 font-mono font-bold text-xs">05</span>
+              <h4 class="font-heading font-bold text-emerald-300 text-base mt-1 mb-1">Join</h4>
+              <p class="text-xs text-emerald-400/80">Offer letter rollout & Day-1 support</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Businesses -->
+        <div class="process-tab-panel hidden opacity-0 translate-y-4 transition-all duration-300" data-panel="businesses">
+          <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 text-center">
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-emerald-400 font-mono font-bold text-xs">01</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Requirement</h4>
+              <p class="text-xs text-slate-400">Define headcounts, shifts, and SLA goals</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-emerald-400 font-mono font-bold text-xs">02</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Source</h4>
+              <p class="text-xs text-slate-400">Pre-vetted talent mobilization at scale</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-emerald-400 font-mono font-bold text-xs">03</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Screen</h4>
+              <p class="text-xs text-slate-400">KYC verification & background checks</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-emerald-400 font-mono font-bold text-xs">04</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Select</h4>
+              <p class="text-xs text-slate-400">Batch selection or client sign-off</p>
+            </div>
+            <div class="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/30">
+              <span class="text-emerald-400 font-mono font-bold text-xs">05</span>
+              <h4 class="font-heading font-bold text-emerald-300 text-base mt-1 mb-1">Deploy</h4>
+              <p class="text-xs text-emerald-400/80">Day-1 shift induction & roster management</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Students -->
+        <div class="process-tab-panel hidden opacity-0 translate-y-4 transition-all duration-300" data-panel="students">
+          <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 text-center">
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-amber-400 font-mono font-bold text-xs">01</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Learn</h4>
+              <p class="text-xs text-slate-400">Industry-aligned core curriculum</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-amber-400 font-mono font-bold text-xs">02</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Build</h4>
+              <p class="text-xs text-slate-400">Deliver practical live client projects</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-amber-400 font-mono font-bold text-xs">03</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Certify</h4>
+              <p class="text-xs text-slate-400">Earn verified industry certificates & LOR</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-amber-400 font-mono font-bold text-xs">04</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Prepare</h4>
+              <p class="text-xs text-slate-400">Aptitude drills & mock interview coaching</p>
+            </div>
+            <div class="p-4 rounded-xl bg-rose-950/40 border border-rose-500/30">
+              <span class="text-rose-400 font-mono font-bold text-xs">05</span>
+              <h4 class="font-heading font-bold text-rose-300 text-base mt-1 mb-1">Get Placed</h4>
+              <p class="text-xs text-rose-400/80">Corporate hiring drives & placement</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4: Website Clients -->
+        <div class="process-tab-panel hidden opacity-0 translate-y-4 transition-all duration-300" data-panel="website">
+          <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 text-center">
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-purple-400 font-mono font-bold text-xs">01</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Discover</h4>
+              <p class="text-xs text-slate-400">Goal alignment & user persona analysis</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-purple-400 font-mono font-bold text-xs">02</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Design</h4>
+              <p class="text-xs text-slate-400">Figma wireframes & modern design system</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-purple-400 font-mono font-bold text-xs">03</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Develop</h4>
+              <p class="text-xs text-slate-400">Next.js, responsive code & SEO structure</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5">
+              <span class="text-purple-400 font-mono font-bold text-xs">04</span>
+              <h4 class="font-heading font-bold text-white text-base mt-1 mb-1">Launch</h4>
+              <p class="text-xs text-slate-400">Cloud deployment & domain configuration</p>
+            </div>
+            <div class="p-4 rounded-xl bg-purple-950/40 border border-purple-500/30">
+              <span class="text-purple-400 font-mono font-bold text-xs">05</span>
+              <h4 class="font-heading font-bold text-purple-300 text-base mt-1 mb-1">Support</h4>
+              <p class="text-xs text-purple-400/80">Monthly uptime & growth maintenance</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       9. SUCCESS & TRUST METRICS (ANIMATED COUNTERS)
+       ========================================================================== -->
+  <section class="py-20 relative bg-gradient-to-r from-blue-950/50 via-slate-950 to-indigo-950/50 border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/5">
+          <div class="text-4xl sm:text-5xl font-black font-heading text-white mb-2 stat-counter" data-target="500" data-suffix="+">
+            0+
+          </div>
+          <p class="text-sm font-semibold text-blue-400">Candidates Connected</p>
+          <span class="text-xs text-slate-400 mt-1 block">Voice, non-voice & ops roles</span>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/5">
+          <div class="text-4xl sm:text-5xl font-black font-heading text-white mb-2 stat-counter" data-target="100" data-suffix="+">
+            0+
+          </div>
+          <p class="text-sm font-semibold text-emerald-400">Hiring Requirements</p>
+          <span class="text-xs text-slate-400 mt-1 block">Dark stores, logistics & BPO</span>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/5">
+          <div class="text-4xl sm:text-5xl font-black font-heading text-white mb-2 stat-counter" data-target="50" data-suffix="+">
+            0+
+          </div>
+          <p class="text-sm font-semibold text-amber-400">Students Trained</p>
+          <span class="text-xs text-slate-400 mt-1 block">Live projects & certified</span>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-white/5">
+          <div class="text-4xl sm:text-5xl font-black font-heading text-white mb-2 stat-counter" data-target="25" data-suffix="+">
+            0+
+          </div>
+          <p class="text-sm font-semibold text-purple-400">Websites Delivered</p>
+          <span class="text-xs text-slate-400 mt-1 block">High performance Next.js apps</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       10. CAREERS SECTION
+       ========================================================================== -->
+  <section class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-panel p-8 sm:p-14 rounded-3xl relative overflow-hidden border border-white/15">
+        <div class="max-w-3xl">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-3">Accelerate Your Journey</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-white tracking-tight mb-4">
+            "Your next opportunity is closer than you think."
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
+            Whether you are looking for an immediate BPO customer support job, a high-impact corporate internship, or comprehensive tech training with placement assistance — SNR NEST is your launchpad.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="bpo-hiring.html" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all shadow-lg shadow-blue-500/25 flex items-center gap-2">
+              <i data-lucide="search" class="w-4 h-4"></i>
+              <span>Find Jobs</span>
+            </a>
+            <a href="internship.html" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-amber-500/25 flex items-center gap-2">
+              <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+              <span>Apply for Internship</span>
+            </a>
+            <a href="training-placement.html" class="px-6 py-3.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm transition-all shadow-lg shadow-rose-500/25 flex items-center gap-2">
+              <i data-lucide="award" class="w-4 h-4"></i>
+              <span>Explore Training</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       11. DUAL BUSINESS CTA SECTION
+       ========================================================================== -->
+  <section class="py-16 relative bg-slate-950/80 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Business CTA 1: Manpower -->
+        <div class="glass-card rounded-3xl p-8 sm:p-10 border-emerald-500/20 relative overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-5">
+              <i data-lucide="users" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold font-heading text-white mb-2">Need people who are ready to work?</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-6">
+              Hire vetted dark store pickers, warehouse associates, shift supervisors, and customer support personnel deployed within 48-72 hours.
+            </p>
+          </div>
+          <button onclick="window.openAppModal('manpower-request')" class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/25">
+            <span>Request Manpower</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Business CTA 2: Website -->
+        <div class="glass-card rounded-3xl p-8 sm:p-10 border-purple-500/20 relative overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-5">
+              <i data-lucide="code" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold font-heading text-white mb-2">Need a website that represents your business?</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-6">
+              Transform your digital footprint with custom Next.js platforms, high-converting landing pages, and enterprise web solutions.
+            </p>
+          </div>
+          <button onclick="window.openAppModal('website-quote')" class="px-6 py-3.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-purple-500/25">
+            <span>Start a Website Project</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       12. TRI-PATHWAY CONTACT & LOCATIONS (WIREFRAME 2 BOTTOM)
+       ========================================================================== -->
+  <section class="py-24 relative" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-bold uppercase tracking-wider mb-4">
+          Connect With Us
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-white tracking-tight mb-4">
+          Let’s Build Together
+        </h2>
+        <p class="text-base sm:text-lg text-slate-400">
+          Dedicated support pathways tailored for Candidates, Businesses, and Students.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left: 3 Pathways & Locations -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <!-- 3 Pathways Card -->
+          <div class="glass-card rounded-2xl p-6">
+            <h4 class="font-heading font-bold text-white text-base mb-4">Choose Your Direct Pathway</h4>
+            <div class="space-y-3 text-xs">
+              <a href="bpo-hiring.html" class="p-3 rounded-xl bg-slate-900 flex items-center justify-between hover:bg-slate-850 hover:border-blue-500/30 border border-white/5 transition-all">
+                <span class="font-semibold text-blue-300">👥 For Candidates (Jobs & Screening)</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+              </a>
+              <a href="manpower-sourcing.html" class="p-3 rounded-xl bg-slate-900 flex items-center justify-between hover:bg-slate-850 hover:border-emerald-500/30 border border-white/5 transition-all">
+                <span class="font-semibold text-emerald-300">🏢 For Businesses (Manpower & Web)</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+              </a>
+              <a href="training-placement.html" class="p-3 rounded-xl bg-slate-900 flex items-center justify-between hover:bg-slate-850 hover:border-rose-500/30 border border-white/5 transition-all">
+                <span class="font-semibold text-rose-300">🎓 For Students (Internships & Training)</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Locations (Bangalore HQ, Hyderabad, More coming soon) -->
+          <div class="glass-card rounded-2xl p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="font-heading font-bold text-white text-base">Our Presence</h4>
+              <span class="text-[10px] font-bold text-emerald-400 uppercase bg-emerald-500/10 px-2 py-0.5 rounded">Hubs Active</span>
+            </div>
+
+            <div class="space-y-4 text-xs">
+              <div class="p-3 rounded-xl bg-slate-900 border border-white/5">
+                <div class="flex items-center justify-between mb-1">
+                  <strong class="text-white text-sm">Bangalore (Headquarters)</strong>
+                  <span class="text-[10px] text-blue-400 font-semibold uppercase">HQ</span>
+                </div>
+                <p class="text-slate-400 leading-relaxed mb-2">SNR Tower, 4th Floor, Outer Ring Road, Bellandur, Bengaluru, Karnataka 560103</p>
+                <div class="text-slate-300 font-mono">📞 +91 80 4123 8899 • blr@snrnest.com</div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900 border border-white/5">
+                <div class="flex items-center justify-between mb-1">
+                  <strong class="text-white text-sm">Hyderabad Branch</strong>
+                  <span class="text-[10px] text-slate-400 font-semibold uppercase">Branch</span>
+                </div>
+                <p class="text-slate-400 leading-relaxed mb-2">Cyber Gateway, Hitech City, Madhapur, Hyderabad, Telangana 500081</p>
+                <div class="text-slate-300 font-mono">📞 +91 40 6789 2244 • hyd@snrnest.com</div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-center font-semibold">
+                ✨ More Locations Coming Soon across India
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Instant Quick Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-card rounded-3xl p-8 border border-white/15">
+            <h3 class="text-xl font-bold font-heading text-white mb-2">Send an Instant Message</h3>
+            <p class="text-xs text-slate-400 mb-6">Fill out this quick form and our dedicated team will reach out within 24 business hours.</p>
+
+            <form id="home-contact-form" onsubmit="event.preventDefault(); window.showToast('Thank you! Your message has been sent successfully.', 'success'); this.reset();" class="space-y-4 text-sm">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Full Name *</label>
+                  <input type="text" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Phone Number *</label>
+                  <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Email Address *</label>
+                  <input type="email" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm">
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Service Category</label>
+                  <select class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white focus:outline-none focus:border-blue-500 text-sm">
+                    <option>BPO Hiring & Candidate Jobs</option>
+                    <option>Manpower Sourcing & Staffing</option>
+                    <option>Website Solutions & Digital Agency</option>
+                    <option>Internship Programs</option>
+                    <option>Training & Placement</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">How Can We Help You?</label>
+                <textarea rows="3" required placeholder="Describe your requirement or inquiry..." class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm shadow-xl shadow-blue-500/25 transition-all">
+                Send Message to SNR NEST
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       13. MEGA FOOTER
+       ========================================================================== -->
+  <footer class="bg-slate-950 border-t border-white/10 pt-16 pb-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
+        
+        <!-- Col 1: Brand & Tagline -->
+        <div class="col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-heading font-black text-white text-sm">SN</div>
+            <span class="font-heading font-bold text-white text-xl">SNR NEST</span>
+          </a>
+          <p class="text-slate-400 leading-relaxed max-w-sm">
+            "Building Careers. Empowering Businesses. Creating Opportunities."
+          </p>
+          <p class="text-slate-500 text-[11px] leading-relaxed">
+            A comprehensive multi-service corporate ecosystem delivering BPO recruitment, manpower staffing, digital website solutions, practical internships, and career training.
+          </p>
+        </div>
+
+        <!-- Col 2: Services -->
+        <div class="space-y-3">
+          <h5 class="text-white font-bold font-heading text-sm">Services</h5>
+          <ul class="space-y-2">
+            <li><a href="bpo-hiring.html" class="hover:text-blue-400 transition-colors">BPO Hiring</a></li>
+            <li><a href="manpower-sourcing.html" class="hover:text-emerald-400 transition-colors">Manpower Sourcing</a></li>
+            <li><a href="website-solutions.html" class="hover:text-purple-400 transition-colors">Website Solutions</a></li>
+            <li><a href="internship.html" class="hover:text-amber-400 transition-colors">Internship Programs</a></li>
+            <li><a href="training-placement.html" class="hover:text-rose-400 transition-colors">Training & Placement</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Candidates -->
+        <div class="space-y-3">
+          <h5 class="text-white font-bold font-heading text-sm">Candidates</h5>
+          <ul class="space-y-2">
+            <li><a href="bpo-hiring.html" class="hover:text-white transition-colors">Find BPO Jobs</a></li>
+            <li><a href="internship.html" class="hover:text-white transition-colors">Apply for Internships</a></li>
+            <li><a href="training-placement.html" class="hover:text-white transition-colors">Placement Assistance</a></li>
+            <li><a href="careers.html" class="hover:text-white transition-colors">Career Pathways</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Businesses -->
+        <div class="space-y-3">
+          <h5 class="text-white font-bold font-heading text-sm">Businesses</h5>
+          <ul class="space-y-2">
+            <li><a href="manpower-sourcing.html" class="hover:text-white transition-colors">Hire Workforce</a></li>
+            <li><a href="manpower-sourcing.html" class="hover:text-white transition-colors">Dark Store Staffing</a></li>
+            <li><a href="bpo-hiring.html" class="hover:text-white transition-colors">BPO Talent Sourcing</a></li>
+            <li><a href="website-solutions.html" class="hover:text-white transition-colors">Start Web Project</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Company & Locations -->
+        <div class="space-y-3">
+          <h5 class="text-white font-bold font-heading text-sm">Locations</h5>
+          <ul class="space-y-2">
+            <li class="text-slate-300">📍 Bangalore (HQ)</li>
+            <li class="text-slate-300">📍 Hyderabad</li>
+            <li class="text-indigo-400 font-medium">✨ More coming soon</li>
+            <li class="pt-2"><a href="about.html" class="hover:text-white">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-white">Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+        <div>© SNR NEST. All rights reserved.</div>
+        <div class="flex items-center gap-6">
+          <a href="about.html" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="about.html" class="hover:text-slate-300">Terms & Conditions</a>
+          <a href="contact.html" class="hover:text-slate-300">Support</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==========================================================================
+       14. UNIVERSAL MODAL SYSTEM (REUSABLE FOR ALL 5 SERVICES)
+       ========================================================================== -->
+  <div id="universal-modal" class="modal-backdrop fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="modal-content w-full max-w-2xl bg-slate-950 border border-white/15 rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto shadow-2xl relative">
+      
+      <!-- Close Button -->
+      <button id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="pr-10 mb-6">
+        <h3 id="modal-title" class="text-2xl font-bold font-heading text-white mb-1">Get Started with SNR NEST</h3>
+        <p id="modal-subtitle" class="text-xs text-slate-400">Fill in the information below to proceed with your request.</p>
+      </div>
+
+      <!-- Dynamic Form -->
+      <form id="universal-form" class="space-y-4">
+        <div id="modal-dynamic-fields" class="space-y-4">
+          <!-- Dynamically populated by window.openAppModal() in app.js -->
+        </div>
+
+        <div class="pt-4 border-t border-white/10 flex items-center justify-end gap-3">
+          <button type="button" onclick="window.closeAppModal()" class="px-5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:text-white text-xs font-semibold">
+            Cancel
+          </button>
+          <button type="submit" id="modal-submit-btn" class="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-500/25 transition-all">
+            Submit Request
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+
+  <!-- Core Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

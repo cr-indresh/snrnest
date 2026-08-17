@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Solutions & Digital Engineering | SNR NEST</title>
+  <meta name="description" content="Turn your business into a modern digital experience. Custom Next.js, React, Tailwind corporate websites, landing pages, e-commerce, and high-performance SEO.">
+  <meta name="keywords" content="website solutions, corporate website development, Next.js developer, landing page design, website redesign, SEO setup, Bangalore, Hyderabad">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { brand: { 500: '#8b5cf6', 600: '#7c3aed', 950: '#090d16' } },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#090d16] text-slate-200 antialiased selection:bg-purple-600 selection:text-white relative">
+
+  <!-- Ambient Glow -->
+  <div class="glow-orb glow-purple w-[600px] h-[600px] -top-32 -left-32"></div>
+
+  <!-- Navigation -->
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/5 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 p-[1px]">
+          <div class="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center font-heading font-black text-xl text-purple-400">SN</div>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl tracking-tight text-white">SNR NEST</span>
+          <span class="hidden sm:block text-[10px] text-slate-400 uppercase tracking-wider">Digital Engineering</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/70 border border-white/10 backdrop-blur-md">
+        <a href="index.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">Home</a>
+        <a href="about.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">About</a>
+        <a href="bpo-hiring.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">BPO Hiring</a>
+        <a href="manpower-sourcing.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">Manpower</a>
+        <a href="website-solutions.html" class="px-4 py-2 rounded-full text-sm font-bold text-purple-400 bg-purple-500/10">Website</a>
+        <a href="internship.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">Internship</a>
+        <a href="training-placement.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">Training</a>
+        <a href="contact.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">Contact</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="#project-planner" class="px-5 py-2 rounded-xl text-sm font-semibold text-white bg-purple-600 hover:bg-purple-500 shadow-lg shadow-purple-500/25">
+          Start Project
+        </a>
+      </div>
+
+      <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md opacity-0 transition-opacity">
+    <div class="drawer-panel fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-slate-950 border-l border-white/10 p-6 flex flex-col justify-between translate-x-full transition-transform">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
+          <span class="font-heading font-bold text-white text-lg">SNR NEST</span>
+          <button id="close-drawer-btn" class="p-2 rounded-lg bg-slate-900 text-slate-400"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+        <nav class="flex flex-col gap-2 text-sm font-medium">
+          <a href="index.html" class="px-3 py-2 rounded-lg text-slate-300">Home</a>
+          <a href="bpo-hiring.html" class="px-3 py-2 rounded-lg text-slate-300">BPO Hiring</a>
+          <a href="manpower-sourcing.html" class="px-3 py-2 rounded-lg text-slate-300">Manpower Sourcing</a>
+          <a href="website-solutions.html" class="px-3 py-2 rounded-lg bg-purple-600/20 text-purple-400 font-bold">Website Solutions</a>
+          <a href="internship.html" class="px-3 py-2 rounded-lg text-slate-300">Internship Programs</a>
+          <a href="training-placement.html" class="px-3 py-2 rounded-lg text-slate-300">Training & Placement</a>
+          <a href="contact.html" class="px-3 py-2 rounded-lg text-slate-300">Contact</a>
+        </nav>
+      </div>
+      <a href="#project-planner" onclick="document.getElementById('close-drawer-btn').click();" class="w-full py-2.5 rounded-xl bg-purple-600 text-white font-semibold text-center text-sm">
+        Start Project
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="pt-36 pb-16 relative bg-grid-pattern border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-bold uppercase tracking-wider mb-5">
+        <i data-lucide="code" class="w-4 h-4"></i>
+        <span>DIGITAL & WEB ENGINEERING VERTICAL</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black font-heading text-white tracking-tight max-w-4xl mx-auto mb-4">
+        "Turn your business into a <span class="gradient-text-purple">digital experience.</span>"
+      </h1>
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">
+        We design and develop modern, responsive, ultra-fast websites that help corporate businesses, fast-growing startups, and SMEs establish an authoritative digital presence.
+      </p>
+
+      <!-- Tech Stack Badges (Wireframe 2) -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 max-w-3xl mx-auto font-mono text-xs">
+        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-purple-300 font-medium">Next.js 14</span>
+        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-purple-300 font-medium">React</span>
+        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-purple-300 font-medium">TypeScript</span>
+        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-purple-300 font-medium">Tailwind CSS</span>
+        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-purple-300 font-medium">Node.js</span>
+        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-white/10 text-purple-300 font-medium">PostgreSQL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Browser Mockup Showcase (Wireframe 2) -->
+  <section class="py-16 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/15 shadow-2xl">
+        
+        <!-- Browser Bar -->
+        <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+          </div>
+          <div class="px-4 py-1 rounded-full bg-slate-900/80 border border-white/10 text-xs font-mono text-slate-400">
+            https://cloud-enterprise.snrnest.dev/preview
+          </div>
+          <div class="text-xs text-purple-400 font-mono">LIVE PREVIEW</div>
+        </div>
+
+        <!-- Mockup Content -->
+        <div class="space-y-6">
+          <div class="h-32 sm:h-44 rounded-2xl bg-gradient-to-r from-purple-900/40 via-indigo-900/30 to-blue-900/40 border border-purple-500/20 p-6 flex flex-col justify-center">
+            <span class="text-xs uppercase tracking-widest text-purple-300 font-mono mb-2">MODERN ARCHITECTURE</span>
+            <h3 class="text-xl sm:text-3xl font-extrabold font-heading text-white">Engineered for Blazing Speed & High Conversions</h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-white/5">
+              <span class="text-emerald-400 font-bold block mb-1">⚡ 99+ Core Web Vitals</span>
+              <p class="text-slate-400">Optimized image delivery, instant server-rendered HTML.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-white/5">
+              <span class="text-blue-400 font-bold block mb-1">📱 100% Fluid Responsive</span>
+              <p class="text-slate-400">Flawless touch rendering on iPhone, Android & UltraWide screens.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-white/5">
+              <span class="text-purple-400 font-bold block mb-1">🔍 Built-in Schema SEO</span>
+              <p class="text-slate-400">Automated meta headers, OpenGraph cards and index indexing.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 Web Services Grid -->
+  <section class="py-20 bg-slate-950/60 relative border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">Capabilities</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white mt-1">Comprehensive Website Solutions</h2>
+        <p class="text-sm text-slate-400 mt-2">End-to-end design, development, CMS integration, and monthly maintenance.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="glass-card rounded-2xl p-6 border-t-2 border-purple-500">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="building" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-white mb-2">Business Websites</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Multi-page corporate platforms showcasing your services, case studies, and brand values.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border-t-2 border-purple-500">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-white mb-2">Corporate Portals</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Enterprise-grade websites with investor sections, career boards, and multi-team portals.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border-t-2 border-purple-500">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-white mb-2">Landing Pages</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">High-converting single pages engineered for paid Google/Meta ads and product campaigns.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border-t-2 border-purple-500">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="user" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-white mb-2">Portfolio Websites</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Sleek, elegant visual portfolios for founders, creative agencies, and consultants.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border-t-2 border-purple-500">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-white mb-2">E-Commerce Stores</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Full storefronts with catalog filters, cart checkouts, and Razorpay/Stripe integrations.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border-t-2 border-purple-500">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-white mb-2">Website Redesign</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Migrate legacy slow websites to modern Next.js and Tailwind CSS with 10x speed boost.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border-t-2 border-purple-500">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="shield" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-white mb-2">Maintenance & SLA</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">24/7 uptime monitoring, security patching, CDN caching, and monthly content updates.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border-t-2 border-purple-500">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold font-heading text-white mb-2">SEO Setup & Audit</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Technical SEO, sitemaps, robots.txt, structured data markup, and search ranking boosts.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4-Step Engineering Process (Wireframe 2) -->
+  <section class="py-16 bg-slate-950/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">Development Lifecycle</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-white mt-1">Discover → Design → Develop → Launch</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+        <div class="glass-card rounded-2xl p-6 text-center">
+          <div class="w-10 h-10 rounded-full bg-purple-600/20 text-purple-400 flex items-center justify-center mx-auto mb-3 font-heading font-black text-sm">01</div>
+          <h4 class="font-heading font-bold text-white text-base mb-1">Discover</h4>
+          <p class="text-xs text-slate-400">Brand goals, user journey mapping & wireframes</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center">
+          <div class="w-10 h-10 rounded-full bg-purple-600/20 text-purple-400 flex items-center justify-center mx-auto mb-3 font-heading font-black text-sm">02</div>
+          <h4 class="font-heading font-bold text-white text-base mb-1">Design</h4>
+          <p class="text-xs text-slate-400">Figma visual prototypes & modern design token system</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center">
+          <div class="w-10 h-10 rounded-full bg-purple-600/20 text-purple-400 flex items-center justify-center mx-auto mb-3 font-heading font-black text-sm">03</div>
+          <h4 class="font-heading font-bold text-white text-base mb-1">Develop</h4>
+          <p class="text-xs text-slate-400">Clean Next.js / TypeScript code & SEO integration</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center border-purple-500/40">
+          <div class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center mx-auto mb-3 font-heading font-black text-sm">04</div>
+          <h4 class="font-heading font-bold text-purple-300 text-base mb-1">Launch</h4>
+          <p class="text-xs text-purple-400/80">Edge deployment, CDN setup & 24/7 uptime monitoring</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Planner / Quote Form -->
+  <section id="project-planner" class="py-20 bg-slate-950/80 border-t border-white/10 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-white/15">
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">Project Discovery</span>
+          <h2 class="text-2xl sm:text-3xl font-bold font-heading text-white mt-1">Start Your Website Project</h2>
+          <p class="text-xs text-slate-400 mt-2">Tell us about your brand vision and get a detailed proposal with timeline & budget within 24 hours.</p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); window.showToast('Project inquiry received! Our technical solutions lead will connect with you.', 'success'); this.reset();" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Your Name *</label>
+              <input type="text" required placeholder="Alex Morgan" class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Company / Brand Name *</label>
+              <input type="text" required placeholder="Morgan Enterprises" class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 text-sm">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Business Email *</label>
+              <input type="email" required placeholder="alex@morgan.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Contact Phone *</label>
+              <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 text-sm">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Project Scope *</label>
+              <select required class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white focus:outline-none focus:border-purple-500 text-sm">
+                <option>New Corporate / Business Website</option>
+                <option>High-Converting Landing Page</option>
+                <option>E-Commerce Store</option>
+                <option>Website Redesign & Modernization</option>
+                <option>Ongoing Maintenance & SEO Setup</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Target Launch Timeline</label>
+              <select class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white focus:outline-none focus:border-purple-500 text-sm">
+                <option>Immediate (1 - 2 Weeks)</option>
+                <option>Within 1 Month</option>
+                <option>Flexible / Planning Phase</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Project Brief & Requirements</label>
+            <textarea rows="3" required placeholder="Describe your business goals, target audience, preferred design aesthetics, or any reference websites..." class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 text-sm"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm shadow-xl shadow-purple-500/25 transition-all">
+            Submit Project Brief
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Universal Modal System -->
+  <div id="universal-modal" class="modal-backdrop fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="modal-content w-full max-w-2xl bg-slate-950 border border-white/15 rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto shadow-2xl relative">
+      <button id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <div class="pr-10 mb-6">
+        <h3 id="modal-title" class="text-2xl font-bold font-heading text-white mb-1">Start Project</h3>
+        <p id="modal-subtitle" class="text-xs text-slate-400">Fill in the details to proceed.</p>
+      </div>
+      <form id="universal-form" class="space-y-4">
+        <div id="modal-dynamic-fields" class="space-y-4"></div>
+        <div class="pt-4 border-t border-white/10 flex items-center justify-end gap-3">
+          <button type="button" onclick="window.closeAppModal()" class="px-5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300 text-xs font-semibold">Cancel</button>
+          <button type="submit" id="modal-submit-btn" class="px-6 py-2.5 rounded-xl bg-purple-600 text-white font-bold text-xs">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 border-t border-white/10 py-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>© SNR NEST. All rights reserved. • Website & Digital Engineering Division</div>
+      <div class="flex gap-4">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="bpo-hiring.html" class="hover:text-white">BPO Hiring</a>
+        <a href="manpower-sourcing.html" class="hover:text-white">Manpower</a>
+        <a href="internship.html" class="hover:text-white">Internships</a>
+        <a href="contact.html" class="hover:text-white">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
