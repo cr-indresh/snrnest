@@ -1,345 +1,235 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Training & Placement Programs | SNR NEST</title>
-  <meta name="description" content="Master in-demand tech and operational skills with SNR NEST. Practical coding labs, ATS resume building, mock interviews, and 100% placement support.">
-  <meta name="keywords" content="training and placement, full stack course, python data science, AI ML training, BPO leadership course, software placement, Bangalore, Hyderabad">
-  
+  <title>Training & Placement — SNR NEST | Become Industry-Ready</title>
+  <meta name="description" content="Bootcamps in full-stack, AI & ML, Python & data analytics, digital marketing & BPO leadership. Train → Build → Practice → Interview → Get Placed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: { brand: { 500: '#f43f5e', 600: '#e11d48', 950: '#090d16' } },
-          fontFamily: {
-            heading: ['Outfit', 'sans-serif'],
-            body: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          }
-        }
-      }
-    }
-  </script>
-  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-[#090d16] text-slate-200 antialiased selection:bg-rose-600 selection:text-white relative">
+<body class="grain bg-ink text-ivory font-body antialiased">
 
-  <!-- Ambient Glow -->
-  <div class="glow-orb glow-indigo w-[600px] h-[600px] -top-32 -left-32"></div>
+  <div id="nav-mount"></div>
 
-  <!-- Navigation -->
-  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/5 py-4">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-600 to-red-600 p-[1px]">
-          <div class="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center font-heading font-black text-xl text-rose-400">SN</div>
-        </div>
-        <div>
-          <span class="font-heading font-extrabold text-xl tracking-tight text-white">SNR NEST</span>
-          <span class="hidden sm:block text-[10px] text-slate-400 uppercase tracking-wider">Training & Placement</span>
-        </div>
-      </a>
-
-      <nav class="hidden lg:flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-slate-900/70 border border-white/10 backdrop-blur-md">
-        <a href="index.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">Home</a>
-        <a href="about.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">About</a>
-        <a href="bpo-hiring.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">BPO Hiring</a>
-        <a href="manpower-sourcing.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">Manpower</a>
-        <a href="website-solutions.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">Website</a>
-        <a href="internship.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">Internship</a>
-        <a href="training-placement.html" class="px-4 py-2 rounded-full text-sm font-bold text-rose-400 bg-rose-500/10">Training</a>
-        <a href="contact.html" class="px-4 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-white">Contact</a>
-      </nav>
-
-      <div class="hidden lg:flex items-center gap-3">
-        <a href="#advisor-form" class="px-5 py-2 rounded-xl text-sm font-semibold text-white bg-rose-600 hover:bg-rose-500 shadow-lg shadow-rose-500/25">
-          Talk to Career Advisor
-        </a>
-      </div>
-
-      <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
+  <!-- ============== PAGE HERO ============== -->
+  <section class="page-hero relative overflow-hidden" data-bg="ink">
+    <div class="absolute inset-0 -z-10">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2400&auto=format&fit=crop" alt="" class="w-full h-full object-cover opacity-25 parallax" data-parallax="0.12" style="filter:grayscale(70%); margin-top:-10%;" loading="eager">
+      <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(10,10,10,.6) 0%, rgba(10,10,10,1) 90%);"></div>
     </div>
-  </header>
-
-  <!-- Mobile Drawer -->
-  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md opacity-0 transition-opacity">
-    <div class="drawer-panel fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-slate-950 border-l border-white/10 p-6 flex flex-col justify-between translate-x-full transition-transform">
-      <div>
-        <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
-          <span class="font-heading font-bold text-white text-lg">SNR NEST</span>
-          <button id="close-drawer-btn" class="p-2 rounded-lg bg-slate-900 text-slate-400"><i data-lucide="x" class="w-5 h-5"></i></button>
-        </div>
-        <nav class="flex flex-col gap-2 text-sm font-medium">
-          <a href="index.html" class="px-3 py-2 rounded-lg text-slate-300">Home</a>
-          <a href="bpo-hiring.html" class="px-3 py-2 rounded-lg text-slate-300">BPO Hiring</a>
-          <a href="manpower-sourcing.html" class="px-3 py-2 rounded-lg text-slate-300">Manpower Sourcing</a>
-          <a href="website-solutions.html" class="px-3 py-2 rounded-lg text-slate-300">Website Solutions</a>
-          <a href="internship.html" class="px-3 py-2 rounded-lg text-slate-300">Internship Programs</a>
-          <a href="training-placement.html" class="px-3 py-2 rounded-lg bg-rose-600/20 text-rose-400 font-bold">Training & Placement</a>
-          <a href="contact.html" class="px-3 py-2 rounded-lg text-slate-300">Contact</a>
-        </nav>
+    <div class="shell relative">
+      <div class="breadcrumb mb-8 sr" data-reveal>
+        <a href="index.html" class="hover:text-ivory transition-colors">SNR NEST</a>
+        <span class="sep">/</span>
+        <span class="current">Training & Placement</span>
       </div>
-      <a href="#advisor-form" onclick="document.getElementById('close-drawer-btn').click();" class="w-full py-2.5 rounded-xl bg-rose-600 text-white font-semibold text-center text-sm">
-        Talk to Career Advisor
-      </a>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <section class="pt-36 pb-16 relative bg-grid-pattern border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold uppercase tracking-wider mb-5">
-        <i data-lucide="award" class="w-4 h-4"></i>
-        <span>SKILL ACCELERATOR & PLACEMENT ENGINE</span>
-      </div>
-      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black font-heading text-white tracking-tight max-w-4xl mx-auto mb-4">
-        "Learn the skills. Become industry-ready. <span class="gradient-text-purple">Get placed.</span>"
+      <div class="t-eyebrow mb-6 sr" data-reveal>[ 01 ]  Vertical</div>
+      <h1 class="t-hero mb-8 sr" data-reveal style="--d:.05s">
+        Become<br>
+        <span class="t-editorial text-accent">industry-ready.</span>
       </h1>
-      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">
-        We combine practical project-driven training with personalized career mentorship, mock interview drills, and corporate placement connections.
-      </p>
-
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="#courses-section" class="px-7 py-3.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm shadow-xl shadow-rose-500/25 transition-all flex items-center gap-2">
-          <span>Explore Training Programs</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-        <button onclick="window.openAppModal('course-enroll')" class="px-7 py-3.5 rounded-xl bg-slate-900 border border-white/10 hover:border-white/20 text-white font-bold text-sm transition-all">
-          Talk to a Career Advisor
-        </button>
+      <div class="grid md:grid-cols-12 gap-y-6 md:gap-x-6 items-end">
+        <p class="md:col-span-7 text-cream text-base md:text-lg leading-relaxed sr" data-reveal style="--d:.15s">
+          Structured curriculum training combined with hands-on project labs, aptitude coaching, mock interviews & dedicated placement assistance — across software, data, AI, marketing & operations.
+        </p>
+        <div class="md:col-span-5 md:flex md:justify-end sr" data-reveal style="--d:.2s">
+          <div class="flex flex-wrap gap-3">
+            <span class="chip">Full Stack</span>
+            <span class="chip">AI & ML</span>
+            <span class="chip">Python & Analytics</span>
+            <span class="chip">Digital Marketing</span>
+            <span class="chip">BPO Leadership</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 3-Stage Visual Pipeline (Wireframe 2) -->
-  <section class="py-16 bg-slate-950/50 relative border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <span class="text-xs font-bold text-rose-400 uppercase tracking-widest">3-Stage Career Transformation</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-white mt-1">Learn → Build → Practice → Interview → Get Placed</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Stage 01 -->
-        <div class="glass-card rounded-3xl p-8 border-t-2 border-rose-500">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-2xl font-black font-heading text-rose-400">01</span>
-            <span class="px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 text-xs font-semibold">Stage One</span>
-          </div>
-          <h3 class="text-xl font-bold font-heading text-white mb-2">Technical Training</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-6">Master industry skills with live mentor sessions, code labs, and capstone project builds.</p>
-          <ul class="space-y-2 text-xs text-slate-300">
-            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400"></i> Live Interactive Lectures</li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400"></i> Hands-on GitHub Code Repos</li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400"></i> Real-world Capstones</li>
-          </ul>
+  <!-- ============== PROCESS ============== -->
+  <section class="section-sm border-t border-line" data-bg="ink">
+    <div class="shell">
+      <div class="grid md:grid-cols-12 gap-y-10 md:gap-x-6 mb-14">
+        <div class="md:col-span-5">
+          <div class="t-eyebrow mb-4 sr" data-reveal>[ 02 ]  Method</div>
+          <h2 class="t-section sr" data-reveal style="--d:.05s">Train → Build →<br>Practice → Interview →<br>Get Placed.</h2>
         </div>
-
-        <!-- Stage 02 -->
-        <div class="glass-card rounded-3xl p-8 border-t-2 border-rose-500">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-2xl font-black font-heading text-rose-400">02</span>
-            <span class="px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 text-xs font-semibold">Stage Two</span>
-          </div>
-          <h3 class="text-xl font-bold font-heading text-white mb-2">Career Preparation</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-6">Transform into an interview-ready candidate with soft skill polish and technical simulations.</p>
-          <ul class="space-y-2 text-xs text-slate-300">
-            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400"></i> ATS-Optimized Resumes</li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400"></i> 1-on-1 Mock Technical Rounds</li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400"></i> Voice & Aptitude Drills</li>
-          </ul>
-        </div>
-
-        <!-- Stage 03 -->
-        <div class="glass-card rounded-3xl p-8 border-t-2 border-rose-500">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-2xl font-black font-heading text-rose-400">03</span>
-            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold">Stage Three</span>
-          </div>
-          <h3 class="text-xl font-bold font-heading text-white mb-2">Placement Support</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-6">Gain direct access to hiring drives, corporate interview referrals, and day-1 joining assistance.</p>
-          <ul class="space-y-2 text-xs text-slate-300">
-            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Direct Interview Lineups</li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> 50+ Hiring Partners</li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Day-1 Onboarding Guidance</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Filterable Course Catalog -->
-  <section id="courses-section" class="py-20 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="glass-panel p-6 rounded-3xl mb-10 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
-          <h2 class="text-2xl font-bold font-heading text-white">Programs & Bootcamps</h2>
-          <p class="text-xs text-rose-400 font-semibold mt-1">Structured curriculum with project portfolio</p>
-        </div>
-        <div>
-          <select id="filter-course-category" class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-white focus:outline-none focus:border-rose-500 text-sm">
-            <option value="all">All Disciplines</option>
-            <option value="Software Development">Software & Web Development</option>
-            <option value="Data Science">Data Science & AI</option>
-            <option value="Data Analytics">Data Analytics & Power BI</option>
-            <option value="Operations">Operations & Leadership</option>
-            <option value="Digital Skills">Digital Marketing</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Courses Grid -->
-      <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Rendered dynamically by js/courses.js -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- COMING SOON / WE ARE EXPANDING (WIREFRAME 2) -->
-  <section class="py-20 relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 border-y border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="glass-panel p-8 sm:p-12 rounded-3xl text-center relative overflow-hidden mb-12 border-2 border-indigo-500/30">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-bold uppercase tracking-widest mb-4">
-          <span class="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span>
-          <span>FUTURE EXPANSION ROADMAP</span>
-        </div>
-        
-        <h2 class="text-3xl sm:text-5xl font-black font-heading text-white tracking-tight mb-4">
-          COMING SOON — <span class="gradient-text-purple">WE ARE EXPANDING</span>
-        </h2>
-        
-        <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Upcoming enterprise disciplines launching across our Bangalore & Hyderabad technology centers.
+        <p class="md:col-span-6 md:col-start-7 text-cream text-base leading-relaxed sr" data-reveal style="--d:.1s">
+          Five tightly choreographed stages — each with its own deliverable. The journey ends with a real offer letter, not just a certificate.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="glass-card rounded-2xl p-6 border-t-2 border-indigo-500">
-          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block mb-1">Q3 Launch</span>
-          <h4 class="text-lg font-bold text-white mb-2 font-heading">Cloud & DevOps</h4>
-          <p class="text-xs text-slate-400">AWS, Azure, Docker, Kubernetes & CI/CD pipeline automation.</p>
-        </div>
-        <div class="glass-card rounded-2xl p-6 border-t-2 border-indigo-500">
-          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block mb-1">Q4 Launch</span>
-          <h4 class="text-lg font-bold text-white mb-2 font-heading">Generative AI</h4>
-          <p class="text-xs text-slate-400">LLM fine-tuning, autonomous agents, RAG architecture & automation.</p>
-        </div>
-        <div class="glass-card rounded-2xl p-6 border-t-2 border-indigo-500">
-          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block mb-1">Q4 Launch</span>
-          <h4 class="text-lg font-bold text-white mb-2 font-heading">FinTech Risk & AML</h4>
-          <p class="text-xs text-slate-400">Banking compliance, KYC verification, and fraud detection operations.</p>
-        </div>
-        <div class="glass-card rounded-2xl p-6 border-t-2 border-indigo-500">
-          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block mb-1">Next Phase</span>
-          <h4 class="text-lg font-bold text-white mb-2 font-heading">Global IT Staffing</h4>
-          <p class="text-xs text-slate-400">International offshore tech placements in US, UK, and Middle East.</p>
-        </div>
+      <div class="grid md:grid-cols-5 gap-6 border-t border-line pt-10">
+        <div class="sr" data-reveal><div class="font-mono text-xs text-accent mb-3">01  —  TRAIN</div><div class="font-display font-semibold text-lg mb-2">Industry Skills</div><div class="text-muted text-sm leading-relaxed">Live mentor-led sessions, code labs & capstone builds.</div></div>
+        <div class="sr" data-reveal style="--d:.05s"><div class="font-mono text-xs text-accent mb-3">02  —  BUILD</div><div class="font-display font-semibold text-lg mb-2">Bridge the Gap</div><div class="text-muted text-sm leading-relaxed">Soft-skills, communication, aptitude & mock interview drills.</div></div>
+        <div class="sr" data-reveal style="--d:.1s"><div class="font-mono text-xs text-accent mb-3">03  —  PRACTICE</div><div class="font-display font-semibold text-lg mb-2">Real-World Drills</div><div class="text-muted text-sm leading-relaxed">Simulated workflows, peer reviews & capstone presentations.</div></div>
+        <div class="sr" data-reveal style="--d:.15s"><div class="font-mono text-xs text-accent mb-3">04  —  INTERVIEW</div><div class="font-display font-semibold text-lg mb-2">Crack the Round</div><div class="text-muted text-sm leading-relaxed">Technical, HR & managerial rounds simulated by mentors.</div></div>
+        <div class="sr" data-reveal style="--d:.2s"><div class="font-mono text-xs text-accent mb-3">05  —  PLACED</div><div class="font-display font-semibold text-lg mb-2">Dream Role</div><div class="text-muted text-sm leading-relaxed">Direct hiring drives, referrals & day-1 joining support.</div></div>
       </div>
-
     </div>
   </section>
 
-  <!-- Career Advisor Consultation Form -->
-  <section id="advisor-form" class="py-20 bg-slate-950/80 border-t border-white/10 relative">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-white/15">
-        <div class="text-center mb-8">
-          <span class="text-xs font-bold text-rose-400 uppercase tracking-widest">Free Career Counseling</span>
-          <h2 class="text-2xl sm:text-3xl font-bold font-heading text-white mt-1">Talk to a Senior Career Advisor</h2>
-          <p class="text-xs text-slate-400 mt-2">Get personalized course recommendations based on your educational background and career goals.</p>
+  <!-- ============== COURSES LIST ============== -->
+  <section class="section bg-charcoal border-y border-line" data-bg="charcoal">
+    <div class="shell">
+      <div class="grid md:grid-cols-12 gap-y-10 md:gap-x-6 mb-14">
+        <div class="md:col-span-5">
+          <div class="t-eyebrow mb-4 sr" data-reveal>[ 03 ]  Courses</div>
+          <h2 class="t-section sr" data-reveal style="--d:.05s">Live cohorts.<br>Real projects.</h2>
+        </div>
+        <div class="md:col-span-6 md:col-start-7">
+          <p class="text-cream text-base leading-relaxed mb-8 sr" data-reveal style="--d:.1s">
+            <span id="course-count" class="text-accent font-mono text-2xl">0</span>
+            <span class="text-muted">  live cohorts across software, data, AI, marketing & operations.</span>
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 sr" data-reveal style="--d:.15s">
+            <div class="field">
+              <input type="text" id="course-search" placeholder=" " autocomplete="off">
+              <label for="course-search">Search courses — name, category</label>
+            </div>
+            <select id="course-cat" class="bg-transparent border border-line-strong px-4 py-3 font-mono text-xs tracking-widest uppercase text-bone focus:border-accent transition-colors self-end">
+              <option value="all">All Categories</option>
+              <option value="software">Software Development</option>
+              <option value="ai">AI & Machine Learning</option>
+              <option value="data">Data Analytics</option>
+              <option value="digital">Digital Skills</option>
+              <option value="operations">Operations & Management</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-line sr" data-reveal style="--d:.2s">
+        <div class="grid grid-cols-[32px_1fr_1fr_1fr_1fr_auto] gap-6 py-4 border-b border-line">
+          <div class="font-mono text-xs text-faint">#</div>
+          <div class="font-mono text-xs text-faint uppercase tracking-widest">Course</div>
+          <div class="font-mono text-xs text-faint uppercase tracking-widest">Duration</div>
+          <div class="font-mono text-xs text-faint uppercase tracking-widest">Mode</div>
+          <div class="font-mono text-xs text-faint uppercase tracking-widest">Level</div>
+          <div></div>
+        </div>
+        <div id="course-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== EXPANDING / COMING SOON ============== -->
+  <section class="section" data-bg="ink">
+    <div class="shell">
+      <div class="grid md:grid-cols-12 gap-y-10 md:gap-x-6 mb-14">
+        <div class="md:col-span-5">
+          <div class="t-eyebrow mb-4 sr" data-reveal>[ 04 ]  Expanding</div>
+          <h2 class="t-section sr" data-reveal style="--d:.05s">We are<br>expanding.</h2>
+        </div>
+        <p class="md:col-span-6 md:col-start-7 text-cream text-base leading-relaxed sr" data-reveal style="--d:.1s">
+          Four new training domains are launching across Q3 & Q4 — Cloud & DevOps, Generative AI, FinTech Risk and a Global Offshore Staffing Hub.
+        </p>
+      </div>
+
+      <div class="verticals sr" data-reveal style="--d:.15s" id="expanding-list"></div>
+    </div>
+  </section>
+
+  <!-- ============== STUDENT FORM ============== -->
+  <section class="section bg-charcoal border-t border-line" data-bg="charcoal" id="enroll-form-section">
+    <div class="shell">
+      <div class="grid md:grid-cols-12 gap-y-12 md:gap-x-6">
+        <div class="md:col-span-5">
+          <div class="t-eyebrow mb-4 sr" data-reveal>[ 05 ]  Enroll</div>
+          <h2 class="t-section mb-8 sr" data-reveal style="--d:.05s">Enroll in<br>a cohort.</h2>
+          <p class="text-cream text-base leading-relaxed mb-8 max-w-md sr" data-reveal style="--d:.1s">
+            Reserve your seat in the next cohort. Limited intake per batch — apply early to secure a place.
+          </p>
+          <div class="font-mono text-xs text-faint leading-relaxed sr" data-reveal style="--d:.15s">
+            <div class="mb-2">— LIVE INTERACTIVE SESSIONS</div>
+            <div class="mb-2">— HANDS-ON PROJECT WORK</div>
+            <div class="mb-2">— 100% PLACEMENT ASSISTANCE</div>
+            <div>— UNLIMITED INTERVIEW ROUNDS</div>
+          </div>
         </div>
 
-        <form onsubmit="event.preventDefault(); window.showToast('Counseling request booked! Our advisor will call you.', 'success'); this.reset();" class="space-y-4">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Full Name *</label>
-              <input type="text" required placeholder="Karan Verma" class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 text-sm">
+        <div class="md:col-span-6 md:col-start-7 sr" data-reveal style="--d:.2s">
+          <form data-premium>
+            <div class="grid md:grid-cols-2 gap-x-6">
+              <div class="field">
+                <input type="text" id="tr-name" placeholder=" " required>
+                <label for="tr-name">Full Name</label>
+                <div class="field-error">Please enter your name.</div>
+              </div>
+              <div class="field">
+                <input type="tel" id="tr-phone" placeholder=" " required>
+                <label for="tr-phone">Phone</label>
+                <div class="field-error">Please enter a valid phone.</div>
+              </div>
             </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Phone Number *</label>
-              <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 text-sm">
+            <div class="field">
+              <input type="email" id="tr-email" placeholder=" " required>
+              <label for="tr-email">Email</label>
+              <div class="field-error">Please enter a valid email.</div>
             </div>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Email Address *</label>
-              <input type="email" required placeholder="karan@example.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 text-sm">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Program of Interest *</label>
-              <select required class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white focus:outline-none focus:border-rose-500 text-sm">
+            <div class="field">
+              <select id="tr-course" required style="appearance:none; background:transparent;">
+                <option value="" disabled selected></option>
                 <option>Full Stack Web Development</option>
                 <option>AI & Machine Learning Foundations</option>
-                <option>Python & Data Analytics</option>
+                <option>Python & Data Analytics Mastery</option>
+                <option>Software Testing & QA Automation</option>
+                <option>Digital Marketing & Brand Growth</option>
                 <option>BPO Leadership & Operations</option>
-                <option>Software QA Automation</option>
-                <option>Digital Marketing Mastery</option>
               </select>
+              <label for="tr-course">Preferred Course</label>
+              <div class="field-error">Please select a course.</div>
             </div>
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Current Background & Career Aspirations</label>
-            <textarea rows="3" required placeholder="Tell us about your degree, current job/college status, and target salary or role..." class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 text-sm"></textarea>
-          </div>
-
-          <button type="submit" class="w-full py-3.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm shadow-xl shadow-rose-500/25 transition-all">
-            Book Free Career Counseling Call
-          </button>
-        </form>
-
+            <div class="field">
+              <textarea id="tr-msg" placeholder=" "></textarea>
+              <label for="tr-msg">Background & learning goals (optional)</label>
+            </div>
+            <div class="pt-2">
+              <button type="submit" class="magnetic magnetic-solid">
+                <span class="m-text">Reserve Seat</span>
+                <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+            <div class="form-success mt-6">
+              <div class="t-eyebrow mb-2" style="color:var(--c-accent)">Seat Reserved</div>
+              <p class="text-cream text-sm">Thank you. Our admissions team will confirm your seat within 24 hours. For queries, contact <a href="mailto:contact@snrnest.com" class="text-accent underline">contact@snrnest.com</a>.</p>
+            </div>
+          </form>
+        </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Universal Modal System -->
-  <div id="universal-modal" class="modal-backdrop fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="modal-content w-full max-w-2xl bg-slate-950 border border-white/15 rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto shadow-2xl relative">
-      <button id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
-      <div class="pr-10 mb-6">
-        <h3 id="modal-title" class="text-2xl font-bold font-heading text-white mb-1">Enroll in Course</h3>
-        <p id="modal-subtitle" class="text-xs text-slate-400">Fill in your information to proceed.</p>
-      </div>
-      <form id="universal-form" class="space-y-4">
-        <div id="modal-dynamic-fields" class="space-y-4"></div>
-        <div class="pt-4 border-t border-white/10 flex items-center justify-end gap-3">
-          <button type="button" onclick="window.closeAppModal()" class="px-5 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300 text-xs font-semibold">Cancel</button>
-          <button type="submit" id="modal-submit-btn" class="px-6 py-2.5 rounded-xl bg-rose-600 text-white font-bold text-xs">Confirm Enrollment</button>
-        </div>
-      </form>
-    </div>
-  </div>
+  <div id="footer-mount"></div>
 
-  <!-- Footer -->
-  <footer class="bg-slate-950 border-t border-white/10 py-12 text-slate-400 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>© SNR NEST. All rights reserved. • Training & Career Placement Division</div>
-      <div class="flex gap-4">
-        <a href="index.html" class="hover:text-white">Home</a>
-        <a href="bpo-hiring.html" class="hover:text-white">BPO Hiring</a>
-        <a href="manpower-sourcing.html" class="hover:text-white">Manpower</a>
-        <a href="website-solutions.html" class="hover:text-white">Website Solutions</a>
-        <a href="contact.html" class="hover:text-white">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/courses.js"></script>
+  <script defer src="data/jobs.js"></script>
+  <script defer src="data/internships.js"></script>
+  <script defer src="data/training.js"></script>
+  <script defer src="js/partials.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/navigation.js"></script>
+  <script defer src="js/animations.js"></script>
+  <script defer src="js/magnetic.js"></script>
+  <script defer src="js/cursor.js"></script>
+  <script defer src="js/forms.js"></script>
+  <script defer src="js/pages.js"></script>
+  <script>
+    document.addEventListener('partials:ready', function() {
+      var expWrap = document.getElementById('expanding-list');
+      if (expWrap && window.SNR_DATA && window.SNR_DATA.expanding) {
+        expWrap.innerHTML = window.SNR_DATA.expanding.map(function(e, i) {
+          return '<div class="vertical-row" tabindex="0">' +
+                   '<span class="v-num">' + String(i+1).padStart(2,'0') + '</span>' +
+                   '<span class="v-title">' + e.title + '</span>' +
+                   '<span class="v-desc">' + e.desc + '  <span class="font-mono text-xs text-accent ml-2">' + e.timeline + '</span></span>' +
+                   '<span class="v-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>' +
+                 '</div>';
+        }).join('');
+      }
+    });
+  </script>
 </body>
 </html>
