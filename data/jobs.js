@@ -9,7 +9,8 @@ window.SNR_DATA.brand = {
   tagline: "Building Careers. Empowering Businesses. Creating Opportunities.",
   eyebrow: "TALENT  •  TECHNOLOGY  •  CAREERS",
   description: "SNR NEST is a multi-service organization delivering BPO hiring, specialized manpower sourcing, website solutions, practical internships, and end-to-end training & placement services.",
-  email: "contact@snrnest.com",
+  email: "praveen@snrnest.in",
+  altEmail: "rangapraveend4@gmail.com",
   phone: "+91 80 4123 8899  /  +91 91234 56789",
   locations: [
     {
@@ -17,14 +18,14 @@ window.SNR_DATA.brand = {
       isHQ: true,
       address: "SNR Tower, 4th Floor, Outer Ring Road, Bellandur, Bengaluru, Karnataka 560103",
       phone: "+91 80 4123 8899",
-      email: "blr@snrnest.com"
+      email: "praveen@snrnest.in"
     },
     {
       city: "Hyderabad",
       isHQ: false,
       address: "Cyber Gateway, Hitech City, Madhapur, Hyderabad, Telangana 500081",
       phone: "+91 40 6789 2244",
-      email: "hyd@snrnest.com"
+      email: "praveen@snrnest.in"
     }
   ],
   stats: {

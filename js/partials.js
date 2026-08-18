@@ -127,7 +127,8 @@
         </div>
         <div>
           <div class="t-label text-faint mb-5">Connect</div>
-          <a href="mailto:contact@snrnest.com" class="footer-link block">contact@snrnest.com</a>
+          <a href="mailto:praveen@snrnest.in" class="footer-link block">praveen@snrnest.in</a>
+          <a href="mailto:rangapraveend4@gmail.com" class="footer-link block">rangapraveend4@gmail.com</a>
           <a href="tel:+918041238899" class="footer-link block">+91 80 4123 8899</a>
           <span class="footer-link block text-faint">Mon – Sat, 10:00 – 19:00</span>
         </div>
@@ -171,7 +172,7 @@
       if (href === here) l.classList.add('is-active');
     });
 
-    // Re-fire nav init / cursor init / magnetic init after partials are in
+    // Re-fire nav init / magnetic init after partials are in
     document.dispatchEvent(new CustomEvent('partials:ready'));
   }
 

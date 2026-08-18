@@ -98,23 +98,23 @@ input, textarea, select { font-family: inherit; color: inherit; }
 .t-hero {
   font-family: var(--f-display);
   font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 0.88;
-  font-size: clamp(3.2rem, 11vw, 11rem);
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  font-size: clamp(2.4rem, 5.5vw, 4.8rem);
 }
 .t-section {
   font-family: var(--f-display);
   font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 0.95;
-  font-size: clamp(2.2rem, 6vw, 5.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
 }
 .t-large {
   font-family: var(--f-display);
   font-weight: 500;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
-  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  font-size: clamp(1.25rem, 1.8vw, 1.75rem);
 }
 
 /* ------------------------------------------------------------------
@@ -192,7 +192,7 @@ input, textarea, select { font-family: inherit; color: inherit; }
   font-family: var(--f-display);
   font-weight: 700;
   letter-spacing: -0.03em;
-  font-size: clamp(2rem, 7vw, 5rem);
+  font-size: clamp(1.75rem, 4.5vw, 3.5rem);
   color: var(--c-ivory);
   opacity: 0;
   transform: translateY(8px);
@@ -222,42 +222,6 @@ input, textarea, select { font-family: inherit; color: inherit; }
   to { width: 220px; }
 }
 
-/* ------------------------------------------------------------------
-   08 — Custom cursor (desktop only — JS adds .has-cursor)
-   ------------------------------------------------------------------ */
-.cursor-dot, .cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  mix-blend-mode: difference;
-  will-change: transform;
-}
-.cursor-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #fff;
-  transform: translate(-50%, -50%);
-}
-.cursor-ring {
-  width: 36px; height: 36px;
-  border: 1px solid rgba(255,255,255,0.5);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s var(--ease-lux), height 0.3s var(--ease-lux),
-              border-color 0.3s var(--ease-lux), background 0.3s var(--ease-lux);
-}
-body.has-cursor { cursor: none; }
-body.has-cursor a, body.has-cursor button, body.has-cursor input, body.has-cursor textarea, body.has-cursor select { cursor: none; }
-.cursor-ring.is-hover { width: 64px; height: 64px; border-color: var(--c-accent); background: rgba(201,169,97,0.05); }
-.cursor-ring.is-down { width: 24px; height: 24px; }
-
-@media (hover: none), (pointer: coarse) {
-  body.has-cursor { cursor: auto; }
-  body.has-cursor a, body.has-cursor button, body.has-cursor input, body.has-cursor textarea, body.has-cursor select { cursor: auto; }
-  .cursor-dot, .cursor-ring { display: none; }
-}
 
 /* ------------------------------------------------------------------
    09 — Navigation
@@ -627,9 +591,9 @@ body.has-cursor a, body.has-cursor button, body.has-cursor input, body.has-curso
 .stat-num {
   font-family: var(--f-display);
   font-weight: 600;
-  font-size: clamp(4rem, 14vw, 12rem);
-  line-height: 0.85;
-  letter-spacing: -0.05em;
+  font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
   color: var(--c-ivory);
 }
 .stat-label {
@@ -765,9 +729,21 @@ body.has-cursor a, body.has-cursor button, body.has-cursor input, body.has-curso
 }
 .tab::after { content: ""; position: absolute; left: 0; bottom: -1.4rem; height: 1px; width: 0; background: var(--c-accent); transition: width 0.5s var(--ease-lux); }
 .tab:hover, .tab.is-active { color: var(--c-ivory); }
-.tab.is-active::after { width: 100%; }
-.tab-pane { display: none; }
-.tab-pane.is-active { display: block; animation: fadeUp 0.6s var(--ease-lux); }
+.tab-pane {
+  display: none !important;
+}
+.tab-pane.is-active {
+  display: block !important;
+  animation: fadeUp 0.6s var(--ease-lux);
+}
+.tab-pane.is-active.grid,
+.tab-pane.is-active[class*="grid"] {
+  display: grid !important;
+}
+.tab-pane.is-active.flex,
+.tab-pane.is-active[class*="flex"] {
+  display: flex !important;
+}
 
 /* ------------------------------------------------------------------
    18 — Page transition overlay
@@ -893,9 +869,9 @@ body.has-cursor a, body.has-cursor button, body.has-cursor input, body.has-curso
 .footer-wordmark {
   font-family: var(--f-display);
   font-weight: 700;
-  letter-spacing: -0.05em;
-  font-size: clamp(4rem, 22vw, 18rem);
-  line-height: 0.85;
+  letter-spacing: -0.04em;
+  font-size: clamp(3rem, 11vw, 8.5rem);
+  line-height: 0.9;
   color: var(--c-ivory);
 }
 .footer-link {
@@ -914,8 +890,13 @@ body.has-cursor a, body.has-cursor button, body.has-cursor input, body.has-curso
    23 — Page hero (interior pages)
    ------------------------------------------------------------------ */
 .page-hero {
-  padding-top: clamp(8rem, 18vh, 14rem);
-  padding-bottom: clamp(3rem, 7vh, 6rem);
+  padding-top: clamp(6.5rem, 13vh, 10.5rem);
+  padding-bottom: clamp(2.5rem, 5vh, 4.5rem);
+}
+.page-hero .t-hero {
+  font-size: clamp(2.1rem, 4.2vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 .breadcrumb {
   font-family: var(--f-mono);
