@@ -1202,8 +1202,20 @@
   handleForm($('#contactForm'), {
     errorEl: $('#contactError'),
     successEl: $('#contactSuccess'),
-    successMsg: 'Message sent. Talk soon!',
-    onSuccess: clearContactDraft, // sent = draft no longer needed
+    successMsg: 'Redirecting to WhatsApp...',
+    onSuccess: (form) => {
+      clearContactDraft(form);
+      const name = (form.querySelector('[name="name"]') || {}).value || '';
+      const phone = (form.querySelector('[name="phone"]') || {}).value || '';
+      const email = (form.querySelector('[name="email"]') || {}).value || '';
+      const interest = (form.querySelector('[name="interest"]') || {}).value || '';
+      const message = (form.querySelector('[name="message"]') || {}).value || '';
+      
+      const text = `Hi SNR NEST,\n\nI have a new enquiry.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n*Looking for:* ${interest}\n*Message:* ${message}`;
+      
+      const whatsappUrl = `https://wa.me/919632341836?text=${encodeURIComponent(text)}`;
+      window.location.href = whatsappUrl;
+    },
   });
 
   /* ----------------------------------------------------------
