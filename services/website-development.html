@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-root="../">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SNR NEST | Website Development</title>
+  <meta name="title" content="SNR NEST | Website Development" />
+  <meta name="description" content="Your website is often the first contact a customer has with your business. SNR NEST designs and builds websites that load quickly, work on every screen size and present your company in a professional way." />
+  <meta name="author" content="SNR NEST" />
+  <meta name="theme-color" content="#F8FAFC" />
+  <link rel="canonical" href="https://www.snrnest.in/services/website-development.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SNR NEST" />
+  <meta property="og:url" content="https://www.snrnest.in/services/website-development.html" />
+  <meta property="og:title" content="SNR NEST | Website Development" />
+  <meta property="og:description" content="Your website is often the first contact a customer has with your business. SNR NEST designs and builds websites that load quickly, work on every screen size and present your company in a professional way." />
+  <meta property="og:image" content="https://www.snrnest.in/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_IN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SNR NEST | Website Development" />
+  <meta name="twitter:description" content="Your website is often the first contact a customer has with your business. SNR NEST designs and builds websites that load quickly, work on every screen size and present your company in a professional way." />
+  <meta name="twitter:image" content="https://www.snrnest.in/assets/og-image.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="SNR NEST" />
+  <link rel="manifest" href="../site.webmanifest" />
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preload" href="../assets/fonts/PlusJakartaSans.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="../css/tailwind.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Website Development",
+    "description": "Your website is often the first contact a customer has with your business. SNR NEST designs and builds websites that load quickly, work on every screen size and present your company in a professional way.",
+    "provider": {
+      "@type": "Organization",
+      "name": "SNR NEST",
+      "url": "https://www.snrnest.in/"
+    },
+    "areaServed": "India",
+    "url": "https://www.snrnest.in/services/website-development.html"
+  }
+  </script>
+</head>
+<body class="bg-slate-50 font-sans text-slate-600 antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[110] focus:rounded-xl focus:bg-navy-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Skip to content</a>
+
+  <!-- Scroll progress indicator -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Offline status banner (shown automatically when the connection drops) -->
+  <div id="offlineBanner" class="offline-banner" role="status" aria-live="polite" hidden>
+    <span class="offline-banner-dot" aria-hidden="true"></span>
+    <i data-lucide="wifi-off" class="h-4 w-4 shrink-0" aria-hidden="true"></i>
+    <span class="offline-banner-text"><strong>You&rsquo;re offline.</strong>&nbsp;Viewing the cached copy of the site &mdash; forms and links need a connection.</span>
+  </div>
+
+  <!-- ============================ HEADER ============================ -->
+  <header id="siteHeader" class="is-solid fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-[76px] lg:px-8">
+      <!-- Logo + tagline (sketch: logo / tagline) -->
+      <a href="../index.html" class="group flex items-center gap-3" aria-label="SNR NEST — home">
+        <img src="../images/logo/logo.svg" alt="SNR NEST logo" width="44" height="44" class="h-10 w-10 rounded-xl shadow-chip transition-transform duration-300 group-hover:-rotate-3 lg:h-11 lg:w-11" />
+        <span class="leading-tight">
+          <span class="block text-[17px] font-extrabold tracking-tight text-slate-900 lg:text-lg">SNR <span class="text-primary-700">NEST</span></span>
+          <span class="block text-[9px] font-bold uppercase tracking-[0.22em] text-slate-500">Workforce &amp; Hiring</span>
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <a href="../index.html" class="nav-link" data-nav="home">Home</a>
+        <a href="../about.html" class="nav-link" data-nav="about">About</a>
+        <div class="nav-drop">
+          <button type="button" class="nav-link nav-drop-btn is-active" data-nav="services" aria-expanded="false" aria-haspopup="true">
+            Services<i aria-hidden="true" data-lucide="chevron-down" class="nav-drop-chevron h-3.5 w-3.5"></i>
+          </button>
+          <div class="nav-drop-panel nav-mega" role="menu" aria-label="Services menu">
+            <div class="nav-mega-head">
+              <div>
+                <span class="nav-mega-eyebrow">What we do</span>
+                <p class="nav-mega-title">Five services. One team.</p>
+              </div>
+              <span class="nav-mega-hint">Pick a service to learn more</span>
+            </div>
+            <div class="nav-mega-grid">
+            <a role="menuitem" class="nav-mega-item" href="../services/bpo-services.html" style="--mega-accent:#059669;--mega-soft:#ECFDF5">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="headset" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>BPO Services</strong><span>Reliable hiring support for voice, non-voice and customer operations.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="../services/manpower-services.html" style="--mega-accent:#7C3AED;--mega-soft:#F5F3FF">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="users" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Manpower Services</strong><span>Skilled manpower for every level, from project managers to shift teams.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="../services/website-development.html" style="--mega-accent:#0284C7;--mega-soft:#F0F9FF">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="globe" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Website Development</strong><span>Professional websites that build a strong digital presence.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="../services/internship.html" style="--mega-accent:#D97706;--mega-soft:#FFFBEB">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="graduation-cap" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Internship</strong><span>Eight structured roles with real work, mentors and certificates.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="../services/training-interview-support.html" style="--mega-accent:#E11D48;--mega-soft:#FFF1F2">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="school" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Training &amp; Interview Support</strong><span>Practical training and interview preparation that make candidates job-ready.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item nav-mega-item--all" href="../services.html" style="--mega-accent:#1D4ED8;--mega-soft:#EFF6FF">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="layout-grid" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>All Services</strong><span>Browse everything we do, each with a dedicated page.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            </div>
+            <div class="nav-mega-foot">
+              <p><i aria-hidden="true" data-lucide="sparkles" class="nav-mega-foot-icon"></i>Not sure where to start? Get a free consultation.</p>
+              <a role="menuitem" href="../contact.html" class="nav-mega-cta">Talk to our team<i aria-hidden="true" data-lucide="arrow-right" class="h-3.5 w-3.5"></i></a>
+            </div>
+          </div>
+        </div>
+        <a href="../contact.html" class="nav-link" data-nav="contact">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="../contact.html" class="btn-primary !px-5 !py-2.5 text-sm">
+          Get Started
+          <i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i>
+        </a>
+
+        <!-- Mobile hamburger -->
+        <button id="menuBtn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white/80 text-slate-700 transition hover:border-primary-300 hover:text-primary-700 lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <i aria-hidden="true" data-lucide="menu" class="menu-icon-open h-5 w-5"></i>
+          <i aria-hidden="true" data-lucide="x" class="menu-icon-close hidden h-5 w-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="invisible translate-y-2 opacity-0 transition-all duration-300 ease-out lg:hidden">
+      <nav class="mx-4 mb-4 space-y-1 rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-soft backdrop-blur-xl" aria-label="Mobile">
+        <a href="../index.html" class="mobile-link"><i aria-hidden="true" data-lucide="home" class="h-4 w-4"></i>Home</a>
+        <a href="../about.html" class="mobile-link"><i aria-hidden="true" data-lucide="building-2" class="h-4 w-4"></i>About</a>
+        <div class="mobile-acc">
+          <button type="button" class="mobile-link mobile-acc-btn" aria-expanded="false">
+            <i aria-hidden="true" data-lucide="briefcase" class="h-4 w-4"></i>Services
+            <i aria-hidden="true" data-lucide="chevron-down" class="mobile-acc-chevron h-4 w-4"></i>
+          </button>
+          <div class="mobile-acc-panel">
+          <a href="../services.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="layout-grid" class="h-3.5 w-3.5"></i>All Services</a>
+          <a href="../services/bpo-services.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="headset" class="h-3.5 w-3.5"></i>BPO Services</a>
+          <a href="../services/manpower-services.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="users" class="h-3.5 w-3.5"></i>Manpower Services</a>
+          <a href="../services/website-development.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="globe" class="h-3.5 w-3.5"></i>Website Development</a>
+          <a href="../services/internship.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="graduation-cap" class="h-3.5 w-3.5"></i>Internship</a>
+          <a href="../services/training-interview-support.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="school" class="h-3.5 w-3.5"></i>Training &amp; Interview Support</a>
+          </div>
+        </div>
+        <a href="../contact.html" class="mobile-link"><i aria-hidden="true" data-lucide="mail" class="h-4 w-4"></i>Contact</a>
+        <a href="../contact.html" class="btn-primary mt-2 w-full justify-center">Get Started <i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================ SERVICE HERO ============================ -->
+    <section class="relative overflow-hidden bg-navy-900 pb-20 pt-28 text-white lg:pb-28 lg:pt-40" aria-label="Website Development introduction">
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="absolute -top-24 right-1/4 h-80 w-80 rounded-full bg-primary-600/20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-sky-500/10 blur-3xl"></div>
+      </div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="[&_a.breadcrumb-link]:!text-slate-300 [&_.breadcrumb-current]:!text-slate-400 [&_.breadcrumb-sep]:!text-slate-500" data-reveal>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="../index.html" class="breadcrumb-link"><i data-lucide="home" class="h-3.5 w-3.5"></i><span>Home</span></a></li>
+          <li class="breadcrumb-sep" aria-hidden="true"><i data-lucide="chevron-right" class="h-3.5 w-3.5"></i></li><li><a href="../services.html" class="breadcrumb-link"><i data-lucide="home" class="h-3.5 w-3.5"></i><span>Services</span></a></li>
+          <li class="breadcrumb-sep" aria-hidden="true"><i data-lucide="chevron-right" class="h-3.5 w-3.5"></i></li><li aria-current="page" class="breadcrumb-current"><span>Website Development</span></li>
+        </ol>
+      </nav>
+        </div>
+        <div class="mt-8 grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          <div data-reveal data-delay="80">
+            <span class="badge-accent w-fit"><i aria-hidden="true" data-lucide="globe" class="h-3.5 w-3.5"></i>Digital Service</span>
+            <h1 class="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl">Website Development</h1>
+            <p class="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">Clean, fast and reliable websites built for growing businesses.</p>
+            <div class="mt-9 flex flex-wrap items-center gap-4">
+              <a href="../contact.html?enquire=Website%20Development" class="btn-primary !bg-white !text-navy-900 shadow-soft hover:!bg-slate-100">Enquire Now<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+              <a href="tel:+919632341836" class="btn-outline-light">Call +91 96323 41836<i aria-hidden="true" data-lucide="phone" class="h-4 w-4"></i></a>
+            </div>
+          </div>
+          <div class="relative" data-reveal data-delay="160">
+            <div class="absolute -inset-3 rotate-1 rounded-[2.2rem] bg-gradient-to-tr from-primary-600/25 via-transparent to-sky-400/20" aria-hidden="true"></div>
+            <img src="../images/services/website-development.jpg" alt="Developers building and testing a responsive business website on modern screens" width="1344" height="768" loading="lazy" class="relative aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-soft ring-1 ring-white/15" />
+            <div class="absolute -bottom-5 left-5 flex items-center gap-3 rounded-2xl bg-white/95 px-4 py-3 shadow-chip ring-1 ring-slate-900/5 backdrop-blur sm:left-7">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              <span class="text-sm font-semibold text-slate-800">Reply within 1 working day</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ OVERVIEW ============================ -->
+    <section class="bg-white py-20 lg:py-24" aria-label="Service overview">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16">
+          <div data-reveal>
+            <span class="section-eyebrow"><span class="h-1.5 w-1.5 rounded-full bg-primary-600"></span>Overview</span>
+            <h2 class="section-title !mt-3 text-left">What this service <span class="text-primary-700">covers</span></h2>
+            <p class="mt-5 text-lg leading-relaxed text-slate-600">Your website is often the first contact a customer has with your business. SNR NEST designs and builds websites that load quickly, work on every screen size and present your company in a professional way.</p>
+            <p class="mt-5 text-lg leading-relaxed text-slate-600">We keep the process simple and transparent. From planning the structure to testing each page, our team handles the work in clear steps so you always know what is happening.</p>
+          </div>
+          <aside class="h-fit rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card lg:sticky lg:top-28" data-reveal data-delay="120" aria-label="At a glance">
+            <h3 class="text-sm font-extrabold uppercase tracking-[0.16em] text-slate-500">At a glance</h3>
+            <ul class="mt-5 space-y-4 text-sm">
+              <li class="meta-row"><i aria-hidden="true" data-lucide="globe" class="h-4 w-4 text-primary-700"></i><span><strong class="font-semibold text-slate-900">Category</strong><span class="block text-slate-500">Digital</span></span></li>
+              <li class="meta-row"><i aria-hidden="true" data-lucide="clock" class="h-4 w-4 text-primary-700"></i><span><strong class="font-semibold text-slate-900">Response time</strong><span class="block text-slate-500">Within 1 working day</span></span></li>
+              <li class="meta-row"><i aria-hidden="true" data-lucide="handshake" class="h-4 w-4 text-primary-700"></i><span><strong class="font-semibold text-slate-900">Engagement</strong><span class="block text-slate-500">One-off drives or ongoing support</span></span></li>
+              <li class="meta-row"><i aria-hidden="true" data-lucide="map-pin" class="h-4 w-4 text-primary-700"></i><span><strong class="font-semibold text-slate-900">Location</strong><span class="block text-slate-500">Hyderabad, Telangana, India</span></span></li>
+            </ul>
+            <a href="../contact.html?enquire=Website%20Development" class="btn-soft mt-7 w-full justify-center">Enquire about Website Development<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ WHAT WE PROVIDE ============================ -->
+    <section class="bg-slate-50 py-20 lg:py-24" aria-label="What we provide">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+          <span class="section-eyebrow"><span class="h-1.5 w-1.5 rounded-full bg-primary-600"></span>What We Provide</span>
+          <h2 class="section-title">Everything included in <span class="text-primary-700">this service</span></h2>
+          <p class="section-sub">Pick the parts you need — or combine them into one complete engagement.</p>
+        </div>
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+<article class="service-card" data-reveal data-delay="0">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="monitor" class="h-5 w-5"></i></span>
+            <h3 class="service-title">Business Websites</h3>
+            <p class="service-desc">Complete websites for small and large businesses, built around your services, your customers and your goals.</p>
+          </article>
+<article class="service-card" data-reveal data-delay="60">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="briefcase" class="h-5 w-5"></i></span>
+            <h3 class="service-title">Corporate Websites</h3>
+            <p class="service-desc">Structured multi-page websites that present your company profile, team, services and contact details with clarity.</p>
+          </article>
+<article class="service-card" data-reveal data-delay="120">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="smartphone" class="h-5 w-5"></i></span>
+            <h3 class="service-title">Responsive Websites</h3>
+            <p class="service-desc">Every page is built to work smoothly on mobile phones, tablets and desktops from the first day.</p>
+          </article>
+<article class="service-card" data-reveal data-delay="180">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="layout-template" class="h-5 w-5"></i></span>
+            <h3 class="service-title">Landing Pages</h3>
+            <p class="service-desc">Focused single pages for campaigns and offers, designed to give visitors one clear action to take.</p>
+          </article>
+<article class="service-card" data-reveal data-delay="240">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="palette" class="h-5 w-5"></i></span>
+            <h3 class="service-title">UI/UX Implementation</h3>
+            <p class="service-desc">Clean layouts, readable text and simple navigation designed around how your customers browse.</p>
+          </article>
+<article class="service-card" data-reveal data-delay="300">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="refresh-cw" class="h-5 w-5"></i></span>
+            <h3 class="service-title">Website Redesign</h3>
+            <p class="service-desc">A fresh structure and modern look for existing websites that feel outdated or load slowly.</p>
+          </article>
+<article class="service-card" data-reveal data-delay="360">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="wrench" class="h-5 w-5"></i></span>
+            <h3 class="service-title">Website Maintenance</h3>
+            <p class="service-desc">Regular updates, speed tuning, security checks and backups that keep your website healthy after launch.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ HOW IT WORKS ============================ -->
+    <section class="bg-white py-20 lg:py-24" aria-label="How it works">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+          <span class="section-eyebrow"><span class="h-1.5 w-1.5 rounded-full bg-primary-600"></span>How It Works</span>
+          <h2 class="section-title">A simple, proven <span class="text-primary-700">process</span></h2>
+          <p class="section-sub">Four clear steps from your first message to a team that runs smoothly.</p>
+        </div>
+        <ol class="process-grid mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2 lg:mt-16">
+<li class="process-step" data-reveal data-delay="0">
+            <span class="process-num" aria-hidden="true">1</span>
+            <div>
+              <h3 class="text-base font-bold text-slate-900">Requirement &amp; Planning</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600">We study your business and agree on the page structure, content, design direction and timeline before work begins.</p>
+            </div>
+          </li>
+<li class="process-step" data-reveal data-delay="80">
+            <span class="process-num" aria-hidden="true">2</span>
+            <div>
+              <h3 class="text-base font-bold text-slate-900">Design &amp; Build</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600">Our team creates the design, builds each page and checks every screen size and browser along the way.</p>
+            </div>
+          </li>
+<li class="process-step" data-reveal data-delay="160">
+            <span class="process-num" aria-hidden="true">3</span>
+            <div>
+              <h3 class="text-base font-bold text-slate-900">Testing &amp; Launch</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600">We test speed, forms and devices, fix what we find and take the website live after final checks.</p>
+            </div>
+          </li>
+<li class="process-step" data-reveal data-delay="240">
+            <span class="process-num" aria-hidden="true">4</span>
+            <div>
+              <h3 class="text-base font-bold text-slate-900">Support &amp; Maintenance</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600">After launch we handle updates, backups and fixes so your website stays healthy over time.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================ BENEFITS ============================ -->
+    <section class="bg-slate-50 py-20 lg:py-24" aria-label="Benefits">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+          <span class="section-eyebrow"><span class="h-1.5 w-1.5 rounded-full bg-primary-600"></span>Benefits</span>
+          <h2 class="section-title">What your business <span class="text-primary-700">gains</span></h2>
+          
+        </div>
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16">
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card transition-shadow duration-300 hover:shadow-soft" data-reveal data-delay="0">
+            <span class="icon-tile bg-emerald-50 text-emerald-700"><i aria-hidden="true" data-lucide="trending-up" class="h-5 w-5"></i></span>
+            <h3 class="mt-4 text-base font-bold text-slate-900">Stronger Online Presence</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-slate-600">A professional website helps customers find you and trust you before the first phone call.</p>
+          </article>
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card transition-shadow duration-300 hover:shadow-soft" data-reveal data-delay="60">
+            <span class="icon-tile bg-emerald-50 text-emerald-700"><i aria-hidden="true" data-lucide="smartphone" class="h-5 w-5"></i></span>
+            <h3 class="mt-4 text-base font-bold text-slate-900">Works on Every Device</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-slate-600">Your site looks and works well on phones, tablets and desktops, where most visitors will come from.</p>
+          </article>
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card transition-shadow duration-300 hover:shadow-soft" data-reveal data-delay="120">
+            <span class="icon-tile bg-emerald-50 text-emerald-700"><i aria-hidden="true" data-lucide="rocket" class="h-5 w-5"></i></span>
+            <h3 class="mt-4 text-base font-bold text-slate-900">Fast Loading Pages</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-slate-600">Optimised pages load quickly, which keeps visitors on the site and reduces drop-offs.</p>
+          </article>
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card transition-shadow duration-300 hover:shadow-soft" data-reveal data-delay="180">
+            <span class="icon-tile bg-emerald-50 text-emerald-700"><i aria-hidden="true" data-lucide="shield-check" class="h-5 w-5"></i></span>
+            <h3 class="mt-4 text-base font-bold text-slate-900">Reliable Support</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-slate-600">Updates, backups and fixes are handled by our team, so your website stays current without extra effort.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ WHY SNR NEST ============================ -->
+    <section class="bg-white py-20 lg:py-24" aria-label="Why SNR NEST">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="overflow-hidden rounded-4xl bg-navy-900 text-white shadow-soft" data-reveal>
+          <div class="grid lg:grid-cols-[1.2fr_0.8fr]">
+            <div class="p-8 sm:p-10 lg:p-12">
+              <span class="section-eyebrow !text-slate-400"><span class="h-1.5 w-1.5 rounded-full bg-primary-400"></span>Why SNR NEST</span>
+              <h2 class="mt-4 text-2xl font-extrabold tracking-tight sm:text-3xl">Ground-level experience, dependable delivery</h2>
+              <div class="mt-7 grid gap-3 sm:grid-cols-2">
+              <span class="check-item !text-slate-200"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 !text-primary-300"></i>We build websites with clear structure and simple English, so every visitor understands your business quickly.</span>
+              <span class="check-item !text-slate-200"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 !text-primary-300"></i>Our process follows fixed steps with regular updates, so you always know the status of your project.</span>
+              <span class="check-item !text-slate-200"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 !text-primary-300"></i>We test on real devices and browsers before launch, which prevents problems that appear only after going live.</span>
+              <span class="check-item !text-slate-200"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 !text-primary-300"></i>Support does not end at launch; we handle maintenance and performance work for the long term.</span>
+              </div>
+            </div>
+            <div class="flex flex-col justify-center border-t border-white/10 bg-white/5 p-8 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+              <span class="icon-tile !h-12 !w-12 !bg-white/10 !text-primary-300 ring-1 ring-white/15"><i aria-hidden="true" data-lucide="globe" class="h-5 w-5"></i></span>
+              <h3 class="mt-5 text-xl font-extrabold">Ready when you are</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-300">Share your requirement today and get a clear plan with roles, numbers and timelines.</p>
+              <a href="../contact.html?enquire=Website%20Development" class="btn-primary mt-7 w-full justify-center !bg-white !text-navy-900 hover:!bg-slate-100">Enquire Now<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ RELATED SERVICES ============================ -->
+    <section class="bg-slate-50 py-20 lg:py-24" aria-label="Related services">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+          <span class="section-eyebrow"><span class="h-1.5 w-1.5 rounded-full bg-primary-600"></span>Keep Exploring</span>
+          <h2 class="section-title">Related <span class="text-primary-700">services</span></h2>
+          
+        </div>
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+<a href="../services/bpo-services.html" class="service-card group" data-reveal data-delay="0">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="headset" class="h-5 w-5"></i></span>
+            <h3 class="service-title">BPO Services</h3>
+            <p class="service-desc">Reliable hiring support for voice, non-voice and customer operations.</p>
+            <span class="link-more">View Service<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"></i></span>
+          </a>
+<a href="../services/manpower-services.html" class="service-card group" data-reveal data-delay="60">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="users" class="h-5 w-5"></i></span>
+            <h3 class="service-title">Manpower Services</h3>
+            <p class="service-desc">Skilled manpower for every level, from project managers to shift teams.</p>
+            <span class="link-more">View Service<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"></i></span>
+          </a>
+<a href="../services/internship.html" class="service-card group" data-reveal data-delay="120">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="graduation-cap" class="h-5 w-5"></i></span>
+            <h3 class="service-title">Internship</h3>
+            <p class="service-desc">Eight structured internship roles with real work, mentors and certificates.</p>
+            <span class="link-more">View Service<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+<section class="relative overflow-hidden bg-navy-950 py-20 text-white lg:py-24" aria-label="Call to action">
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-primary-600/25 blur-3xl"></div>
+        <div class="absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-sky-500/15 blur-3xl"></div>
+      </div>
+      <div class="relative mx-auto max-w-3xl px-4 text-center sm:px-6" data-reveal>
+        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Let&rsquo;s talk about <span class="text-primary-400">your requirement</span>.</h2>
+        <p class="mx-auto mt-5 max-w-xl text-lg text-slate-300">Tell us the roles and numbers you need. We will reply with a clear plan and timeline.</p>
+        <div class="mt-9 flex flex-wrap items-center justify-center gap-4">
+          <a href="../contact.html?enquire=Website%20Development" class="btn-primary !bg-white !text-navy-900 shadow-soft hover:!bg-slate-100">Enquire Now<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+          <a href="tel:+919632341836" class="btn-outline-light">Call Us<i aria-hidden="true" data-lucide="phone" class="h-4 w-4"></i></a>
+        </div>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 text-sm text-slate-400">
+          <button type="button" class="contact-chip" data-copy="praveen@snrnest.in" aria-label="Copy email address to clipboard">
+            <i aria-hidden="true" data-lucide="mail" class="h-4 w-4 text-primary-400"></i>praveen@snrnest.in
+            <i aria-hidden="true" data-lucide="copy" class="copy-ico h-3.5 w-3.5"></i>
+          </button>
+          <button type="button" class="contact-chip" data-copy="+91 96323 41836" aria-label="Copy phone number to clipboard">
+            <i aria-hidden="true" data-lucide="phone" class="h-4 w-4 text-primary-400"></i>+91 96323 41836
+            <i aria-hidden="true" data-lucide="copy" class="copy-ico h-3.5 w-3.5"></i>
+          </button>
+          <span class="inline-flex items-center gap-2"><i aria-hidden="true" data-lucide="map-pin" class="h-4 w-4 text-primary-400"></i>Hyderabad, India</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="bg-navy-950 text-slate-300" aria-label="Footer">
+    <div class="mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8 lg:pt-20">
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_1fr] lg:gap-10">
+        <!-- Brand + contact -->
+        <div>
+          <a href="../index.html" class="flex w-fit items-center gap-3" aria-label="SNR NEST — home">
+            <img src="../images/logo/logo.svg" alt="SNR NEST logo" width="44" height="44" loading="lazy" class="h-11 w-11 rounded-xl" />
+            <span class="leading-tight">
+              <span class="block text-lg font-extrabold tracking-tight text-white">SNR <span class="text-primary-400">NEST</span></span>
+              <span class="block text-[9px] font-bold uppercase tracking-[0.22em] text-slate-400">Workforce &amp; Hiring</span>
+            </span>
+          </a>
+          <p class="mt-5 max-w-sm text-sm leading-relaxed text-slate-400">SNR NEST connects people, skills, businesses and opportunities — building careers and teams that grow together.</p>
+          <div class="mt-6 flex items-center gap-3">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on LinkedIn"><i aria-hidden="true" data-lucide="linkedin" class="h-4 w-4"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on Instagram"><i aria-hidden="true" data-lucide="instagram" class="h-4 w-4"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on X"><i aria-hidden="true" data-lucide="twitter" class="h-4 w-4"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on Facebook"><i aria-hidden="true" data-lucide="facebook" class="h-4 w-4"></i></a>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm">
+            <li><a href="mailto:praveen@snrnest.in" class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="mail" class="h-3.5 w-3.5"></i></span>praveen@snrnest.in</a></li>
+            <li><a href="tel:+919632341836" class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="phone" class="h-3.5 w-3.5"></i></span>+91 96323 41836</a></li>
+            <li><span class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="map-pin" class="h-3.5 w-3.5"></i></span>Hyderabad, Telangana, India</span></li>
+          </ul>
+          <div class="site-qr" id="siteQrTile">
+            <button type="button" id="siteQrBtn" class="site-qr-btn" aria-label="QR code: scan to open this page, or activate to copy the page link">
+              <span id="siteQrTarget" class="site-qr-target" aria-hidden="true"></span>
+            </button>
+            <p class="site-qr-caption" id="siteQrCaption">Scan to open this page</p>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <nav aria-label="Quick links" class="lg:justify-self-center">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li><a href="../index.html" class="footer-link">Home</a></li>
+            <li><a href="../about.html" class="footer-link">About</a></li>
+            <li><a href="../services.html" class="footer-link">Services</a></li>
+            <li><a href="../services/internship.html" class="footer-link">Internships</a></li>
+            <li><a href="../contact.html" class="footer-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Services sitemap -->
+        <nav aria-label="Services">
+          <h3 class="footer-heading">Services</h3>
+          <ul class="mt-5 space-y-2.5 text-sm">
+            <li><a href="../services/bpo-services.html" class="footer-link">BPO Services</a></li>
+            <li><a href="../services/manpower-services.html" class="footer-link">Manpower Services</a></li>
+            <li><a href="../services/website-development.html" class="footer-link">Website Development</a></li>
+            <li><a href="../services/internship.html" class="footer-link">Internship</a></li>
+            <li><a href="../services/training-interview-support.html" class="footer-link">Training &amp; Interview Support</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-7 text-sm text-slate-500 sm:flex-row">
+        <p>&copy; <span id="year">2025</span> SNR NEST. All rights reserved.</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <p class="inline-flex items-center gap-2"><i aria-hidden="true" data-lucide="sparkles" class="h-3.5 w-3.5 text-primary-400"></i>Building Opportunities. Empowering Careers.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Back to top -->
+  <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i data-lucide="arrow-up" class="h-5 w-5" aria-hidden="true"></i>
+  </button>
+
+  <!-- WhatsApp chat -->
+  <a id="whatsFab" class="whats-fab" href="https://wa.me/919632341836?text=Hi%20SNR%20NEST%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with SNR NEST on WhatsApp (opens in a new tab)">
+    <svg viewBox="0 0 32 32" class="h-6 w-6" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.6 4.46 1.72 6.4L3.2 28.8l6.56-1.68a12.74 12.74 0 0 0 6.24 1.6h.004c7.056 0 12.796-5.74 12.796-12.8 0-3.42-1.332-6.636-3.752-9.052A12.7 12.7 0 0 0 16.004 3.2Zm0 23.432h-.004a10.66 10.66 0 0 1-5.428-1.484l-.388-.232-3.896 1 1.04-3.8-.256-.392a10.63 10.63 0 0 1-1.636-5.724c0-5.868 4.78-10.644 10.66-10.644 2.848 0 5.524 1.11 7.536 3.124a10.57 10.57 0 0 1 3.116 7.528c-.004 5.868-4.78 10.624-10.744 10.624Zm5.836-7.972c-.32-.16-1.888-.932-2.18-1.038-.292-.108-.504-.16-.716.16-.212.32-.824 1.038-1.01 1.25-.184.212-.37.24-.69.08-.32-.16-1.348-.496-2.566-1.584-.948-.844-1.588-1.888-1.774-2.208-.184-.32-.02-.494.14-.652.144-.144.32-.372.48-.558.16-.186.212-.32.32-.532.108-.212.054-.396-.028-.556-.08-.16-.716-1.726-.98-2.364-.258-.62-.52-.536-.716-.546l-.61-.01c-.212 0-.556.08-.846.396-.29.32-1.11 1.084-1.11 2.644 0 1.56 1.136 3.068 1.294 3.28.16.212 2.234 3.412 5.412 4.784.756.326 1.346.52 1.806.666.758.242 1.448.208 1.994.126.608-.09 1.888-.772 2.154-1.516.266-.744.266-1.382.186-1.516-.078-.134-.29-.212-.61-.372Z"/>
+    </svg>
+    <span class="whats-fab-tip" aria-hidden="true">Chat with us</span>
+  </a>
+
+  <!-- Install app banner (PWA — appears when the browser allows installation) -->
+  <aside id="installBanner" class="install-banner" role="complementary" aria-label="Install the SNR NEST app" hidden>
+    <img src="../images/logo/logo.svg" alt="" width="44" height="44" loading="lazy" class="install-banner-logo" />
+    <div class="install-banner-copy">
+      <p class="install-banner-title">Install SNR NEST</p>
+      <p class="install-banner-sub">One tap from your home screen &mdash; works offline too.</p>
+    </div>
+    <button type="button" id="installAccept" class="btn-primary !px-4 !py-2 text-sm">Install<i aria-hidden="true" data-lucide="smartphone" class="h-4 w-4"></i></button>
+    <button type="button" id="installDismiss" class="install-banner-close" aria-label="Dismiss install suggestion">
+      <i data-lucide="x" class="h-4 w-4" aria-hidden="true"></i>
+    </button>
+  </aside>
+
+  <!-- Print-only application receipt (filled by js on demand) -->
+  <div id="receiptPrint" class="receipt-print" aria-hidden="true"></div>
+
+  <!-- Toasts -->
+  <div id="toastStack" class="fixed bottom-24 right-5 z-[120] flex w-[calc(100%-2.5rem)] max-w-sm flex-col gap-3" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="../assets/vendor/lucide.min.js" defer></script>
+  <script src="../assets/vendor/qrcode.js" defer></script>
+  <script src="../js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,3861 @@
+/* ============================================================
+   SNR NEST — custom styles
+   (state classes, components, animations; utilities in tailwind.css)
+   ============================================================ */
+
+:root {
+  --primary: #1D4ED8;
+  --primary-dark: #1E40AF;
+  --navy: #0F172A;
+  --ring: rgba(37, 99, 235, 0.35);
+  color-scheme: light;
+}
+
+/* ---------- base niceties ---------- */
+::selection { background: #1D4ED8; color: #F8FAFC; text-shadow: none; }
+
+body { text-rendering: optimizeLegibility; }
+
+/* consistent focus ring (no forced radius — pills/dots keep their shape) */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+/* lighter, higher-contrast ring on dark navy surfaces */
+#about :focus-visible,
+#contact :focus-visible,
+footer :focus-visible {
+  outline-color: #93C5FD;
+}
+.dot:focus-visible { outline-offset: 3px; }
+
+/* slim, subtle scrollbar with an inset rounded thumb */
+* { scrollbar-width: thin; scrollbar-color: #94A3B8 transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  background-clip: padding-box;
+  border: 2.5px solid transparent; /* creates the slimmer pill look */
+  border-radius: 99px;
+}
+*::-webkit-scrollbar-thumb:hover { background: #94A3B8; background-clip: padding-box; }
+
+/* fixed-header offset for anchor jumps (no scroll-mt utilities exist in the
+   precompiled tailwind.css, so this is handled here) */
+section[id] { scroll-margin-top: 5.75rem; }
+form[id], [id="internshipForm"] { scroll-margin-top: 6.5rem; }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+#siteHeader.is-scrolled {
+  background: rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-color: rgba(226, 232, 240, 0.9);
+  box-shadow: 0 8px 30px -18px rgba(15, 23, 42, 0.25);
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #475569;
+  border-radius: 0.65rem;
+  white-space: nowrap;
+  transition: color .2s ease, background-color .2s ease;
+}
+.nav-link:hover { color: var(--primary-dark); background: rgba(37, 99, 235, 0.06); }
+.nav-link.is-active { color: var(--primary-dark); }
+.nav-link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0.9rem; right: 0.9rem; bottom: 0.15rem;
+  height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), #60A5FA);
+  transform-origin: left center;
+  animation: navUnderline .4s cubic-bezier(.22,.61,.36,1) both;
+}
+@keyframes navUnderline {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* mobile menu panel (overrides Tailwind utility states via order) */
+#mobileMenu.menu-open { visibility: visible; opacity: 1; transform: translateY(0); }
+.menu-icon-open.hidden, .menu-icon-close.hidden { display: none; }
+
+.mobile-link {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.85rem;
+  font-weight: 600; font-size: 0.95rem; color: #334155;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+.mobile-link:hover { background: #EFF6FF; color: var(--primary-dark); transform: translateX(3px); }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary,
+.btn-secondary,
+.btn-soft,
+.btn-ghost,
+.btn-outline-light {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem; font-weight: 700; line-height: 1;
+  border-radius: 0.9rem;
+  transition: transform .2s ease, box-shadow .25s ease, background-color .2s ease, border-color .2s ease, color .2s ease;
+  will-change: transform;
+}
+.btn-primary {
+  position: relative; overflow: hidden;
+  background: var(--primary); color: #fff;
+  box-shadow: 0 10px 24px -10px rgba(29, 78, 216, .55);
+}
+/* premium sheen sweep */
+.btn-primary::after {
+  content: "";
+  position: absolute; top: -20%; bottom: -20%; left: -45%;
+  width: 38%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent);
+  transform: skewX(-18deg);
+  transition: left .6s cubic-bezier(.22,.61,.36,1);
+  pointer-events: none;
+}
+.btn-primary:hover::after { left: 120%; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 16px 30px -12px rgba(29, 78, 216, .6); }
+.btn-primary:active { transform: translateY(0) scale(.98); }
+
+.btn-secondary { background: #fff; color: #0F172A; border: 1.5px solid #E2E8F0; box-shadow: 0 2px 8px -4px rgba(15,23,42,.12); }
+.btn-secondary:hover { border-color: var(--primary); color: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 12px 26px -14px rgba(15,23,42,.25); }
+
+.btn-soft { background: #EFF6FF; color: var(--primary-dark); border: 1px solid #DBEAFE; }
+.btn-soft:hover { background: var(--primary); border-color: var(--primary); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px -12px rgba(29,78,216,.5); }
+
+.btn-ghost { color: var(--primary-dark); background: transparent; }
+.btn-ghost:hover { background: #EFF6FF; transform: translateY(-2px); }
+
+.btn-outline-light { border: 1.5px solid rgba(255,255,255,.35); color: #fff; }
+.btn-outline-light:hover { border-color: #fff; background: rgba(255,255,255,.08); transform: translateY(-2px); }
+
+/* consistent pressed state on secondary buttons */
+.btn-secondary:active,
+.btn-soft:active,
+.btn-ghost:active,
+.btn-outline-light:active { transform: translateY(0) scale(.98); }
+
+button:disabled { opacity: .6; cursor: not-allowed; transform: none !important; }
+
+/* header CTA: hidden on small screens (own rule so it beats .btn-primary display) */
+@media (max-width: 639px) {
+  #headerCta { display: none; }
+}
+
+/* ============================================================
+   HERO / SLIDER
+   ============================================================ */
+.hero-slider { outline: none; }
+.slide { display: none; }
+.slide.is-active { display: block; }
+
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroImageIn {
+  from { opacity: 0; transform: translateY(14px) scale(.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.slide.is-active .anim-1 { animation: heroFade .5s ease .05s both; }
+.slide.is-active .anim-2 { animation: heroFade .55s ease .12s both; }
+.slide.is-active .anim-3 { animation: heroFade .55s ease .20s both; }
+.slide.is-active .anim-4 { animation: heroFade .55s ease .28s both; }
+.slide.is-active .anim-5 { animation: heroFade .55s ease .36s both; }
+.slide.is-active .anim-6 { animation: heroImageIn .7s cubic-bezier(.22,.61,.36,1) .18s both; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--primary-dark);
+  background: #fff;
+  border: 1px solid #DBEAFE;
+  border-radius: 99px;
+  box-shadow: 0 4px 14px -8px rgba(29, 78, 216, .35);
+}
+
+.pulse-dot {
+  position: relative; display: inline-block;
+  width: 10px; height: 10px; border-radius: 99px;
+  background: #10B981; flex-shrink: 0;
+}
+.pulse-dot::after {
+  content: ""; position: absolute; inset: -4px;
+  border-radius: 99px; background: rgba(16, 185, 129, .35);
+  animation: pulseRing 1.8s ease-out infinite;
+}
+@keyframes pulseRing {
+  0%   { transform: scale(.6); opacity: 1; }
+  80%, 100% { transform: scale(1.7); opacity: 0; }
+}
+
+.slider-arrow {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.6rem; height: 2.6rem;
+  border-radius: 99px;
+  color: #475569; background: #fff;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px -6px rgba(15,23,42,.2);
+  transition: all .2s ease;
+}
+.slider-arrow:hover { color: var(--primary-dark); border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(29,78,216,.4); }
+.slider-arrow:active { transform: translateY(0) scale(.94); transition-duration: .1s; }
+
+.dot {
+  width: 0.55rem; height: 0.55rem;
+  border-radius: 99px;
+  background: #CBD5E1;
+  box-shadow: inset 0 1px 2px rgba(15,23,42,.14);
+  transition: width .35s cubic-bezier(.22,.61,.36,1), background-color .3s ease, transform .25s ease, box-shadow .3s ease;
+}
+.dot:hover { background: #94A3B8; transform: scale(1.2); }
+.dot.is-active {
+  width: 1.75rem;
+  background: linear-gradient(90deg, var(--primary), #3B82F6);
+  box-shadow: 0 3px 10px -2px rgba(29,78,216,.55), 0 0 0 4px rgba(29,78,216,.14);
+}
+
+/* ============================================================
+   SHARED SECTION PIECES
+   ============================================================ */
+.section-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font-size: 0.75rem; font-weight: 800;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--primary-dark);
+}
+.section-title {
+  margin-top: 1rem;
+  font-size: clamp(1.8rem, 1.2rem + 2.2vw, 2.75rem);
+  font-weight: 800; letter-spacing: -0.02em; line-height: 1.12;
+  color: #0F172A;
+  text-wrap: balance;
+}
+.section-sub { margin-top: 1rem; font-size: 1.02rem; line-height: 1.7; color: #64748B; }
+
+.icon-tile {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.75rem; height: 2.75rem; flex-shrink: 0;
+  border-radius: 0.9rem;
+  transition: transform .3s cubic-bezier(.22,.61,.36,1);
+}
+/* gentle tile lift when its card is hovered */
+.opportunity-card:hover .icon-tile,
+.service-card:hover .icon-tile { transform: translateY(-2px) rotate(-5deg); }
+
+.badge-soft {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+  color: #059669; background: #ECFDF5;
+  border: 1px solid #A7F3D0; border-radius: 99px;
+}
+.badge-soft::before { content: ""; width: 6px; height: 6px; border-radius: 99px; background: #10B981; }
+
+.badge-accent {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--primary-dark); background: #EFF6FF;
+  border: 1px solid #DBEAFE; border-radius: 99px;
+}
+
+.skill-pill {
+  padding: 0.28rem 0.7rem;
+  font-size: 0.72rem; font-weight: 700;
+  color: #475569; background: #F8FAFC;
+  border: 1px solid #E2E8F0; border-radius: 99px;
+}
+
+.meta-row { display: flex; align-items: center; gap: 0.55rem; }
+.meta-row svg { color: #94A3B8; flex-shrink: 0; }
+
+.check-item {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.7rem 0.95rem;
+  font-size: 0.9rem; font-weight: 600; color: #334155;
+  background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 0.8rem;
+}
+.check-item svg { color: var(--primary); flex-shrink: 0; }
+
+.role-row { display: flex; align-items: flex-start; gap: 0.8rem; }
+.role-row > svg { margin-top: 2px; }
+
+/* ---------- opportunity (internship) cards ---------- */
+.opportunity-card {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #E2E8F0; border-radius: 1.5rem;
+  box-shadow: 0 1px 2px rgba(15,23,42,.04);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+/* gradient accent line revealed along the top edge on hover */
+.opportunity-card::before,
+.service-card::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--primary), #38BDF8);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .45s cubic-bezier(.22,.61,.36,1);
+}
+.opportunity-card:hover::before,
+.service-card:hover::before { transform: scaleX(1); }
+.opportunity-card:hover {
+  transform: translateY(-6px);
+  border-color: #BFDBFE;
+  box-shadow: 0 24px 44px -22px rgba(15, 23, 42, .22);
+}
+
+/* ---------- service cards ---------- */
+.service-card {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  padding: 1.75rem;
+  background: #fff;
+  border: 1px solid #E2E8F0; border-radius: 1.5rem;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #BFDBFE;
+  box-shadow: 0 24px 44px -22px rgba(15, 23, 42, .2);
+}
+.service-title { margin-top: 1.1rem; font-size: 1.1rem; font-weight: 800; color: #0F172A; }
+.service-desc { margin-top: 0.55rem; font-size: 0.9rem; line-height: 1.65; color: #64748B; }
+.service-points { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.service-points li {
+  padding: 0.26rem 0.65rem;
+  font-size: 0.72rem; font-weight: 700; color: var(--primary-dark);
+  background: #EFF6FF; border-radius: 99px;
+}
+.link-more {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  margin-top: auto; padding-top: 1.1rem;
+  font-size: 0.9rem; font-weight: 800; color: var(--primary-dark);
+  transition: gap .2s ease, color .2s ease;
+}
+.link-more:hover { gap: 0.7rem; color: var(--primary); }
+article .link-more { padding-top: 1.25rem; }
+
+/* ---------- media-card image polish ----------
+   gentle photo treatment + one-time shine sweep on hover
+   (manpower cards: .group > .relative; BPO feature: .relative[min-h-*]) */
+article.group img { transition: transform .7s cubic-bezier(.22,.61,.36,1), filter .7s ease; }
+article.group:hover img { filter: saturate(1.08) brightness(1.03); }
+article.group > .relative::after,
+.relative[class*="min-h-"]::after {
+  content: "";
+  position: absolute; inset: 0; z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 32%, rgba(255,255,255,.15) 50%, transparent 68%);
+  transform: translateX(-130%);
+  transition: transform 1s cubic-bezier(.22,.61,.36,1);
+}
+article.group:hover > .relative::after,
+.relative[class*="min-h-"]:hover::after { transform: translateX(130%); }
+
+/* ---------- process steps (BPO card) ---------- */
+.step-chip {
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  font-size: 0.68rem; font-weight: 700; color: #475569;
+}
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.7rem; height: 1.7rem;
+  font-size: 0.72rem; font-weight: 800; color: var(--primary-dark);
+  background: #EFF6FF; border: 1px solid #DBEAFE; border-radius: 99px;
+}
+
+/* ============================================================
+   BRAND STATEMENT
+   ============================================================ */
+.statement {
+  margin-top: 1.4rem;
+  font-weight: 800; letter-spacing: -0.03em; line-height: 0.98;
+  font-size: clamp(3rem, 2rem + 8vw, 6.5rem);
+  text-shadow: 0 2px 60px rgba(96, 165, 250, .35);
+}
+.statement-line { display: block; }
+.statement-accent {
+  background: linear-gradient(92deg, #60A5FA 0%, #93C5FD 30%, #38BDF8 55%, #93C5FD 80%, #60A5FA 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  text-shadow: none; /* avoid clipped-gradient shadow artifacts in Safari */
+  animation: statementShimmer 11s ease-in-out infinite;
+}
+@keyframes statementShimmer {
+  0%, 100% { background-position: 0% 0; }
+  50%      { background-position: 100% 0; }
+}
+/* staggered line entrance once the section reveals (JS present) */
+html.js .statement.revealed .statement-line { animation: statementLine .75s cubic-bezier(.22,.61,.36,1) both; }
+html.js .statement.revealed .statement-line:nth-child(2) { animation-delay: .12s; }
+html.js .statement.revealed .statement-line:nth-child(3) { animation-delay: .24s; }
+@keyframes statementLine {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.pillar { display: inline-flex; align-items: center; gap: 0.7rem; font-weight: 700; color: #E2E8F0; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer-heading {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  font-size: 0.78rem; font-weight: 800;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: #94A3B8;
+}
+.footer-heading::before {
+  content: "";
+  width: 1.1rem; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), #38BDF8);
+}
+/* smooth slide + growing underline (no layout-shifting padding) */
+.footer-link {
+  display: inline-block;
+  color: #CBD5E1;
+  background-image: linear-gradient(90deg, #60A5FA, #38BDF8);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1.5px;
+  transition: color .2s ease, transform .25s cubic-bezier(.22,.61,.36,1), background-size .3s ease;
+}
+.footer-link:hover { color: #fff; transform: translateX(4px); background-size: 100% 1.5px; }
+.footer-contact { display: flex; align-items: center; gap: 0.7rem; color: #CBD5E1; transition: color .2s ease; }
+a.footer-contact:hover { color: #fff; }
+a.footer-contact .icon-tile { transition: background-color .25s ease, transform .25s ease; }
+a.footer-contact:hover .icon-tile { background-color: rgba(255,255,255,.12) !important; transform: translateY(-1px); }
+
+.social-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.4rem; height: 2.4rem;
+  border-radius: 0.8rem;
+  color: #CBD5E1; background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  transition: all .25s ease;
+}
+.social-btn:hover { color: #fff; background: var(--primary); border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 10px 20px -10px rgba(29,78,216,.7); }
+
+/* ============================================================
+   MODALS
+   ============================================================ */
+.modal {
+  width: calc(100vw - 2rem);
+  max-width: 34rem;
+  border: none; padding: 0; background: transparent;
+  overflow: visible;
+}
+.modal::backdrop {
+  background: rgba(11, 17, 32, 0.6);
+  -webkit-backdrop-filter: blur(8px) saturate(1.3);
+  backdrop-filter: blur(8px) saturate(1.3);
+}
+.modal[open] { animation: modalIn .32s cubic-bezier(.22,.61,.36,1); }
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(18px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-card {
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  padding: 1.6rem;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 40px 90px -30px rgba(15, 23, 42, .5);
+  border: 1px solid #E2E8F0;
+}
+@media (min-width: 640px) { .modal-card { padding: 2rem; } }
+
+.modal-close {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.5rem; height: 2.5rem; flex-shrink: 0;
+  border-radius: 0.8rem; color: #64748B;
+  background: #F8FAFC; border: 1px solid #E2E8F0;
+  transition: all .2s ease;
+}
+.modal-close:hover { color: #0F172A; background: #EFF6FF; border-color: #BFDBFE; transform: rotate(90deg); }
+
+/* ---------- forms ---------- */
+.form-label { display: block; margin-bottom: 0.4rem; font-size: 0.82rem; font-weight: 700; color: #334155; }
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.92rem; font-weight: 500; color: #0F172A;
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0; border-radius: 0.85rem;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.form-input::placeholder { color: #94A3B8; }
+.form-input:focus {
+  outline: none; background: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+.form-input.user-invalid { border-color: #F43F5E; }
+
+/* ============================================================
+   SCROLL REVEAL (activated only when JS is present)
+   ============================================================ */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+html.js [data-reveal].revealed { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   TOASTS
+   ============================================================ */
+.toast {
+  display: flex; align-items: flex-start; gap: 0.7rem;
+  padding: 0.9rem 1.05rem;
+  font-size: 0.88rem; font-weight: 600; color: #0F172A;
+  background: rgba(255, 255, 255, .97);
+  border: 1px solid #E2E8F0; border-left: 3px solid #10B981; border-radius: 1rem;
+  box-shadow: 0 20px 40px -18px rgba(15, 23, 42, .35);
+  animation: toastIn .35s cubic-bezier(.22,.61,.36,1);
+}
+.toast.leaving { opacity: 0; transform: translateY(8px); transition: all .3s ease; }
+.toast svg { flex-shrink: 0; margin-top: 1px; }
+
+/* Undo action inside a toast (destructive tracker actions: clear-all / remove-one) */
+.toast-action {
+  margin-left: auto;
+  flex-shrink: 0;
+  border: 0; border-radius: 0.6rem; cursor: pointer;
+  padding: 0.35rem 0.75rem;
+  background: #0F172A; color: #FFFFFF;
+  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.02em;
+  transition: background .2s ease, transform .2s ease;
+}
+.toast-action:hover { background: var(--primary, #2563EB); }
+.toast-action:focus-visible { outline: 2px solid var(--primary, #2563EB); outline-offset: 2px; }
+.toast-action:active { transform: scale(.95); }
+@media (max-width: 640px) {
+  .toast-action { padding: 0.55rem 0.9rem; } /* bigger touch target on phones */
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(14px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html.js [data-reveal] { opacity: 1; transform: none; }
+}
+
+/* print: always reveal everything */
+@media print {
+  html.js [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
+
+/* ============================================================
+   ROUND 2: scroll progress · back-to-top · slider progress ·
+            image fade-in · inline field errors · toast variants
+   ============================================================ */
+
+/* ---------- scroll progress bar ---------- */
+#scrollProgress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  z-index: 60;
+  background: linear-gradient(90deg, #1D4ED8, #3B82F6 55%, #38BDF8);
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+  border-radius: 0 99px 99px 0;
+  box-shadow: 0 1px 6px -2px rgba(29, 78, 216, .5);
+}
+
+/* ---------- back to top ---------- */
+.back-to-top {
+  position: fixed;
+  right: 1.25rem; bottom: 1.25rem;
+  z-index: 90;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 3rem; height: 3rem;
+  border-radius: 99px;
+  color: #fff;
+  background: var(--navy);
+  border: 1px solid rgba(255, 255, 255, .12);
+  box-shadow: 0 14px 30px -12px rgba(15, 23, 42, .55);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: opacity .3s ease, transform .3s ease, visibility .3s ease,
+              background-color .2s ease, box-shadow .25s ease;
+}
+.back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { background: var(--primary); box-shadow: 0 16px 34px -12px rgba(29, 78, 216, .65); }
+.back-to-top:active { transform: translateY(2px) scale(.96); }
+@media (max-width: 640px) {
+  .back-to-top { width: 2.75rem; height: 2.75rem; right: 1rem; bottom: 1rem; }
+}
+
+/* ---------- slider autoplay progress (synced with JS timer) ---------- */
+.dot.is-active { position: relative; overflow: hidden; }
+.dot.is-active::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, .55);
+  border-radius: inherit;
+  transform-origin: left center;
+  animation: dotProgress var(--slider-interval, 6000ms) linear forwards;
+}
+@keyframes dotProgress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+body.slider-paused .dot.is-active::after { animation-play-state: paused; }
+
+/* ---------- image fade-in on load ---------- */
+html.js img.img-fade:not(.is-loaded) { opacity: 0; }
+html.js img.img-fade { transition: opacity .6s ease; }
+html.js img.img-fade.is-loaded { opacity: 1; }
+
+/* ---------- inline field validation ---------- */
+.field-error-msg {
+  display: flex; align-items: center; gap: 0.35rem;
+  margin-top: 0.4rem;
+  font-size: 0.76rem; font-weight: 600;
+  color: #E11D48;
+  animation: heroFade .25s ease both;
+}
+.form-input.user-invalid { border-color: #FB7185; background: #FFF1F2; }
+.form-input.user-invalid:focus { border-color: #F43F5E; box-shadow: 0 0 0 4px rgba(244, 63, 94, .15); }
+
+/* ---------- toast variants ---------- */
+.toast { border-left: 3px solid #10B981; }
+.toast.toast-info { border-left-color: var(--primary); }
+.toast.toast-info svg { color: var(--primary); }
+
+/* ---------- success panel entrance ---------- */
+#applySuccess:not(.hidden), #contactSuccess:not(.hidden) { animation: heroFade .45s cubic-bezier(.22,.61,.36,1) both; }
+#applySuccess:not(.hidden) > span:first-child, #contactSuccess:not(.hidden) > span:first-child {
+  animation: successPop .5s cubic-bezier(.34,1.56,.64,1) .1s both;
+}
+@keyframes successPop {
+  0% { transform: scale(.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ============================================================
+   ROUND 3: slider counter + pause/play · Ken Burns · blob drift ·
+            select chevron · toast progress · resume upload ·
+            applications tracker · copy chips · micro-polish
+   ============================================================ */
+
+/* ---------- slider counter + pause/play toggle ---------- */
+.slider-counter {
+  min-width: 4.2rem;
+  text-align: right;
+  font-size: 0.78rem; font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #94A3B8;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 639px) { .slider-counter { display: none; } }
+
+.slider-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.6rem; height: 2.6rem;
+  border-radius: 99px;
+  color: #475569; background: #fff;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 10px -6px rgba(15,23,42,.2);
+  transition: all .2s ease;
+}
+.slider-toggle:hover { color: var(--primary-dark); border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(29,78,216,.4); }
+.slider-toggle:active { transform: translateY(0) scale(.94); transition-duration: .1s; }
+.slider-toggle[aria-pressed="true"] { color: var(--primary-dark); background: #EFF6FF; border-color: #BFDBFE; }
+.toggle-icon-pause.hidden, .toggle-icon-play.hidden { display: none; }
+
+/* ---------- Ken Burns drift on the active hero photo ---------- */
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.055); }
+}
+.slide.is-active .anim-6 img { animation: kenBurns 8s cubic-bezier(.22,.61,.36,1) both; }
+
+/* ---------- ambient hero blobs drift ---------- */
+.blob { will-change: transform; }
+.blob-a { animation: blobDrift 16s ease-in-out infinite; }
+.blob-b { animation: blobDrift 21s ease-in-out infinite reverse; }
+@keyframes blobDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(30px, -22px) scale(1.07); }
+}
+
+/* ---------- custom chevron for select fields ---------- */
+select.form-input {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  background-size: 1rem;
+  padding-right: 2.6rem;
+}
+select.form-input:focus {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231D4ED8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+select.form-input.user-invalid {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23F43F5E' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+/* ---------- toast auto-dismiss progress line ---------- */
+.toast { position: relative; overflow: hidden; }
+.toast::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  height: 2.5px; width: 100%;
+  background: linear-gradient(90deg, #10B981, #34D399);
+  transform-origin: left center;
+  animation: toastLife var(--toast-life, 3800ms) linear forwards;
+  opacity: .85;
+  pointer-events: none;
+}
+.toast.toast-info::after { background: linear-gradient(90deg, var(--primary), #60A5FA); }
+@keyframes toastLife {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
+/* ---------- resume upload dropzone ---------- */
+.upload-zone {
+  display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+  padding: 1.35rem 1rem;
+  text-align: center; cursor: pointer;
+  background: #F8FAFC;
+  border: 1.5px dashed #CBD5E1; border-radius: 0.9rem;
+  transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+.upload-zone:hover { border-color: var(--primary); background: rgba(239, 246, 255, 0.6); }
+.upload-zone:focus-within { border-color: var(--primary); box-shadow: 0 0 0 4px var(--ring); }
+.upload-zone.is-dragover { border-color: var(--primary); background: #EFF6FF; box-shadow: 0 0 0 4px var(--ring); }
+.upload-zone-icon { color: #94A3B8; transition: color .2s ease, transform .2s ease; }
+.upload-zone:hover .upload-zone-icon { color: var(--primary); transform: translateY(-2px); }
+.upload-zone-text { font-size: 0.88rem; color: #475569; }
+.upload-zone-text strong { color: var(--primary-dark); }
+.upload-zone.has-file { border-style: solid; border-color: #93C5FD; background: #EFF6FF; }
+
+.file-chip {
+  display: flex; align-items: center; gap: 0.6rem;
+  margin-top: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.85rem;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE; border-radius: 0.8rem;
+  animation: heroFade .3s ease both;
+}
+.file-chip-remove {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.65rem; height: 1.65rem; flex-shrink: 0;
+  border-radius: 0.55rem;
+  color: #64748B; background: #fff;
+  border: 1px solid #E2E8F0;
+  transition: all .15s ease;
+}
+.file-chip-remove:hover { color: #E11D48; border-color: #FECDD3; background: #FFF1F2; }
+
+/* ---------- applications tracker ---------- */
+.apps-list {
+  display: flex; flex-direction: column; gap: 0.65rem;
+  max-height: 18rem; overflow-y: auto;
+  padding-right: 0.2rem;
+}
+.app-item {
+  display: flex; align-items: center; gap: 0.8rem;
+  padding: 0.85rem 0.95rem;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0; border-radius: 1rem;
+  animation: heroFade .32s ease both;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.app-item:hover { border-color: #BFDBFE; box-shadow: 0 6px 16px -10px rgba(15, 23, 42, .18); }
+.app-item-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.25rem; height: 2.25rem; flex-shrink: 0;
+  border-radius: 0.75rem;
+  color: var(--primary-dark); background: #EFF6FF;
+  border: 1px solid #DBEAFE;
+}
+.app-status {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.3rem 0.65rem; flex-shrink: 0;
+  font-size: 0.66rem; font-weight: 800;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: #B45309; background: #FFFBEB;
+  border: 1px solid #FDE68A; border-radius: 99px;
+}
+.app-status-dot { width: 6px; height: 6px; border-radius: 99px; background: #F59E0B; }
+
+/* ---------- copy-to-clipboard chips (dark contact surfaces) ---------- */
+.contact-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.875rem; font-weight: 600; color: #CBD5E1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 99px;
+  transition: color .2s ease, border-color .2s ease, background-color .2s ease, transform .2s ease;
+}
+.contact-chip:hover {
+  color: #fff;
+  border-color: rgba(147, 197, 253, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+.contact-chip .copy-ico { color: #93C5FD; opacity: 0; transform: translateX(-3px); transition: opacity .2s ease, transform .2s ease; }
+.contact-chip:hover .copy-ico,
+.contact-chip:focus-visible .copy-ico { opacity: 1; transform: translateX(0); }
+
+/* footer utility button that reuses .footer-link styling */
+button.footer-link {
+  background-color: transparent;
+  border: 0; padding: 0; margin: 0;
+  font: inherit; cursor: pointer; text-align: left;
+}
+
+/* ---------- skill pill micro-lift on card hover ---------- */
+.skill-pill { transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease; }
+.opportunity-card:hover .skill-pill {
+  color: var(--primary-dark);
+  background: #F0F7FF;
+  border-color: #BFDBFE;
+}
+
+/* ============================================================
+   R3-6: REFINED VISUAL DETAIL PASS
+   coherent elevation scale · internship card bevel · about
+   hairline · dropzone dot-grid · tracker stagger · control
+   rings · input hover affordance · measure polish
+   ============================================================ */
+
+/* ---------- 1. coherent elevation scale ----------
+   harmonize the previously mixed hover shadows into one family
+   (small controls → buttons → rows → cards → overlay surfaces);
+   cards get a two-layer "contact + ambient" shadow for depth */
+:root {
+  --lift-btn: 0 12px 26px -12px; /* one geometry, per-color alpha */
+  --lift-card: 0 2px 6px -2px rgba(15, 23, 42, .05), 0 24px 48px -20px rgba(15, 23, 42, .16);
+}
+.btn-primary:hover   { box-shadow: var(--lift-btn) rgba(29, 78, 216, .55); }
+.btn-secondary:hover { box-shadow: var(--lift-btn) rgba(15, 23, 42, .22); }
+.btn-soft:hover      { box-shadow: var(--lift-btn) rgba(29, 78, 216, .5); }
+.opportunity-card:hover,
+.service-card:hover  { box-shadow: var(--lift-card); }
+.app-item:hover      { box-shadow: 0 8px 20px -12px rgba(15, 23, 42, .16); }
+
+/* ---------- 2. internship cards: soft bevel on hover ----------
+   1px white catch-light along the top edge + faint blue inner
+   hairline, so the lifted card reads as physically raised */
+.opportunity-card::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95), inset 0 0 0 1px rgba(191, 219, 254, .35);
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+.opportunity-card:hover::after { opacity: 1; }
+
+/* icon tiles gain a tiny catch-light + soft drop shadow while lifted */
+.opportunity-card .icon-tile,
+.service-card .icon-tile {
+  transition: transform .3s cubic-bezier(.22, .61, .36, 1), box-shadow .3s ease;
+}
+.opportunity-card:hover .icon-tile,
+.service-card:hover .icon-tile {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), 0 8px 16px -8px rgba(15, 23, 42, .28);
+}
+
+/* ---------- 3. brand statement: one tasteful detail ----------
+   thin gradient hairline floating above the eyebrow */
+#about .max-w-5xl::before {
+  content: "";
+  display: block;
+  width: 4.5rem; height: 2px;
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, rgba(147, 197, 253, .85), transparent);
+}
+
+/* ---------- 4. upload zone: premium drag affordance ----------
+   quiet dot-grid texture on hover, vivid on dragover */
+.upload-zone:hover {
+  background-image: radial-gradient(rgba(29, 78, 216, .07) 1px, transparent 1.5px);
+  background-size: 14px 14px;
+}
+.upload-zone.is-dragover {
+  background-color: #EFF6FF;
+  background-image: radial-gradient(rgba(29, 78, 216, .16) 1px, transparent 1.5px);
+  background-size: 14px 14px;
+  box-shadow: 0 0 0 4px var(--ring), inset 0 1px 0 rgba(255, 255, 255, .9), inset 0 0 22px rgba(29, 78, 216, .05);
+}
+.upload-zone.is-dragover .upload-zone-text strong { color: var(--primary); }
+.upload-zone:hover .upload-zone-icon,
+.upload-zone.is-dragover .upload-zone-icon {
+  color: var(--primary);
+  transform: translateY(-3px) scale(1.16);
+}
+.upload-zone.is-dragover .upload-zone-icon { transform: translateY(-3px) scale(1.22); }
+
+/* ---------- 5. applications tracker: staggered entrance ----------
+   rows cascade in when the list renders (capped for long lists) */
+.app-item:nth-child(1) { animation-delay: .02s; }
+.app-item:nth-child(2) { animation-delay: .07s; }
+.app-item:nth-child(3) { animation-delay: .12s; }
+.app-item:nth-child(4) { animation-delay: .17s; }
+.app-item:nth-child(5) { animation-delay: .22s; }
+.app-item:nth-child(6) { animation-delay: .27s; }
+.app-item:nth-child(n + 7) { animation-delay: .3s; }
+@media (prefers-reduced-motion: reduce) {
+  .app-item { animation-delay: 0s !important; } /* delays would hold rows invisible */
+}
+
+/* nicer tracker icon tiles: catch-light + lift on row hover */
+.app-item-icon {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.app-item:hover .app-item-icon {
+  transform: translateY(-1px);
+  border-color: #93C5FD;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 6px 14px -6px rgba(29, 78, 216, .35);
+}
+
+/* ---------- 6. toasts: accent alignment (verified) ----------
+   border-left, icon and progress line already switch together
+   (emerald default / primary for .toast-info); radius 1rem matches
+   .app-item — no change needed, documented for the audit */
+
+/* ---------- 7. focus rings for round-3 controls ---------- */
+.contact-chip:focus-visible { outline: 2px solid #93C5FD; outline-offset: 3px; }
+.slider-toggle:focus-visible,
+.slider-arrow:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.contact-chip:active { transform: translateY(0) scale(.98); }
+
+/* ---------- 8. form inputs: quiet hover affordance ---------- */
+.form-input:hover:not(:focus):not(.user-invalid) { border-color: #CBD5E1; }
+
+/* ---------- 9. measure polish for centered section intros ----------
+   checked: every .section-sub already sits in a .max-w-2xl (672px)
+   centered header and 60ch resolves wider (~716px) — redundant,
+   intentionally skipped per task guidance */
+
+/* ---------- 10. slider controls: halo ring on hover ----------
+   double-layer ring falls off like the .dot.is-active halo */
+.slider-arrow:hover,
+.slider-toggle:hover {
+  box-shadow: 0 10px 20px -10px rgba(29, 78, 216, .4), 0 0 0 2px rgba(29, 78, 216, .16), 0 0 0 5px rgba(29, 78, 216, .07);
+}
+
+/* ============================================================
+   R4-4: Round-4 additions
+   (char counters, ref chip, WhatsApp FAB, print receipt)
+   ============================================================ */
+
+/* --- Message character counters ---------------------------- */
+.char-counter {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #94A3B8;
+  font-variant-numeric: tabular-nums;
+  transition: color .25s ease;
+}
+.char-counter.is-near { color: #D97706; }   /* >=90% */
+.char-counter.is-max { color: #E11D48; }    /* at limit */
+
+/* --- Reference-number chip (apply success panel) ------------ */
+.ref-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #E2E8F0;
+  background: #F8FAFC;
+  color: #0F172A;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, .05);
+  transition: border-color .2s ease, background .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.ref-chip:hover {
+  border-color: #BFDBFE;
+  background: #EFF6FF;
+  box-shadow: 0 6px 16px -8px rgba(29, 78, 216, .35);
+  transform: translateY(-1px);
+}
+.ref-chip:active { transform: translateY(0) scale(.98); }
+.ref-chip:focus-visible { outline: 2px solid #93C5FD; outline-offset: 3px; }
+.ref-chip-copy { color: #94A3B8; transition: color .2s ease; }
+.ref-chip:hover .ref-chip-copy { color: #1D4ED8; }
+
+/* --- WhatsApp chat FAB --------------------------------------
+   Bottom-left counterpart to the back-to-top FAB.
+   Sits under native <dialog> top-layer automatically.        */
+.whats-fab {
+  position: fixed;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  background: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 10px 24px -10px rgba(37, 211, 102, .65), 0 2px 6px rgba(15, 23, 42, .12);
+  transition: transform .25s cubic-bezier(.22, 1, .36, 1), box-shadow .25s ease;
+}
+.whats-fab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px -10px rgba(37, 211, 102, .7), 0 0 0 4px rgba(37, 211, 102, .18);
+}
+.whats-fab:focus-visible { outline: 2px solid #16A34A; outline-offset: 3px; }
+.whats-fab:active { transform: translateY(-1px) scale(.97); }
+.whats-fab svg { display: block; }
+.whats-fab-tip {
+  position: absolute;
+  left: calc(100% + 0.75rem);
+  top: 50%;
+  translate: 0 -50%;
+  white-space: nowrap;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.75rem;
+  background: #0F172A;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-4px);
+  transition: opacity .22s ease, transform .22s ease;
+}
+.whats-fab:hover .whats-fab-tip,
+.whats-fab:focus-visible .whats-fab-tip { opacity: 1; transform: translateX(0); }
+@media (prefers-reduced-motion: reduce) {
+  .whats-fab, .whats-fab-tip, .ref-chip { transition: none; }
+}
+@media (max-width: 480px) {
+  .whats-fab { left: 1rem; bottom: 1rem; }
+  .whats-fab-tip { display: none; } /* touch devices have no hover */
+}
+
+/* --- Print: application receipt -----------------------------
+   #receiptPrint is display:none on screen. When the receipt
+   button fires, body gets .printing-receipt and ONLY the
+   receipt prints.                                           */
+.receipt-print { display: none; }
+@media print {
+  @page { margin: 14mm; }
+  body.printing-receipt > *:not(#receiptPrint) { display: none !important; }
+  body.printing-receipt #receiptPrint { display: block !important; }
+  body.printing-receipt { background: #FFFFFF !important; }
+  .receipt-box {
+    max-width: 100%;
+    border: 1.5px solid #0F172A;
+    border-radius: 12px;
+    padding: 28px 32px;
+    font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    color: #0F172A;
+  }
+  .receipt-brand {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border: 1.5px solid #0F172A;
+    border-radius: 8px;
+    padding: 6px 12px;
+  }
+  .receipt-box h1 {
+    margin: 18px 0 2px;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .receipt-sub { margin: 0 0 18px; font-size: 11.5px; color: #475569; }
+  .receipt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+    margin: 0;
+    padding: 16px 0;
+    border-top: 1px solid #CBD5E1;
+    border-bottom: 1px solid #CBD5E1;
+  }
+  .receipt-row dt {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #64748B;
+  }
+  .receipt-row dd { margin: 3px 0 0; font-size: 13px; font-weight: 600; }
+  .receipt-ref { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; }
+  .receipt-status {
+    display: inline-block;
+    border: 1px solid #0F172A;
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .receipt-note { margin: 16px 0 0; font-size: 11px; line-height: 1.6; color: #475569; }
+  .receipt-foot {
+    margin: 14px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid #E2E8F0;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: #94A3B8;
+  }
+  /* WhatsApp FAB and toasts never print */
+  .whats-fab, #toastStack { display: none !important; }
+}
+
+/* ============================================================
+   R4-5: ROUND-4 VISUAL DETAIL PASS
+   1. WhatsApp FAB entrance + periodic attention pulse
+   2. Char-counter pill states · ref-chip copy micro-slide
+   3. #printReceipt hover refinement (icon tilt + underline sweep)
+   4. Upload zone .has-file "confirmed" state
+   5. Tracker reference number chip (.app-item .font-mono)
+   6. Modal backdrop depth + .modal-card opening curve
+   7. Footer social buttons: consistent lift + halo family
+   Appended after the @media print block on purpose: print rules
+   only apply in print contexts, so screen cascade is unaffected
+   and the print section itself stays untouched.
+   ============================================================ */
+
+/* ---------- 1a. WhatsApp FAB: one-time entrance ----------
+   fade + rise ~1.2s after load. fill-mode "backwards" (not
+   "both") is deliberate: once the animation finishes it stops
+   applying, releasing transform for the existing hover/active
+   states (a forwards fill would freeze transform forever). */
+@keyframes whatsFabIn {
+  from { opacity: 0; transform: translateY(16px) scale(.88); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.whats-fab {
+  animation: whatsFabIn .55s cubic-bezier(.22, 1, .36, 1) 1.2s backwards;
+}
+
+/* ---------- 1b. periodic attention pulse (every ~12s) ----------
+   a thin ring expands + fades once per cycle; suppressed on
+   hover/focus so it never fights the interactive halo. Resting
+   size of the FAB itself is unchanged (ring is ::after only). */
+@keyframes whatsPing {
+  0%   { opacity: .75; transform: scale(1); }
+  12%  { opacity: 0;   transform: scale(1.7); }
+  100% { opacity: 0;   transform: scale(1.7); }
+}
+.whats-fab::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px solid rgba(37, 211, 102, .55);
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  animation: whatsPing 12s ease-out 2.4s infinite;
+}
+.whats-fab:hover::after,
+.whats-fab:focus-visible::after { animation: none; opacity: 0; }
+
+/* ---------- 2a. char counter: tabular pill states ----------
+   tabular-nums was already set in R4-4 (kept); the pill chrome
+   (padding/radius/transparent bg) lives on the BASE state so
+   toggling is-near/is-max only cross-fades color, no layout
+   shift; tints reuse the existing amber/rose semantics */
+.char-counter {
+  padding: 0.16rem 0.55rem;
+  border-radius: 999px;
+  background-color: transparent;
+  transition: color .25s ease, background-color .25s ease;
+}
+.char-counter.is-near { color: #B45309; background-color: rgba(217, 119, 6, .1); }
+.char-counter.is-max  { color: #BE123C; background-color: rgba(225, 29, 72, .09); }
+
+/* ---------- 2b. ref chip: copy-icon micro-slide ----------
+   icon nudges right on hover/focus (stays visible for touch
+   users — a reveal would hide the affordance with no hover) */
+.ref-chip .ref-chip-copy {
+  transition: color .2s ease, transform .25s cubic-bezier(.22, .61, .36, 1);
+}
+.ref-chip:hover .ref-chip-copy,
+.ref-chip:focus-visible .ref-chip-copy {
+  color: var(--primary);
+  transform: translateX(2px);
+}
+
+/* ---------- 3. print receipt button: quiet receipt affordance ----------
+   scoped to #printReceipt so sibling .btn-ghost buttons are
+   untouched; printer icon tilts like pulling a sheet + a soft
+   underline sweep grows from the left */
+#printReceipt { position: relative; }
+#printReceipt::after {
+  content: "";
+  position: absolute;
+  left: 1rem; right: 1rem; bottom: 0.4rem;
+  height: 1.5px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), #60A5FA);
+  opacity: 0;
+  transform: scaleX(.4);
+  transform-origin: left center;
+  transition: opacity .25s ease, transform .3s cubic-bezier(.22, .61, .36, 1);
+  pointer-events: none;
+}
+#printReceipt:hover::after,
+#printReceipt:focus-visible::after { opacity: .55; transform: scaleX(1); }
+#printReceipt svg { transition: transform .3s cubic-bezier(.22, .61, .36, 1); }
+#printReceipt:hover svg { transform: rotate(-10deg) translateY(-1px); }
+
+/* ---------- 4. upload zone: confirmed (.has-file) state ----------
+   emerald shift + soft green tint reads as "file accepted";
+   the blue dot-grid hover texture is suppressed so the
+   confirmed zone stays calm; icon does a tiny one-shot pop */
+.upload-zone.has-file {
+  border-color: #6EE7B7;
+  background-color: #F0FDF4;
+  background-image: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 0 0 3px rgba(16, 185, 129, .07);
+}
+.upload-zone.has-file .upload-zone-icon {
+  color: #059669;
+  animation: hasFilePop .35s cubic-bezier(.22, .61, .36, 1);
+}
+.upload-zone.has-file .upload-zone-text strong { color: #047857; }
+.upload-zone.has-file #resumeHint { color: #10B981; }
+@keyframes hasFilePop {
+  0%   { transform: scale(.85); }
+  60%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+/* ---------- 5. tracker: reference number as a tiny serial chip ----------
+   .font-mono utility (compiled tailwind) stays; we add chip
+   chrome + tracking so SNR-… refs scan like serials */
+.app-item .font-mono {
+  display: inline-block;
+  padding: 0.05rem 0.4rem;
+  border-radius: 0.45rem;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  color: #475569;
+  font-size: 0.65rem;
+  letter-spacing: 0.07em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- 6a. modal backdrop: refined tint + depth ----------
+   radial vignette over the tint deepens the edges so the card
+   floats forward; bare dialog::backdrop kept as the legacy
+   fallback (class-scoped rule wins where supported) */
+.modal::backdrop,
+dialog::backdrop {
+  background:
+    radial-gradient(120% 115% at 50% 42%, rgba(15, 23, 42, 0) 42%, rgba(15, 23, 42, .3) 100%),
+    rgba(11, 17, 32, .62);
+  -webkit-backdrop-filter: blur(10px) saturate(1.35);
+  backdrop-filter: blur(10px) saturate(1.35);
+}
+
+/* ---------- 6b. modal card opening curve ----------
+   no animation existed on .modal-card itself (modalIn runs on
+   the dialog wrapper); this adds a springy scale-in with an
+   ease-out-expo style curve — layered, not doubled */
+@keyframes modalCardIn {
+  from { opacity: 0; transform: translateY(12px) scale(.962); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.modal[open] .modal-card {
+  animation: modalCardIn .42s cubic-bezier(.19, 1, .3, 1);
+}
+
+/* ---------- 7. footer social buttons: complete the hover family ----------
+   all footer socials share .social-btn (lift + blue fill); the
+   missing family member was the shared 4px halo ring (same
+   geometry as the WhatsApp FAB / slider control halos) plus a
+   micro icon lift. No footer markup touched. */
+.social-btn:hover {
+  box-shadow: 0 10px 20px -10px rgba(29, 78, 216, .7), 0 0 0 4px rgba(29, 78, 216, .16);
+}
+.social-btn svg { transition: transform .25s ease; }
+.social-btn:hover svg { transform: translateY(-1px) scale(1.08); }
+
+/* ---------- R4-5 reduced-motion kills ----------
+   every new animation gets an explicit neutral state; the
+   global reduce block already zeroes transition durations */
+@media (prefers-reduced-motion: reduce) {
+  .whats-fab { animation: none; }
+  .whats-fab::after { animation: none; opacity: 0; }
+  .upload-zone.has-file .upload-zone-icon { animation: none; }
+  .modal[open] .modal-card { animation: none; }
+  #printReceipt::after { transition: none; }
+}
+
+/* ============================================================
+   R5: OFFLINE BANNER + INSTALL BANNER (new PWA components)
+   Base layer — detail/animation polish may extend below.
+   ============================================================ */
+
+/* ---------- Offline status banner ----------
+   Fixed pill under the top edge; amber "warning" family.
+   Shown via [hidden] toggle from js on offline/online events. */
+.offline-banner {
+  position: fixed;
+  left: 50%;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  transform: translateX(-50%);
+  z-index: 130; /* above header (z-50) and toasts (120) */
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  max-width: min(92vw, 34rem);
+  padding: .6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid #FED7AA;
+  background: rgba(255, 247, 237, .92);
+  -webkit-backdrop-filter: blur(10px) saturate(1.3);
+  backdrop-filter: blur(10px) saturate(1.3);
+  color: #9A3412;
+  font-size: .8rem;
+  font-weight: 600;
+  line-height: 1.35;
+  box-shadow: 0 12px 30px -12px rgba(154, 52, 18, .28), 0 0 0 4px rgba(251, 146, 60, .08);
+}
+.offline-banner svg { color: #EA580C; }
+.offline-banner-text strong { color: #7C2D12; font-weight: 800; }
+
+/* pulsing status dot */
+.offline-banner-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #F97316;
+  position: relative;
+}
+.offline-banner-dot::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(249, 115, 22, .55);
+  animation: offlineDotPing 1.6s ease-out infinite;
+}
+@keyframes offlineDotPing {
+  0% { transform: scale(.5); opacity: 1; }
+  80%, 100% { transform: scale(1.4); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .offline-banner-dot::after { animation: none; opacity: .4; }
+}
+
+/* ---------- Install app banner ----------
+   Bottom-center card; slides up when .is-shown is added by js. */
+.install-banner {
+  position: fixed;
+  left: 50%;
+  bottom: calc(1.1rem + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%) translateY(16px);
+  z-index: 125; /* below dialogs' top layer, above page */
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  width: min(92vw, 26.5rem);
+  padding: .8rem .9rem;
+  border-radius: 18px;
+  border: 1px solid rgba(226, 232, 240, .9);
+  background: rgba(255, 255, 255, .94);
+  -webkit-backdrop-filter: blur(12px) saturate(1.35);
+  backdrop-filter: blur(12px) saturate(1.35);
+  box-shadow: 0 2px 6px -2px rgba(15, 23, 42, .05), 0 24px 48px -20px rgba(15, 23, 42, .28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .34s ease, transform .34s cubic-bezier(.22, 1, .36, 1);
+}
+.install-banner.is-shown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.install-banner[hidden] { display: none; }
+
+.install-banner-logo {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px -10px rgba(15, 23, 42, .25);
+}
+.install-banner-copy { flex: 1 1 auto; min-width: 0; }
+.install-banner-title {
+  font-size: .92rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.25;
+}
+.install-banner-sub {
+  font-size: .74rem;
+  font-weight: 600;
+  color: #64748B;
+  line-height: 1.4;
+  margin-top: .1rem;
+}
+.install-banner .btn-primary { flex-shrink: 0; }
+
+.install-banner-close {
+  flex-shrink: 0;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: -.15rem -.2rem 0 0;
+  border-radius: 9px;
+  color: #94A3B8;
+  transition: color .2s ease, background-color .2s ease;
+}
+.install-banner-close:hover { color: #0F172A; background: #F1F5F9; }
+.install-banner-close:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, .28);
+}
+.install-banner-close svg { color: currentColor; }
+
+/* small screens: keep clear of the bottom FABs by hugging the bottom edge */
+@media (max-width: 640px) {
+  .install-banner {
+    width: calc(100vw - 2rem);
+    padding: .75rem .8rem;
+    gap: .65rem;
+  }
+  .install-banner-sub { font-size: .7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .install-banner { transition: opacity .2s ease; transform: translateX(-50%); }
+  .install-banner.is-shown { transform: translateX(-50%); }
+}
+
+/* ---------- R5 responsive corrections (from mobile QA) ----------
+   1) Offline banner ≤640px: full-width compact top bar (no pill blob,
+      no overlap of the header logo); 2) install banner on mobile sits
+      above the bottom FABs (WhatsApp left / back-to-top right). */
+@media (max-width: 640px) {
+  .offline-banner {
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    padding: .5rem .85rem;
+    gap: .5rem;
+    font-size: .72rem;
+  }
+  .offline-banner-dot { width: 7px; height: 7px; }
+  .install-banner {
+    bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ============================================================
+   R5-6: ROUND-5 VISUAL DETAIL PASS
+   Premium polish for the R5 offline/install banners + the
+   save-contact chip, plus new sitewide micro-details.
+   CSS-only (no HTML changes); cheap properties only
+   (transform/opacity/box-shadow/background/border/color).
+   ============================================================ */
+
+/* ---------- A. Offline banner ----------
+   1) Entrance: slide-down + fade every time [hidden] clears
+      (display:none -> flex restarts the animation). The
+      keyframes re-apply the banner's own horizontal placement
+      via --ob-x so both layouts land exactly on their base
+      transforms: desktop pill keeps translateX(-50%),
+      mobile full-width bar keeps transform:none (0px). */
+.offline-banner { --ob-x: -50%; }
+@keyframes offlineBannerIn {
+  from { opacity: 0; transform: translateX(var(--ob-x)) translateY(-12px); }
+  to   { opacity: 1; transform: translateX(var(--ob-x)) translateY(0); }
+}
+.offline-banner:not([hidden]) { animation: offlineBannerIn .35s ease-out; }
+
+/* 2) Amber glow refinement: subtle top-edge catch-light added
+      to the existing shadow stack (appended override — the R5
+      base rule above stays untouched). */
+.offline-banner {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6),
+              0 12px 30px -12px rgba(154, 52, 18, .28),
+              0 0 0 4px rgba(251, 146, 60, .08);
+}
+
+/* 3) wifi-off icon: one-time tilt-shake on appear to draw the
+      eye (small -12deg -> +2.5deg -> 0 settle). */
+@keyframes offlineIconTilt {
+  0%   { transform: rotate(-12deg); }
+  65%  { transform: rotate(2.5deg); }
+  100% { transform: rotate(0deg); }
+}
+.offline-banner:not([hidden]) svg { animation: offlineIconTilt .5s ease-out; }
+
+@media (max-width: 640px) {
+  .offline-banner { --ob-x: 0px; } /* full-width bar: no centering shift */
+}
+
+/* ---------- B. Install banner ----------
+   1) Accent (picked: left gradient bar over a background wash):
+      3px primary gradient capsule on the card's left edge.
+      border-radius: inherit follows the 18px corners so the
+      ends round off inside them; pointer-events none so the
+      bar never blocks the Install / close buttons. */
+.install-banner::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, var(--primary) 0%, #60A5FA 100%);
+  pointer-events: none;
+}
+
+/* 2) Logo: micro-tilt while the banner is hovered/focused —
+      mirrors the header logo's group-hover:-rotate-3 language
+      with the same .3s easing. */
+.install-banner-logo { transition: transform .3s cubic-bezier(.22, 1, .36, 1); }
+.install-banner:hover .install-banner-logo,
+.install-banner:focus-within .install-banner-logo { transform: rotate(-3deg); }
+
+/* 3) #installAccept: the .btn-primary sheen sweep (::after ->
+      left:120% on hover) AND a scale(.98) :active press already
+      exist in the buttons block — verified, intentionally NOT
+      duplicated here.
+   4) Dismiss exit: the base (non-.is-shown) transform is
+      translateX(-50%) translateY(16px) and js waits 360ms
+      before [hidden], so dismiss already eases DOWN 16px over
+      .34s — checked, no adjustment needed. */
+
+/* ---------- C. Save-contact chip ----------
+   .copy-ico already fades/slides in on hover + focus-visible
+   (R3 chip rules). The download glyph additionally dips 1px —
+   a gentle "downloading" nudge. Scoped to #saveContact so the
+   email/phone chips keep their pure slide-in.
+   Press state: .contact-chip:active { scale(.98) } (R3-6) and
+   the :focus-visible ring (outline #93C5FD, offset 3px) already
+   cover this chip through the shared class — verified, not
+   duplicated. */
+#saveContact:hover .copy-ico,
+#saveContact:focus-visible .copy-ico { opacity: 1; transform: translateX(0) translateY(1px); }
+
+/* ---------- D. Sitewide micro-details ---------- */
+
+/* D1. Internship cards: "Apply Now" arrow nudges 2px right when
+      the card is hovered or keyboard-focused. */
+.opportunity-card .btn-soft svg { transition: transform .25s cubic-bezier(.22, .61, .36, 1); }
+.opportunity-card:hover .btn-soft svg,
+.opportunity-card:focus-within .btn-soft svg { transform: translateX(2px); }
+
+/* D2. Service cards: "Know More" arrow joins the existing
+      gap-widen/color hover with its own 2px nudge. */
+.service-card .link-more svg { transition: transform .25s cubic-bezier(.22, .61, .36, 1); }
+.service-card:hover .link-more svg,
+.service-card:focus-within .link-more svg { transform: translateX(2px); }
+
+/* D3. Section headers: 2.5rem x 2px primary gradient underline
+      that scales in when the header's [data-reveal] container
+      lands (complements — does not touch — the R3-6 #about
+      hairline, which lives on the container ::before).
+      .section-title is unique to the internships / services /
+      manpower headers; the contact h2 (tailwind utility classes)
+      is matched separately. Bars stay hidden until reveal only
+      when JS is present; html:not(.js) keeps them visible. */
+.section-title::after,
+#contact h2::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin: .85rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), #60A5FA);
+  transform: scaleX(0);
+  transform-origin: 50% 50%;
+  transition: transform .55s cubic-bezier(.22, 1, .36, 1) .18s;
+}
+#main [data-reveal].revealed .section-title::after,
+#main [data-reveal].revealed h2::after { transform: scaleX(1); }
+html:not(.js) .section-title::after,
+html:not(.js) #contact h2::after { transform: scaleX(1); }
+
+/* D4. Slider pause/play toggle: the revealed play icon gives a
+      springy pop when the user pauses. Hooked to aria-pressed
+      (which only flips on CLICK) — not body.slider-paused,
+      which also toggles on the section-wide hover pause. */
+@keyframes iconSpringPop {
+  from { transform: scale(.6); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+#sliderToggle[aria-pressed="true"] .toggle-icon-play {
+  animation: iconSpringPop .35s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+/* D5. Toast icon: same spring pop on entrance — the toast card
+      itself already slides in via toastIn, so only the icon
+      pops (no fill-mode hold; base state equals the end frame). */
+.toast svg { animation: iconSpringPop .4s cubic-bezier(.34, 1.56, .64, 1); }
+
+/* D6. Footer "back to top" brand logo: micro-tilt matching the
+      header logo hover. Verified MISSING before adding (the
+      footer brand link has no .group class), so this is new and
+      CSS-only via its aria-label. */
+footer a[aria-label*="back to top"] img { transition: transform .3s cubic-bezier(.22, 1, .36, 1); }
+footer a[aria-label*="back to top"]:hover img,
+footer a[aria-label*="back to top"]:focus-visible img { transform: rotate(-3deg); }
+
+/* Slider dots hover: ALREADY EXISTS (.dot:hover = scale(1.2) +
+   #94A3B8 shift, transform transitioned on .dot) — checked,
+   intentionally not duplicated. */
+
+/* ---------- E. Explicit reduced-motion kills ----------
+   The global reduce block already zeroes durations; these stop
+   the new one-shot animations outright so no mid-state can
+   linger (R4-5 pattern). New transitions (underlines, arrow
+   nudges, tilts) end in their base state and are fully covered
+   by the global duration zeroing. */
+@media (prefers-reduced-motion: reduce) {
+  .offline-banner:not([hidden]) { animation: none; }
+  .offline-banner:not([hidden]) svg { animation: none; }
+  #sliderToggle[aria-pressed="true"] .toggle-icon-play { animation: none; }
+  .toast svg { animation: none; }
+}
+
+/* ---------- R5 fix: respect [hidden] on the offline banner ----------
+   The base rule sets display:flex which (like any author rule) beats the
+   UA stylesheet's [hidden]{display:none} — so the banner stayed rendered
+   even with the hidden attribute set. Explicit guard added. */
+.offline-banner[hidden] { display: none; }
+
+/* ============================================================
+   R6-7: ROUND-6 VISUAL DETAIL PASS
+   share-button icon flourish · internship skill-pill reveal
+   stagger · section-eyebrow dot pulse · slider-counter hover
+   cue · manpower cards join the card family · footer contact
+   tile tilt · primary-button icon nudge · outline-light icon
+   lift. (SW update toast: SKIPPED by design — CSS cannot
+   select toasts by icon name; the R5 toast icon spring pop
+   already covers every toast entrance.)
+   ============================================================ */
+
+/* ---------- 1. #shareSite: distinct share-2 flourish ----------
+   The shared .footer-link hover (translateX(4px) + gradient
+   underline growth) already applies to this button — verified
+   it is a plain class match, and button.footer-link reset from
+   round 3 keeps the button chromeless. Distinct share detail:
+   the two-node share-2 glyph gently "spreads" (scale + a hair
+   of rotation) with a primary tint while hovered/focused. */
+#shareSite svg {
+  transition: transform .35s cubic-bezier(.34, 1.56, .64, 1), color .25s ease;
+}
+#shareSite:hover svg,
+#shareSite:focus-visible svg {
+  transform: scale(1.15) rotate(-8deg);
+  color: #60A5FA;
+}
+
+/* ---------- 2. internship skill pills: staggered rise ----------
+   Pills are static until the card reveals: script.js adds
+   .revealed to [data-reveal] (html.js scope only, so no-JS
+   visitors always see the pills). The round-3 hover recolor is
+   preserved by re-declaring color/background/border in the
+   transition lists; per-property delays keep the recolor
+   instant while only opacity/transform stagger. */
+html.js .opportunity-card .skill-pill {
+  opacity: 0;
+  transform: translateY(7px);
+  transition:
+    opacity .45s ease,
+    transform .45s cubic-bezier(.22, .61, .36, 1),
+    color .2s ease,
+    background-color .2s ease,
+    border-color .2s ease;
+}
+html.js .opportunity-card.revealed .skill-pill { opacity: 1; transform: translateY(0); }
+html.js .opportunity-card.revealed .skill-pill:nth-child(1) {
+  transition:
+    opacity .45s ease .3s,
+    transform .45s cubic-bezier(.22, .61, .36, 1) .3s,
+    color .2s ease 0s,
+    background-color .2s ease 0s,
+    border-color .2s ease 0s;
+}
+html.js .opportunity-card.revealed .skill-pill:nth-child(2) {
+  transition:
+    opacity .45s ease .38s,
+    transform .45s cubic-bezier(.22, .61, .36, 1) .38s,
+    color .2s ease 0s,
+    background-color .2s ease 0s,
+    border-color .2s ease 0s;
+}
+html.js .opportunity-card.revealed .skill-pill:nth-child(3) {
+  transition:
+    opacity .45s ease .46s,
+    transform .45s cubic-bezier(.22, .61, .36, 1) .46s,
+    color .2s ease 0s,
+    background-color .2s ease 0s,
+    border-color .2s ease 0s;
+}
+html.js .opportunity-card.revealed .skill-pill:nth-child(n + 4) {
+  transition:
+    opacity .45s ease .54s,
+    transform .45s cubic-bezier(.22, .61, .36, 1) .54s,
+    color .2s ease 0s,
+    background-color .2s ease 0s,
+    border-color .2s ease 0s;
+}
+
+/* ---------- 3. section-eyebrow dot: gentle attention pulse ----------
+   The tiny inline dot inside each section eyebrow breathes on a
+   3s loop. Deliberately scoped to .section-eyebrow > span so the
+   separate .pulse-dot class in the hero chips (its own
+   pulseRing animation) is untouched. */
+@keyframes eyebrowDotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.45); opacity: .5; }
+}
+.section-eyebrow > span {
+  transform-origin: 50% 50%;
+  animation: eyebrowDotPulse 3s ease-in-out infinite;
+}
+
+/* ---------- 4. slider counter: quiet hover/focus cue ----------
+   "01 / 04" micro-expands its letter-spacing and deepens one
+   step when the pointer rests on (or focus enters) the slider
+   controls row. Box width is pinned by the existing 4.2rem
+   min-width + right alignment (measured: zero layout shift, the
+   dots never move), so only the glyph rhythm breathes. */
+.slider-counter {
+  transition: letter-spacing .35s ease, color .35s ease;
+}
+#heroSlider + div:hover .slider-counter,
+#heroSlider + div:focus-within .slider-counter {
+  letter-spacing: .22em;
+  color: #475569;
+}
+
+/* ---------- 5. manpower cards: join the R3-6 card family ----------
+   The two big #manpower cards were still on the bare Tailwind
+   shadow-card / hover:shadow-soft utility pairing — no bevel, no
+   shared --lift-card elevation. Same geometry as the internship
+   bevel (inset white catch-light + faint blue hairline) and the
+   shared two-layer lift shadow. The reveal transition list is
+   re-declared (this rule outranks html.js [data-reveal]) so the
+   entrance keeps its .7s curve + per-card delay while hover
+   shadow/border get a snappy .3s and hover transform enters at
+   .3s and releases on the floaty .7s curve — press fast, settle
+   slow. */
+#manpower article[data-reveal] {
+  position: relative;
+  transition:
+    opacity .7s cubic-bezier(.22, .61, .36, 1),
+    transform .7s cubic-bezier(.22, .61, .36, 1),
+    box-shadow .3s ease,
+    border-color .3s ease;
+  transition-delay: var(--reveal-delay, 0ms), var(--reveal-delay, 0ms), 0ms, 0ms;
+}
+#manpower article[data-reveal]:hover {
+  transform: translateY(-4px);
+  border-color: #BFDBFE;
+  box-shadow: var(--lift-card);
+  transition: transform .3s cubic-bezier(.22, .61, .36, 1), box-shadow .3s ease, border-color .3s ease;
+  transition-delay: 0ms;
+}
+#manpower article[data-reveal]::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95), inset 0 0 0 1px rgba(191, 219, 254, .35);
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+#manpower article[data-reveal]:hover::after { opacity: 1; }
+
+/* ---------- 6. footer contact rows: icon-tile tilt + tint ----------
+   The tile already lifts 1px and whitens on row hover (round-2
+   base); this rounds it out with a -3deg tilt and a primary tint
+   so the whole row reads as one interactive unit. Appended after
+   the base rule (same selector, later cascade) — transform now
+   composes lift + tilt, and the tinted !important lands after
+   the existing !important so it wins without touching it.
+   :focus-visible parity added for keyboard users. */
+a.footer-contact:hover .icon-tile,
+a.footer-contact:focus-visible .icon-tile {
+  transform: translateY(-1px) rotate(-3deg);
+  background-color: rgba(96, 165, 250, .22) !important;
+}
+
+/* ---------- 7. primary buttons: forward icon nudge ----------
+   Arrow icons inside .btn-primary (hero CTAs, Get Started in
+   #contact, 404 "Back to Home") slide 2px on hover/focus — the
+   same +2px language the internship/service card arrows got in
+   R5-6. Send icons (form submits) read as forward motion too,
+   so a single shared rule keeps the family consistent. */
+.btn-primary svg {
+  transition: transform .25s cubic-bezier(.22, .61, .36, 1);
+}
+.btn-primary:hover svg,
+.btn-primary:focus-visible svg {
+  transform: translateX(2px);
+}
+
+/* ---------- 8. #contact "Contact Us" outline-light icon lift ----------
+   btn-outline-light hover (border/bg/lift) already existed; its
+   mail glyph now gets a tiny 1px rise to match the button's own
+   -2px hover lift. Only one instance sitewide (scoped effect). */
+.btn-outline-light svg {
+  transition: transform .25s cubic-bezier(.22, .61, .36, 1);
+}
+.btn-outline-light:hover svg,
+.btn-outline-light:focus-visible svg {
+  transform: translateY(-1px);
+}
+
+/* ---------- 9. reduced-motion kills for R6-7 animations ----------
+   The global reduce block zeroes durations but not delays, so
+   the pill stagger delays get an explicit reset (R3-6 pattern);
+   the eyebrow pulse and share flourish are one-line kills.
+   Counter/hover transitions end in base state and are covered
+   by the global duration zeroing. */
+@media (prefers-reduced-motion: reduce) {
+  .section-eyebrow > span { animation: none; }
+  #shareSite svg { transition: none; }
+  #shareSite:hover svg,
+  #shareSite:focus-visible svg { transform: none; }
+  html.js .opportunity-card .skill-pill {
+    opacity: 1; transform: none; transition: none;
+  }
+  .btn-primary svg,
+  .btn-outline-light svg { transition: none; }
+  .btn-primary:hover svg,
+  .btn-primary:focus-visible svg,
+  .btn-outline-light:hover svg,
+  .btn-outline-light:focus-visible svg { transform: none; }
+}
+
+/* ============================================================
+   R7: CONTACT QR TILE + FORM HONEYPOT (base layer)
+   ============================================================ */
+
+/* ---------- QR tile row (contact section: vCard + WhatsApp side by side) ---------- */
+.qr-tile-row {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem 2.5rem;
+}
+.qr-tile-row .qr-tile { margin-top: 0; } /* spacing owned by the row now */
+
+/* ---------- QR tile (contact section, dark navy bg) ---------- */
+.qr-tile {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .7rem;
+}
+.qr-code-btn {
+  position: relative;
+  display: block;
+  padding: .55rem;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px -2px rgba(15, 23, 42, .12), 0 18px 36px -18px rgba(2, 6, 23, .55);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.qr-code-btn:hover { transform: translateY(-2px); }
+.qr-code-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, .8), 0 18px 36px -18px rgba(2, 6, 23, .55);
+}
+.qr-code-btn:active { transform: scale(.97); }
+.qr-code-target {
+  display: block;
+  width: 148px;  /* 69-module vCard QR: 148px keeps ~2.1px/module for reliable phone scanning */
+  height: 148px;
+  color: #0F172A; /* svg uses currentColor? createSvgTag uses hard black — override below */
+}
+.qr-code-target svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.qr-code-scan {
+  position: absolute;
+  right: -.6rem;
+  bottom: -.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: #1D4ED8;
+  color: #FFFFFF;
+  box-shadow: 0 8px 18px -8px rgba(29, 78, 216, .7);
+}
+/* WhatsApp variant — same badge shape, chat-green accent (matches #whatsFab) */
+.qr-code-scan--wa {
+  background: #25D366;
+  box-shadow: 0 8px 18px -8px rgba(22, 163, 74, .75);
+}
+.qr-tile-caption {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: #94A3B8;
+}
+
+/* ---------- honeypot: visually + a11y hidden, machine-readable ---------- */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+}
+
+/* ============================================================
+   R7-6: ROUND-7 VISUAL DETAIL PASS
+   QR tile brand ink + scan-line sweep + entrance · apps-export
+   glyph dip · open-badge breathing glow · contact + 404 ambient
+   blob drift · hero floating-chip glow breathe · mobile-menu
+   link stagger · 404 entrance + logo tilt.
+   ============================================================ */
+
+/* ---------- 1. QR tile: brand-color the modules ----------
+   qrcode-generator emits its path with a hard-coded
+   fill="black" presentation ATTRIBUTE. A CSS fill on the path
+   outranks presentation attributes, so the modules re-ink
+   without touching the generated markup. #0F172A is the
+   heading ink — same scan contrast as black on the white
+   card, but on-brand. */
+.qr-code-target svg path { fill: #0F172A; }
+
+/* ---------- 2. QR hover: one scan-line sweep ----------
+   Tasteful pick over a badge-scale loop: a 2px gradient line
+   sweeps top-to-bottom INSIDE the white card, once per
+   hover/focus-visible engagement (re-hover replays it).
+   Transform-only travel (compositor cheap); the 144px travel
+   derives from the fixed geometry — 148px QR + .55rem button
+   padding — and the line rests invisible (opacity 0) between
+   runs, so the resting state is pixel-identical to before. */
+.qr-code-btn::after {
+  content: "";
+  position: absolute;
+  top: .6rem;
+  left: .6rem;
+  right: .6rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    rgba(29, 78, 216, 0),
+    rgba(29, 78, 216, .65) 30%,
+    #60A5FA 50%,
+    rgba(29, 78, 216, .65) 70%,
+    rgba(29, 78, 216, 0));
+  opacity: 0;
+  transform: translateY(0);
+  pointer-events: none;
+}
+.qr-code-btn:hover::after,
+.qr-code-btn:focus-visible::after {
+  animation: qrScanSweep 1.2s cubic-bezier(.45, .05, .55, .95) 1;
+}
+@keyframes qrScanSweep {
+  0%   { opacity: 0; transform: translateY(0); }
+  12%  { opacity: .9; }
+  82%  { opacity: .9; }
+  100% { opacity: 0; transform: translateY(144px); }
+}
+
+/* ---------- 3. QR tile entrance ----------
+   The tile sits inside the contact container's [data-reveal]
+   and deliberately has none itself — so the rise is hooked to
+   the container's .revealed class (script.js adds it on
+   intersect): one fade+rise, in step with the reveal.
+   fill-mode backwards holds the hidden frame through the
+   .15s delay; html:not(.js) visitors never animate. */
+html.js .revealed .qr-tile {
+  animation: qrTileIn .5s cubic-bezier(.22, 1, .36, 1) .15s backwards;
+}
+@keyframes qrTileIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- 4. #appsExport: download glyph dip ----------
+   Shares the .btn-ghost hover (bg + 2px lift — verified). The
+   distinct micro-detail mirrors the R5-6 #saveContact
+   treatment: the download icon dips 1px, a gentle
+   "downloading" nudge. Keyboard parity included. */
+#appsExport svg { transition: transform .25s cubic-bezier(.22, .61, .36, 1); }
+#appsExport:hover svg,
+#appsExport:focus-visible svg { transform: translateY(1px); }
+
+/* ---------- 5. internship "Open" badge: breathing glow ----------
+   The badge's little emerald dot breathes a soft expanding
+   ring (box-shadow on a 6px dot — tiny paint). Scoped to the
+   internship cards; reads as a live-status cue, distinct from
+   the hero pulse-ring and the eyebrow dot pulse. */
+@keyframes openBadgeBreathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, .38); }
+  55%      { box-shadow: 0 0 0 5px rgba(16, 185, 129, 0); }
+}
+.opportunity-card .badge-soft::before {
+  animation: openBadgeBreathe 2.4s ease-out infinite;
+}
+
+/* ---------- 6. contact section: ambient blob drift ----------
+   The two navy/sky blur blobs were static; a VERY slow
+   alternating drift (30s / 38s, opposite directions) gives
+   the dark section quiet life. Transform-only on
+   already-filtered layers; hero blobs keep their own
+   blobDrift (they use the .blob class — no selector overlap). */
+@keyframes contactBlobDrift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(3%, -5%, 0) scale(1.07); }
+}
+#contact .blur-3xl {
+  will-change: transform;
+  animation: contactBlobDrift 30s ease-in-out infinite alternate;
+}
+#contact .blur-3xl:last-child {
+  animation-duration: 38s;
+  animation-direction: alternate-reverse;
+}
+
+/* ---------- 7. hero floating chips: gentle glow breathe ----------
+   The white status chips floating on the hero photos ("Hiring
+   Drive · Open This Month" etc.) get a soft blue halo that
+   breathes via an ::after overlay — opacity-only animation,
+   the chip's own box-shadow utilities stay untouched. Only
+   the active slide renders, so this costs nothing while
+   hidden. (Scoped to .slide chips; the 404 logo's shadow-chip
+   is not inside a slide.) */
+@keyframes heroChipGlow {
+  0%, 100% { opacity: 0; }
+  50%      { opacity: 1; }
+}
+.slide .shadow-chip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 5px rgba(29, 78, 216, .07), 0 10px 30px -6px rgba(29, 78, 216, .18);
+  opacity: 0;
+  pointer-events: none;
+  animation: heroChipGlow 4.2s ease-in-out infinite;
+}
+
+/* ---------- 8. mobile menu: link stagger on open ----------
+   #mobileMenu.menu-open is the script's state class — links
+   cascade in with short delays when the menu opens. Animation
+   (not transition) with fill-mode BACKWARDS only: after each
+   run the element returns to its natural state, so the
+   .mobile-link hover translateX keeps working (a forwards
+   fill would freeze the transform). Closing stays on the
+   container's own 300ms fade — no reverse stagger needed.
+   The closing CTA button joins as the sixth beat. */
+html.js #mobileMenu.menu-open nav > a,
+html.js #mobileMenu.menu-open nav > button {
+  animation: menuLinkIn .32s cubic-bezier(.22, 1, .36, 1) backwards;
+}
+html.js #mobileMenu.menu-open nav > a:nth-child(1) { animation-delay: .06s; }
+html.js #mobileMenu.menu-open nav > a:nth-child(2) { animation-delay: .11s; }
+html.js #mobileMenu.menu-open nav > a:nth-child(3) { animation-delay: .16s; }
+html.js #mobileMenu.menu-open nav > a:nth-child(4) { animation-delay: .21s; }
+html.js #mobileMenu.menu-open nav > a:nth-child(5) { animation-delay: .26s; }
+html.js #mobileMenu.menu-open nav > button:nth-child(6) { animation-delay: .32s; }
+@keyframes menuLinkIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- 9. 404 page: entrance, blob drift, logo tilt ----------
+   404.html shares this stylesheet but never gets html.js and
+   has no data-reveal — these selectors use its specific
+   structure (main > div.relative / main > .pointer-events-none)
+   which only exists on that page: one fade+rise entrance for
+   the card, the two ambient blobs join the slow drift family,
+   and the logo micro-tilts on hover like the header logos. */
+main > div.relative {
+  animation: notFoundIn .55s cubic-bezier(.22, 1, .36, 1) .1s backwards;
+}
+@keyframes notFoundIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+main > .pointer-events-none .blur-3xl {
+  animation: contactBlobDrift 26s ease-in-out infinite alternate;
+}
+main > .pointer-events-none .blur-3xl:last-child {
+  animation-duration: 34s;
+  animation-direction: alternate-reverse;
+}
+main > div.relative > img {
+  transition: transform .3s cubic-bezier(.22, 1, .36, 1);
+}
+main > div.relative > img:hover {
+  transform: rotate(-3deg) scale(1.04);
+}
+
+/* ---------- 10. reduced-motion kills for R7-6 ----------
+   The global reduce block zeroes durations but not delays, so
+   delayed one-shots (QR tile .15s, 404 .1s, menu stagger) get
+   explicit kills — R3-6/R6-7 pattern. Ambient loops (badge
+   breathe, blob drift, chip glow) stop outright; the scan
+   sweep never renders (base opacity 0); hover transforms are
+   neutralized. */
+@media (prefers-reduced-motion: reduce) {
+  .qr-code-btn::after { animation: none; }
+  html.js .revealed .qr-tile { animation: none; }
+  #appsExport svg { transition: none; }
+  #appsExport:hover svg,
+  #appsExport:focus-visible svg { transform: none; }
+  .opportunity-card .badge-soft::before { animation: none; }
+  #contact .blur-3xl,
+  main > .pointer-events-none .blur-3xl { animation: none; }
+  .slide .shadow-chip::after { animation: none; opacity: 0; }
+  html.js #mobileMenu.menu-open nav > a,
+  html.js #mobileMenu.menu-open nav > button { animation: none; }
+  main > div.relative { animation: none; }
+  main > div.relative > img { transition: none; transform: none; }
+}
+
+/* ==========================================================================
+   R8-2: ROUND-8 BASE STYLES (features: footer site QR, tracker search,
+   per-item delete, receipt QR) — visual polish layered on top by R8-6.
+   ========================================================================== */
+
+/* --- Footer "scan to visit" QR (white card on navy footer) --- */
+.site-qr {
+  display: flex; align-items: center; gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+.site-qr[hidden] { display: none; } /* R5 lesson: keep [hidden] winning over display */
+.site-qr-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 104px; height: 104px; flex-shrink: 0;
+  padding: 0.5rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.site-qr-target {
+  display: block; width: 88px; height: 88px;
+}
+.site-qr-target svg { display: block; width: 100%; height: 100%; }
+.site-qr-target svg path { fill: #0F172A; }
+.site-qr-caption {
+  margin: 0;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: #94A3B8;
+}
+
+/* --- Tracker search field --- */
+.apps-search {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.6rem 0.85rem;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0; border-radius: 0.9rem;
+  color: #94A3B8;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.apps-search:focus-within {
+  border-color: var(--primary, #2563EB);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+.apps-search input {
+  flex: 1; min-width: 0;
+  border: 0; outline: none; background: transparent;
+  font: inherit; font-size: 0.875rem; font-weight: 600;
+  color: #0F172A;
+}
+.apps-search input::placeholder { color: #94A3B8; font-weight: 500; }
+.apps-search input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.apps-search-clear {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.6rem; height: 1.6rem; flex-shrink: 0;
+  border: 0; border-radius: 99px; cursor: pointer;
+  background: #E2E8F0; color: #475569;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.apps-search-clear:hover { background: #CBD5E1; color: #0F172A; transform: scale(1.06); }
+.apps-search-clear[hidden] { display: none; }
+
+/* --- Per-item remove button (armed = confirm state) --- */
+.app-item-del {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  flex-shrink: 0;
+  padding: 0.45rem; margin: -0.45rem -0.15rem -0.45rem 0;
+  border: 0; border-radius: 0.7rem; cursor: pointer;
+  background: transparent; color: #CBD5E1;
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.02em;
+  transition: color .2s ease, background .2s ease, transform .2s ease;
+}
+.app-item-del .del-label { display: none; }
+.app-item-del:hover { color: #F43F5E; background: #FFF1F2; }
+.app-item-del:focus-visible {
+  outline: 2px solid var(--primary, #2563EB);
+  outline-offset: 2px;
+}
+.app-item-del.is-armed { color: #E11D48; background: #FFF1F2; padding-left: 0.6rem; padding-right: 0.6rem; }
+.app-item-del.is-armed .del-label { display: inline; }
+
+/* Per-row "Receipt" — re-opens the saved receipt for that application
+   (icon + label; quieter than the delete button, brand-tinted on hover) */
+.app-item-receipt {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  flex-shrink: 0;
+  padding: 0.45rem; margin: -0.45rem 0 -0.45rem 0;
+  border: 0; border-radius: 0.7rem; cursor: pointer;
+  background: transparent; color: #CBD5E1;
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.02em;
+  transition: color .2s ease, background .2s ease, transform .2s ease;
+}
+.app-item-receipt:hover { color: var(--primary, #2563EB); background: #EFF6FF; }
+.app-item-receipt:focus-visible {
+  outline: 2px solid var(--primary, #2563EB);
+  outline-offset: 2px;
+}
+.app-item-receipt .receipt-label { display: none; }
+@media (min-width: 481px) {
+  .app-item-receipt .receipt-label { display: inline; } /* roomy rows: label visible */
+}
+
+/* Tap-to-copy reference number inside a tracker row
+   (the global [data-copy] handler does the actual copying) */
+.app-item-ref {
+  display: inline-flex; align-items: center; gap: 0.22rem;
+  border: 0; padding: 0.1rem 0.3rem; margin: -0.1rem -0.3rem;
+  background: none; cursor: pointer;
+  font: inherit; color: inherit;
+  border-radius: 0.35rem;
+  transition: color .2s ease, background .2s ease;
+}
+.app-item-ref .app-item-ref-ico { opacity: .55; transition: opacity .2s ease; }
+.app-item-ref:hover { color: var(--primary, #2563EB); background: #EFF6FF; }
+.app-item-ref:hover .app-item-ref-ico { opacity: 1; }
+.app-item-ref:focus-visible { outline: 2px solid var(--primary, #2563EB); outline-offset: 2px; }
+
+/* Count pill on the footer "My Applications" entry (mirrors the tracker) */
+.apps-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 1.15rem; height: 1.15rem; padding: 0 0.32rem;
+  margin-left: 0.05rem;
+  border-radius: 999px;
+  background: var(--primary, #2563EB); color: #FFFFFF;
+  font-size: 0.66rem; font-weight: 800; line-height: 1;
+}
+.apps-badge[hidden] { display: none; } /* author display must not beat [hidden] (R5 lesson) */
+@media (max-width: 480px) {
+  .app-status { display: none; } /* tight rows: status pill yields, info line still carries the state */
+  .app-item-del.is-armed { margin-left: auto; }
+}
+
+/* --- Receipt QR (print-only: receipt markup is print-scoped) --- */
+@media print {
+  .receipt-qr {
+    display: flex; align-items: center; gap: 14px;
+    margin-top: 14px; padding-top: 12px;
+    border-top: 1px dashed #CBD5E1;
+  }
+  .receipt-qr-code { display: block; width: 84px; height: 84px; flex-shrink: 0; }
+  .receipt-qr-code svg { display: block; width: 100%; height: 100%; }
+  .receipt-qr-code svg path { fill: #0F172A; }
+  .receipt-qr-cap { font-size: 10px; line-height: 1.5; color: #475569; font-weight: 600; }
+}
+
+/* ==========================================================================
+   R8-6: ROUND-8 VISUAL DETAIL PASS
+   Primary targets: footer site QR (.site-qr*), tracker search (.apps-search*),
+   per-item remove button (.app-item-del*). Receipt QR stays print-only and is
+   left untouched (it already blends: dashed divider + caption, R8-2).
+   Fresh sitewide micro-details audited against the R2-R7 worklog — none of
+   them overlap prior passes (social-row ripple, empty-state CTA arrow,
+   autofill ink, empty-state entrance, apps-count digits are all new; the
+   sitewide scrollbar, ::selection, slider-arrow :active and social-btn hover
+   already existed and were left alone).
+   NOTE: the footer grid carries NO data-reveal / .revealed hook, so the site
+   QR deliberately gets NO entrance animation (per round-8 instruction).
+   ========================================================================== */
+
+/* --- 1. Footer "scan to visit" QR -------------------------------------------
+   White 104px card on the navy footer. Hover/focus = soft lift + deep navy
+   ambient shadow + a faint brand-tinted halo ring (primary-400 family, the
+   footer's accent blue). This later-cascade block ADDS the transition without
+   modifying the R8-2 base rule. QR modules stay #0F172A (scan contrast). */
+.site-qr-btn {
+  transition: transform .3s cubic-bezier(.22, 1, .36, 1),
+              box-shadow .3s cubic-bezier(.22, 1, .36, 1),
+              border-color .3s cubic-bezier(.22, 1, .36, 1);
+}
+.site-qr-btn:hover,
+.site-qr-btn:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.22),
+              0 18px 32px -16px rgba(2, 6, 23, 0.85);
+}
+.site-qr-btn:active { transform: translateY(-1px) scale(0.98); }
+.site-qr-btn:focus-visible { outline-offset: 3px; } /* color #93C5FD inherited from the footer :focus-visible rule */
+.site-qr-caption { transition: color .3s ease; }
+.site-qr:hover .site-qr-caption,
+.site-qr:focus-within .site-qr-caption { color: #93C5FD; }
+
+/* --- 2. Tracker search field --------------------------------------------------
+   focus-within border/ring already exist (R8-2 base). Here: the search icon
+   scales 1.06 and inks brand blue on focus-within, the field gets a quiet
+   hover border (same language as the R3-6 .form-input quiet hover), the
+   caret inks primary, and the clear button's X rotates 90deg with a press
+   state (outline color/offset already covered by the global :focus-visible). */
+.apps-search:hover:not(:focus-within) { border-color: #CBD5E1; }
+.apps-search:focus-within { color: var(--primary); } /* only the icon inherits — input/clear have explicit colors */
+.apps-search input { caret-color: var(--primary); }
+.apps-search > svg { transition: transform .25s cubic-bezier(.22, 1, .36, 1); }
+.apps-search:focus-within > svg { transform: scale(1.06); }
+.apps-search-clear svg { transition: transform .25s cubic-bezier(.22, 1, .36, 1); }
+.apps-search-clear:hover svg,
+.apps-search-clear:focus-visible svg { transform: rotate(90deg); }
+.apps-search-clear:active { transform: scale(0.9); }
+
+/* --- 3. Per-item remove button --------------------------------------------------
+   Arming fires a ONE-TIME heartbeat (scale pop) and the "Sure?" label slides
+   in; a soft rose ring marks the armed state. The animation re-fires on every
+   re-arm because re-adding the class restarts it. Hover keeps the base red
+   tint and tilts the trash glyph; press gives tactile feedback. */
+.app-item-del svg { transition: transform .2s ease; }
+.app-item-del:hover svg { transform: rotate(-8deg); }
+.app-item-del:active { transform: scale(0.94); }
+.app-item-del.is-armed {
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.12);
+  animation: delArmBeat 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.app-item-del.is-armed .del-label { animation: delLabelIn 0.22s ease-out; }
+@keyframes delArmBeat {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.08); }
+  65%  { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+@keyframes delLabelIn {
+  from { opacity: 0; transform: translateX(-3px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* --- 4. Fresh sitewide micro-details (audited vs R2-R7) ---------------------- */
+
+/* (a) Footer social-row ripple: hovering the row lifts all four buttons in a
+   quick left-to-right wave (per-nth transition delays ride the base
+   `transition: all .25s`); the directly-hovered button keeps its full -3px +
+   R4-5 halo, siblings rise -2px. The reverse wave plays on unhover. */
+footer .mt-6.flex.items-center.gap-3:hover .social-btn { transform: translateY(-2px); }
+footer .mt-6.flex.items-center.gap-3:hover .social-btn:hover { transform: translateY(-3px); }
+footer .mt-6.flex.items-center.gap-3 .social-btn:nth-child(1) { transition-delay: 0s; }
+footer .mt-6.flex.items-center.gap-3 .social-btn:nth-child(2) { transition-delay: 45ms; }
+footer .mt-6.flex.items-center.gap-3 .social-btn:nth-child(3) { transition-delay: 90ms; }
+footer .mt-6.flex.items-center.gap-3 .social-btn:nth-child(4) { transition-delay: 135ms; }
+
+/* (b) "View Openings" empty-state CTA: arrow-up-right nudges up-right on
+   hover/focus (the R5-6 nudge only covers .opportunity-card Apply buttons,
+   the R6-7 one only .btn-primary — this .btn-soft was uncovered). */
+#appsEmptyCta svg { transition: transform .25s cubic-bezier(.22, 1, .36, 1); }
+#appsEmptyCta:hover svg,
+#appsEmptyCta:focus-visible svg { transform: translate(1px, -1px); }
+
+/* (c) Autofill ink: Chromium autofill keeps the brand surface + ink instead
+   of the default pale-yellow flash (inputs rest on #F8FAFC in base state). */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #0F172A;
+  -webkit-box-shadow: 0 0 0 1000px #F8FAFC inset;
+  caret-color: #0F172A;
+  border-color: var(--primary);
+  border-radius: 0.85rem;
+}
+
+/* (d) Empty-state + no-match entrance: both panels toggle .hidden, so the
+   animation (re)starts each time they become rendered — a one-time fade+rise
+   for the panel and a springy pop for the folder glyph, matching the R2
+   successPop vocabulary. Never runs while display:none. */
+#appsEmpty,
+#appsNoMatch { animation: appsPanelIn 0.35s ease-out; }
+#appsEmpty > span {
+  display: inline-flex; /* already a flex span via Tailwind; kept explicit for the transform */
+  animation: appsIconPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s backwards;
+}
+@keyframes appsPanelIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes appsIconPop {
+  from { transform: scale(0.7); }
+  60%  { transform: scale(1.08); }
+  to   { transform: scale(1); }
+}
+
+/* (e) Tracker count digits: fixed-width numerals stop the "3 of 5 …" count
+   from jittering while typing in the search field (static, not animated). */
+#appsCount { font-variant-numeric: tabular-nums; }
+
+/* --- 5. reduced-motion kills for R8-6 -----------------------------------------
+   The global reduce block zeroes durations but NOT delays, so the social
+   ripple's transition-delay gets an explicit 0s reset (R3-6 pattern). The
+   one-shot animations (delArmBeat, delLabelIn, appsPanelIn, appsIconPop —
+   the latter two have a 0.05s delay) are killed outright, and movement-type
+   hover transforms on the new interactive details are neutralized
+   (R7-6 pattern). Autofill ink / tabular digits are static and
+   motion-independent. */
+@media (prefers-reduced-motion: reduce) {
+  .site-qr-btn:hover,
+  .site-qr-btn:focus-visible,
+  .site-qr-btn:active { transform: none; }
+  .apps-search > svg,
+  .apps-search:focus-within > svg { transition: none; transform: none; }
+  .apps-search-clear svg { transition: none; }
+  .apps-search-clear:hover svg,
+  .apps-search-clear:focus-visible svg { transform: none; }
+  .apps-search-clear:active { transform: none; }
+  .app-item-del:hover svg,
+  .app-item-del:active { transform: none; }
+  .app-item-del.is-armed { animation: none; animation-delay: 0s; }
+  .app-item-del.is-armed .del-label { animation: none; animation-delay: 0s; }
+  #appsEmpty,
+  #appsNoMatch { animation: none; animation-delay: 0s; }
+  #appsEmpty > span { animation: none; animation-delay: 0s; }
+  #appsEmptyCta svg { transition: none; }
+  #appsEmptyCta:hover svg,
+  #appsEmptyCta:focus-visible svg { transform: none; }
+  footer .mt-6.flex.items-center.gap-3 .social-btn:nth-child(n) { transition-delay: 0s; } /* :nth-child(n) matches the per-nth delay rules' specificity and wins by cascade order */
+  footer .mt-6.flex.items-center.gap-3:hover .social-btn,
+  footer .mt-6.flex.items-center.gap-3:hover .social-btn:hover { transform: none; }
+}
+
+/* ============================================================
+   R9-6: ROUND-9 VISUAL DETAIL PASS
+   QR tile row (vCard + WhatsApp): staggered entrance, WhatsApp
+   focus ring + green scan sweep + caption tints. Tracker:
+   per-row Receipt button print-head tick + press. Fresh
+   sitewide: manpower card arrows, slider-arrow glyph nudge,
+   back-to-top chevron lift.
+   ============================================================ */
+
+/* ---------- 1. QR tile row: staggered one-time entrance ----------
+   The R7 entrance (qrTileIn, hooked to the contact container's
+   .revealed class) fires BOTH tiles together at .15s. Per-tile
+   delays make the row cascade left-to-right: the vCard tile
+   restates the R7 .15s beat, the WhatsApp tile joins one beat
+   later. Delays ONLY — keyframes, .5s duration and fill-mode
+   backwards (holds the hidden frame through the delay) are the
+   untouched R7 rules. NO geometry change: tiles keep the 148px
+   QR, so the shared hard-coded 144px scan-sweep travel still
+   fits both cards. nth-child counts the row's two .qr-tile divs
+   (an unavailable WhatsApp tile is display:none via [hidden] and
+   simply never animates). html:not(.js) visitors never animate
+   (R7 scoping preserved). */
+html.js .revealed .qr-tile-row .qr-tile:nth-child(1) { animation-delay: .15s; }
+html.js .revealed .qr-tile-row .qr-tile:nth-child(2) { animation-delay: .3s; }
+
+/* ---------- 2. WhatsApp QR: green focus ring + green sweep ----------
+   Base :focus-visible ring is the blue #93C5FD halo. The WhatsApp
+   button gets a badge-matching green ring (#4ADE80 = green-400,
+   the #25D366 badge's own tint family) while keeping the deep
+   ambient layer — same specificity as the base rule, later in the
+   cascade, so it wins without touching it. The R7 scan-line is
+   re-inked WhatsApp-green for this button: a COLOR-ONLY override
+   of the ::after background — position, size and the shared
+   hard-coded 144px travel are untouched (geometry identical to
+   the vCard tile). */
+.qr-code-btn--wa:focus-visible {
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, .75),
+              0 18px 36px -18px rgba(2, 6, 23, .55);
+}
+.qr-code-btn--wa::after {
+  background: linear-gradient(90deg,
+    rgba(22, 163, 74, 0),
+    rgba(22, 163, 74, .65) 30%,
+    #4ADE80 50%,
+    rgba(22, 163, 74, .65) 70%,
+    rgba(22, 163, 74, 0));
+}
+
+/* ---------- 3. QR tile captions: hover/focus tint ----------
+   Mirrors the footer .site-qr-caption tint (R8-6). The WhatsApp
+   caption tints badge-green #4ADE80 (~9.6:1 on the navy section
+   background — comfortably readable); the vCard caption joins
+   with the footer's blue #93C5FD so the two tiles behave as one
+   family (only the WA tint was requested — the blue twin is a
+   symmetry addition using the exact footer language). Color-only;
+   resting captions stay #94A3B8. */
+.qr-tile-caption { transition: color .3s ease; }
+#qrTile:hover .qr-tile-caption,
+#qrTile:focus-within .qr-tile-caption { color: #93C5FD; }
+#waQrTile:hover .qr-tile-caption,
+#waQrTile:focus-within .qr-tile-caption { color: #4ADE80; }
+
+/* ---------- 4. Tracker receipt button: print-head tick ----------
+   Quieter sibling of the delete button: on hover AND
+   :focus-visible (site keyboard-parity convention) the printer
+   glyph dips 1px — a print-head tick in the same 1px-dip
+   vocabulary as #appsExport (R7-6) and the R4-5 #printReceipt
+   printer tilt, but on a DIFFERENT element (this per-row button
+   opens a modal instantly, so deliberately NO armed state —
+   that language belongs to .app-item-del). :active presses
+   scale(.94), sharing the delete button's press geometry; the
+   base color/bg hover (#CBD5E1 → primary/#EFF6FF) is untouched. */
+.app-item-receipt svg { transition: transform .2s ease; }
+.app-item-receipt:hover svg,
+.app-item-receipt:focus-visible svg { transform: translateY(1px); }
+.app-item-receipt:active { transform: scale(.94); }
+
+/* ---------- 5. Fresh sitewide micro-details (audited vs R2-R8) ---------- */
+
+/* (a) Manpower cards complete the arrow-nudge family: the five
+   .service-card "Know More" arrows and the internship Apply
+   arrows got theirs in R5-6, the empty-state CTA in R8-6 — but
+   the two #manpower cards were left out. Their .btn-soft
+   "Know More" (arrow-right) now leans +2px and their .link-more
+   "Talk to Us" (arrow-up-right) takes the diagonal (1px,-1px)
+   the R8-6 CTA nudge uses for that icon. Card hover AND
+   :focus-within (both controls are tabbable). */
+#manpower article .btn-soft svg,
+#manpower article .link-more svg { transition: transform .25s cubic-bezier(.22, .61, .36, 1); }
+#manpower article:hover .btn-soft svg,
+#manpower article:focus-within .btn-soft svg { transform: translateX(2px); }
+#manpower article:hover .link-more svg,
+#manpower article:focus-within .link-more svg { transform: translate(1px, -1px); }
+
+/* (b) Hero slider arrows: directional glyph nudge — the NEXT
+   arrow's glyph leans +1px, the PREV arrow's -1px, riding the
+   existing R3-6 halo/color hover (its box-shadow/color/translateY
+   are untouched, so the two compose). Attribute selectors keep
+   the pair distinct; :focus-visible parity included. */
+.slider-arrow svg { transition: transform .25s cubic-bezier(.22, .61, .36, 1); }
+.slider-arrow[data-slide-dir="1"]:hover svg,
+.slider-arrow[data-slide-dir="1"]:focus-visible svg { transform: translateX(1px); }
+.slider-arrow[data-slide-dir="-1"]:hover svg,
+.slider-arrow[data-slide-dir="-1"]:focus-visible svg { transform: translateX(-1px); }
+
+/* (c) Back-to-top FAB: the chevron lifts 1px on hover and
+   :focus-visible — upward motion matching the button's job
+   (hover bg/shadow + active press already exist in base; the
+   glyph itself was static). Distinct from the R5-6 footer
+   back-to-top brand-LOGO tilt (different element, no overlap). */
+#backToTop svg { transition: transform .25s cubic-bezier(.22, .61, .36, 1); }
+#backToTop:hover svg,
+#backToTop:focus-visible svg { transform: translateY(-1px); }
+
+/* ---------- 6. Audited and SKIPPED (verified live/CSSOM) ----------
+   - .ref-chip: fully covered by R4-5 (hover bg/border/lift/shadow +
+     .ref-chip-copy color slide on hover/:focus-visible) — no gap.
+   - #installAccept: .btn-primary → sheen sweep + :active scale +
+     R6-7 icon nudge already apply.
+   - .offline-banner.online: DEAD HOOK — script.js only fires a
+     toast on the online event and toggles [hidden]; no .online
+     class ever exists, so styling it would be dead code.
+   - 404 "Back to Home": .btn-primary → R6-7 icon nudge covers it.
+   - Toast entrance/leaving: toastIn + .toast.leaving fade/sink +
+     iconSpringPop + ::after progress line all exist (R2/R5-6).
+   - Mobile menu CTA: .btn-primary inside the menu → R6-7 icon
+     nudge + R7-6 menuLinkIn sixth beat already cover it.
+
+---------- 7. reduced-motion kills for R9-6 ----------
+   The global reduce block zeroes durations but NOT delays, so the
+   staggered QR entrance is killed at MATCHING specificity —
+   :nth-child(n) equals the per-nth delay rules' specificity and
+   the kill sits later in the cascade (R8 lesson) — with an
+   explicit animation-delay: 0s reset. Movement-type hover
+   transforms are neutralized; non-motion feedback (caption tint,
+   receipt color/background, WA ring shadow) stays. */
+@media (prefers-reduced-motion: reduce) {
+  html.js .revealed .qr-tile-row .qr-tile:nth-child(n) {
+    animation: none;
+    animation-delay: 0s;
+  }
+  .app-item-receipt svg { transition: none; }
+  .app-item-receipt:hover svg,
+  .app-item-receipt:focus-visible svg,
+  .app-item-receipt:active { transform: none; }
+  #manpower article .btn-soft svg,
+  #manpower article .link-more svg { transition: none; }
+  #manpower article:hover .btn-soft svg,
+  #manpower article:focus-within .btn-soft svg,
+  #manpower article:hover .link-more svg,
+  #manpower article:focus-within .link-more svg { transform: none; }
+  .slider-arrow svg { transition: none; }
+  .slider-arrow[data-slide-dir="1"]:hover svg,
+  .slider-arrow[data-slide-dir="1"]:focus-visible svg,
+  .slider-arrow[data-slide-dir="-1"]:hover svg,
+  .slider-arrow[data-slide-dir="-1"]:focus-visible svg { transform: none; }
+  #backToTop svg { transition: none; }
+  #backToTop:hover svg,
+  #backToTop:focus-visible svg { transform: none; }
+}
+
+/* ============================================================
+   R10-7: ROUND-10 VISUAL DETAIL PASS
+   New base elements polished: toast Undo button (.toast-action),
+   tap-to-copy ref (.app-item-ref*), footer count pill
+   (.apps-badge). Fresh sitewide micro-details audited against
+   R2-R9: install-banner X rotation, QR scan-badge one-shot pop
+   (rides the contact container's .revealed hook), contact-chip
+   glyph nudge + press, required-field star (CSS :has, progressive
+   enhancement), apps modal title hairline (R3-6 language),
+   social-btn focus fill parity. CSS-only; cheap properties only
+   (transform/opacity/color/box-shadow/background/border-color);
+   every animation/transition gets an explicit reduced-motion
+   treatment (zero duration AND zero delay at matching
+   specificity — the R8 :nth-child lesson). QR tile geometry
+   untouched (148px QR / 144px scan-sweep travel).
+   ============================================================ */
+
+/* --- 1. Toast "Undo" button ------------------------------------------------
+   Base already has: navy pill → primary hover bg, :active scale(.95),
+   focus-visible outline, margin-left:auto, mobile padding bump.
+   Added here: a hover LIFT (-1px) + soft contact shadow so the action
+   reads as raisable, and a ONE-SHOT arrival cue inside the toast's first
+   second (the toast entrance settles at .35s; the cue pops the button
+   ~.45s–.8s, right after the toast lands — the eye lands on Undo).
+   fill "backwards" holds the first frame through the delay; no forwards
+   fill, so the base hover/active transforms own the element afterwards. */
+.toast-action {
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+  animation: toastActionCue .35s cubic-bezier(.34, 1.56, .64, 1) .45s backwards;
+}
+.toast-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px -5px rgba(15, 23, 42, .5);
+}
+/* Press depth must win over the hover lift: this re-declaration sits LATER
+   in the cascade than the :hover rule above (same specificity), so while
+   pressing, scale(.95) beats translateY(-1px) — without it the base :active
+   rule (earlier in the file) would be shadowed by the hover lift and the
+   click would feel dead. */
+.toast-action:active { transform: scale(.95); }
+@keyframes toastActionCue {
+  0%   { transform: scale(1); }
+  60%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* --- 2. Tap-to-copy reference number (.app-item-ref) ------------------------
+   Base already has: primary ink + #EFF6FF wash + icon opacity 1 on hover,
+   focus-visible outline. The inner mono span is the R4-5 ref CHIP
+   (.app-item .font-mono: bg #F1F5F9 + border #E2E8F0), so instead of an
+   underline (would clash with the chip chrome — see skips note below)
+   the chip's border inks #93C5FD while the row hovers/focuses: a quiet
+   "armed to copy" state. The copy glyph takes a -8deg tilt on hover AND
+   :focus-visible (keyboard parity; R8 trash-tilt family) and pressing
+   deepens the glyph to rotate(-8deg) scale(.96) for tactile depth. */
+.app-item-ref > span { transition: border-color .2s ease; }
+.app-item-ref:hover > span,
+.app-item-ref:focus-visible > span { border-color: #93C5FD; }
+.app-item-ref .app-item-ref-ico { transition: opacity .2s ease, transform .2s ease; }
+.app-item-ref:hover .app-item-ref-ico,
+.app-item-ref:focus-visible .app-item-ref-ico { transform: rotate(-8deg); }
+.app-item-ref:active .app-item-ref-ico { transform: rotate(-8deg) scale(.96); }
+
+/* --- 3. Footer count pill (.apps-badge) --------------------------------------
+   Static soft brand ring seats the blue pill on the dark navy footer (it
+   otherwise floats). Hover/focus parity with the parent .footer-link
+   (which already lifts +4px and whitens): pill brightens to primary-500,
+   scales 1.08 and its ring warms up. [hidden] base rule untouched. */
+.apps-badge {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+.footer-link:hover .apps-badge,
+.footer-link:focus-visible .apps-badge {
+  background: #3B82F6;
+  transform: scale(1.08);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, .28);
+}
+
+/* --- 4. Install banner close: the X rotates a quarter turn --------------------
+   Same dismiss gesture vocabulary as the R8-6 tracker search clear
+   (rotate 90deg) on a different element; the button's own hover
+   tint/focus ring (base) is untouched. */
+.install-banner-close svg { transition: transform .25s cubic-bezier(.22, 1, .36, 1); }
+.install-banner-close:hover svg,
+.install-banner-close:focus-visible svg { transform: rotate(90deg); }
+
+/* --- 5. QR scan badge: one-time pop when its tile first becomes visible -------
+   The contact container carries data-reveal → .revealed (the same hook the
+   R7 entrance and the R9-6 stagger ride). Both tiles settle by ~.8s; at
+   .85s each scan badge pops in with a spring — a final "badge arrives
+   last" beat. Does NOT fight the R7 scan sweep: the sweep is
+   .qr-code-btn::after, the badge is a separate span, and the tile
+   GEOMETRY (148px QR / 144px sweep travel) is untouched — the pop is a
+   transform+opacity beat on the badge itself (opacity 0 during the delay
+   so the badge "arrives" with the pop instead of sitting tiny). Reduced
+   motion shows it instantly at its base opacity 1. html:not(.js) visitors
+   never animate (R7 scoping preserved). */
+html.js .revealed .qr-code-scan { animation: qrScanPop .45s cubic-bezier(.34, 1.56, .64, 1) .85s backwards; }
+@keyframes qrScanPop {
+  0%   { opacity: 0; transform: scale(.4); }
+  70%  { opacity: 1; transform: scale(1.12); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* --- 6. Contact chips: copy-glyph diagonal nudge --------------------------------
+   Fresh micro-detail (audited vs R2-R9: R4-5 covered .ref-chip, R5-6
+   covered #saveContact's download dip): the email/phone copy glyphs take
+   a tiny translate(1px,-1px) "reach to the corner" nudge while their chip
+   is hovered or keyboard-focused. #saveContact keeps its R5-6 1px dip —
+   the ID rule outranks this class rule. Placed BEFORE the press rule
+   below so :active still wins the cascade while pressing. */
+.contact-chip:hover .copy-ico,
+.contact-chip:focus-visible .copy-ico { transform: translate(1px, -1px); }
+
+/* --- 7. Contact chips: copy-glyph press feedback -------------------------------
+   .contact-chip:active already squeezes the whole chip scale(.98) (R3-6);
+   the trailing copy/download glyph adds its own deeper press so the click
+   registers on the icon right before the toast confirms. #saveContact's
+   download glyph keeps its R5-6 1px dip while squeezing. The base glyph
+   transition (opacity/transform .2s) animates the press. */
+.contact-chip:active .copy-ico { transform: translateX(0) scale(.85); }
+#saveContact:active .copy-ico { transform: translateX(0) translateY(1px) scale(.85); }
+
+/* --- 8. Required-field star on form labels --------------------------------------
+   Markup check verified: labels carry NO visual marker (the two optional
+   fields say "(optional)" in text) while six inputs are required and
+   unmarked. CSS-only via :has() — progressive enhancement: without :has
+   support no star is drawn and nothing breaks. Matches exactly the
+   required set (apply name/phone/email, contact name/email/message);
+   NOT the two "(optional)" fields, the selects, or contact phone
+   (not required in markup). Second selector covers the contact-message
+   label, which sits one level deeper (inside the counter row) than its
+   required textarea. Static content — no motion involved. */
+.form-label:has(+ [required])::after,
+div:has(> [required]) .form-label::after {
+  content: " *";
+  color: #E11D48;
+  font-weight: 800;
+}
+
+/* --- 9. Apps modal title: R3-6 hairline accent ----------------------------------
+   A short brand hairline under "My Applications" — the same static
+   gradient-hairline language as the #about statement detail (R3-6 §3),
+   left-anchored to read as a title accent. Static; the modal card
+   scrolls, so the few px of header height are harmless (overflow checked
+   on desktop + mobile with the modal open). */
+#appsModalTitle::after {
+  content: "";
+  display: block;
+  width: 3rem; height: 2px;
+  margin-top: .45rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(37, 99, 235, .7), rgba(37, 99, 235, 0));
+}
+
+/* --- 10. Footer social buttons: focus-visible parity -----------------------------
+   Hover already fills the chip blue + halo (R4-5/R8-6); keyboard focus
+   only got the thin global outline. Focus now matches the hover fill +
+   halo ring — motionless ON PURPOSE (no transform on keyboard focus), so
+   there is nothing to neutralize under reduce; the #93C5FD footer outline
+   stays on top for contrast against the filled chip. */
+.social-btn:focus-visible {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(29, 78, 216, .28), 0 10px 20px -10px rgba(29, 78, 216, .7);
+}
+
+/* --- 11. Audited and SKIPPED (verified in base/prior rounds) -------------------
+   - .dot hover grow: base .dot:hover already scales 1.2 + inks #94A3B8
+     (transform transitioned on .dot; documented in the R2 pass comment,
+     line ~1665) — adding more would double it.
+   - #offlineBanner shimmer: R5-6 already gave the amber bar a slide-in
+     entrance, icon tilt, refined glow + the pulsing status dot; a shimmer
+     on a persistent status bar would be noise. Documented skip.
+   - .app-item-ref dotted underline: the ref span is a bordered chip
+     (R4-5 .app-item .font-mono) — an underline would clash with the chip
+     chrome; border-ink + press used instead (§2).
+   - ".copy-chip": no such class exists in the markup (only .contact-chip
+     and .ref-chip, both already covered by base/R4-5/R5-6) → §6 nudge +
+     §7 press cover the .contact-chip glyph (the only fresh gap). */
+
+/* --- 12. reduced-motion kills for R10-7 -----------------------------------------
+   The global reduce block zeroes durations but NOT delays, so the one-shots
+   (toastActionCue .45s delay, qrScanPop .85s delay) are killed at MATCHING
+   specificity with an explicit animation-delay: 0s (R8 lesson) — otherwise
+   fill-mode backwards would freeze a mid-frame for the whole delay.
+   Movement-type hovers/presses are neutralized (R7-6 pattern): the glyph
+   nudge lands back on the base translateX(0) hover spot; non-motion
+   feedback (shadows, fills, border inks, star, hairline) stays. */
+@media (prefers-reduced-motion: reduce) {
+  .toast-action { animation: none; animation-delay: 0s; }
+  .toast-action:hover,
+  .toast-action:active { transform: none; }
+  .app-item-ref > span { transition: none; }
+  .app-item-ref .app-item-ref-ico { transition: none; }
+  .app-item-ref:hover .app-item-ref-ico,
+  .app-item-ref:focus-visible .app-item-ref-ico,
+  .app-item-ref:active .app-item-ref-ico { transform: none; }
+  .footer-link:hover .apps-badge,
+  .footer-link:focus-visible .apps-badge { transform: none; }
+  .install-banner-close svg { transition: none; }
+  .install-banner-close:hover svg,
+  .install-banner-close:focus-visible svg { transform: none; }
+  html.js .revealed .qr-code-scan { animation: none; animation-delay: 0s; }
+  .contact-chip:hover .copy-ico,
+  .contact-chip:focus-visible .copy-ico { transform: translateX(0); }
+  .contact-chip:active .copy-ico,
+  #saveContact:active .copy-ico { transform: none; }
+}
+
+
+/* ============================================================
+   R11-7: ROUND-11 VISUAL DETAIL PASS
+   Scope: #shareReceipt glyph scatter, apply-success actions-row
+   rise, select chevron quiet hover, badge-accent micro sheen.
+   CSS-only append; no existing rule modified. Cheap properties
+   only (transform/opacity/background/box-shadow).
+   ============================================================ */
+
+/* --- 1. #shareReceipt: share-2 glyph "scatter" nudge ----------
+   New ghost button in the apply-success actions row. Distinct
+   from the printer dip (#printReceipt R4-5 / .app-item-receipt
+   R9-6) and the footer share-2 spread (R6-7 #shareSite): this
+   glyph breaks AWAY -- +1px right, -1px up, 8deg clockwise,
+   springy release. :focus-visible parity for keyboard users;
+   the button itself keeps the shared .btn-ghost hover. */
+#shareReceipt svg { transition: transform .3s cubic-bezier(.34, 1.56, .64, 1); }
+#shareReceipt:hover svg,
+#shareReceipt:focus-visible svg { transform: translate(1px, -1px) rotate(8deg); }
+
+/* --- 2. Apply-success actions row: one-time staggered rise ----
+   The panel already has heroFade (R2) + successPop icon (R2);
+   the four action buttons (Done / My Applications / Share
+   receipt / Print receipt) had no entrance of their own. Hooked
+   to the same un-hide event via html.js + :not(.hidden) -- it
+   re-fires on every reveal (apply submit, receipt re-open from
+   the tracker), the same contract as the R8 empty state.
+   Fill-mode BACKWARDS ONLY (R4-5 lesson): a forwards fill would
+   freeze the transform and kill the btn hover/active states.
+   .04s cascade on top of a .1s base delay so the panel fade and
+   icon pop lead. Row targeted structurally (last div child of
+   #applySuccess) -- revisit if the panel markup ever grows. */
+@keyframes successActionRise {
+  from { opacity: 0; transform: translateY(8px); }
+}
+html.js #applySuccess:not(.hidden) > div:last-of-type > button {
+  animation: successActionRise .42s cubic-bezier(.22, .61, .36, 1) backwards;
+}
+html.js #applySuccess:not(.hidden) > div:last-of-type > button:nth-child(1) { animation-delay: .1s; }
+html.js #applySuccess:not(.hidden) > div:last-of-type > button:nth-child(2) { animation-delay: .14s; }
+html.js #applySuccess:not(.hidden) > div:last-of-type > button:nth-child(3) { animation-delay: .18s; }
+html.js #applySuccess:not(.hidden) > div:last-of-type > button:nth-child(4) { animation-delay: .22s; }
+
+/* --- 3. Select fields: chevron joins the quiet hover ----------
+   The custom chevron (R3 base) re-inks only on :focus and
+   .user-invalid; the R3-6 quiet hover border had no glyph twin.
+   On quiet hover the chevron darkens #64748B -> #475569 to
+   match the #CBD5E1 border nudge. Non-motion color feedback --
+   intentionally NOT neutralized under reduced motion. Covers
+   both selects (#applyRole, #contactInterest) via the class. */
+select.form-input:hover:not(:focus):not(.user-invalid) {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+/* --- 4. .badge-accent: micro sheen -----------------------------
+   "Flagship Service" + service-modal tag pill. Static top
+   catch-light (R3-6 icon-tile language) + soft white wash --
+   motionless on purpose, nothing to neutralize under reduce. */
+.badge-accent {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, 0) 58%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9);
+}
+
+/* --- 5. Audited and SKIPPED (verified in base/prior rounds) ---
+   - Deep-link welcome toast: standard .toast -- toastIn +
+     iconSpringPop + synced progress line (R2-R5) plus the
+     toast-action lift/cue (R10-7) already cover it; nothing
+     tasteful to add without disturbing that work.
+   - (b) #sliderToggle: base hover lift + border/color, :active
+     press, [aria-pressed="true"] tint, R3-6 double halo + focus
+     ring, R5-6 play-icon spring pop -- fully covered.
+   - (c) .footer-heading::before (1.1rem gradient dash) exists in
+     the BASE and covers ALL THREE headings (Quick Links /
+     Services / Contact share the class -- index.html lines
+     661/673/684); no per-heading gap to fill.
+   - (d) 404 ghost button: 404.html has NO .btn-ghost -- only
+     .btn-primary Back to Home (R6-7 arrow nudge) and
+     .btn-secondary Contact Us (base hover) -- nothing to do.
+   - (e) .form-input quiet hover: the R3-6 rule is CLASS-scoped,
+     so it already hits both selects (#applyRole index.html 733,
+     #contactInterest 847) and both textareas (747/858) -- no
+     input/select/textarea gap exists.
+   - (f) Mobile menu scrollbar: #mobileMenu is a dropdown panel
+     with no max-height/overflow-y (5 links + CTA always fit;
+     the page scrolls instead) -- no inner scroller to style.
+   - (h) print CSS untouched per house rule. */
+
+/* --- 6. reduced-motion kills for R11-7 -------------------------
+   The global reduce block zeroes durations but NOT delays, so
+   the actions-row one-shot is killed at MATCHING specificity
+   (:nth-child(n) resolves equal to the per-nth delay rules and
+   sits later in the cascade -- R8 lesson) with an explicit
+   animation-delay: 0s, otherwise fill-mode backwards would
+   freeze the from-frame for the whole delay. Movement-type
+   hovers are neutralized; non-motion feedback (btn-ghost bg +
+   lift, chevron ink, badge sheen) stays. */
+@media (prefers-reduced-motion: reduce) {
+  html.js #applySuccess:not(.hidden) > div:last-of-type > button:nth-child(n) {
+    animation: none;
+    animation-delay: 0s;
+  }
+  #shareReceipt svg { transition: none; }
+  #shareReceipt:hover svg,
+  #shareReceipt:focus-visible svg { transform: none; }
+}
+
+/* ============================================================
+   R10 — MULTI-PAGE COMPONENTS (dropdown nav, accordions,
+   breadcrumb, process steps, panel scrollbars)
+   ============================================================ */
+
+/* ---------- desktop dropdown navigation ---------- */
+.nav-drop { position: relative; }
+.nav-drop-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.nav-drop-chevron,
+.nav-drop-btn svg.nav-drop-chevron,
+.nav-drop-btn .nav-drop-chevron {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.nav-drop.open .nav-drop-chevron,
+.nav-drop.open .nav-drop-btn svg.nav-drop-chevron { transform: rotate(180deg); }
+.nav-drop-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  width: min(30rem, calc(100vw - 2rem));
+  display: grid;
+  gap: 2px;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #E2E8F0;
+  border-radius: 1.25rem;
+  box-shadow: 0 24px 55px -24px rgba(15, 23, 42, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+  z-index: 60;
+  max-height: min(30rem, calc(100vh - 8rem));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.nav-drop-panel--wide {
+  width: min(42rem, calc(100vw - 2rem));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.nav-drop.open > .nav-drop-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-drop-panel--right { left: auto; right: -0.5rem; transform: translateY(6px) !important; }
+.nav-drop-panel--left { left: 0; transform: translateY(6px) !important; }
+.nav-drop.open > .nav-drop-panel--right,
+.nav-drop.open > .nav-drop-panel--left { transform: translateY(0) !important; }
+
+.nav-drop-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.9rem;
+  transition: background 0.18s ease;
+}
+.nav-drop-item:hover,
+.nav-drop-item:focus-visible { background: #F1F5F9; }
+.nav-drop-item-icon {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.65rem;
+  background: #EFF6FF;
+  color: #1D4ED8;
+}
+.nav-drop-item-copy { display: flex; flex-direction: column; min-width: 0; }
+.nav-drop-item-copy strong { font-size: 0.875rem; font-weight: 700; color: #0F172A; line-height: 1.25; }
+.nav-drop-item-sub {
+  font-size: 0.72rem;
+  color: #64748B;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---------- mobile menu accordions ---------- */
+.mobile-acc-panel {
+  display: none;
+  padding: 0.25rem 0 0.35rem 0.55rem;
+  max-height: 16rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.mobile-acc.open .mobile-acc-panel { display: block; }
+.mobile-sublink {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.65rem;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: #475569;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.mobile-sublink:hover { background: #F1F5F9; color: #1D4ED8; }
+.mobile-acc .mobile-acc-chevron { margin-left: auto; transition: transform 0.25s ease; }
+.mobile-acc.open .mobile-acc-chevron { transform: rotate(180deg); }
+
+/* ---------- breadcrumb ---------- */
+.breadcrumb ol { list-style: none; margin: 0; padding: 0; }
+.breadcrumb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  padding: 0.3rem 0.55rem;
+  border-radius: 0.6rem;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.breadcrumb-link:hover { background: #F1F5F9; color: #1D4ED8; }
+.breadcrumb-sep { color: #CBD5E1; display: inline-flex; }
+.breadcrumb-current { font-size: 0.8rem; font-weight: 700; color: #0F172A; padding: 0.3rem 0.55rem; }
+
+/* ---------- numbered process steps ---------- */
+.process-grid { list-style: none; margin: 0; padding: 0; }
+.process-step {
+  display: flex;
+  gap: 1rem;
+  padding: 1.4rem;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 1.5rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 14px 34px -18px rgba(15, 23, 42, 0.14);
+}
+.process-num {
+  display: inline-flex;
+  height: 2.4rem;
+  width: 2.4rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #EFF6FF;
+  color: #1D4ED8;
+  font-weight: 800;
+  font-size: 1rem;
+  border: 1px solid #DBEAFE;
+}
+
+/* ---------- slim scrollbars for nav panels ---------- */
+.nav-drop-panel::-webkit-scrollbar,
+.mobile-acc-panel::-webkit-scrollbar { width: 6px; }
+.nav-drop-panel::-webkit-scrollbar-thumb,
+.mobile-acc-panel::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 99px; }
+.nav-drop-panel::-webkit-scrollbar-track,
+.mobile-acc-panel::-webkit-scrollbar-track { background: transparent; }
+
+/* ---------- reduced motion kills (matches R7-R9 convention) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .nav-drop-chevron,
+  .mobile-acc .mobile-acc-chevron { transition: none; }
+  .nav-drop-panel { transition: none; }
+  .nav-drop-item,
+  .breadcrumb-link,
+  .mobile-sublink { transition: none; }
+}
+
+/* ============================================================
+   R10b — SOLID HEADER VARIANT for subpages (dark heroes)
+   index.html keeps the transparent-then-solid behaviour; every
+   generated subpage uses .is-solid so the wordmark, tagline and
+   nav links stay readable over navy hero bands.
+   ============================================================ */
+#siteHeader.is-solid {
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-color: rgba(226, 232, 240, 0.9);
+  box-shadow: 0 8px 30px -18px rgba(15, 23, 42, 0.22);
+}
+
+/* ============================================================
+   R10-STYLE: MULTI-PAGE DETAIL PASS (Task 10-b, append-only)
+   Scope: components introduced with the multi-page rebuild —
+   desktop dropdown, mobile accordion, breadcrumb, process
+   steps, page heroes (light + navy) and the solid header.
+   Nothing above this block was modified or removed.
+
+   Verified skips (do not re-litigate):
+   - .nav-drop-item.is-current: NOT possible cleanly without
+     HTML edits. Pages carry no body id/data-page hook, drop
+     items carry no aria-current, and CSS cannot match an item's
+     href against the current URL. The per-page .is-active on
+     the parent drop button (already in markup) marks the
+     section instead.
+   - .opportunity-card / .service-card: hover polish is already
+     deep (lift, scaleX accent bar, icon-tile tilt/rotate,
+     skill-pill stagger, ::after wash) — extra layers would
+     fight the existing transitions, so left untouched.
+   - Hard connector line between process cards: the grid is a
+     centered 2-col layout (max-w-4xl), so any hard-coded rule
+     or pseudo-element "wire" would misalign across the 12
+     pages using it. The numbered-badge shadow below is the
+     chosen connector treatment.
+   ============================================================ */
+
+/* ---------- 1. desktop dropdown micro-polish ---------- */
+/* Open-state entrance shadow: tight contact layer + wide ambient
+   layer (replaces the single soft shadow only while open). */
+.nav-drop.open > .nav-drop-panel {
+  box-shadow:
+    0 2px 6px -2px rgba(15, 23, 42, 0.08),
+    0 30px 62px -26px rgba(15, 23, 42, 0.34);
+}
+/* Staggered item entrance: one 160ms keyframe (under the 180ms
+   cap), fill BACKWARDS only — no forwards freeze, so :hover
+   keeps owning the element after the animation releases.
+   Items slide DOWN 5px into place, which means they never
+   exceed the panel's overflow-y box mid-animation (no scrollbar
+   flicker). 30ms cascade, capped at the 8th item so the 11-item
+   Services panel still settles in ~0.37s. */
+@keyframes dropItemIn {
+  from { opacity: 0; transform: translateY(-5px); }
+}
+.nav-drop.open > .nav-drop-panel > .nav-drop-item {
+  animation: dropItemIn 0.16s ease backwards;
+}
+.nav-drop.open > .nav-drop-panel > .nav-drop-item:nth-child(2) { animation-delay: 0.03s; }
+.nav-drop.open > .nav-drop-panel > .nav-drop-item:nth-child(3) { animation-delay: 0.06s; }
+.nav-drop.open > .nav-drop-panel > .nav-drop-item:nth-child(4) { animation-delay: 0.09s; }
+.nav-drop.open > .nav-drop-panel > .nav-drop-item:nth-child(5) { animation-delay: 0.12s; }
+.nav-drop.open > .nav-drop-panel > .nav-drop-item:nth-child(6) { animation-delay: 0.15s; }
+.nav-drop.open > .nav-drop-panel > .nav-drop-item:nth-child(7) { animation-delay: 0.18s; }
+.nav-drop.open > .nav-drop-panel > .nav-drop-item:nth-child(8) { animation-delay: 0.21s; }
+.nav-drop.open > .nav-drop-panel > .nav-drop-item:nth-child(n + 9) { animation-delay: 0.21s; }
+/* item icon tile quietly deepens on hover/focus (color-only,
+   survives reduced-motion per house convention) */
+.nav-drop-item-icon { transition: background 0.18s ease; }
+.nav-drop-item:hover .nav-drop-item-icon,
+.nav-drop-item:focus-visible .nav-drop-item-icon { background: #DBEAFE; }
+/* keyboard ring: inset outline so it follows the 0.9rem item
+   radius AND stays visible inside the panel's overflow clipping
+   (an outside-offset ring would be cut by overflow-y: auto) */
+.nav-drop-item:focus-visible {
+  outline: 2px solid var(--primary, #2563EB);
+  outline-offset: -2px;
+}
+
+/* ---------- 2. breadcrumb ---------- */
+/* current page becomes a quiet "you are here" chip; the
+   translucent slate tint reads on BOTH light heroes and navy
+   bands (navy pages only override the text colour) */
+.breadcrumb-current {
+  border-radius: 0.6rem;
+  background: rgba(148, 163, 184, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.2);
+}
+/* separator chevron leans toward the page you are leaving */
+.breadcrumb-sep svg { transition: transform 0.2s ease; }
+.breadcrumb ol li:hover + li.breadcrumb-sep svg { transform: translateX(2px); }
+/* navy detail heroes: the base #F1F5F9 hover pill is a harsh
+   white block on the dark band — translucent white wash instead
+   (hover AND focus parity). Light pages keep #F1F5F9. */
+section[aria-label$="introduction"] .breadcrumb-link:hover,
+section[aria-label$="introduction"] .breadcrumb-link:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+}
+/* dark-surface focus ring parity — same #93C5FD convention the
+   base sheet uses for #about/#contact/footer, now extended to
+   the navy hero bands (breadcrumb links + CTAs inside them) */
+section[aria-label$="introduction"] :focus-visible { outline-color: #93C5FD; }
+
+/* ---------- 3. numbered process steps ---------- */
+.process-step {
+  transition:
+    transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
+    border-color 0.2s ease,
+    box-shadow 0.25s ease;
+}
+.process-step:hover {
+  transform: translateY(-2px);
+  border-color: #DBEAFE;
+  box-shadow:
+    0 2px 4px rgba(15, 23, 42, 0.05),
+    0 20px 44px -20px rgba(15, 23, 42, 0.22); /* capped growth vs base -18px/0.14 */
+}
+/* Cascade fix for the JS path: `html.js [data-reveal].revealed`
+   (line ~524, specificity 0,3,1) sets transform:translateY(0)
+   and would silently block the hover lift above (0,2,0) once a
+   card is revealed. This paired rule out-specifies it (0,4,1);
+   no-JS visitors keep the plain :hover rule. NOTE for the
+   orchestrator: the SAME conflict currently neutralises the
+   pre-existing .opportunity-card/.service-card hover lifts —
+   left untouched here (out of scope, shared component). */
+html.js .process-step.revealed:hover {
+  transform: translateY(-2px);
+}
+/* numbered badge: 3px white halo pins it to the card ("coin"
+   look) + soft primary shadow — the connector treatment */
+.process-num {
+  box-shadow:
+    0 0 0 3px #FFFFFF,
+    0 6px 16px -6px rgba(29, 78, 216, 0.45);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.process-step:hover .process-num {
+  background: #DBEAFE;
+  box-shadow:
+    0 0 0 3px #FFFFFF,
+    0 8px 18px -6px rgba(29, 78, 216, 0.55);
+}
+
+/* ---------- 4. page heroes ---------- */
+/* Landing heroes (about/services/internships/contact — the exact
+   aria-label keeps index's "Introduction" slider hero out): a
+   1px fading hairline seats the light band before the next
+   section. Purely decorative, no layout impact. */
+section[aria-label="Page introduction"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(72rem, 92%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #E2E8F0 18%, #E2E8F0 82%, transparent);
+}
+/* Floating "Reply within 1 working day" chip (service detail
+   pages only — the chip is the element right after the hero
+   image; scoped so index's 6 slider chips never match): gentle
+   6s float, 4px max travel. */
+@keyframes chipFloat {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-4px); }
+}
+section[aria-label$="introduction"] img + div.absolute {
+  animation: chipFloat 6s ease-in-out infinite alternate;
+}
+
+/* ---------- 5. mobile accordion ---------- */
+/* subtle tree-rail inside the open panel (box-shadow, not
+   border: zero layout shift) */
+.mobile-acc.open .mobile-acc-panel {
+  box-shadow: inset 1px 0 0 0 #E2E8F0;
+}
+/* children fade/slide in as the panel flips from display:none —
+   same 160ms keyframe family and 30ms cascade as the dropdown,
+   capped at the 8th link (Services panel has 11) */
+@keyframes mobileSubIn {
+  from { opacity: 0; transform: translateY(-4px); }
+}
+.mobile-acc.open .mobile-acc-panel > .mobile-sublink {
+  animation: mobileSubIn 0.16s ease backwards;
+}
+.mobile-acc.open .mobile-acc-panel > .mobile-sublink:nth-child(2) { animation-delay: 0.03s; }
+.mobile-acc.open .mobile-acc-panel > .mobile-sublink:nth-child(3) { animation-delay: 0.06s; }
+.mobile-acc.open .mobile-acc-panel > .mobile-sublink:nth-child(4) { animation-delay: 0.09s; }
+.mobile-acc.open .mobile-acc-panel > .mobile-sublink:nth-child(5) { animation-delay: 0.12s; }
+.mobile-acc.open .mobile-acc-panel > .mobile-sublink:nth-child(6) { animation-delay: 0.15s; }
+.mobile-acc.open .mobile-acc-panel > .mobile-sublink:nth-child(7) { animation-delay: 0.18s; }
+.mobile-acc.open .mobile-acc-panel > .mobile-sublink:nth-child(8) { animation-delay: 0.21s; }
+.mobile-acc.open .mobile-acc-panel > .mobile-sublink:nth-child(n + 9) { animation-delay: 0.21s; }
+
+/* ---------- 6. solid header polish ---------- */
+/* saturate the backdrop so the navy band reads as richer glass
+   behind the bar; shadow split into ambient + contact layers */
+#siteHeader.is-solid {
+  -webkit-backdrop-filter: blur(14px) saturate(1.35);
+  backdrop-filter: blur(14px) saturate(1.35);
+  box-shadow:
+    0 10px 34px -20px rgba(15, 23, 42, 0.3),
+    0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+/* ---------- 7. reduced-motion kills (matching specificity,
+   later in cascade — R8/R10/R11 convention) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .nav-drop.open > .nav-drop-panel > .nav-drop-item:nth-child(n) {
+    animation: none;
+    animation-delay: 0s;
+  }
+  .mobile-acc.open .mobile-acc-panel > .mobile-sublink:nth-child(n) {
+    animation: none;
+    animation-delay: 0s;
+  }
+  section[aria-label$="introduction"] img + div.absolute { animation: none; }
+  .breadcrumb-sep svg { transition: none; }
+  .breadcrumb ol li:hover + li.breadcrumb-sep svg { transform: none; }
+  .process-step,
+  .process-num { transition: none; }
+  .process-step:hover { transform: none; }
+}
+
+/* ============================================================
+   R12 — MULTI-PAGE RESTRUCTURE (5-service IA)
+   New components for services/internship.html (role details
+   panel on each internship card) and the 5-service IA.
+   Append-only: nothing above this block was modified.
+   ============================================================ */
+
+/* ---------- internship card "View Details" panel ---------- */
+.role-details-panel {
+  border-left: 2px solid #E2E8F0;
+  padding: 0.25rem 0 0.25rem 0.9rem;
+  animation: rolePanelIn 0.28s ease both;
+}
+@keyframes rolePanelIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* chevron rotates when a panel is open (aria-expanded is the
+   single source of truth, set by js) */
+[data-role-details] .role-details-chevron { transition: transform 0.25s ease; }
+[data-role-details][aria-expanded="true"] .role-details-chevron { transform: rotate(180deg); }
+[data-role-details][aria-expanded="true"]:hover { border-color: #A5B4FC; }
+
+/* honour reduced motion: no panel animation, no chevron tween */
+@media (prefers-reduced-motion: reduce) {
+  .role-details-panel { animation: none; }
+  [data-role-details] .role-details-chevron { transition: none; }
+}
+
+/* ============================================================
+   R12-b — STYLING DETAIL PASS (Task 7: internship hub + training
+   page polish for the 5-service IA). Append-only: nothing above
+   this block was modified. Palette: existing slate/blue tints
+   only (#EFF6FF #DBEAFE #BFDBFE #A5B4FC) + white-alpha
+   catch-lights on navy. No layout shifts, no print impact.
+   ============================================================ */
+
+/* ---------- 1a. Role details panel: smoother open --------------
+   Refined keyframe over R12's rolePanelIn: house cubic-bezier
+   (.22,.61,.36,1) at 0.34s, and the left-border accent blooms
+   slate-200 -> blue-200 while the panel fades in (fill "both"
+   holds the open accent while aria-expanded). Inner padding
+   deepened ~2px for calmer spacing. */
+@keyframes rolePanelBloom {
+  from { opacity: 0; transform: translateY(-5px); border-left-color: #E2E8F0; }
+  to   { opacity: 1; transform: translateY(0); border-left-color: #BFDBFE; }
+}
+.role-details-panel {
+  padding: 0.4rem 0 0.35rem 1.05rem;
+  animation: rolePanelBloom 0.34s cubic-bezier(.22,.61,.36,1) both;
+}
+/* Non-motion accent twin: also serves reduced motion (the kill
+   below removes the tween; the open border still shifts,
+   color-only). */
+.role-details-panel:not([hidden]) { border-left-color: #BFDBFE; }
+
+/* ---------- 1b. View Details: is-open nuance -------------------
+   Soft primary tint + hairline inset ring while aria-expanded.
+   .btn-ghost has no border, so the R12 open:hover border-color
+   gets its visible twin as an inset ring in the same #A5B4FC
+   ink. :focus-visible keeps keyboard parity (house convention). */
+[data-role-details][aria-expanded="true"] {
+  background-color: #EFF6FF;
+  box-shadow: inset 0 0 0 1px #DBEAFE;
+}
+[data-role-details][aria-expanded="true"]:hover,
+[data-role-details][aria-expanded="true"]:focus-visible {
+  box-shadow: inset 0 0 0 1px #A5B4FC;
+}
+
+/* ---------- 1c. .opportunity-card hover lift: SKIPPED ----------
+   Already fully covered by the base language (lift -6px, border
+   #BFDBFE, deep shadow, ::before top accent line, icon-tile
+   tilt, skill-pill stagger) — adding more would double it. */
+
+/* ---------- 2. Internship apply form (#internship-apply) -------
+   Audited gaps:
+   - Focus glow: base .form-input:focus (4px var(--ring) halo +
+     white bg) is class-scoped and already styles every
+     #internshipForm field incl. the select — nothing to add.
+   - Select hover ink: R11-7 §3 select.form-input:hover is
+     class-scoped, covers #internRole — nothing to add.
+   - #internRefChip: .ref-chip fully covered (R4-5 + R5-6 copy
+     glyph slide) — nothing to add.
+   The one real gap: the success panel lands silently. One-time
+   entrance (display:none -> block restarts it on every submit),
+   with the reference row arriving on a short beat after. */
+@keyframes internSuccessIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+html.js #internSuccess:not(.hidden) {
+  animation: internSuccessIn 0.4s cubic-bezier(.22,.61,.36,1) both;
+}
+html.js #internSuccess:not(.hidden) #internRefWrap:not(.hidden) {
+  animation: internSuccessIn 0.38s cubic-bezier(.22,.61,.36,1) 0.12s both;
+}
+
+/* ---------- 3. Training page: two sections, one language -------
+   #training article cards already carry a reduced Tailwind echo
+   of .service-card (hover:-translate-y-1 + hover:shadow-soft);
+   echo two more beats, REDUCED vs .service-card (border ink
+   #DBEAFE vs #BFDBFE, tile tilt -3deg vs -5deg). */
+#training article:hover { border-color: #DBEAFE; }
+#training article:hover .icon-tile { transform: translateY(-1px) rotate(-3deg); }
+
+/* #interview-support cards (navy): static inset catch-light
+   (motionless, R11 badge-sheen language). Tailwind's ring is
+   box-shadow-driven, so the ring vars are re-declared to keep
+   the hairline intact — hover then brightens border + ring. */
+#interview-support article {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), 0 0 #0000;
+}
+#interview-support article:hover {
+  border-color: rgba(255, 255, 255, .22);
+  --tw-ring-color: rgba(255, 255, 255, .16);
+}
+#interview-support article:hover .icon-tile { transform: translateY(-2px) rotate(4deg) scale(1.05); }
+
+/* ---------- 4. Internship hero chips: static enrichment --------
+   The four white/10 chips are not interactive (per brief: no
+   hover/raise). One motionless top catch-light echoing the navy
+   cards; the Tailwind ring is preserved via its vars. */
+section[aria-label="Internship introduction"] .bg-white\/10 {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), 0 0 #0000;
+}
+
+/* ---------- 5. reduced-motion kills (R8-R12 convention:
+   matching-or-higher specificity, later in the cascade) -------- */
+@media (prefers-reduced-motion: reduce) {
+  /* re-established: the R12 kill sits above the new animation
+     declaration, so it is killed again here */
+  .role-details-panel { animation: none; animation-delay: 0s; }
+  html.js #internSuccess:not(.hidden) { animation: none; animation-delay: 0s; }
+  html.js #internSuccess:not(.hidden) #internRefWrap:not(.hidden) { animation: none; animation-delay: 0s; }
+  #training article:hover .icon-tile,
+  #interview-support article:hover .icon-tile { transform: none; }
+}
+
+/* ==========================================================
+   R13 — Services sketch boxes (index #services)
+   Box anatomy per client sketch: title row + bullet list left,
+   description panel right, chip strip, Apply->form + Know more.
+   Accent color per box via --svc-accent inline variable.
+   ========================================================== */
+.svc-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 1px solid #E2E8F0;
+  background: #fff;
+  padding: 1.75rem;
+  box-shadow: 0 2px 10px -6px rgba(15, 23, 42, .08);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.svc-box::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--svc-accent, #2563EB), transparent 72%);
+  opacity: .9;
+  pointer-events: none;
+}
+.svc-box:hover {
+  transform: translateY(-3px);
+  border-color: #CBD5E1;
+  box-shadow: 0 24px 44px -26px rgba(15, 23, 42, .28);
+}
+.svc-box-label {
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #64748B;
+}
+.svc-desc {
+  border-radius: 1.25rem;
+  border: 1px solid #E2E8F0;
+  background: linear-gradient(180deg, #F8FAFC, #FFFFFF);
+  padding: 1.25rem 1.5rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8);
+}
+.svc-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: .625rem;
+  padding: .5rem .625rem;
+  border-radius: .75rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #334155;
+  transition: background-color .2s ease;
+}
+.svc-bullet:hover { background: #F1F5F9; }
+.svc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  border: 1px solid #E2E8F0;
+  border-radius: .85rem;
+  background: #fff;
+  padding: .5rem .8rem;
+  font-size: .75rem;
+  font-weight: 700;
+  color: #475569;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, .05);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.svc-chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--svc-accent, #2563EB);
+  box-shadow: 0 8px 16px -10px rgba(15, 23, 42, .22);
+}
+@media (max-width: 640px) {
+  .svc-box { padding: 1.4rem; border-radius: 1.5rem; }
+  .svc-desc { padding: 1.05rem 1.15rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .svc-box, .svc-box:hover,
+  .svc-chip, .svc-chip:hover,
+  .svc-bullet, .svc-bullet:hover { transform: none; transition: none; }
+}
+
+/* ==========================================================
+   R13 fix — #mobileMenu was in normal flow inside the fixed
+   header: closed but ~330px tall, it inflated the header to
+   ~411px on mobile and covered page content behind a frosted
+   strip. Anchor it below the bar as a true dropdown overlay.
+   ========================================================== */
+#mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: calc(100vh - 5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+/* ==========================================================
+   R14 — Text reveal animations (internships heading + cards)
+   .txt-words : heading splits into words that rise in stagger
+   .txt-lines : direct children fade-rise as staggered lines
+   Styles are html.js-scoped so content is never hidden when
+   JavaScript is unavailable.
+   ========================================================== */
+html.js .txt-words .w {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.55em) rotate(3deg);
+  transition: opacity 0.5s ease, transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: calc(var(--wi, 0) * 65ms);
+  will-change: transform, opacity;
+}
+html.js .txt-words.is-in .w {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+html.js .txt-lines > *:not(.txt-words) {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: calc(var(--li, 0) * 90ms + var(--ld, 0ms));
+}
+html.js .txt-lines.is-in > *:not(.txt-words) {
+  opacity: 1;
+  transform: translateY(0);
+}
+.txt-lines--lag { --ld: 140ms; }
+@media (prefers-reduced-motion: reduce) {
+  html.js .txt-words .w,
+  html.js .txt-lines > *:not(.txt-words) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   R15 — SERVICES MEGA MENU + NAV SIMPLIFICATION
+   - "Internships" removed from the bar (desktop + mobile):
+     one internship page remains, reachable from the Services
+     mega menu, the homepage internships section and the footer.
+   - Services dropdown redesigned as a mega panel: head row,
+     2x3 grid of accent tiles (matches the homepage svc-box
+     palette), CTA footer strip. Existing open/close JS is
+     unchanged (same .nav-drop / .nav-drop-panel contract).
+   ============================================================ */
+
+/* ---------- mega panel shell (overrides .nav-drop-panel grid) ---------- */
+.nav-mega {
+  display: block;
+  width: min(43rem, calc(100vw - 2rem));
+  padding: 0.6rem;
+  gap: 0;
+}
+.nav-mega-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0.65rem 0.75rem;
+}
+.nav-mega-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #1D4ED8;
+}
+.nav-mega-eyebrow::before {
+  content: "";
+  height: 4px;
+  width: 4px;
+  border-radius: 99px;
+  background: #2563EB;
+}
+.nav-mega-title {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #0F172A;
+  line-height: 1.2;
+}
+.nav-mega-hint { font-size: 0.72rem; font-weight: 600; color: #94A3B8; }
+
+/* ---------- accent tile grid ---------- */
+.nav-mega-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+}
+.nav-mega-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.7rem 2rem 0.7rem 0.75rem;
+  border-radius: 0.95rem;
+  border: 1px solid transparent;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.nav-mega-item:hover,
+.nav-mega-item:focus-visible {
+  background: #F8FAFC;
+  border-color: var(--mega-soft, #EFF6FF);
+  transform: translateY(-1px);
+}
+.nav-mega-item:focus-visible {
+  outline: 2px solid var(--primary, #2563EB);
+  outline-offset: -2px;
+}
+.nav-mega-item-icon {
+  display: flex;
+  height: 2.15rem;
+  width: 2.15rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.7rem;
+  background: var(--mega-soft, #EFF6FF);
+  color: var(--mega-accent, #1D4ED8);
+  transition: transform 0.18s ease;
+}
+.nav-mega-item:hover .nav-mega-item-icon,
+.nav-mega-item:focus-visible .nav-mega-item-icon { transform: scale(1.07) rotate(-3deg); }
+.nav-mega-item-copy { display: block; min-width: 0; }
+.nav-mega-item-copy strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.25;
+}
+.nav-mega-item-copy span {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.72rem;
+  color: #64748B;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.nav-mega-item-arrow {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.7rem;
+  height: 15px;
+  width: 15px;
+  color: var(--mega-accent, #1D4ED8);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.nav-mega-item:hover .nav-mega-item-arrow,
+.nav-mega-item:focus-visible .nav-mega-item-arrow { opacity: 1; transform: translate(0, 0); }
+/* "All Services" tile closes the 2x3 grid with a quiet outline style */
+.nav-mega-item--all { background: #FAFCFF; border-color: #EFF6FF; }
+
+/* ---------- CTA footer strip ---------- */
+.nav-mega-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  padding: 0.7rem 0.65rem 0.3rem;
+  border-top: 1px solid #F1F5F9;
+}
+.nav-mega-foot p {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+}
+.nav-mega-foot-icon { height: 14px; width: 14px; color: #D97706; }
+.nav-mega-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1D4ED8;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: #EFF6FF;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+.nav-mega-cta:hover,
+.nav-mega-cta:focus-visible { background: #DBEAFE; transform: translateY(-1px); }
+.nav-mega-cta:focus-visible { outline: 2px solid var(--primary, #2563EB); outline-offset: 2px; }
+
+/* ---------- staggered entrance (reuses dropItemIn keyframe) ---------- */
+.nav-drop.open > .nav-drop-panel.nav-mega .nav-mega-head { animation: dropItemIn 0.16s ease backwards; }
+.nav-drop.open > .nav-drop-panel.nav-mega .nav-mega-item { animation: dropItemIn 0.16s ease backwards; }
+.nav-drop.open > .nav-drop-panel.nav-mega .nav-mega-item:nth-child(2) { animation-delay: 0.03s; }
+.nav-drop.open > .nav-drop-panel.nav-mega .nav-mega-item:nth-child(3) { animation-delay: 0.06s; }
+.nav-drop.open > .nav-drop-panel.nav-mega .nav-mega-item:nth-child(4) { animation-delay: 0.09s; }
+.nav-drop.open > .nav-drop-panel.nav-mega .nav-mega-item:nth-child(5) { animation-delay: 0.12s; }
+.nav-drop.open > .nav-drop-panel.nav-mega .nav-mega-item:nth-child(6) { animation-delay: 0.15s; }
+.nav-drop.open > .nav-drop-panel.nav-mega .nav-mega-foot { animation: dropItemIn 0.18s ease 0.16s backwards; }
+
+/* ---------- reduced motion kills ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .nav-mega-item,
+  .nav-mega-item-icon,
+  .nav-mega-item-arrow,
+  .nav-mega-cta { transition: none; }
+  .nav-drop.open > .nav-drop-panel.nav-mega .nav-mega-head,
+  .nav-drop.open > .nav-drop-panel.nav-mega .nav-mega-item,
+  .nav-drop.open > .nav-drop-panel.nav-mega .nav-mega-foot { animation: none; }
+  .nav-mega-item:hover,
+  .nav-mega-item:focus-visible,
+  .nav-mega-cta:hover,
+  .nav-mega-cta:focus-visible { transform: none; }
+  .nav-mega-item:hover .nav-mega-item-icon { transform: none; }
+}

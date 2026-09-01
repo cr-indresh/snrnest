@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# SNR NEST — sitemap
+Sitemap: https://www.snrnest.in/sitemap.xml

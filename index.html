@@ -1,510 +1,827 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth" data-root="">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SNR NEST — Building Careers. Empowering Businesses. Creating Opportunities.</title>
-  <meta name="description" content="SNR NEST is a multi-service corporate ecosystem connecting talent, businesses, technology, education and careers. BPO Hiring, Manpower Sourcing, Website Solutions, Internships & Training.">
-  <meta property="og:title" content="SNR NEST — Talent • Technology • Careers">
-  <meta property="og:description" content="Multi-service corporate ecosystem connecting talent, businesses, technology, education and careers.">
-  <meta property="og:type" content="website">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Primary Meta Tags (as marked in the sketch) -->
+  <title>SNR NEST — Building Opportunities. Empowering Careers. | BPO, Manpower, Websites, Internships &amp; Training</title>
+  <meta name="title" content="SNR NEST — Building Opportunities. Empowering Careers." />
+  <meta name="description" content="SNR NEST connects people, skills, businesses and opportunities. BPO services, manpower services, website development, internships and training &amp; interview support — all in one place." />
+  <meta name="keywords" content="SNR NEST, BPO services, manpower services, website development, internships, training and interview support, bulk hiring, workforce recruitment" />
+  <meta name="author" content="SNR NEST" />
+  <meta name="theme-color" content="#F8FAFC" />
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: { extend: {
-        fontFamily: {
-          display: ['Manrope', 'system-ui', 'sans-serif'],
-          body: ['Inter', 'system-ui', 'sans-serif'],
-          mono: ['JetBrains Mono', 'monospace'],
-        }
-      } }
-    }
+  <!-- Open Graph (og:url + og:image use a placeholder domain — update on deployment, see README.md) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SNR NEST" />
+  <meta property="og:url" content="https://www.snrnest.in/" />
+  <meta property="og:title" content="SNR NEST — Building Opportunities. Empowering Careers." />
+  <meta property="og:description" content="We connect talent, businesses and opportunities to create meaningful growth." />
+  <meta property="og:image" content="https://www.snrnest.in/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SNR NEST — Building Opportunities. Empowering Careers." />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SNR NEST — Building Opportunities. Empowering Careers." />
+  <meta name="twitter:description" content="BPO services, manpower services, website development, internships and training &amp; interview support." />
+  <meta name="twitter:image" content="https://www.snrnest.in/assets/og-image.jpg" />
+
+  <!-- Favicon (as marked in the sketch) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="SNR NEST" />
+
+  <!-- PWA: installable on desktop & mobile -->
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- JS flag for progressive enhancement (scroll reveal etc.) -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Fonts + Styles -->
+  <link rel="preload" href="assets/fonts/PlusJakartaSans.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SNR NEST",
+    "slogan": "Building Opportunities. Empowering Careers.",
+    "email": "praveen@snrnest.in",
+    "telephone": "+91 96323 41836",
+    "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" }
+  }
   </script>
-  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="grain bg-ink text-ivory font-body antialiased">
 
-  <!-- Partials (nav, footer, intro, modal) injected by partials.js -->
-  <div id="nav-mount"></div>
+<body class="bg-slate-50 font-sans text-slate-600 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[110] focus:rounded-xl focus:bg-navy-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Skip to content</a>
 
-  <!-- ============== HERO ============== -->
-  <section class="relative min-h-screen flex flex-col justify-end overflow-hidden" style="padding-bottom:clamp(3rem,6vh,5rem);">
-    <!-- Layered background image (subtle, editorial crop) -->
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute inset-0 mask-image" style="--d:.6s">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2400&auto=format&fit=crop" alt="" class="w-full h-full object-cover opacity-30 parallax" data-parallax="0.12" style="filter:grayscale(60%) contrast(1.05) brightness(.7);" loading="eager">
-      </div>
-      <div class="absolute inset-0" style="background:linear-gradient(180deg, rgba(10,10,10,.55) 0%, rgba(10,10,10,.85) 60%, rgba(10,10,10,1) 100%);"></div>
-      <!-- Corner metadata -->
-      <div class="absolute top-32 right-6 md:right-10 text-right hidden md:block">
-        <div class="font-mono text-[10px] tracking-[0.3em] text-faint">N 12°55′  •  E 77°40′</div>
-        <div class="font-mono text-[10px] tracking-[0.3em] text-faint mt-1">BANGALORE  —  INDIA</div>
-      </div>
-    </div>
+  <!-- Scroll progress indicator -->
+  <div id="scrollProgress" aria-hidden="true"></div>
 
-    <div class="shell relative z-10 w-full">
-      <!-- Eyebrow -->
-      <div class="reveal-up mb-10 md:mb-14" style="--d:.9s">
-        <div class="flex items-center gap-4">
-          <span class="block w-10 h-px bg-accent"></span>
-          <span class="t-eyebrow">Talent  •  Technology  •  Careers</span>
-        </div>
-      </div>
+  <!-- Offline status banner (shown automatically when the connection drops) -->
+  <div id="offlineBanner" class="offline-banner" role="status" aria-live="polite" hidden>
+    <span class="offline-banner-dot" aria-hidden="true"></span>
+    <i data-lucide="wifi-off" class="h-4 w-4 shrink-0" aria-hidden="true"></i>
+    <span class="offline-banner-text"><strong>You&rsquo;re offline.</strong>&nbsp;Viewing the cached copy of the site &mdash; forms and links need a connection.</span>
+  </div>
 
-      <!-- Mega headline -->
-      <h1 class="t-hero split-words mb-8 md:mb-12">
-        Connecting People,<br>
-        Businesses <span class="t-editorial text-accent">and</span> Opportunities.
-      </h1>
+  <!-- ============================ HEADER ============================ -->
+  <header id="siteHeader" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-[76px] lg:px-8">
+      <!-- Logo + tagline (sketch: logo / tagline) -->
+      <a href="#home" class="group flex items-center gap-3" aria-label="SNR NEST — home">
+        <img src="images/logo/logo.svg" alt="SNR NEST logo" width="44" height="44" class="h-10 w-10 rounded-xl shadow-chip transition-transform duration-300 group-hover:-rotate-3 lg:h-11 lg:w-11" />
+        <span class="leading-tight">
+          <span class="block text-[17px] font-extrabold tracking-tight text-slate-900 lg:text-lg">SNR <span class="text-primary-700">NEST</span></span>
+          <span class="block text-[9px] font-bold uppercase tracking-[0.22em] text-slate-500">Workforce &amp; Hiring</span>
+        </span>
+      </a>
 
-      <!-- Subline -->
-      <div class="grid md:grid-cols-12 gap-y-8 md:gap-x-6 items-end">
-        <p class="reveal-up md:col-span-6 text-cream text-base md:text-lg leading-relaxed" style="--d:1.1s">
-          A multi-service ecosystem operating across five interconnected verticals — BPO Hiring, Manpower Sourcing, Website Solutions, Internships and Training & Placement.
-        </p>
-        <div class="reveal-up md:col-span-6 flex flex-col md:flex-row md:items-end md:justify-end gap-4" style="--d:1.3s">
-          <a href="bpo-hiring.html" class="magnetic magnetic-solid">
-            <span class="m-text">Explore Opportunities</span>
-            <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a href="contact.html" class="magnetic">
-            <span class="m-text">Contact Us</span>
-            <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-3 reveal-fade" style="--d:1.6s">
-      <span class="font-mono text-[10px] tracking-[0.3em] text-faint uppercase">Scroll</span>
-      <span class="block w-px h-10 bg-line-strong origin-top" style="animation: scrollPulse 2.4s var(--ease-lux) infinite;"></span>
-    </div>
-    <style>@keyframes scrollPulse{0%{transform:scaleY(.2);opacity:.4}50%{transform:scaleY(1);opacity:1}100%{transform:scaleY(.2);opacity:.4}}</style>
-  </section>
-
-  <!-- ============== INTRO STATEMENT ============== -->
-  <section class="section relative" data-bg="ink">
-    <div class="shell">
-      <div class="grid md:grid-cols-12 gap-y-10 md:gap-x-6">
-        <div class="md:col-span-3">
-          <div class="sr" data-reveal>
-            <div class="t-eyebrow mb-4">[ 001 ]  Ecosystem</div>
+      <!-- Desktop nav -->
+      <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <a href="index.html" class="nav-link is-active" data-nav="home" aria-current="page">Home</a>
+        <a href="about.html" class="nav-link" data-nav="about">About</a>
+        <div class="nav-drop">
+          <button type="button" class="nav-link nav-drop-btn" data-nav="services" aria-expanded="false" aria-haspopup="true">
+            Services<i aria-hidden="true" data-lucide="chevron-down" class="nav-drop-chevron h-3.5 w-3.5"></i>
+          </button>
+          <div class="nav-drop-panel nav-mega" role="menu" aria-label="Services menu">
+            <div class="nav-mega-head">
+              <div>
+                <span class="nav-mega-eyebrow">What we do</span>
+                <p class="nav-mega-title">Five services. One team.</p>
+              </div>
+              <span class="nav-mega-hint">Pick a service to learn more</span>
+            </div>
+            <div class="nav-mega-grid">
+            <a role="menuitem" class="nav-mega-item" href="services/bpo-services.html" style="--mega-accent:#059669;--mega-soft:#ECFDF5">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="headset" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>BPO Services</strong><span>Reliable hiring support for voice, non-voice and customer operations.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="services/manpower-services.html" style="--mega-accent:#7C3AED;--mega-soft:#F5F3FF">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="users" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Manpower Services</strong><span>Skilled manpower for every level, from project managers to shift teams.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="services/website-development.html" style="--mega-accent:#0284C7;--mega-soft:#F0F9FF">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="globe" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Website Development</strong><span>Professional websites that build a strong digital presence.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="services/internship.html" style="--mega-accent:#D97706;--mega-soft:#FFFBEB">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="graduation-cap" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Internship</strong><span>Eight structured roles with real work, mentors and certificates.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="services/training-interview-support.html" style="--mega-accent:#E11D48;--mega-soft:#FFF1F2">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="school" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Training &amp; Interview Support</strong><span>Practical training and interview preparation that make candidates job-ready.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item nav-mega-item--all" href="services.html" style="--mega-accent:#1D4ED8;--mega-soft:#EFF6FF">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="layout-grid" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>All Services</strong><span>Browse everything we do, each with a dedicated page.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            </div>
+            <div class="nav-mega-foot">
+              <p><i aria-hidden="true" data-lucide="sparkles" class="nav-mega-foot-icon"></i>Not sure where to start? Get a free consultation.</p>
+              <a role="menuitem" href="contact.html" class="nav-mega-cta">Talk to our team<i aria-hidden="true" data-lucide="arrow-right" class="h-3.5 w-3.5"></i></a>
+            </div>
           </div>
         </div>
-        <div class="md:col-span-9">
-          <p class="t-section sr" data-reveal style="--d:.05s">
-            One platform.<br>
-            <span class="text-muted">Multiple</span> possibilities.
-          </p>
-          <p class="mt-10 max-w-2xl text-cream text-base md:text-lg leading-relaxed sr" data-reveal style="--d:.15s">
-            SNR NEST operates across People, Business, Technology, Education and Careers — connecting each layer into a single, end-to-end ecosystem. Whether you are hiring, job-hunting, scaling operations, or building a digital product, the same network answers.
-          </p>
-        </div>
+        <a href="contact.html" class="nav-link" data-nav="contact">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="btn-primary !px-5 !py-2.5 text-sm">
+          Get Started
+          <i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i>
+        </a>
+
+        <!-- Mobile hamburger -->
+        <button id="menuBtn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white/80 text-slate-700 transition hover:border-primary-300 hover:text-primary-700 lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <i aria-hidden="true" data-lucide="menu" class="menu-icon-open h-5 w-5"></i>
+          <i aria-hidden="true" data-lucide="x" class="menu-icon-close hidden h-5 w-5"></i>
+        </button>
       </div>
     </div>
-  </section>
 
-  <!-- ============== FIVE VERTICALS ============== -->
-  <section class="section-sm relative" data-bg="charcoal">
-    <div class="shell">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16 gap-6">
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="invisible translate-y-2 opacity-0 transition-all duration-300 ease-out lg:hidden">
+      <nav class="mx-4 mb-4 space-y-1 rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-soft backdrop-blur-xl" aria-label="Mobile">
+        <a href="index.html" class="mobile-link"><i aria-hidden="true" data-lucide="home" class="h-4 w-4"></i>Home</a>
+        <a href="about.html" class="mobile-link"><i aria-hidden="true" data-lucide="building-2" class="h-4 w-4"></i>About</a>
+        <div class="mobile-acc">
+          <button type="button" class="mobile-link mobile-acc-btn" aria-expanded="false">
+            <i aria-hidden="true" data-lucide="briefcase" class="h-4 w-4"></i>Services
+            <i aria-hidden="true" data-lucide="chevron-down" class="mobile-acc-chevron h-4 w-4"></i>
+          </button>
+          <div class="mobile-acc-panel">
+            <a href="services.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="layout-grid" class="h-3.5 w-3.5"></i>All Services</a>
+            <a href="services/bpo-services.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="headset" class="h-3.5 w-3.5"></i>BPO Services</a>
+            <a href="services/manpower-services.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="users" class="h-3.5 w-3.5"></i>Manpower Services</a>
+            <a href="services/website-development.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="globe" class="h-3.5 w-3.5"></i>Website Development</a>
+            <a href="services/internship.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="graduation-cap" class="h-3.5 w-3.5"></i>Internship</a>
+            <a href="services/training-interview-support.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="school" class="h-3.5 w-3.5"></i>Training &amp; Interview Support</a>
+          </div>
+        </div>
+        <a href="contact.html" class="mobile-link"><i aria-hidden="true" data-lucide="mail" class="h-4 w-4"></i>Contact</a>
+        <a href="contact.html" class="btn-primary mt-2 w-full justify-center">Get Started <i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================ HERO + SLIDER ============================ -->
+    <section id="home" data-spy="home" class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 pt-28 lg:pt-36" aria-label="Introduction">
+      <!-- soft background shapes -->
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="blob blob-a absolute -left-32 top-16 h-80 w-80 rounded-full bg-primary-100/60 blur-3xl"></div>
+        <div class="blob blob-b absolute -right-24 top-40 h-96 w-96 rounded-full bg-sky-100/50 blur-3xl"></div>
+        <svg class="absolute right-8 top-24 hidden h-40 w-40 text-primary-200/70 lg:block" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+          <circle cx="4" cy="4" r="2.2"/><circle cx="24" cy="4" r="2.2"/><circle cx="44" cy="4" r="2.2"/><circle cx="64" cy="4" r="2.2"/><circle cx="84" cy="4" r="2.2"/>
+          <circle cx="4" cy="24" r="2.2"/><circle cx="24" cy="24" r="2.2"/><circle cx="44" cy="24" r="2.2"/><circle cx="64" cy="24" r="2.2"/><circle cx="84" cy="24" r="2.2"/>
+          <circle cx="4" cy="44" r="2.2"/><circle cx="24" cy="44" r="2.2"/><circle cx="44" cy="44" r="2.2"/><circle cx="64" cy="44" r="2.2"/><circle cx="84" cy="44" r="2.2"/>
+        </svg>
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div id="heroSlider" class="hero-slider" tabindex="0" aria-roledescription="carousel" aria-label="SNR NEST highlights">
+
+          <!-- SLIDE 1 -->
+          <article class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 4">
+            <div class="grid items-center gap-12 py-10 lg:grid-cols-[1.02fr_1fr] lg:gap-16 lg:py-14">
+              <div>
+                <span class="hero-badge anim-1"><i aria-hidden="true" data-lucide="sparkles" class="h-3.5 w-3.5"></i>Workforce &amp; Recruitment Solutions</span>
+                <h1 class="mt-6 tracking-tight text-slate-900">
+                  <span class="anim-2 block text-5xl font-extrabold sm:text-6xl xl:text-7xl">SNR NEST</span>
+                  <span class="anim-3 mt-4 block text-xl font-bold text-slate-700 sm:text-2xl xl:text-[1.75rem]">Building Opportunities. <span class="text-primary-700">Empowering Careers.</span></span>
+                </h1>
+                <p class="anim-4 mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                  SNR NEST connects people, skills, businesses and opportunities to create meaningful growth — from BPO hiring to complete manpower solutions.
+                </p>
+                <div class="anim-5 mt-8 flex flex-wrap items-center gap-4">
+                  <a href="services/internship.html" class="btn-primary">Explore Opportunities<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+                  <a href="about.html" class="btn-secondary">Learn More</a>
+                </div>
+              </div>
+              <div class="anim-6 relative mx-auto w-full max-w-xl lg:max-w-none">
+                <div class="absolute -inset-3 -rotate-1 rounded-[2.2rem] bg-gradient-to-tr from-primary-100/80 via-transparent to-sky-100/80" aria-hidden="true"></div>
+                <img src="images/hero/hero-1.jpg" alt="SNR NEST team collaborating in a modern office" width="1344" height="768" fetchpriority="high" class="relative aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-soft ring-1 ring-slate-900/10" />
+                <div class="absolute -bottom-5 left-5 flex items-center gap-3 rounded-2xl bg-white/95 px-4 py-3 shadow-chip ring-1 ring-slate-900/5 backdrop-blur sm:left-7">
+                  <span class="pulse-dot" aria-hidden="true"></span>
+                  <span class="text-sm font-semibold text-slate-800">Now Hiring · Voice &amp; Non-Voice Roles</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 2 -->
+          <article class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
+            <div class="grid items-center gap-12 py-10 lg:grid-cols-[1.02fr_1fr] lg:gap-16 lg:py-14">
+              <div>
+                <span class="hero-badge anim-1"><i aria-hidden="true" data-lucide="headset" class="h-3.5 w-3.5"></i>BPO Hiring</span>
+                <h2 class="mt-6 tracking-tight text-slate-900">
+                  <span class="anim-2 block text-4xl font-extrabold leading-[1.08] sm:text-5xl xl:text-[3.4rem]">BPO Hiring,<br />Made Simple.</span>
+                  <span class="anim-3 mt-4 block text-xl font-bold text-slate-700 sm:text-2xl">Voice · Non-Voice · Customer Support</span>
+                </h2>
+                <p class="anim-4 mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                  We hire for every BPO process — sourcing, screening, interviews and onboarding, handled end to end by our team.
+                </p>
+                <div class="anim-5 mt-8 flex flex-wrap items-center gap-4">
+                  <a href="services/bpo-services.html" class="btn-primary">Explore BPO Services<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+                  <a href="contact.html" class="btn-secondary">Talk to Us</a>
+                </div>
+              </div>
+              <div class="anim-6 relative mx-auto w-full max-w-xl lg:max-w-none">
+                <div class="absolute -inset-3 rotate-1 rounded-[2.2rem] bg-gradient-to-tr from-primary-100/80 via-transparent to-sky-100/80" aria-hidden="true"></div>
+                <img src="images/hero/hero-2.jpg" alt="BPO professionals working with headsets in a modern call center" width="1344" height="768" loading="lazy" decoding="async" class="relative aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-soft ring-1 ring-slate-900/10" />
+                <div class="absolute -bottom-5 left-5 flex items-center gap-3 rounded-2xl bg-white/95 px-4 py-3 shadow-chip ring-1 ring-slate-900/5 backdrop-blur sm:left-7">
+                  <span class="pulse-dot" aria-hidden="true"></span>
+                  <span class="text-sm font-semibold text-slate-800">Hiring Drive · Open This Month</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 3 -->
+          <article class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
+            <div class="grid items-center gap-12 py-10 lg:grid-cols-[1.02fr_1fr] lg:gap-16 lg:py-14">
+              <div>
+                <span class="hero-badge anim-1"><i aria-hidden="true" data-lucide="users" class="h-3.5 w-3.5"></i>Manpower Solutions</span>
+                <h2 class="mt-6 tracking-tight text-slate-900">
+                  <span class="anim-2 block text-4xl font-extrabold leading-[1.08] sm:text-5xl xl:text-[3.4rem]">Workforce for<br />Modern Operations.</span>
+                  <span class="anim-3 mt-4 block text-xl font-bold text-slate-700 sm:text-2xl">Manpower Source · Dark Store Management</span>
+                </h2>
+                <p class="anim-4 mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                  From project managers to shift incharges — we build reliable teams for dark stores, warehouses and daily operations.
+                </p>
+                <div class="anim-5 mt-8 flex flex-wrap items-center gap-4">
+                  <a href="services/manpower-services.html" class="btn-primary">Explore Manpower<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+                  <a href="contact.html" class="btn-secondary">Talk to Us</a>
+                </div>
+              </div>
+              <div class="anim-6 relative mx-auto w-full max-w-xl lg:max-w-none">
+                <div class="absolute -inset-3 -rotate-1 rounded-[2.2rem] bg-gradient-to-tr from-primary-100/80 via-transparent to-sky-100/80" aria-hidden="true"></div>
+                <img src="images/hero/hero-3.jpg" alt="Operations team managing a modern dark store warehouse" width="1344" height="768" loading="lazy" decoding="async" class="relative aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-soft ring-1 ring-slate-900/10" />
+                <div class="absolute -bottom-5 left-5 flex items-center gap-3 rounded-2xl bg-white/95 px-4 py-3 shadow-chip ring-1 ring-slate-900/5 backdrop-blur sm:left-7">
+                  <span class="pulse-dot" aria-hidden="true"></span>
+                  <span class="text-sm font-semibold text-slate-800">Dark Store Teams · PAN-India</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLIDE 4 -->
+          <article class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
+            <div class="grid items-center gap-12 py-10 lg:grid-cols-[1.02fr_1fr] lg:gap-16 lg:py-14">
+              <div>
+                <span class="hero-badge anim-1"><i aria-hidden="true" data-lucide="graduation-cap" class="h-3.5 w-3.5"></i>Internships &amp; Careers</span>
+                <h2 class="mt-6 tracking-tight text-slate-900">
+                  <span class="anim-2 block text-4xl font-extrabold leading-[1.08] sm:text-5xl xl:text-[3.4rem]">Start Your Career<br />with SNR NEST.</span>
+                  <span class="anim-3 mt-4 block text-xl font-bold text-slate-700 sm:text-2xl">Learn. Work. Grow.</span>
+                </h2>
+                <p class="anim-4 mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                  Real projects, real mentors. Internships in software, data, marketing and operations — open for students and freshers.
+                </p>
+                <div class="anim-5 mt-8 flex flex-wrap items-center gap-4">
+                  <a href="services/internship.html" class="btn-primary">View Internships<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+                  <a href="services/internship.html#internship-apply" class="btn-secondary">Apply Now</a>
+                </div>
+              </div>
+              <div class="anim-6 relative mx-auto w-full max-w-xl lg:max-w-none">
+                <div class="absolute -inset-3 rotate-1 rounded-[2.2rem] bg-gradient-to-tr from-primary-100/80 via-transparent to-sky-100/80" aria-hidden="true"></div>
+                <img src="images/hero/hero-4.jpg" alt="Interns in a training session with a mentor" width="1344" height="768" loading="lazy" decoding="async" class="relative aspect-[4/3] w-full rounded-[1.75rem] object-cover shadow-soft ring-1 ring-slate-900/10" />
+                <div class="absolute -bottom-5 left-5 flex items-center gap-3 rounded-2xl bg-white/95 px-4 py-3 shadow-chip ring-1 ring-slate-900/5 backdrop-blur sm:left-7">
+                  <span class="pulse-dot" aria-hidden="true"></span>
+                  <span class="text-sm font-semibold text-slate-800">Internships Open · Apply Today</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Slider indicators (sketch: o o o o o under hero) -->
+        <div class="flex items-center justify-center gap-5 pb-14 pt-6 lg:pb-20">
+          <span id="slideCounter" class="slider-counter" aria-hidden="true">01&nbsp;/&nbsp;04</span>
+          <button type="button" class="slider-arrow" data-slide-dir="-1" aria-label="Previous slide">
+            <i aria-hidden="true" data-lucide="arrow-left" class="h-4 w-4"></i>
+          </button>
+          <div id="sliderDots" class="flex items-center gap-2.5" role="tablist" aria-label="Choose slide">
+            <button type="button" class="dot is-active" role="tab" aria-selected="true" aria-controls="heroSlider" aria-label="Go to slide 1"></button>
+            <button type="button" class="dot" role="tab" aria-selected="false" aria-controls="heroSlider" aria-label="Go to slide 2"></button>
+            <button type="button" class="dot" role="tab" aria-selected="false" aria-controls="heroSlider" aria-label="Go to slide 3"></button>
+            <button type="button" class="dot" role="tab" aria-selected="false" aria-controls="heroSlider" aria-label="Go to slide 4"></button>
+          </div>
+          <button type="button" class="slider-arrow" data-slide-dir="1" aria-label="Next slide">
+            <i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i>
+          </button>
+          <button type="button" id="sliderToggle" class="slider-toggle" aria-label="Pause slideshow" aria-pressed="false">
+            <i aria-hidden="true" data-lucide="pause" class="toggle-icon-pause h-4 w-4"></i>
+            <i aria-hidden="true" data-lucide="play" class="toggle-icon-play hidden h-4 w-4"></i>
+          </button>
+        </div>
+        <p id="sliderLive" class="sr-only" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ============================ SERVICES (sketch: BPO – hirings + categories) ============================ -->
+    <section id="services" data-spy="services" class="bg-slate-50 py-20 lg:py-28" aria-label="Services">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+          <span class="section-eyebrow"><span class="h-1.5 w-1.5 rounded-full bg-primary-600"></span>What We Do</span>
+          <h2 class="section-title">Our <span class="text-primary-700">Services</span></h2>
+          <p class="section-sub">Hiring and workforce services for companies of every size — from one role to one thousand.</p>
+        </div>
+
+        <div class="mt-12 space-y-6 lg:mt-16 lg:space-y-8">
+          <!-- ═══════════ BOX 1 · BPO HIRINGS ═══════════ -->
+          <article class="svc-box" style="--svc-accent:#059669" data-reveal data-delay="0" aria-label="BPO Hirings service">
+            <div class="flex flex-wrap items-start gap-4">
+              <span class="icon-tile shrink-0 bg-emerald-50 text-emerald-700"><i aria-hidden="true" data-lucide="headset" class="h-5 w-5"></i></span>
+              <div class="min-w-0 flex-1">
+                <h3 class="text-xl font-extrabold text-slate-900 sm:text-2xl">BPO Hirings</h3>
+                <p class="text-sm text-slate-500">Voice, non-voice and customer operations staffing</p>
+              </div>
+              <span class="badge-soft self-start sm:self-center">Hiring</span>
+            </div>
+            <div class="mt-6 grid gap-6 lg:grid-cols-2 lg:gap-8">
+              <div>
+                <p class="svc-box-label">What we cover</p>
+                <ul class="mt-3 grid gap-1 sm:grid-cols-2">
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-emerald-600"></i>Voice Process Hiring</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-emerald-600"></i>Non-Voice Process Hiring</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-emerald-600"></i>Customer Support Hiring</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-emerald-600"></i>Bulk Hiring Drives</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-emerald-600"></i>Candidate Screening</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-emerald-600"></i>Recruitment Support</li>
+                </ul>
+              </div>
+              <div class="svc-desc">
+                <p class="svc-box-label">Description</p>
+                <p class="mt-2 text-sm leading-relaxed !text-slate-600 sm:text-base">Reliable hiring support for voice, non-voice and customer operations. We source, screen and coordinate candidates so your floor team can focus on training and operations.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="phone-call" class="h-3.5 w-3.5 text-emerald-600"></i>Voice</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="keyboard" class="h-3.5 w-3.5 text-emerald-600"></i>Non-Voice</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="users" class="h-3.5 w-3.5 text-emerald-600"></i>Support</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="layers" class="h-3.5 w-3.5 text-emerald-600"></i>Bulk Drives</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="filter" class="h-3.5 w-3.5 text-emerald-600"></i>Screening</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="clipboard-check" class="h-3.5 w-3.5 text-emerald-600"></i>Follow-up</span>
+            </div>
+            <div class="mt-7 flex flex-wrap items-center gap-4 border-t border-slate-100 pt-6">
+              <a href="contact.html?enquire=BPO%20Services" class="btn-primary" aria-label="Apply for BPO hiring — opens the enquiry form">Apply Now<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+              <a href="services/bpo-services.html" class="btn-secondary">Know More<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+              <span class="ml-auto hidden items-center gap-2 text-sm text-slate-400 sm:flex"><i aria-hidden="true" data-lucide="timer" class="h-4 w-4"></i>Shortlists within days</span>
+            </div>
+          </article>
+
+          <!-- ═══════════ BOX 2 · MANPOWER SOURCING &amp; DARK STORE ═══════════ -->
+          <article class="svc-box" style="--svc-accent:#7C3AED" data-reveal data-delay="60" aria-label="Manpower sourcing and dark store management service">
+            <div class="flex flex-wrap items-start gap-4">
+              <span class="icon-tile shrink-0 bg-violet-50 text-violet-700"><i aria-hidden="true" data-lucide="users" class="h-5 w-5"></i></span>
+              <div class="min-w-0 flex-1">
+                <h3 class="text-xl font-extrabold text-slate-900 sm:text-2xl">Manpower Sourcing <span class="text-slate-300">/</span> Dark Store Management</h3>
+                <p class="text-sm text-slate-500">Operations teams at every level, ready to deploy</p>
+              </div>
+              <span class="badge-soft self-start sm:self-center">Workforce</span>
+            </div>
+            <div class="mt-6 grid gap-6 lg:grid-cols-2 lg:gap-8">
+              <div>
+                <p class="svc-box-label">Roles we fill</p>
+                <ul class="mt-3 grid gap-1 sm:grid-cols-2">
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-violet-600"></i>Project Manager</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-violet-600"></i>Operations Manager</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-violet-600"></i>Team Lead</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-violet-600"></i>Shift Incharge</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-violet-600"></i>Manpower Sourcing</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-violet-600"></i>Dark Store Teams</li>
+                </ul>
+              </div>
+              <div class="svc-desc">
+                <p class="svc-box-label">Description</p>
+                <p class="mt-2 text-sm leading-relaxed !text-slate-600 sm:text-base">Dependable manpower for every level of your operation, from project managers to shift teams. Dark store staffing and floor coordination are handled end to end, and experience is verified before any profile reaches you.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="user-search" class="h-3.5 w-3.5 text-violet-600"></i>Sourcing</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="map-pin" class="h-3.5 w-3.5 text-violet-600"></i>Deployment</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="clipboard-list" class="h-3.5 w-3.5 text-violet-600"></i>Staffing</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="clock" class="h-3.5 w-3.5 text-violet-600"></i>Shifts</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="network" class="h-3.5 w-3.5 text-violet-600"></i>Coordination</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="warehouse" class="h-3.5 w-3.5 text-violet-600"></i>Dark Store</span>
+            </div>
+            <div class="mt-7 flex flex-wrap items-center gap-4 border-t border-slate-100 pt-6">
+              <a href="contact.html?enquire=Manpower%20Services" class="btn-primary" aria-label="Apply for manpower services — opens the enquiry form">Apply Now<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+              <a href="services/manpower-services.html" class="btn-secondary">Know More<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+              <span class="ml-auto hidden items-center gap-2 text-sm text-slate-400 sm:flex"><i aria-hidden="true" data-lucide="shield-check" class="h-4 w-4"></i>Verified profiles only</span>
+            </div>
+          </article>
+
+          <!-- ═══════════ BOX 3 · WEBSITE DEVELOPMENT ═══════════ -->
+          <article class="svc-box" style="--svc-accent:#0284C7" data-reveal data-delay="120" aria-label="Website development service">
+            <div class="flex flex-wrap items-start gap-4">
+              <span class="icon-tile shrink-0 bg-sky-50 text-sky-700"><i aria-hidden="true" data-lucide="globe" class="h-5 w-5"></i></span>
+              <div class="min-w-0 flex-1">
+                <h3 class="text-xl font-extrabold text-slate-900 sm:text-2xl">Website Development</h3>
+                <p class="text-sm text-slate-500">Clean, fast websites for growing businesses</p>
+              </div>
+              <span class="badge-soft self-start sm:self-center">Digital</span>
+            </div>
+            <div class="mt-6 grid gap-6 lg:grid-cols-2 lg:gap-8">
+              <div>
+                <p class="svc-box-label">What we build</p>
+                <ul class="mt-3 grid gap-1 sm:grid-cols-2">
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-sky-600"></i>Business Websites</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-sky-600"></i>Corporate Websites</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-sky-600"></i>Responsive Layouts</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-sky-600"></i>Landing Pages</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-sky-600"></i>UI/UX Implementation</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-sky-600"></i>Redesign &amp; Maintenance</li>
+                </ul>
+              </div>
+              <div class="svc-desc">
+                <p class="svc-box-label">Description</p>
+                <p class="mt-2 text-sm leading-relaxed !text-slate-600 sm:text-base">Professional websites that load quickly, work on every screen and present your company clearly. Built in fixed steps with regular updates, from planning to launch and long-term maintenance.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="monitor" class="h-3.5 w-3.5 text-sky-600"></i>Business</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="briefcase" class="h-3.5 w-3.5 text-sky-600"></i>Corporate</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="smartphone" class="h-3.5 w-3.5 text-sky-600"></i>Responsive</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="layout-template" class="h-3.5 w-3.5 text-sky-600"></i>Landing</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="palette" class="h-3.5 w-3.5 text-sky-600"></i>UI/UX</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="wrench" class="h-3.5 w-3.5 text-sky-600"></i>Maintenance</span>
+            </div>
+            <div class="mt-7 flex flex-wrap items-center gap-4 border-t border-slate-100 pt-6">
+              <a href="contact.html?enquire=Website%20Development" class="btn-primary" aria-label="Apply for website development — opens the enquiry form">Apply Now<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+              <a href="services/website-development.html" class="btn-secondary">Know More<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+              <span class="ml-auto hidden items-center gap-2 text-sm text-slate-400 sm:flex"><i aria-hidden="true" data-lucide="phone-call" class="h-4 w-4"></i>Free consultation call</span>
+            </div>
+          </article>
+
+          <!-- ═══════════ BOX 4 · INTERNSHIP PROGRAM ═══════════ -->
+          <article class="svc-box" style="--svc-accent:#D97706" data-reveal data-delay="0" aria-label="Internship program">
+            <div class="flex flex-wrap items-start gap-4">
+              <span class="icon-tile shrink-0 bg-amber-50 text-amber-700"><i aria-hidden="true" data-lucide="graduation-cap" class="h-5 w-5"></i></span>
+              <div class="min-w-0 flex-1">
+                <h3 class="text-xl font-extrabold text-slate-900 sm:text-2xl">Internship Program</h3>
+                <p class="text-sm text-slate-500">Eight structured roles with real work and mentors</p>
+              </div>
+              <span class="badge-soft self-start sm:self-center">Learning</span>
+            </div>
+            <div class="mt-6 grid gap-6 lg:grid-cols-2 lg:gap-8">
+              <div>
+                <p class="svc-box-label">Roles available</p>
+                <ul class="mt-3 grid gap-1 sm:grid-cols-2">
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-amber-600"></i>HR &amp; Recruitment Intern</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-amber-600"></i>Talent Acquisition Specialist</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-amber-600"></i>Manpower Sourcing Ops</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-amber-600"></i>Staffing &amp; Deployment</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-amber-600"></i>BPO Hiring Support</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-amber-600"></i>Workforce Coordination</li>
+                </ul>
+                <p class="mt-3 text-sm text-slate-400">+ 2 more roles on the internship page</p>
+              </div>
+              <div class="svc-desc">
+                <p class="svc-box-label">Description</p>
+                <p class="mt-2 text-sm leading-relaxed !text-slate-600 sm:text-base">Eight structured internship roles with real work, mentors and certificates. Every role has a fixed duration, a named mentor and clear learning goals, so you finish with skills and work samples.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="book-open" class="h-3.5 w-3.5 text-amber-600"></i>Real Projects</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="message-circle" class="h-3.5 w-3.5 text-amber-600"></i>Mentors</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="award" class="h-3.5 w-3.5 text-amber-600"></i>Certificate</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="clock" class="h-3.5 w-3.5 text-amber-600"></i>2 to 6 Months</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="map-pin" class="h-3.5 w-3.5 text-amber-600"></i>Hybrid</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="briefcase" class="h-3.5 w-3.5 text-amber-600"></i>Job Pipeline</span>
+            </div>
+            <div class="mt-7 flex flex-wrap items-center gap-4 border-t border-slate-100 pt-6">
+              <a href="services/internship.html#internshipForm" class="btn-primary" aria-label="Apply for an internship — opens the application form">Apply Now<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+              <a href="services/internship.html" class="btn-secondary">Know More<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+              <span class="ml-auto hidden items-center gap-2 text-sm text-slate-400 sm:flex"><i aria-hidden="true" data-lucide="sparkles" class="h-4 w-4"></i>Apply in under a minute</span>
+            </div>
+          </article>
+
+          <!-- ═══════════ BOX 5 · TRAINING &amp; INTERVIEW SUPPORT ═══════════ -->
+          <article class="svc-box" style="--svc-accent:#E11D48" data-reveal data-delay="60" aria-label="Training and interview support service">
+            <div class="flex flex-wrap items-start gap-4">
+              <span class="icon-tile shrink-0 bg-rose-50 text-rose-700"><i aria-hidden="true" data-lucide="school" class="h-5 w-5"></i></span>
+              <div class="min-w-0 flex-1">
+                <h3 class="text-xl font-extrabold text-slate-900 sm:text-2xl">Training &amp; Interview Support</h3>
+                <p class="text-sm text-slate-500">Practical preparation that makes candidates job-ready</p>
+              </div>
+              <span class="badge-soft self-start sm:self-center">Learning</span>
+            </div>
+            <div class="mt-6 grid gap-6 lg:grid-cols-2 lg:gap-8">
+              <div>
+                <p class="svc-box-label">What we cover</p>
+                <ul class="mt-3 grid gap-1 sm:grid-cols-2">
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-rose-600"></i>Career Skills</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-rose-600"></i>Communication Skills</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-rose-600"></i>BPO &amp; Operations Training</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-rose-600"></i>Resume Guidance</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-rose-600"></i>Mock Interviews</li>
+                  <li class="svc-bullet"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5 shrink-0 text-rose-600"></i>Confidence Building</li>
+                </ul>
+              </div>
+              <div class="svc-desc">
+                <p class="svc-box-label">Description</p>
+                <p class="mt-2 text-sm leading-relaxed !text-slate-600 sm:text-base">Practical training and interview preparation that make candidates job-ready. Communication practice, resume guidance and mock interviews with honest feedback, until you can face any interview with confidence.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="message-circle" class="h-3.5 w-3.5 text-rose-600"></i>Speaking</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="file-text" class="h-3.5 w-3.5 text-rose-600"></i>Resume</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="video" class="h-3.5 w-3.5 text-rose-600"></i>Mock Interviews</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="mic" class="h-3.5 w-3.5 text-rose-600"></i>Communication</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="lightbulb" class="h-3.5 w-3.5 text-rose-600"></i>Tips</span>
+              <span class="svc-chip"><i aria-hidden="true" data-lucide="heart-handshake" class="h-3.5 w-3.5 text-rose-600"></i>Confidence</span>
+            </div>
+            <div class="mt-7 flex flex-wrap items-center gap-4 border-t border-slate-100 pt-6">
+              <a href="contact.html?enquire=Training%20%26%20Interview%20Support" class="btn-primary" aria-label="Apply for training and interview support — opens the enquiry form">Apply Now<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+              <a href="services/training-interview-support.html" class="btn-secondary">Know More<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+              <span class="ml-auto hidden items-center gap-2 text-sm text-slate-400 sm:flex"><i aria-hidden="true" data-lucide="users" class="h-4 w-4"></i>Small batches · Practical sessions</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-10 text-center" data-reveal>
+          <a href="services.html" class="btn-secondary">Explore All Services<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+          <p class="mt-3 text-sm text-slate-500">5 core services across hiring, workforce, digital and learning — each with a dedicated page.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ INTERNSHIPS ============================ -->
+    <section id="internships" data-spy="internships" class="bg-white py-20 lg:py-28" aria-label="Internships">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center txt-lines" data-reveal>
+          <span class="section-eyebrow"><span class="h-1.5 w-1.5 rounded-full bg-primary-600"></span>Careers &amp; Learning</span>
+          <h2 class="section-title txt-words">Internships &amp; <span class="text-primary-700">Opportunities</span></h2>
+          <p class="section-sub">Learn on real projects with a team that guides you. Pick a role and apply in under a minute.</p>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16 xl:grid-cols-4">
+          <!-- Card 1 -->
+          <article class="opportunity-card txt-lines txt-lines--lag flex flex-col" data-reveal data-delay="0">
+            <div class="flex items-start justify-between">
+              <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="users" class="h-5 w-5"></i></span>
+              <span class="badge-soft">Human Resources</span>
+            </div>
+            <h3 class="mt-5 text-lg font-bold text-slate-900">HR &amp; Recruitment Intern</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Learn practical HR processes, recruitment and candidate coordination.</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="meta-row"><i aria-hidden="true" data-lucide="clock" class="h-4 w-4"></i>3 to 6 months</li>
+              <li class="meta-row"><i aria-hidden="true" data-lucide="map-pin" class="h-4 w-4"></i>Hybrid · Hyderabad</li>
+            </ul>
+            <div class="mt-auto grid grid-cols-2 gap-2 pt-6">
+              <a href="services/internship.html#role-hr-recruitment-intern" class="btn-ghost !px-3 justify-center text-sm">View Internship</a>
+              <a href="services/internship.html?apply=HR%20%26%20Recruitment%20Intern" class="btn-soft !px-3 justify-center text-sm">Apply Now<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="opportunity-card txt-lines txt-lines--lag flex flex-col" data-reveal data-delay="80">
+            <div class="flex items-start justify-between">
+              <span class="icon-tile shrink-0 bg-emerald-50 text-emerald-700"><i aria-hidden="true" data-lucide="headset" class="h-5 w-5"></i></span>
+              <span class="badge-soft">Customer Operations</span>
+            </div>
+            <h3 class="mt-5 text-lg font-bold text-slate-900">BPO Hiring Support Intern</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Support high-volume BPO hiring for voice and non-voice roles, from screening to joining.</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="meta-row"><i aria-hidden="true" data-lucide="clock" class="h-4 w-4"></i>2 to 4 months</li>
+              <li class="meta-row"><i aria-hidden="true" data-lucide="map-pin" class="h-4 w-4"></i>Hybrid · Hyderabad</li>
+            </ul>
+            <div class="mt-auto grid grid-cols-2 gap-2 pt-6">
+              <a href="services/internship.html#role-bpo-hiring-support-intern" class="btn-ghost !px-3 justify-center text-sm">View Internship</a>
+              <a href="services/internship.html?apply=BPO%20Hiring%20Support%20Intern" class="btn-soft !px-3 justify-center text-sm">Apply Now<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="opportunity-card txt-lines txt-lines--lag flex flex-col" data-reveal data-delay="160">
+            <div class="flex items-start justify-between">
+              <span class="icon-tile shrink-0 bg-amber-50 text-amber-700"><i aria-hidden="true" data-lucide="megaphone" class="h-5 w-5"></i></span>
+              <span class="badge-soft">Marketing &amp; Growth</span>
+            </div>
+            <h3 class="mt-5 text-lg font-bold text-slate-900">Digital Marketing &amp; Branding Intern</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Help grow the SNR NEST brand online — content, campaigns and candidate outreach.</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="meta-row"><i aria-hidden="true" data-lucide="clock" class="h-4 w-4"></i>2 to 4 months</li>
+              <li class="meta-row"><i aria-hidden="true" data-lucide="map-pin" class="h-4 w-4"></i>Hybrid · Hyderabad</li>
+            </ul>
+            <div class="mt-auto grid grid-cols-2 gap-2 pt-6">
+              <a href="services/internship.html#role-digital-marketing-branding-intern" class="btn-ghost !px-3 justify-center text-sm">View Internship</a>
+              <a href="services/internship.html?apply=Digital%20Marketing%20%26%20Branding%20Intern" class="btn-soft !px-3 justify-center text-sm">Apply Now<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="opportunity-card txt-lines txt-lines--lag flex flex-col" data-reveal data-delay="240">
+            <div class="flex items-start justify-between">
+              <span class="icon-tile shrink-0 bg-violet-50 text-violet-700"><i aria-hidden="true" data-lucide="clipboard-list" class="h-5 w-5"></i></span>
+              <span class="badge-soft">Operations &amp; Staffing</span>
+            </div>
+            <h3 class="mt-5 text-lg font-bold text-slate-900">Workforce Coordination Intern</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Keep daily workforce operations running — rosters, attendance, reports and coordination.</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="meta-row"><i aria-hidden="true" data-lucide="clock" class="h-4 w-4"></i>3 to 6 months</li>
+              <li class="meta-row"><i aria-hidden="true" data-lucide="map-pin" class="h-4 w-4"></i>On-site · Hyderabad</li>
+            </ul>
+            <div class="mt-auto grid grid-cols-2 gap-2 pt-6">
+              <a href="services/internship.html#role-workforce-coordination-intern" class="btn-ghost !px-3 justify-center text-sm">View Internship</a>
+              <a href="services/internship.html?apply=Workforce%20Coordination%20Intern" class="btn-soft !px-3 justify-center text-sm">Apply Now<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-10 text-center" data-reveal>
+          <a href="services/internship.html" class="btn-secondary">View All Internships<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+          <p class="mt-3 text-sm text-slate-500">8 structured roles across HR, operations, marketing and business.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ BRAND STATEMENT (sketch: "We are Growing") ============================ -->
+    <section id="about" data-spy="about" class="relative overflow-hidden bg-navy-900 py-24 text-white lg:py-32" aria-label="About SNR NEST">
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-600/20 blur-3xl"></div>
+        <div class="absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-sky-500/10 blur-3xl"></div>
+        <svg class="absolute inset-0 h-full w-full opacity-[0.05]" aria-hidden="true"><defs><pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse"><path d="M44 0H0v44" fill="none" stroke="white" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
+      </div>
+
+      <div class="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+        <span class="section-eyebrow !text-slate-400" data-reveal><span class="h-1.5 w-1.5 rounded-full bg-primary-400"></span>Who We Are</span>
+
+        <h2 class="statement" data-reveal data-delay="80">
+          <span class="statement-line">WE ARE</span>
+          <span class="statement-line statement-accent">GROWING</span>
+          <span class="statement-line">TOGETHER<span class="text-primary-400">.</span></span>
+        </h2>
+
+        <p class="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-300" data-reveal data-delay="160">
+          We connect <strong class="font-semibold text-white">talent</strong>, <strong class="font-semibold text-white">businesses</strong> and <strong class="font-semibold text-white">opportunities</strong> to create meaningful growth — one right match at a time.
+        </p>
+
+        <div class="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-5" data-reveal data-delay="240">
+          <span class="pillar"><span class="icon-tile !bg-white/10 !text-primary-300 ring-1 ring-white/15"><i aria-hidden="true" data-lucide="users" class="h-4 w-4"></i></span>Talent</span>
+          <span class="pillar"><span class="icon-tile !bg-white/10 !text-primary-300 ring-1 ring-white/15"><i aria-hidden="true" data-lucide="building-2" class="h-4 w-4"></i></span>Businesses</span>
+          <span class="pillar"><span class="icon-tile !bg-white/10 !text-primary-300 ring-1 ring-white/15"><i aria-hidden="true" data-lucide="trending-up" class="h-4 w-4"></i></span>Opportunities</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ FINAL CTA ============================ -->
+    <section id="contact" data-spy="contact" class="relative overflow-hidden bg-navy-950 py-20 text-white lg:py-28" aria-label="Contact us">
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-primary-600/25 blur-3xl"></div>
+        <div class="absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-sky-500/15 blur-3xl"></div>
+      </div>
+      <div class="relative mx-auto max-w-3xl px-4 text-center sm:px-6" data-reveal>
+        <span class="section-eyebrow !text-slate-400"><span class="h-1.5 w-1.5 rounded-full bg-primary-400"></span>Get Started</span>
+        <h2 class="mt-5 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">Let's Build the Right<br class="hidden sm:block" /> Team Together.</h2>
+        <p class="mx-auto mt-5 max-w-xl text-lg text-slate-300">Tell us what you need. We will find the right people for your team — or the right job for you.</p>
+        <div class="mt-9 flex flex-wrap items-center justify-center gap-4">
+          <a href="contact.html" class="btn-primary !bg-white !text-navy-900 shadow-soft hover:!bg-slate-100">Get Started<i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></a>
+          <a href="mailto:praveen@snrnest.in" class="btn-outline-light">Contact Us<i aria-hidden="true" data-lucide="mail" class="h-4 w-4"></i></a>
+        </div>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 text-sm text-slate-400">
+          <button type="button" class="contact-chip" data-copy="praveen@snrnest.in" aria-label="Copy email address to clipboard">
+            <i aria-hidden="true" data-lucide="mail" class="h-4 w-4 text-primary-400"></i>praveen@snrnest.in
+            <i aria-hidden="true" data-lucide="copy" class="copy-ico h-3.5 w-3.5"></i>
+          </button>
+          <button type="button" class="contact-chip" data-copy="+91 96323 41836" aria-label="Copy phone number to clipboard">
+            <i aria-hidden="true" data-lucide="phone" class="h-4 w-4 text-primary-400"></i>+91 96323 41836
+            <i aria-hidden="true" data-lucide="copy" class="copy-ico h-3.5 w-3.5"></i>
+          </button>
+          <a href="contact.html#apps" class="contact-chip" aria-label="Track your saved applications">
+            <i aria-hidden="true" data-lucide="folder-open" class="h-4 w-4 text-primary-400"></i>Track your application
+            <i aria-hidden="true" data-lucide="arrow-up-right" class="copy-ico h-3.5 w-3.5"></i>
+          </a>
+          <span class="inline-flex items-center gap-2"><i aria-hidden="true" data-lucide="map-pin" class="h-4 w-4 text-primary-400"></i>Hyderabad, India</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="bg-navy-950 text-slate-300" aria-label="Footer">
+    <div class="mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8 lg:pt-20">
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_1fr] lg:gap-10">
+        <!-- Brand + contact -->
         <div>
-          <div class="t-eyebrow mb-4 sr" data-reveal>[ 002 ]  Verticals</div>
-          <h2 class="t-section sr" data-reveal style="--d:.05s">
-            Five verticals,<br>one network.
-          </h2>
-        </div>
-        <p class="max-w-md text-cream text-sm leading-relaxed sr" data-reveal style="--d:.1s">
-          Each vertical operates independently, yet every one is reinforced by the other four. Hover any row to explore.
-        </p>
-      </div>
-
-      <!-- Editorial list -->
-      <div class="verticals sr" data-reveal style="--d:.15s">
-        <a href="bpo-hiring.html" class="vertical-row" data-image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop">
-          <span class="v-num">01</span>
-          <span class="v-title">BPO Hiring</span>
-          <span class="v-desc">Voice, non-voice, customer support & back-office roles across leading BPO & BPM partners.</span>
-          <span class="v-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </a>
-        <a href="manpower-sourcing.html" class="vertical-row" data-image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop">
-          <span class="v-num">02</span>
-          <span class="v-title">Manpower Sourcing</span>
-          <span class="v-desc">Workforce staffing for dark stores, warehouses, logistics & retail floor operations.</span>
-          <span class="v-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </a>
-        <a href="website-solutions.html" class="vertical-row" data-image="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1200&auto=format&fit=crop">
-          <span class="v-num">03</span>
-          <span class="v-title">Website Solutions</span>
-          <span class="v-desc">Bespoke, high-conversion digital experiences engineered for ambitious businesses.</span>
-          <span class="v-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </a>
-        <a href="internship.html" class="vertical-row" data-image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
-          <span class="v-num">04</span>
-          <span class="v-title">Internship</span>
-          <span class="v-desc">Industry-aligned programs across HR, operations, marketing & business strategy.</span>
-          <span class="v-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </a>
-        <a href="training-placement.html" class="vertical-row" data-image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
-          <span class="v-num">05</span>
-          <span class="v-title">Training & Placement</span>
-          <span class="v-desc">Bootcamps in full-stack, AI/ML, data analytics, digital marketing & BPO leadership.</span>
-          <span class="v-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== CLIENT MARQUEE ============== -->
-  <section class="section-sm bg-charcoal border-y border-line" data-bg="charcoal">
-    <div class="shell">
-      <div class="flex items-center justify-between mb-10 gap-6">
-        <div class="t-eyebrow sr" data-reveal>[ 003 ]  Hiring Partners</div>
-        <div class="font-mono text-xs text-faint tracking-widest sr" data-reveal style="--d:.05s">VERIFIED ECOSYSTEM  —  ACTIVE DRIVES</div>
-      </div>
-    </div>
-    <div class="marquee sr" data-reveal style="--d:.1s">
-      <div class="marquee-track">
-        <span class="marquee-item"><span class="dot"></span>Concentrix</span>
-        <span class="marquee-item"><span class="dot"></span>Tata Elxsi</span>
-        <span class="marquee-item"><span class="dot"></span>KreditBee</span>
-        <span class="marquee-item"><span class="dot"></span>Stable Money</span>
-        <span class="marquee-item"><span class="dot"></span>Axis Bank</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== STATS ============== -->
-  <section class="section" data-bg="ink">
-    <div class="shell">
-      <div class="grid grid-cols-2 lg:grid-cols-4 divide-line border-line border-y">
-        <div class="p-8 md:p-10 border-r border-line sr" data-reveal>
-          <div class="stat-num" data-target="500" data-suffix="+">0</div>
-          <div class="stat-label">Candidates Connected</div>
-        </div>
-        <div class="p-8 md:p-10 lg:border-r border-line sr" data-reveal style="--d:.1s">
-          <div class="stat-num" data-target="100" data-suffix="+">0</div>
-          <div class="stat-label">Hiring Requirements</div>
-        </div>
-        <div class="p-8 md:p-10 border-r border-line border-t md:border-t-0 sr" data-reveal style="--d:.2s">
-          <div class="stat-num" data-target="50" data-suffix="+">0</div>
-          <div class="stat-label">Students Trained</div>
-        </div>
-        <div class="p-8 md:p-10 border-t md:border-t-0 sr" data-reveal style="--d:.3s">
-          <div class="stat-num" data-target="25" data-suffix="+">0</div>
-          <div class="stat-label">Websites Delivered</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== PROCESS TABS ============== -->
-  <section class="section bg-charcoal" data-bg="charcoal">
-    <div class="shell">
-      <div class="grid md:grid-cols-12 gap-y-10 md:gap-x-6 mb-14">
-        <div class="md:col-span-4">
-          <div class="t-eyebrow mb-4 sr" data-reveal>[ 004 ]  Process</div>
-          <h2 class="t-section sr" data-reveal style="--d:.05s">
-            Four pathways.<br>One methodology.
-          </h2>
-        </div>
-        <p class="md:col-span-7 md:col-start-6 text-cream text-base leading-relaxed sr" data-reveal style="--d:.1s">
-          The path through SNR NEST shifts depending on who you are — a candidate, a business, a student, or a website client. Each journey is engineered for a specific outcome, yet they all share the same DNA: discovery, craft, execution and outcome.
-        </p>
-      </div>
-
-      <div data-tabs class="sr" data-reveal style="--d:.15s">
-        <div class="tabs mb-12">
-          <button class="tab is-active" data-tab="candidates">Candidates</button>
-          <button class="tab" data-tab="businesses">Businesses</button>
-          <button class="tab" data-tab="students">Students</button>
-          <button class="tab" data-tab="clients">Website Clients</button>
-        </div>
-
-        <div class="tab-pane is-active grid grid-cols-2 md:grid-cols-5 gap-6" data-pane="candidates">
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">01</div><div class="font-display font-semibold text-lg text-ivory mb-2">Discover</div><div class="text-cream text-sm leading-relaxed">Find your track.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">02</div><div class="font-display font-semibold text-lg text-ivory mb-2">Apply</div><div class="text-cream text-sm leading-relaxed">Submit your profile.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">03</div><div class="font-display font-semibold text-lg text-ivory mb-2">Prepare</div><div class="text-cream text-sm leading-relaxed">Mock drills & resume.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">04</div><div class="font-display font-semibold text-lg text-ivory mb-2">Interview</div><div class="text-cream text-sm leading-relaxed">Direct with partners.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">05</div><div class="font-display font-semibold text-lg text-ivory mb-2">Join</div><div class="text-cream text-sm leading-relaxed">Day-1 onboarding.</div></div>
-        </div>
-        <div class="tab-pane grid grid-cols-2 md:grid-cols-5 gap-6" data-pane="businesses">
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">01</div><div class="font-display font-semibold text-lg text-ivory mb-2">Requirement</div><div class="text-cream text-sm leading-relaxed">Share headcount & shifts.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">02</div><div class="font-display font-semibold text-lg text-ivory mb-2">Source</div><div class="text-cream text-sm leading-relaxed">Verified talent pool.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">03</div><div class="font-display font-semibold text-lg text-ivory mb-2">Screen</div><div class="text-cream text-sm leading-relaxed">KYC + skill check.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">04</div><div class="font-display font-semibold text-lg text-ivory mb-2">Select</div><div class="text-cream text-sm leading-relaxed">Interview sign-off.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">05</div><div class="font-display font-semibold text-lg text-ivory mb-2">Deploy</div><div class="text-cream text-sm leading-relaxed">Day-1 compliant.</div></div>
-        </div>
-        <div class="tab-pane grid grid-cols-2 md:grid-cols-5 gap-6" data-pane="students">
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">01</div><div class="font-display font-semibold text-lg text-ivory mb-2">Learn</div><div class="text-cream text-sm leading-relaxed">Mentor-led training.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">02</div><div class="font-display font-semibold text-lg text-ivory mb-2">Build</div><div class="text-cream text-sm leading-relaxed">Real project work.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">03</div><div class="font-display font-semibold text-lg text-ivory mb-2">Certify</div><div class="text-cream text-sm leading-relaxed">Verified credentials.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">04</div><div class="font-display font-semibold text-lg text-ivory mb-2">Prepare</div><div class="text-cream text-sm leading-relaxed">Interview drills.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">05</div><div class="font-display font-semibold text-lg text-ivory mb-2">Placed</div><div class="text-cream text-sm leading-relaxed">Hiring drive access.</div></div>
-        </div>
-        <div class="tab-pane grid grid-cols-2 md:grid-cols-5 gap-6" data-pane="clients">
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">01</div><div class="font-display font-semibold text-lg text-ivory mb-2">Discover</div><div class="text-cream text-sm leading-relaxed">Scope & persona.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">02</div><div class="font-display font-semibold text-lg text-ivory mb-2">Design</div><div class="text-cream text-sm leading-relaxed">System & prototype.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">03</div><div class="font-display font-semibold text-lg text-ivory mb-2">Develop</div><div class="text-cream text-sm leading-relaxed">Clean & responsive.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">04</div><div class="font-display font-semibold text-lg text-ivory mb-2">Launch</div><div class="text-cream text-sm leading-relaxed">CDN edge + SEO.</div></div>
-          <div class="border-t border-line pt-6"><div class="font-mono text-xs text-accent mb-3">05</div><div class="font-display font-semibold text-lg text-ivory mb-2">Support</div><div class="text-cream text-sm leading-relaxed">Ongoing maintenance.</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== WHY SNR NEST — editorial rows ============== -->
-  <section class="section" data-bg="ink">
-    <div class="shell">
-      <div class="grid md:grid-cols-12 gap-y-10 md:gap-x-6 mb-14">
-        <div class="md:col-span-4">
-          <div class="t-eyebrow mb-4 sr" data-reveal>[ 005 ]  Why SNR NEST</div>
-          <h2 class="t-section sr" data-reveal style="--d:.05s">
-            Engineered<br>for outcomes.
-          </h2>
-        </div>
-        <p class="md:col-span-7 md:col-start-6 text-cream text-base leading-relaxed sr" data-reveal style="--d:.1s">
-          Every advantage below is a consequence of how the ecosystem is wired — proximity to hiring partners, real operational floor exposure, in-house engineering, and a placement team that does not stop until you are placed.
-        </p>
-      </div>
-
-      <div class="border-t border-line sr" data-reveal style="--d:.15s" id="why-rows"></div>
-    </div>
-  </section>
-
-  <!-- ============== CAREER CTA ============== -->
-  <section class="relative overflow-hidden" data-bg="charcoal" style="padding:clamp(6rem,16vh,12rem) 0;">
-    <div class="absolute inset-0 -z-10">
-      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2400&auto=format&fit=crop" alt="" class="w-full h-full object-cover parallax" data-parallax="0.15" style="filter:grayscale(70%) contrast(1.05) brightness(.4);" loading="lazy">
-      <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(10,10,10,.6) 0%, rgba(20,20,20,.85) 100%);"></div>
-    </div>
-    <div class="shell relative z-10">
-      <div class="t-eyebrow mb-6 sr" data-reveal>[ 006 ]  Career</div>
-      <h2 class="t-section max-w-4xl mb-10 sr" data-reveal style="--d:.05s">
-        Your next opportunity<br>is closer than you think.
-      </h2>
-      <div class="flex flex-wrap gap-4 sr" data-reveal style="--d:.1s">
-        <a href="bpo-hiring.html" class="magnetic magnetic-solid">
-          <span class="m-text">Find Jobs</span>
-          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="internship.html" class="magnetic">
-          <span class="m-text">Apply for Internship</span>
-          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="training-placement.html" class="magnetic">
-          <span class="m-text">Explore Training</span>
-          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== EMPLOYER CTA — two paths ============== -->
-  <section class="section" data-bg="ink">
-    <div class="shell">
-      <div class="grid md:grid-cols-2 gap-12 md:gap-8">
-        <div class="sr" data-reveal>
-          <div class="t-eyebrow mb-6">For Employers  —  01</div>
-          <h3 class="t-large mb-6">Need people who are ready to work?</h3>
-          <p class="text-cream text-sm leading-relaxed mb-10 max-w-md">
-            Share your requirement — we source, screen, KYC and deploy a compliant workforce in 48 to 72 hours across dark stores, warehouses, BPO floors and retail operations.
-          </p>
-          <a href="manpower-sourcing.html" class="magnetic magnetic-solid">
-            <span class="m-text">Request Manpower</span>
-            <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <a href="index.html" class="flex w-fit items-center gap-3" aria-label="SNR NEST — home">
+            <img src="images/logo/logo.svg" alt="SNR NEST logo" width="44" height="44" loading="lazy" class="h-11 w-11 rounded-xl" />
+            <span class="leading-tight">
+              <span class="block text-lg font-extrabold tracking-tight text-white">SNR <span class="text-primary-400">NEST</span></span>
+              <span class="block text-[9px] font-bold uppercase tracking-[0.22em] text-slate-400">Workforce &amp; Hiring</span>
+            </span>
           </a>
-        </div>
-        <div class="md:border-l md:border-line md:pl-12 sr" data-reveal style="--d:.1s">
-          <div class="t-eyebrow mb-6">For Brands  —  02</div>
-          <h3 class="t-large mb-6">Need a website that represents your business?</h3>
-          <p class="text-cream text-sm leading-relaxed mb-10 max-w-md">
-            From bespoke corporate platforms to high-conversion landing pages and full e-commerce — engineered with semantic code, fluid typography and edge-CDN performance.
+          <p class="mt-5 max-w-sm text-sm leading-relaxed text-slate-400">
+            SNR NEST connects people, skills, businesses and opportunities — building careers and teams that grow together.
           </p>
-          <a href="website-solutions.html" class="magnetic magnetic-solid">
-            <span class="m-text">Start Your Website</span>
-            <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          <div class="mt-6 flex items-center gap-3">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on LinkedIn"><i aria-hidden="true" data-lucide="linkedin" class="h-4 w-4"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on Instagram"><i aria-hidden="true" data-lucide="instagram" class="h-4 w-4"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on X"><i aria-hidden="true" data-lucide="twitter" class="h-4 w-4"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on Facebook"><i aria-hidden="true" data-lucide="facebook" class="h-4 w-4"></i></a>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm">
+            <li><a href="mailto:praveen@snrnest.in" class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="mail" class="h-3.5 w-3.5"></i></span>praveen@snrnest.in</a></li>
+            <li><a href="tel:+919632341836" class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="phone" class="h-3.5 w-3.5"></i></span>+91 96323 41836</a></li>
+            <li><span class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="map-pin" class="h-3.5 w-3.5"></i></span>Hyderabad, Telangana, India</span></li>
+          </ul>
+          <div class="site-qr" id="siteQrTile">
+            <button type="button" id="siteQrBtn" class="site-qr-btn" aria-label="QR code: scan to visit the SNR NEST website, or activate to copy the site link">
+              <span id="siteQrTarget" class="site-qr-target" aria-hidden="true"></span>
+            </button>
+            <p class="site-qr-caption" id="siteQrCaption">Scan to visit our site</p>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <nav aria-label="Quick links" class="lg:justify-self-center">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="services/internship.html" class="footer-link">Internships</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Services sitemap -->
+        <nav aria-label="Services">
+          <h3 class="footer-heading">Services</h3>
+          <ul class="mt-5 space-y-2.5 text-sm">
+            <li><a href="services/bpo-services.html" class="footer-link">BPO Services</a></li>
+            <li><a href="services/manpower-services.html" class="footer-link">Manpower Services</a></li>
+            <li><a href="services/website-development.html" class="footer-link">Website Development</a></li>
+            <li><a href="services/internship.html" class="footer-link">Internship</a></li>
+            <li><a href="services/training-interview-support.html" class="footer-link">Training &amp; Interview Support</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-7 text-sm text-slate-500 sm:flex-row">
+        <p>© <span id="year">2025</span> SNR NEST. All rights reserved.</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <p class="inline-flex items-center gap-2"><i aria-hidden="true" data-lucide="sparkles" class="h-3.5 w-3.5 text-primary-400"></i>Building Opportunities. Empowering Careers.</p>
         </div>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- ============== EXPANDING / COMING SOON ============== -->
-  <section class="section bg-charcoal border-t border-line" data-bg="charcoal">
-    <div class="shell">
-      <div class="grid md:grid-cols-12 gap-y-10 md:gap-x-6 mb-14">
-        <div class="md:col-span-5">
-          <div class="t-eyebrow mb-4 sr" data-reveal>[ 007 ]  Expanding</div>
-          <h2 class="t-section sr" data-reveal style="--d:.05s">We are<br>expanding.</h2>
-        </div>
-        <p class="md:col-span-6 md:col-start-7 text-cream text-base leading-relaxed sr" data-reveal style="--d:.1s">
-          SNR NEST is currently operating out of Bangalore and Hyderabad. New training cohorts, verticals and geographies are in motion — Cloud & DevOps, Generative AI, FinTech Risk and Global Offshore Staffing are launching across the next two quarters.
-        </p>
-      </div>
+  <!-- Back to top -->
+  <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i data-lucide="arrow-up" class="h-5 w-5" aria-hidden="true"></i>
+  </button>
 
-      <!-- Network map -->
-      <div class="expand-map sr" data-reveal style="--d:.15s" id="expand-map">
-        <!-- Nodes positioned via JS -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-          <div class="font-mono text-xs tracking-[0.3em] text-faint mb-2">CURRENT</div>
-          <div class="font-display text-3xl">India</div>
-        </div>
-      </div>
+  <!-- WhatsApp chat -->
+  <a id="whatsFab" class="whats-fab" href="https://wa.me/919632341836?text=Hi%20SNR%20NEST%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with SNR NEST on WhatsApp (opens in a new tab)">
+    <svg viewBox="0 0 32 32" class="h-6 w-6" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.6 4.46 1.72 6.4L3.2 28.8l6.56-1.68a12.74 12.74 0 0 0 6.24 1.6h.004c7.056 0 12.796-5.74 12.796-12.8 0-3.42-1.332-6.636-3.752-9.052A12.7 12.7 0 0 0 16.004 3.2Zm0 23.432h-.004a10.66 10.66 0 0 1-5.428-1.484l-.388-.232-3.896 1 1.04-3.8-.256-.392a10.63 10.63 0 0 1-1.636-5.724c0-5.868 4.78-10.644 10.66-10.644 2.848 0 5.524 1.11 7.536 3.124a10.57 10.57 0 0 1 3.116 7.528c-.004 5.868-4.78 10.624-10.744 10.624Zm5.836-7.972c-.32-.16-1.888-.932-2.18-1.038-.292-.108-.504-.16-.716.16-.212.32-.824 1.038-1.01 1.25-.184.212-.37.24-.69.08-.32-.16-1.348-.496-2.566-1.584-.948-.844-1.588-1.888-1.774-2.208-.184-.32-.02-.494.14-.652.144-.144.32-.372.48-.558.16-.186.212-.32.32-.532.108-.212.054-.396-.028-.556-.08-.16-.716-1.726-.98-2.364-.258-.62-.52-.536-.716-.546l-.61-.01c-.212 0-.556.08-.846.396-.29.32-1.11 1.084-1.11 2.644 0 1.56 1.136 3.068 1.294 3.28.16.212 2.234 3.412 5.412 4.784.756.326 1.346.52 1.806.666.758.242 1.448.208 1.994.126.608-.09 1.888-.772 2.154-1.516.266-.744.266-1.382.186-1.516-.078-.134-.29-.212-.61-.372Z"/>
+    </svg>
+    <span class="whats-fab-tip" aria-hidden="true">Chat with us</span>
+  </a>
 
-      <div class="grid md:grid-cols-4 gap-6 mt-10">
-        <div class="sr" data-reveal>
-          <div class="font-mono text-xs text-accent tracking-widest mb-2">BANGALORE</div>
-          <div class="text-bone text-sm">Headquarters  —  Bellandur</div>
-        </div>
-        <div class="sr" data-reveal style="--d:.05s">
-          <div class="font-mono text-xs text-accent tracking-widest mb-2">HYDERABAD</div>
-          <div class="text-bone text-sm">Branch  —  Hitech City</div>
-        </div>
-        <div class="sr" data-reveal style="--d:.1s">
-          <div class="font-mono text-xs text-faint tracking-widest mb-2">NEXT  —  Q3</div>
-          <div class="text-muted text-sm">Cloud & DevOps Academy</div>
-        </div>
-        <div class="sr" data-reveal style="--d:.15s">
-          <div class="font-mono text-xs text-faint tracking-widest mb-2">NEXT  —  Q4</div>
-          <div class="text-muted text-sm">Global Offshore Hub</div>
-        </div>
-      </div>
+  <!-- Install app banner (PWA — appears when the browser allows installation) -->
+  <aside id="installBanner" class="install-banner" role="complementary" aria-label="Install the SNR NEST app" hidden>
+    <img src="images/logo/logo.svg" alt="" width="44" height="44" loading="lazy" class="install-banner-logo" />
+    <div class="install-banner-copy">
+      <p class="install-banner-title">Install SNR NEST</p>
+      <p class="install-banner-sub">One tap from your home screen &mdash; works offline too.</p>
     </div>
-  </section>
+    <button type="button" id="installAccept" class="btn-primary !px-4 !py-2 text-sm">Install<i aria-hidden="true" data-lucide="smartphone" class="h-4 w-4"></i></button>
+    <button type="button" id="installDismiss" class="install-banner-close" aria-label="Dismiss install suggestion">
+      <i data-lucide="x" class="h-4 w-4" aria-hidden="true"></i>
+    </button>
+  </aside>
 
-  <!-- ============== ABOUT — ECOSYSTEM ============== -->
-  <section class="section" data-bg="ink">
-    <div class="shell">
-      <div class="t-eyebrow mb-4 sr" data-reveal>[ 008 ]  About</div>
-      <h2 class="t-section max-w-4xl mb-14 sr" data-reveal style="--d:.05s">
-        People, Business, Technology,<br>
-        Education <span class="t-editorial text-accent">&amp;</span> Careers.
-      </h2>
-      <div class="grid md:grid-cols-5 gap-y-8 md:gap-x-6 border-y border-line py-12 sr" data-reveal style="--d:.1s">
-        <div><div class="font-mono text-xs text-accent mb-2">01</div><div class="font-display text-xl">People</div></div>
-        <div><div class="font-mono text-xs text-accent mb-2">02</div><div class="font-display text-xl">Business</div></div>
-        <div><div class="font-mono text-xs text-accent mb-2">03</div><div class="font-display text-xl">Technology</div></div>
-        <div><div class="font-mono text-xs text-accent mb-2">04</div><div class="font-display text-xl">Education</div></div>
-        <div><div class="font-mono text-xs text-accent mb-2">05</div><div class="font-display text-xl">Careers</div></div>
-      </div>
-      <div class="mt-12 flex flex-wrap gap-4 sr" data-reveal style="--d:.15s">
-        <a href="about.html" class="magnetic">
-          <span class="m-text">Read About SNR NEST</span>
-          <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- Print-only application receipt (filled by js on demand) -->
+  <div id="receiptPrint" class="receipt-print" aria-hidden="true"></div>
 
-  <!-- Footer mount -->
-  <div id="footer-mount"></div>
+  <!-- Toasts -->
+  <div id="toastStack" class="fixed bottom-24 right-5 z-[120] flex w-[calc(100%-2.5rem)] max-w-sm flex-col gap-3" aria-live="polite"></div>
 
-  <!-- ============== Scripts ============== -->
-  <script defer src="data/jobs.js"></script>
-  <script defer src="data/internships.js"></script>
-  <script defer src="data/training.js"></script>
-  <script defer src="js/partials.js"></script>
-  <script defer src="js/main.js"></script>
-  <script defer src="js/navigation.js"></script>
-  <script defer src="js/animations.js"></script>
-  <script defer src="js/magnetic.js"></script>
-  <script defer src="js/forms.js"></script>
-  <script defer src="js/pages.js"></script>
-
-  <!-- Inline page-level init for verticals/why rows/map -->
-  <script>
-    document.addEventListener('partials:ready', () => {
-      // Why rows (editorial list of advantages)
-      var why = document.getElementById('why-rows');
-      if (why && window.SNR_DATA && window.SNR_DATA.advantages) {
-        why.innerHTML = window.SNR_DATA.advantages.map(function(a) {
-          return '<div class="why-row group grid grid-cols-12 gap-4 py-8 border-b border-line items-center cursor-default transition-all duration-500 hover:pl-4">' +
-                   '<div class="col-span-2 md:col-span-1 font-mono text-xs text-faint">' + a.num + '</div>' +
-                   '<div class="col-span-10 md:col-span-4 font-display font-semibold text-xl md:text-2xl text-bone group-hover:text-ivory transition-colors duration-400">' + a.title + '</div>' +
-                   '<div class="col-span-12 md:col-span-6 md:col-start-6 text-cream text-sm leading-relaxed max-w-xl">' + a.desc + '</div>' +
-                   '<div class="col-span-12 md:col-span-1 md:text-right hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500"><span class="block w-8 h-px bg-accent ml-auto"></span></div>' +
-                 '</div>';
-        }).join('');
-        // Re-trigger reveal on injected items
-        if (window.SNR && window.SNR.initScrollReveal) {
-          // already initialized; just add is-in when in view
-          var io = new IntersectionObserver(function(es){
-            es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
-          }, { threshold: 0.15 });
-          why.querySelectorAll('.why-row').forEach(function(el){ io.observe(el); });
-        }
-      }
-
-      // Expand map nodes
-      var map = document.getElementById('expand-map');
-      if (map) {
-        var nodes = [
-          { x: 28, y: 42, label: 'Bangalore', primary: true },
-          { x: 36, y: 60, label: 'Hyderabad', primary: true },
-          { x: 60, y: 30, label: 'Coming Soon', primary: false },
-          { x: 75, y: 50, label: 'Next Phase', primary: false },
-          { x: 90, y: 70, label: 'Global', primary: false }
-        ];
-        nodes.forEach(function(n){
-          var dot = document.createElement('div');
-          dot.className = 'expand-node' + (n.primary ? '' : '');
-          if (!n.primary) dot.style.background = 'var(--c-stone)';
-          dot.style.left = n.x + '%';
-          dot.style.top = n.y + '%';
-          map.appendChild(dot);
-          var lab = document.createElement('div');
-          lab.className = 'expand-label';
-          lab.textContent = n.label;
-          lab.style.left = n.x + '%';
-          lab.style.top = n.y + '%';
-          if (!n.primary) lab.style.color = 'var(--c-faint)';
-          map.appendChild(lab);
-        });
-        // Connecting lines via SVG overlay
-        var svgNS = 'http://www.w3.org/2000/svg';
-        var svg = document.createElementNS(svgNS, 'svg');
-        svg.setAttribute('width','100%');
-        svg.setAttribute('height','100%');
-        svg.setAttribute('viewBox','0 0 100 100');
-        svg.setAttribute('preserveAspectRatio','none');
-        svg.style.position = 'absolute';
-        svg.style.inset = '0';
-        svg.style.pointerEvents = 'none';
-        var pairs = [[0,1],[1,2],[2,3],[3,4],[1,3]];
-        pairs.forEach(function(p){
-          var a = nodes[p[0]], b = nodes[p[1]];
-          var line = document.createElementNS(svgNS, 'line');
-          line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
-          line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
-          line.setAttribute('stroke', a.primary && b.primary ? 'var(--c-accent)' : 'var(--c-line-strong)');
-          line.setAttribute('stroke-width', '0.15');
-          line.setAttribute('opacity', a.primary && b.primary ? '0.7' : '0.4');
-          line.setAttribute('stroke-dasharray', a.primary && b.primary ? '0' : '0.6 0.6');
-          svg.appendChild(line);
-        });
-        map.appendChild(svg);
-      }
-    });
-  </script>
-
+  <!-- Scripts -->
+  <script src="assets/vendor/lucide.min.js" defer></script>
+  <script src="assets/vendor/qrcode.js" defer></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

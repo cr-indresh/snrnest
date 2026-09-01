@@ -1,328 +1,578 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth" data-root="">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact SNR NEST | Candidates, Businesses & Students</title>
-  <meta name="description" content="Reach SNR NEST across three pathways — candidates, businesses & students. Bangalore HQ + Hyderabad branch.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SNR NEST | Contact Us — Enquiries &amp; Internship Applications</title>
+  <meta name="title" content="SNR NEST | Contact Us — Enquiries &amp; Internship Applications" />
+  <meta name="description" content="Contact SNR NEST for hiring and workforce enquiries or internship applications. Call, email, WhatsApp, or use our enquiry and application forms — we reply within one working day." />
+  <meta name="author" content="SNR NEST" />
+  <meta name="theme-color" content="#F8FAFC" />
+  <link rel="canonical" href="https://www.snrnest.in/contact.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SNR NEST" />
+  <meta property="og:url" content="https://www.snrnest.in/contact.html" />
+  <meta property="og:title" content="SNR NEST | Contact Us — Enquiries &amp; Internship Applications" />
+  <meta property="og:description" content="Contact SNR NEST for hiring and workforce enquiries or internship applications. Call, email, WhatsApp, or use our enquiry and application forms — we reply within one working day." />
+  <meta property="og:image" content="https://www.snrnest.in/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_IN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SNR NEST | Contact Us — Enquiries &amp; Internship Applications" />
+  <meta name="twitter:description" content="Contact SNR NEST for hiring and workforce enquiries or internship applications. Call, email, WhatsApp, or use our enquiry and application forms — we reply within one working day." />
+  <meta name="twitter:image" content="https://www.snrnest.in/assets/og-image.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="SNR NEST" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preload" href="assets/fonts/PlusJakartaSans.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.snrnest.in/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://www.snrnest.in/contact.html"}]}
+  </script>
 </head>
-<body class="grain bg-ink text-ivory font-body antialiased">
+<body class="bg-slate-50 font-sans text-slate-600 antialiased">
 
-  <div id="nav-mount"></div>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[110] focus:rounded-xl focus:bg-navy-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">Skip to content</a>
 
-  <!-- ============== PAGE HERO ============== -->
-  <section class="page-hero relative overflow-hidden" data-bg="ink">
-    <div class="absolute inset-0 -z-10">
-      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2400&auto=format&fit=crop" alt="" class="w-full h-full object-cover opacity-25 parallax" data-parallax="0.12" style="filter:grayscale(70%); margin-top:-10%;" loading="eager">
-      <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(10,10,10,.6) 0%, rgba(10,10,10,1) 90%);"></div>
-    </div>
-    <div class="shell relative">
-      <div class="breadcrumb mb-8 sr" data-reveal>
-        <a href="index.html" class="hover:text-ivory transition-colors">SNR NEST</a>
-        <span class="sep">/</span>
-        <span class="current">Contact</span>
-      </div>
-      <div class="t-eyebrow mb-6 sr" data-reveal>[ 01 ]  Contact</div>
-      <h1 class="t-hero mb-8 sr" data-reveal style="--d:.05s">
-        Three pathways.<br>
-        <span class="t-editorial text-accent">One</span> destination.
-      </h1>
-      <p class="max-w-2xl text-cream text-base md:text-lg leading-relaxed sr" data-reveal style="--d:.15s">
-        Choose the path that fits you — candidates, businesses or students. Each route reaches a dedicated team within 24 hours.
-      </p>
-    </div>
-  </section>
+  <!-- Scroll progress indicator -->
+  <div id="scrollProgress" aria-hidden="true"></div>
 
-  <!-- ============== TRI-PATHWAY FORM ============== -->
-  <section class="section-sm border-t border-line" data-bg="ink">
-    <div class="shell">
-      <div data-tabs class="sr" data-reveal>
-        <div class="tabs mb-12">
-          <button class="tab is-active" data-tab="candidates">Candidates</button>
-          <button class="tab" data-tab="businesses">Businesses</button>
-          <button class="tab" data-tab="students">Students</button>
-        </div>
+  <!-- Offline status banner (shown automatically when the connection drops) -->
+  <div id="offlineBanner" class="offline-banner" role="status" aria-live="polite" hidden>
+    <span class="offline-banner-dot" aria-hidden="true"></span>
+    <i data-lucide="wifi-off" class="h-4 w-4 shrink-0" aria-hidden="true"></i>
+    <span class="offline-banner-text"><strong>You&rsquo;re offline.</strong>&nbsp;Viewing the cached copy of the site &mdash; forms and links need a connection.</span>
+  </div>
 
-        <!-- Candidates -->
-        <div class="tab-pane is-active grid md:grid-cols-12 gap-y-12 md:gap-x-6" data-pane="candidates">
-          <div class="md:col-span-5">
-            <div class="t-eyebrow mb-4">For Candidates</div>
-            <h2 class="t-section mb-6">Looking for<br>a job?</h2>
-            <p class="text-cream text-base leading-relaxed mb-8 max-w-md">
-              Submit your profile — our placement team will match you with active BPO roles, internship tracks & training cohorts.
-            </p>
-            <div class="font-mono text-xs text-faint leading-relaxed">
-              <div class="mb-2">— BPO JOBS</div>
-              <div class="mb-2">— INTERNSHIPS</div>
-              <div>— TRAINING & PLACEMENT</div>
+  <!-- ============================ HEADER ============================ -->
+  <header id="siteHeader" class="is-solid fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-[76px] lg:px-8">
+      <!-- Logo + tagline (sketch: logo / tagline) -->
+      <a href="index.html" class="group flex items-center gap-3" aria-label="SNR NEST — home">
+        <img src="images/logo/logo.svg" alt="SNR NEST logo" width="44" height="44" class="h-10 w-10 rounded-xl shadow-chip transition-transform duration-300 group-hover:-rotate-3 lg:h-11 lg:w-11" />
+        <span class="leading-tight">
+          <span class="block text-[17px] font-extrabold tracking-tight text-slate-900 lg:text-lg">SNR <span class="text-primary-700">NEST</span></span>
+          <span class="block text-[9px] font-bold uppercase tracking-[0.22em] text-slate-500">Workforce &amp; Hiring</span>
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <a href="index.html" class="nav-link" data-nav="home">Home</a>
+        <a href="about.html" class="nav-link" data-nav="about">About</a>
+        <div class="nav-drop">
+          <button type="button" class="nav-link nav-drop-btn" data-nav="services" aria-expanded="false" aria-haspopup="true">
+            Services<i aria-hidden="true" data-lucide="chevron-down" class="nav-drop-chevron h-3.5 w-3.5"></i>
+          </button>
+          <div class="nav-drop-panel nav-mega" role="menu" aria-label="Services menu">
+            <div class="nav-mega-head">
+              <div>
+                <span class="nav-mega-eyebrow">What we do</span>
+                <p class="nav-mega-title">Five services. One team.</p>
+              </div>
+              <span class="nav-mega-hint">Pick a service to learn more</span>
+            </div>
+            <div class="nav-mega-grid">
+            <a role="menuitem" class="nav-mega-item" href="services/bpo-services.html" style="--mega-accent:#059669;--mega-soft:#ECFDF5">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="headset" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>BPO Services</strong><span>Reliable hiring support for voice, non-voice and customer operations.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="services/manpower-services.html" style="--mega-accent:#7C3AED;--mega-soft:#F5F3FF">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="users" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Manpower Services</strong><span>Skilled manpower for every level, from project managers to shift teams.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="services/website-development.html" style="--mega-accent:#0284C7;--mega-soft:#F0F9FF">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="globe" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Website Development</strong><span>Professional websites that build a strong digital presence.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="services/internship.html" style="--mega-accent:#D97706;--mega-soft:#FFFBEB">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="graduation-cap" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Internship</strong><span>Eight structured roles with real work, mentors and certificates.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item" href="services/training-interview-support.html" style="--mega-accent:#E11D48;--mega-soft:#FFF1F2">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="school" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>Training &amp; Interview Support</strong><span>Practical training and interview preparation that make candidates job-ready.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            <a role="menuitem" class="nav-mega-item nav-mega-item--all" href="services.html" style="--mega-accent:#1D4ED8;--mega-soft:#EFF6FF">
+              <span class="nav-mega-item-icon"><i aria-hidden="true" data-lucide="layout-grid" class="h-4 w-4"></i></span>
+              <span class="nav-mega-item-copy"><strong>All Services</strong><span>Browse everything we do, each with a dedicated page.</span></span>
+              <i aria-hidden="true" data-lucide="arrow-up-right" class="nav-mega-item-arrow"></i>
+            </a>
+            </div>
+            <div class="nav-mega-foot">
+              <p><i aria-hidden="true" data-lucide="sparkles" class="nav-mega-foot-icon"></i>Not sure where to start? Get a free consultation.</p>
+              <a role="menuitem" href="contact.html" class="nav-mega-cta">Talk to our team<i aria-hidden="true" data-lucide="arrow-right" class="h-3.5 w-3.5"></i></a>
             </div>
           </div>
-          <div class="md:col-span-6 md:col-start-7">
-            <form data-premium>
-              <div class="grid md:grid-cols-2 gap-x-6">
-                <div class="field">
-                  <input type="text" id="c-name" placeholder=" " required>
-                  <label for="c-name">Full Name</label>
-                  <div class="field-error">Please enter your name.</div>
-                </div>
-                <div class="field">
-                  <input type="tel" id="c-phone" placeholder=" " required>
-                  <label for="c-phone">Phone</label>
-                  <div class="field-error">Please enter a valid phone.</div>
-                </div>
-              </div>
-              <div class="field">
-                <input type="email" id="c-email" placeholder=" " required>
-                <label for="c-email">Email</label>
-                <div class="field-error">Please enter a valid email.</div>
-              </div>
-              <div class="field">
-                <select id="c-interest" required style="appearance:none; background:transparent;">
-                  <option value="" disabled selected></option>
-                  <option>BPO Jobs</option>
-                  <option>Internships</option>
-                  <option>Training & Placement</option>
-                </select>
-                <label for="c-interest">I am interested in</label>
-                <div class="field-error">Please select an option.</div>
-              </div>
-              <div class="field">
-                <textarea id="c-msg" placeholder=" "></textarea>
-                <label for="c-msg">Your message (optional)</label>
-              </div>
-              <div class="pt-2">
-                <button type="submit" class="magnetic magnetic-solid">
-                  <span class="m-text">Send Message</span>
-                  <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </button>
-              </div>
-              <div class="form-success mt-6">
-                <div class="t-eyebrow mb-2" style="color:var(--c-accent)">Message Sent</div>
-                <p class="text-cream text-sm">Thank you. Our team will respond within 24 hours.</p>
-              </div>
-            </form>
+        </div>
+        <a href="contact.html" class="nav-link is-active" data-nav="contact" aria-current="page">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button type="button" data-open-apply="General Application" class="btn-primary !px-5 !py-2.5 text-sm">
+          Apply Now
+          <i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i>
+        </button>
+
+        <!-- Mobile hamburger -->
+        <button id="menuBtn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white/80 text-slate-700 transition hover:border-primary-300 hover:text-primary-700 lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <i aria-hidden="true" data-lucide="menu" class="menu-icon-open h-5 w-5"></i>
+          <i aria-hidden="true" data-lucide="x" class="menu-icon-close hidden h-5 w-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="invisible translate-y-2 opacity-0 transition-all duration-300 ease-out lg:hidden">
+      <nav class="mx-4 mb-4 space-y-1 rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-soft backdrop-blur-xl" aria-label="Mobile">
+        <a href="index.html" class="mobile-link"><i aria-hidden="true" data-lucide="home" class="h-4 w-4"></i>Home</a>
+        <a href="about.html" class="mobile-link"><i aria-hidden="true" data-lucide="building-2" class="h-4 w-4"></i>About</a>
+        <div class="mobile-acc">
+          <button type="button" class="mobile-link mobile-acc-btn" aria-expanded="false">
+            <i aria-hidden="true" data-lucide="briefcase" class="h-4 w-4"></i>Services
+            <i aria-hidden="true" data-lucide="chevron-down" class="mobile-acc-chevron h-4 w-4"></i>
+          </button>
+          <div class="mobile-acc-panel">
+          <a href="services.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="layout-grid" class="h-3.5 w-3.5"></i>All Services</a>
+          <a href="services/bpo-services.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="headset" class="h-3.5 w-3.5"></i>BPO Services</a>
+          <a href="services/manpower-services.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="users" class="h-3.5 w-3.5"></i>Manpower Services</a>
+          <a href="services/website-development.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="globe" class="h-3.5 w-3.5"></i>Website Development</a>
+          <a href="services/internship.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="graduation-cap" class="h-3.5 w-3.5"></i>Internship</a>
+          <a href="services/training-interview-support.html" class="mobile-sublink"><i aria-hidden="true" data-lucide="school" class="h-3.5 w-3.5"></i>Training &amp; Interview Support</a>
           </div>
         </div>
+        <a href="contact.html" class="mobile-link"><i aria-hidden="true" data-lucide="mail" class="h-4 w-4"></i>Contact</a>
+        <button type="button" data-open-apply="General Application" class="btn-primary mt-2 w-full justify-center">Apply Now <i aria-hidden="true" data-lucide="arrow-right" class="h-4 w-4"></i></button>
+      </nav>
+    </div>
+  </header>
 
-        <!-- Businesses -->
-        <div class="tab-pane grid md:grid-cols-12 gap-y-12 md:gap-x-6" data-pane="businesses">
-          <div class="md:col-span-5">
-            <div class="t-eyebrow mb-4">For Businesses</div>
-            <h2 class="t-section mb-6">Hiring or<br>building?</h2>
-            <p class="text-cream text-base leading-relaxed mb-8 max-w-md">
-              Share your requirement — we respond with workforce plans, BPO hiring pipelines & website briefs within 24 hours.
-            </p>
-            <div class="font-mono text-xs text-faint leading-relaxed">
-              <div class="mb-2">— MANPOWER</div>
-              <div class="mb-2">— BPO HIRING</div>
-              <div>— WEBSITE SOLUTIONS</div>
+  <main id="main">
+    <!-- ============================ PAGE HERO ============================ -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 pb-4 pt-28 lg:pt-36" aria-label="Page introduction">
+      <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div class="blob blob-a absolute -left-32 top-10 h-72 w-72 rounded-full bg-primary-100/60 blur-3xl"></div>
+        <div class="blob blob-b absolute -right-24 top-32 h-80 w-80 rounded-full bg-sky-100/50 blur-3xl"></div>
+      </div>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li><a href="index.html" class="breadcrumb-link"><i data-lucide="home" class="h-3.5 w-3.5"></i><span>Home</span></a></li>
+          <li class="breadcrumb-sep" aria-hidden="true"><i data-lucide="chevron-right" class="h-3.5 w-3.5"></i></li><li aria-current="page" class="breadcrumb-current"><span>Contact</span></li>
+        </ol>
+      </nav>
+        <div class="mx-auto max-w-3xl text-center" data-reveal>
+          <span class="section-eyebrow mt-8"><span class="h-1.5 w-1.5 rounded-full bg-primary-600"></span>Contact Us</span>
+          <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">Let&rsquo;s Build the Right <span class="text-primary-700">Team Together</span></h1>
+          <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">Call, email or use the forms below — for hiring enquiries, internship applications and everything in between.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT INFO CARDS ============================ -->
+    <section class="bg-white pb-20 pt-14 lg:pb-24" aria-label="Contact details">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card" data-reveal data-delay="0">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="phone" class="h-5 w-5"></i></span>
+            <h2 class="mt-4 text-sm font-extrabold uppercase tracking-[0.14em] text-slate-500">Call us</h2>
+            <a href="tel:+919632341836" class="mt-1.5 block font-bold text-slate-900 hover:text-primary-700" aria-label="Call SNR NEST now">+91 96323 41836</a>
+          </article>
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card" data-reveal data-delay="60">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="mail" class="h-5 w-5"></i></span>
+            <h2 class="mt-4 text-sm font-extrabold uppercase tracking-[0.14em] text-slate-500">Email us</h2>
+            <a href="mailto:praveen@snrnest.in" class="mt-1.5 block font-bold text-slate-900 hover:text-primary-700" aria-label="Email SNR NEST">praveen@snrnest.in</a>
+            <a href="mailto:rangapraveend4@gmail.com" class="mt-1 block text-sm font-medium text-slate-600 hover:text-primary-700" aria-label="Alternate Email SNR NEST">rangapraveend4@gmail.com</a>
+          </article>
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card" data-reveal data-delay="120">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="map-pin" class="h-5 w-5"></i></span>
+            <h2 class="mt-4 text-sm font-extrabold uppercase tracking-[0.14em] text-slate-500">Visit us</h2>
+            <p class="mt-1.5 font-bold text-slate-900">Hyderabad, Telangana, India</p>
+          </article>
+<article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-card" data-reveal data-delay="180">
+            <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="clock" class="h-5 w-5"></i></span>
+            <h2 class="mt-4 text-sm font-extrabold uppercase tracking-[0.14em] text-slate-500">Working hours</h2>
+            <p class="mt-1.5 font-bold text-slate-900">Mon to Sat · 9:30 am to 7:00 pm IST</p>
+          </article>
+        </div>
+
+        <!-- Two clear paths -->
+        <div class="mt-6 grid gap-6 lg:grid-cols-2">
+          <article class="rounded-4xl border border-slate-200 bg-white p-7 shadow-card sm:p-9" data-reveal>
+            <div class="flex items-center gap-4">
+              <span class="icon-tile bg-emerald-50 text-emerald-700"><i aria-hidden="true" data-lucide="graduation-cap" class="h-5 w-5"></i></span>
+              <h2 class="text-xl font-extrabold text-slate-900">Apply for an internship</h2>
+            </div>
+            <p class="mt-4 leading-relaxed text-slate-600">Pick a role, upload your resume and submit in under a minute. You will get a reference number instantly.</p>
+            <div class="mt-5 grid gap-2.5 sm:grid-cols-2">
+              <span class="check-item"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5"></i>8 structured roles</span>
+              <span class="check-item"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5"></i>Resume upload</span>
+              <span class="check-item"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5"></i>Instant reference number</span>
+              <span class="check-item"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5"></i>Reply in 2–3 working days</span>
+            </div>
+            <button type="button" data-open-apply="General Application" class="btn-primary mt-7 w-full justify-center">Start Application<i aria-hidden="true" data-lucide="arrow-up-right" class="h-4 w-4"></i></button>
+          </article>
+
+          <article class="rounded-4xl border border-slate-200 bg-white p-7 shadow-card sm:p-9" data-reveal data-delay="100">
+            <div class="flex items-center gap-4">
+              <span class="icon-tile bg-primary-50 text-primary-700"><i aria-hidden="true" data-lucide="briefcase" class="h-5 w-5"></i></span>
+              <h2 class="text-xl font-extrabold text-slate-900">Enquire about our services</h2>
+            </div>
+            <p class="mt-4 leading-relaxed text-slate-600">Hiring, staffing or a full operations team — share your requirement and we will reply with a plan.</p>
+            <div class="mt-5 grid gap-2.5 sm:grid-cols-2">
+              <span class="check-item"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5"></i>All 5 core services covered</span>
+              <span class="check-item"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5"></i>Clear role-based plan</span>
+              <span class="check-item"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5"></i>Reply within 1 working day</span>
+              <span class="check-item"><i aria-hidden="true" data-lucide="check-circle-2" class="h-5 w-5"></i>No obligation</span>
+            </div>
+            <a href="#enquiry" class="btn-soft mt-7 w-full justify-center">Go to Enquiry Form<i aria-hidden="true" data-lucide="arrow-down" class="h-4 w-4"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ ENQUIRY FORM ============================ -->
+    <section id="enquiry" class="bg-slate-50 py-20 lg:py-24" aria-label="Enquiry form">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+          <div data-reveal>
+            <span class="section-eyebrow"><span class="h-1.5 w-1.5 rounded-full bg-primary-600"></span>Send an Enquiry</span>
+            <h2 class="section-title !mt-3 text-left">Tell us what <span class="text-primary-700">you need</span></h2>
+            <p class="mt-5 leading-relaxed text-slate-600">Fill the form and our team will get back to you. Your draft is saved on this device automatically, so you never lose what you typed.</p>
+            <ol class="mt-8 space-y-5">
+              <li class="role-row"><span class="step-num">1</span><span><strong class="font-semibold text-slate-900">We read it the same day</strong><span class="block text-sm text-slate-500">Enquiries are picked up during working hours.</span></span></li>
+              <li class="role-row"><span class="step-num">2</span><span><strong class="font-semibold text-slate-900">A short clarifying call</strong><span class="block text-sm text-slate-500">We confirm roles, numbers and timelines with you.</span></span></li>
+              <li class="role-row"><span class="step-num">3</span><span><strong class="font-semibold text-slate-900">You get a clear plan</strong><span class="block text-sm text-slate-500">Roles, counts and next steps — in plain language.</span></span></li>
+            </ol>
+            <div class="mt-8 flex flex-wrap items-center gap-3 text-sm">
+              <button type="button" class="contact-chip" data-copy="praveen@snrnest.in" aria-label="Copy email address to clipboard">
+                <i aria-hidden="true" data-lucide="mail" class="h-4 w-4 text-primary-700"></i>praveen@snrnest.in
+                <i aria-hidden="true" data-lucide="copy" class="copy-ico h-3.5 w-3.5"></i>
+              </button>
+              <button type="button" class="contact-chip" data-copy="+91 96323 41836" aria-label="Copy phone number to clipboard">
+                <i aria-hidden="true" data-lucide="phone" class="h-4 w-4 text-primary-700"></i>+91 96323 41836
+                <i aria-hidden="true" data-lucide="copy" class="copy-ico h-3.5 w-3.5"></i>
+              </button>
             </div>
           </div>
-          <div class="md:col-span-6 md:col-start-7">
-            <form data-premium>
-              <div class="grid md:grid-cols-2 gap-x-6">
-                <div class="field">
-                  <input type="text" id="b-name" placeholder=" " required>
-                  <label for="b-name">Contact Name</label>
-                  <div class="field-error">Please enter your name.</div>
-                </div>
-                <div class="field">
-                  <input type="text" id="b-company" placeholder=" " required>
-                  <label for="b-company">Company</label>
-                  <div class="field-error">Please enter your company.</div>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-x-6">
-                <div class="field">
-                  <input type="email" id="b-email" placeholder=" " required>
-                  <label for="b-email">Work Email</label>
-                  <div class="field-error">Please enter a valid email.</div>
-                </div>
-                <div class="field">
-                  <input type="tel" id="b-phone" placeholder=" ">
-                  <label for="b-phone">Phone</label>
-                </div>
-              </div>
-              <div class="field">
-                <select id="b-interest" required style="appearance:none; background:transparent;">
-                  <option value="" disabled selected></option>
-                  <option>Manpower Sourcing</option>
-                  <option>BPO Hiring</option>
-                  <option>Website Solutions</option>
-                </select>
-                <label for="b-interest">I am interested in</label>
-                <div class="field-error">Please select an option.</div>
-              </div>
-              <div class="field">
-                <textarea id="b-msg" placeholder=" "></textarea>
-                <label for="b-msg">Share your requirement</label>
-              </div>
-              <div class="pt-2">
-                <button type="submit" class="magnetic magnetic-solid">
-                  <span class="m-text">Send Requirement</span>
-                  <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </button>
-              </div>
-              <div class="form-success mt-6">
-                <div class="t-eyebrow mb-2" style="color:var(--c-accent)">Requirement Received</div>
-                <p class="text-cream text-sm">Thank you. Our team will respond within 24 hours with a scoped plan.</p>
-              </div>
-            </form>
-          </div>
-        </div>
 
-        <!-- Students -->
-        <div class="tab-pane grid md:grid-cols-12 gap-y-12 md:gap-x-6" data-pane="students">
-          <div class="md:col-span-5">
-            <div class="t-eyebrow mb-4">For Students</div>
-            <h2 class="t-section mb-6">Learning &<br>growing?</h2>
-            <p class="text-cream text-base leading-relaxed mb-8 max-w-md">
-              Apply for internships, enroll in training cohorts, or join placement pipelines — our team will guide you from application to first day.
-            </p>
-            <div class="font-mono text-xs text-faint leading-relaxed">
-              <div class="mb-2">— INTERNSHIPS</div>
-              <div class="mb-2">— TRAINING</div>
-              <div>— PLACEMENT</div>
+          <div class="rounded-4xl border border-slate-200 bg-white p-7 shadow-card sm:p-10" data-reveal data-delay="100">
+            <form id="contactForm" class="space-y-4" novalidate>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label for="contactName" class="form-label">Full Name</label>
+                  <input id="contactName" name="name" type="text" required autocomplete="name" placeholder="Your name" class="form-input" />
+                </div>
+                <div>
+                  <label for="contactPhone" class="form-label">Phone</label>
+                  <input id="contactPhone" name="phone" type="tel" autocomplete="tel" placeholder="+91 …" pattern="[0-9+\-\s]{7,17}" class="form-input" />
+                </div>
+              </div>
+              <div>
+                <label for="contactEmail" class="form-label">Email</label>
+                <input id="contactEmail" name="email" type="email" required autocomplete="email" placeholder="you@example.com" class="form-input" />
+              </div>
+              <div>
+                <label for="contactInterest" class="form-label">I am…</label>
+                <select id="contactInterest" name="interest" class="form-input">
+            <option>Looking to hire</option>
+            <option>Looking for a job</option>
+            <option>Exploring partnership</option>
+            <optgroup label="Enquire about a service">
+              <option>BPO Services</option>
+              <option>Manpower Services</option>
+              <option>Website Development</option>
+              <option>Internship</option>
+              <option>Training &amp; Interview Support</option>
+            </optgroup>
+            <optgroup label="Internships">
+              <option>HR &amp; Recruitment Intern</option>
+              <option>Talent Acquisition Specialist Intern</option>
+              <option>Manpower Sourcing Operations Intern</option>
+              <option>Staffing &amp; Deployment Intern</option>
+              <option>BPO Hiring Support Intern</option>
+              <option>Workforce Coordination Intern</option>
+              <option>Digital Marketing &amp; Branding Intern</option>
+              <option>Business Operations &amp; Strategy Intern</option>
+            </optgroup>
+                </select>
+              </div>
+              <div>
+                <div class="flex items-baseline justify-between gap-3">
+                  <label for="contactMessage" class="form-label">Message</label>
+                  <span id="contactMsgCount" class="char-counter" aria-hidden="true">0 / 600</span>
+                </div>
+                <textarea id="contactMessage" name="message" rows="4" required maxlength="600" placeholder="How can we help?" class="form-input resize-none" aria-describedby="contactMsgCount"></textarea>
+              </div>
+              <p id="contactError" class="hidden rounded-xl bg-rose-50 px-4 py-3 text-sm font-medium text-rose-700" role="alert">Please fill in your name, email and a short message.</p>
+              <div class="hp-field" aria-hidden="true">
+                <label for="contactWebsite">Leave this field empty</label>
+                <input id="contactWebsite" type="text" name="company_website" tabindex="-1" autocomplete="off" />
+              </div>
+              <button type="submit" class="btn-primary w-full justify-center">Send Message<i aria-hidden="true" data-lucide="send" class="h-4 w-4"></i></button>
+            </form>
+
+            <div id="contactSuccess" class="hidden py-6 text-center">
+              <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-600"><i aria-hidden="true" data-lucide="check-circle-2" class="h-9 w-9"></i></span>
+              <h3 class="mt-5 text-xl font-extrabold text-slate-900">Message sent!</h3>
+              <p class="mx-auto mt-2 max-w-sm text-sm text-slate-500">Thanks for reaching out. Our team will get back to you shortly.</p>
+              <button type="button" class="btn-soft mt-7" id="contactFormReset">Send another message</button>
             </div>
           </div>
-          <div class="md:col-span-6 md:col-start-7">
-            <form data-premium>
-              <div class="grid md:grid-cols-2 gap-x-6">
-                <div class="field">
-                  <input type="text" id="s-name" placeholder=" " required>
-                  <label for="s-name">Full Name</label>
-                  <div class="field-error">Please enter your name.</div>
-                </div>
-                <div class="field">
-                  <input type="tel" id="s-phone" placeholder=" " required>
-                  <label for="s-phone">Phone</label>
-                  <div class="field-error">Please enter a valid phone.</div>
-                </div>
-              </div>
-              <div class="field">
-                <input type="email" id="s-email" placeholder=" " required>
-                <label for="s-email">Email</label>
-                <div class="field-error">Please enter a valid email.</div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-x-6">
-                <div class="field">
-                  <input type="text" id="s-qual" placeholder=" ">
-                  <label for="s-qual">Qualification</label>
-                </div>
-                <div class="field">
-                  <input type="text" id="s-year" placeholder=" ">
-                  <label for="s-year">Graduation Year</label>
-                </div>
-              </div>
-              <div class="field">
-                <select id="s-interest" required style="appearance:none; background:transparent;">
-                  <option value="" disabled selected></option>
-                  <option>Internship</option>
-                  <option>Training</option>
-                  <option>Placement</option>
-                </select>
-                <label for="s-interest">I am interested in</label>
-                <div class="field-error">Please select an option.</div>
-              </div>
-              <div class="pt-2">
-                <button type="submit" class="magnetic magnetic-solid">
-                  <span class="m-text">Send Application</span>
-                  <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </button>
-              </div>
-              <div class="form-success mt-6">
-                <div class="t-eyebrow mb-2" style="color:var(--c-accent)">Application Received</div>
-                <p class="text-cream text-sm">Thank you. Our coordinator will reach out within 48 hours.</p>
-              </div>
-            </form>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ============================ QR + VCARD ============================ -->
+    <section class="bg-slate-50 pb-20 pt-2 lg:pb-24" aria-label="Save our contact details">
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-3 text-sm" data-reveal>
+          <button type="button" class="contact-chip" id="saveContact" aria-label="Download SNR NEST contact card (vCard file)">
+            <i aria-hidden="true" data-lucide="contact" class="h-4 w-4 text-primary-700"></i>Save contact info
+            <i aria-hidden="true" data-lucide="download" class="copy-ico h-3.5 w-3.5"></i>
+          </button>
+          <span class="inline-flex items-center gap-2 text-slate-500"><i aria-hidden="true" data-lucide="smartphone" class="h-4 w-4 text-primary-700"></i>Point your camera at a code to scan</span>
+        </div>
+        <div class="qr-tile-row mt-8 justify-center" data-reveal data-delay="100">
+          <div class="qr-tile" id="qrTile">
+            <button type="button" id="qrCodeBtn" class="qr-code-btn" aria-label="QR code: scan to save SNR NEST contact details, or activate to download the contact file">
+              <span id="qrCodeTarget" class="qr-code-target" aria-hidden="true"></span>
+              <span class="qr-code-scan" aria-hidden="true"><i data-lucide="scan-line" class="h-4 w-4"></i></span>
+            </button>
+            <p class="qr-tile-caption">Scan to save our contact</p>
+          </div>
+          <div class="qr-tile" id="waQrTile">
+            <button type="button" id="waQrBtn" class="qr-code-btn qr-code-btn--wa" aria-label="QR code: scan to open a WhatsApp chat with SNR NEST, or activate to open WhatsApp in a new tab">
+              <span id="waQrTarget" class="qr-code-target" aria-hidden="true"></span>
+              <span class="qr-code-scan qr-code-scan--wa" aria-hidden="true"><i data-lucide="scan-line" class="h-4 w-4"></i></span>
+            </button>
+            <p class="qr-tile-caption">Scan to WhatsApp us</p>
           </div>
         </div>
       </div>
+    </section>
+
+  <!-- Apply modal -->
+  <dialog id="applyModal" class="modal" aria-labelledby="applyModalTitle">
+    <div class="modal-card">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 id="applyModalTitle" class="text-xl font-extrabold text-slate-900">Apply Now</h2>
+          <p class="mt-1 text-sm text-slate-500">Fill this quick form. Our team will call you back.</p>
+        </div>
+        <button type="button" class="modal-close" data-close-modal aria-label="Close dialog"><i aria-hidden="true" data-lucide="x" class="h-5 w-5"></i></button>
+      </div>
+
+      <form id="applyForm" class="mt-6 space-y-4" novalidate>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="applyName" class="form-label">Full Name</label>
+            <input id="applyName" name="name" type="text" required autocomplete="name" placeholder="Your name" class="form-input" />
+          </div>
+          <div>
+            <label for="applyPhone" class="form-label">Phone</label>
+            <input id="applyPhone" name="phone" type="tel" required autocomplete="tel" placeholder="+91 …" pattern="[0-9+\-\s]{7,17}" class="form-input" />
+          </div>
+        </div>
+        <div>
+          <label for="applyEmail" class="form-label">Email</label>
+          <input id="applyEmail" name="email" type="email" required autocomplete="email" placeholder="you@example.com" class="form-input" />
+        </div>
+        <div>
+          <label for="applyRole" class="form-label">Applying For</label>
+          <select id="applyRole" name="role" class="form-input">
+            <option>HR &amp; Recruitment Intern</option>
+            <option>Talent Acquisition Specialist Intern</option>
+            <option>Manpower Sourcing Operations Intern</option>
+            <option>Staffing &amp; Deployment Intern</option>
+            <option>BPO Hiring Support Intern</option>
+            <option>Workforce Coordination Intern</option>
+            <option>Digital Marketing &amp; Branding Intern</option>
+            <option>Business Operations &amp; Strategy Intern</option>
+            <option>General Application</option>
+          </select>
+        </div>
+        <div>
+          <div class="flex items-baseline justify-between gap-3">
+            <label for="applyMessage" class="form-label">Message <span class="font-normal text-slate-400">(optional)</span></label>
+            <span id="applyMsgCount" class="char-counter" aria-hidden="true">0 / 600</span>
+          </div>
+          <textarea id="applyMessage" name="message" rows="3" maxlength="600" placeholder="Tell us a little about yourself…" class="form-input resize-none" aria-describedby="applyMsgCount"></textarea>
+        </div>
+        <div>
+          <span class="form-label" id="resumeLabel">Resume <span class="font-normal text-slate-400">(optional · PDF / DOC · max 2 MB)</span></span>
+          <label id="resumeZone" for="resumeInput" class="upload-zone">
+            <input id="resumeInput" name="resume" type="file" accept=".pdf,.doc,.docx" class="sr-only" aria-describedby="resumeHint" />
+            <i aria-hidden="true" data-lucide="upload-cloud" class="upload-zone-icon h-6 w-6"></i>
+            <span class="upload-zone-text"><strong>Click to upload</strong> or drag &amp; drop</span>
+            <span id="resumeHint" class="text-xs text-slate-400">PDF, DOC or DOCX — up to 2 MB</span>
+          </label>
+          <div id="resumeChip" class="file-chip hidden">
+            <i aria-hidden="true" data-lucide="file-text" class="h-4 w-4 shrink-0 text-primary-700"></i>
+            <span id="resumeChipName" class="truncate font-semibold text-slate-700"></span>
+            <span id="resumeChipSize" class="shrink-0 text-xs text-slate-400"></span>
+            <button type="button" id="resumeRemove" class="file-chip-remove" aria-label="Remove selected file">
+              <i aria-hidden="true" data-lucide="x" class="h-3.5 w-3.5"></i>
+            </button>
+          </div>
+          <p id="resumeError" class="field-error-msg hidden" role="alert"></p>
+        </div>
+        <p id="applyError" class="hidden rounded-xl bg-rose-50 px-4 py-3 text-sm font-medium text-rose-700" role="alert">Please fill in your name, phone and a valid email.</p>
+        <div class="hp-field" aria-hidden="true">
+          <label for="applyWebsite">Leave this field empty</label>
+          <input id="applyWebsite" type="text" name="company_website" tabindex="-1" autocomplete="off" />
+        </div>
+        <button type="submit" class="btn-primary w-full justify-center">Submit Application<i aria-hidden="true" data-lucide="send" class="h-4 w-4"></i></button>
+        <p class="text-center text-xs text-slate-400">Or email us directly at <a class="font-semibold text-primary-700 hover:underline" href="mailto:praveen@snrnest.in">praveen@snrnest.in</a></p>
+      </form>
+
+      <div id="applySuccess" class="hidden py-6 text-center">
+        <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-600"><i aria-hidden="true" data-lucide="check-circle-2" class="h-9 w-9"></i></span>
+        <h3 class="mt-5 text-xl font-extrabold text-slate-900">Application received!</h3>
+        <p class="mx-auto mt-2 max-w-sm text-sm text-slate-500">Thank you, <span id="applySuccessName" class="font-semibold text-slate-700">friend</span>. Our team will reach out to you within 2–3 working days.</p>
+        <div id="applyRefWrap" class="mt-5 hidden">
+          <p class="text-xs font-semibold uppercase tracking-widest text-slate-400">Reference number</p>
+          <button type="button" id="applyRefChip" class="ref-chip mx-auto mt-1.5" data-copy="" title="Copy reference number" aria-label="Copy application reference number">
+            <i aria-hidden="true" data-lucide="hash" class="h-3.5 w-3.5"></i>
+            <span id="applyRefValue" class="font-mono font-bold tracking-wider"></span>
+            <i aria-hidden="true" data-lucide="copy" class="ref-chip-copy h-3.5 w-3.5"></i>
+          </button>
+          <p class="mt-1.5 text-xs text-slate-400">Keep this handy — quote it in any follow-up.</p>
+        </div>
+        <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+          <button type="button" class="btn-soft" data-close-modal>Done</button>
+          <button type="button" class="btn-ghost" id="shareReceipt">Share receipt<i aria-hidden="true" data-lucide="share-2" class="h-4 w-4"></i></button>
+          <button type="button" class="btn-ghost" id="printReceipt">Print receipt<i aria-hidden="true" data-lucide="printer" class="h-4 w-4"></i></button>
+        </div>
+      </div>
     </div>
-  </section>
+  </dialog>
 
-  <!-- ============== DIRECT CONTACT ============== -->
-  <section class="section bg-charcoal border-y border-line" data-bg="charcoal">
-    <div class="shell">
-      <div class="grid md:grid-cols-12 gap-y-10 md:gap-x-6 mb-14">
-        <div class="md:col-span-5">
-          <div class="t-eyebrow mb-4 sr" data-reveal>[ 02 ]  Direct</div>
-          <h2 class="t-section sr" data-reveal style="--d:.05s">Reach us<br>directly.</h2>
+
+
+  </main>
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="bg-navy-950 text-slate-300" aria-label="Footer">
+    <div class="mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8 lg:pt-20">
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_1fr] lg:gap-10">
+        <!-- Brand + contact -->
+        <div>
+          <a href="index.html" class="flex w-fit items-center gap-3" aria-label="SNR NEST — home">
+            <img src="images/logo/logo.svg" alt="SNR NEST logo" width="44" height="44" loading="lazy" class="h-11 w-11 rounded-xl" />
+            <span class="leading-tight">
+              <span class="block text-lg font-extrabold tracking-tight text-white">SNR <span class="text-primary-400">NEST</span></span>
+              <span class="block text-[9px] font-bold uppercase tracking-[0.22em] text-slate-400">Workforce &amp; Hiring</span>
+            </span>
+          </a>
+          <p class="mt-5 max-w-sm text-sm leading-relaxed text-slate-400">SNR NEST connects people, skills, businesses and opportunities — building careers and teams that grow together.</p>
+          <div class="mt-6 flex items-center gap-3">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on LinkedIn"><i aria-hidden="true" data-lucide="linkedin" class="h-4 w-4"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on Instagram"><i aria-hidden="true" data-lucide="instagram" class="h-4 w-4"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on X"><i aria-hidden="true" data-lucide="twitter" class="h-4 w-4"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="SNR NEST on Facebook"><i aria-hidden="true" data-lucide="facebook" class="h-4 w-4"></i></a>
+          </div>
+          <ul class="mt-6 space-y-3 text-sm">
+            <li><a href="mailto:praveen@snrnest.in" class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="mail" class="h-3.5 w-3.5"></i></span>praveen@snrnest.in</a></li>
+            <li><a href="mailto:rangapraveend4@gmail.com" class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="mail" class="h-3.5 w-3.5"></i></span>rangapraveend4@gmail.com</a></li>
+            <li><a href="tel:+919632341836" class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="phone" class="h-3.5 w-3.5"></i></span>+91 96323 41836</a></li>
+            <li><span class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="map-pin" class="h-3.5 w-3.5"></i></span>Hyderabad, Telangana, India</span></li>
+          </ul>
+          <div class="site-qr" id="siteQrTile">
+            <button type="button" id="siteQrBtn" class="site-qr-btn" aria-label="QR code: scan to open this page, or activate to copy the page link">
+              <span id="siteQrTarget" class="site-qr-target" aria-hidden="true"></span>
+            </button>
+            <p class="site-qr-caption" id="siteQrCaption">Scan to visit our site</p>
+          </div>
         </div>
-        <p class="md:col-span-6 md:col-start-7 text-cream text-base leading-relaxed sr" data-reveal style="--d:.1s">
-          Two city offices, one central email & one phone tree — choose whichever channel suits you. We respond within 24 hours, Monday to Saturday.
-        </p>
+
+        <!-- Quick links -->
+        <nav aria-label="Quick links" class="lg:justify-self-center">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="services/internship.html" class="footer-link">Internships</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Services sitemap -->
+        <nav aria-label="Services">
+          <h3 class="footer-heading">Services</h3>
+          <ul class="mt-5 space-y-2.5 text-sm">
+            <li><a href="services/bpo-services.html" class="footer-link">BPO Services</a></li>
+            <li><a href="services/manpower-services.html" class="footer-link">Manpower Services</a></li>
+            <li><a href="services/website-development.html" class="footer-link">Website Development</a></li>
+            <li><a href="services/internship.html" class="footer-link">Internship</a></li>
+            <li><a href="services/training-interview-support.html" class="footer-link">Training &amp; Interview Support</a></li>
+          </ul>
+        </nav>
+
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8 md:gap-4 border-t border-line pt-12">
-        <div class="sr" data-reveal>
-          <div class="font-mono text-xs text-accent tracking-widest mb-3">EMAIL</div>
-          <a href="mailto:praveen@snrnest.in" class="font-display font-semibold text-lg md:text-xl hover:text-accent transition-colors block mb-1">praveen@snrnest.in</a>
-          <a href="mailto:rangapraveend4@gmail.com" class="font-mono text-xs text-cream hover:text-accent transition-colors block mb-1">rangapraveend4@gmail.com</a>
-          <div class="text-muted text-xs mt-2">General & direct enquiries  —  24h response</div>
-        </div>
-        <div class="md:border-l md:border-line md:pl-8 lg:pl-12 sr" data-reveal style="--d:.1s">
-          <div class="font-mono text-xs text-accent tracking-widest mb-3">PHONE</div>
-          <a href="tel:+918041238899" class="font-display font-semibold text-xl hover:text-accent transition-colors block mb-1">+91 80 4123 8899</a>
-          <div class="text-muted text-xs">Mon – Sat  —  10:00 to 19:00 IST</div>
-        </div>
-        <div class="md:border-l md:border-line md:pl-8 lg:pl-12 sr" data-reveal style="--d:.2s">
-          <div class="font-mono text-xs text-accent tracking-widest mb-3">MOBILE</div>
-          <a href="tel:+919123456789" class="font-display font-semibold text-xl hover:text-accent transition-colors block mb-1">+91 91234 56789</a>
-          <div class="text-muted text-xs">Urgent queries  —  7 days a week</div>
+      <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-7 text-sm text-slate-500 sm:flex-row">
+        <p>&copy; <span id="year">2025</span> SNR NEST. All rights reserved.</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <p class="inline-flex items-center gap-2"><i aria-hidden="true" data-lucide="sparkles" class="h-3.5 w-3.5 text-primary-400"></i>Building Opportunities. Empowering Careers.</p>
         </div>
       </div>
     </div>
-  </section>
+  </footer>
+  <!-- Back to top -->
+  <button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i data-lucide="arrow-up" class="h-5 w-5" aria-hidden="true"></i>
+  </button>
 
-  <!-- ============== LOCATIONS ============== -->
-  <section class="section" data-bg="ink">
-    <div class="shell">
-      <div class="grid md:grid-cols-12 gap-y-10 md:gap-x-6 mb-14">
-        <div class="md:col-span-5">
-          <div class="t-eyebrow mb-4 sr" data-reveal>[ 03 ]  Locations</div>
-          <h2 class="t-section sr" data-reveal style="--d:.05s">Two cities.<br>One network.</h2>
-        </div>
-        <p class="md:col-span-6 md:col-start-7 text-cream text-base leading-relaxed sr" data-reveal style="--d:.1s">
-          Operations across Bangalore & Hyderabad — with new geographies & training cohorts launching across the next two quarters.
-        </p>
-      </div>
+  <!-- WhatsApp chat -->
+  <a id="whatsFab" class="whats-fab" href="https://wa.me/919632341836?text=Hi%20SNR%20NEST%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with SNR NEST on WhatsApp (opens in a new tab)">
+    <svg viewBox="0 0 32 32" class="h-6 w-6" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M16.004 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.6 4.46 1.72 6.4L3.2 28.8l6.56-1.68a12.74 12.74 0 0 0 6.24 1.6h.004c7.056 0 12.796-5.74 12.796-12.8 0-3.42-1.332-6.636-3.752-9.052A12.7 12.7 0 0 0 16.004 3.2Zm0 23.432h-.004a10.66 10.66 0 0 1-5.428-1.484l-.388-.232-3.896 1 1.04-3.8-.256-.392a10.63 10.63 0 0 1-1.636-5.724c0-5.868 4.78-10.644 10.66-10.644 2.848 0 5.524 1.11 7.536 3.124a10.57 10.57 0 0 1 3.116 7.528c-.004 5.868-4.78 10.624-10.744 10.624Zm5.836-7.972c-.32-.16-1.888-.932-2.18-1.038-.292-.108-.504-.16-.716.16-.212.32-.824 1.038-1.01 1.25-.184.212-.37.24-.69.08-.32-.16-1.348-.496-2.566-1.584-.948-.844-1.588-1.888-1.774-2.208-.184-.32-.02-.494.14-.652.144-.144.32-.372.48-.558.16-.186.212-.32.32-.532.108-.212.054-.396-.028-.556-.08-.16-.716-1.726-.98-2.364-.258-.62-.52-.536-.716-.546l-.61-.01c-.212 0-.556.08-.846.396-.29.32-1.11 1.084-1.11 2.644 0 1.56 1.136 3.068 1.294 3.28.16.212 2.234 3.412 5.412 4.784.756.326 1.346.52 1.806.666.758.242 1.448.208 1.994.126.608-.09 1.888-.772 2.154-1.516.266-.744.266-1.382.186-1.516-.078-.134-.29-.212-.61-.372Z"/>
+    </svg>
+    <span class="whats-fab-tip" aria-hidden="true">Chat with us</span>
+  </a>
 
-      <div class="grid md:grid-cols-2 gap-8 md:gap-12 border-t border-line pt-12">
-        <div class="sr" data-reveal>
-          <div class="font-mono text-xs text-accent tracking-widest mb-3">BANGALORE  —  HQ</div>
-          <div class="font-display font-semibold text-2xl mb-4">SNR Tower</div>
-          <div class="text-cream text-sm leading-relaxed mb-3">4th Floor, Outer Ring Road,<br>Bellandur, Bengaluru,<br>Karnataka 560103</div>
-          <div class="font-mono text-xs text-muted mb-1">+91 80 4123 8899</div>
-          <div class="font-mono text-xs text-muted">praveen@snrnest.in</div>
-        </div>
-        <div class="md:border-l md:border-line md:pl-12 sr" data-reveal style="--d:.1s">
-          <div class="font-mono text-xs text-accent tracking-widest mb-3">HYDERABAD  —  BRANCH</div>
-          <div class="font-display font-semibold text-2xl mb-4">Cyber Gateway</div>
-          <div class="text-cream text-sm leading-relaxed mb-3">Hitech City, Madhapur,<br>Hyderabad,<br>Telangana 500081</div>
-          <div class="font-mono text-xs text-muted mb-1">+91 40 6789 2244</div>
-          <div class="font-mono text-xs text-muted">praveen@snrnest.in</div>
-        </div>
-      </div>
+  <!-- Install app banner (PWA — appears when the browser allows installation) -->
+  <aside id="installBanner" class="install-banner" role="complementary" aria-label="Install the SNR NEST app" hidden>
+    <img src="images/logo/logo.svg" alt="" width="44" height="44" loading="lazy" class="install-banner-logo" />
+    <div class="install-banner-copy">
+      <p class="install-banner-title">Install SNR NEST</p>
+      <p class="install-banner-sub">One tap from your home screen &mdash; works offline too.</p>
     </div>
-  </section>
+    <button type="button" id="installAccept" class="btn-primary !px-4 !py-2 text-sm">Install<i aria-hidden="true" data-lucide="smartphone" class="h-4 w-4"></i></button>
+    <button type="button" id="installDismiss" class="install-banner-close" aria-label="Dismiss install suggestion">
+      <i data-lucide="x" class="h-4 w-4" aria-hidden="true"></i>
+    </button>
+  </aside>
 
-  <div id="footer-mount"></div>
+  <!-- Print-only application receipt (filled by js on demand) -->
+  <div id="receiptPrint" class="receipt-print" aria-hidden="true"></div>
 
-  <script defer src="data/jobs.js"></script>
-  <script defer src="data/internships.js"></script>
-  <script defer src="data/training.js"></script>
-  <script defer src="js/partials.js"></script>
-  <script defer src="js/main.js"></script>
-  <script defer src="js/navigation.js"></script>
-  <script defer src="js/animations.js"></script>
-  <script defer src="js/magnetic.js"></script>
-  <script defer src="js/forms.js"></script>
-  <script defer src="js/pages.js"></script>
+  <!-- Toasts -->
+  <div id="toastStack" class="fixed bottom-24 right-5 z-[120] flex w-[calc(100%-2.5rem)] max-w-sm flex-col gap-3" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/lucide.min.js" defer></script>
+  <script src="assets/vendor/qrcode.js" defer></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
