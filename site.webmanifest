@@ -1,7 +1,7 @@
 {
   "name": "SNR NEST — Building Opportunities. Empowering Careers.",
   "short_name": "SNR NEST",
-  "description": "SNR NEST connects people, skills, businesses and opportunities. BPO services, manpower services, website development, internships and training & interview support.",
+  "description": "SNR NEST connects people, skills, businesses and opportunities. BPO services, manpower services, website development, internships and training & placements.",
   "id": "snr-nest-website",
   "start_url": "./index.html",
   "scope": "./",
@@ -32,3 +32,4 @@
     }
   ]
 }
+

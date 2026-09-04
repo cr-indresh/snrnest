@@ -133,8 +133,52 @@ form[id], [id="internshipForm"] { scroll-margin-top: 6.5rem; }
 .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 16px 30px -12px rgba(29, 78, 216, .6); }
 .btn-primary:active { transform: translateY(0) scale(.98); }
 
-.btn-secondary { background: #fff; color: #0F172A; border: 1.5px solid #E2E8F0; box-shadow: 0 2px 8px -4px rgba(15,23,42,.12); }
-.btn-secondary:hover { border-color: var(--primary); color: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 12px 26px -14px rgba(15,23,42,.25); }
+.btn-secondary {
+  position: relative;
+  background: #fff;
+  color: #0F172A;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 8px -4px rgba(15,23,42,.12);
+  z-index: 0;
+  overflow: hidden;
+}
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200%;
+  height: 200%;
+  translate: -50% -50%;
+  border-radius: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 80deg,
+    rgba(37,99,235,.7) 120deg,
+    rgba(59,130,246,1) 180deg,
+    rgba(37,99,235,.7) 240deg,
+    transparent 280deg,
+    transparent 360deg
+  );
+  animation: glowSpin 3.5s linear infinite;
+  z-index: -2;
+  pointer-events: none;
+}
+.btn-secondary::after {
+  content: "";
+  position: absolute;
+  inset: 1.5px;
+  border-radius: calc(.9rem - 2px);
+  background: #fff;
+  z-index: -1;
+  pointer-events: none;
+}
+@keyframes glowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.btn-secondary:hover { color: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 12px 26px -14px rgba(37,99,235,.35); }
 
 .btn-soft { background: #EFF6FF; color: var(--primary-dark); border: 1px solid #DBEAFE; }
 .btn-soft:hover { background: var(--primary); border-color: var(--primary); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 26px -12px rgba(29,78,216,.5); }
@@ -4052,7 +4096,7 @@ html.js .txt-lines.is-in > *:not(.txt-words) {
 .fv-ring-a {
   left: 26.79%; top: 26.79%; width: 46.42%; height: 46.42%;
   border: 1px dashed rgba(37,99,235,.3);
-  animation: fvRingSpin 150s linear infinite;
+  animation: fvRingSpin 300s linear infinite;
 }
 .fv-ring-b {
   left: 14.29%; top: 14.29%; width: 71.42%; height: 71.42%;
@@ -4087,7 +4131,7 @@ html.js .txt-lines.is-in > *:not(.txt-words) {
   border-radius: 9999px;
   border: 1.5px solid var(--nc, #2563EB);
   opacity: 0;
-  animation: fvNodePing 4.2s cubic-bezier(.2,.6,.35,1) var(--pd, 0s) infinite;
+  animation: fvNodePing 8.4s cubic-bezier(.2,.6,.35,1) var(--pd, 0s) infinite;
 }
 @keyframes fvNodePing {
   0% { transform: scale(.7); opacity: .55; }
@@ -4208,6 +4252,7 @@ html.js .txt-lines.is-in > *:not(.txt-words) {
 .fv-chip-card {
   display: flex;
   align-items: center;
+  text-decoration: none;
   gap: .55rem;
   padding: .6rem .85rem .6rem .6rem;
   border-radius: 1.15rem;
@@ -4264,23 +4309,26 @@ html.js .txt-lines.is-in > *:not(.txt-words) {
 }
 .fv-hub, .fv-chip, .fv-particles, .fv-orbit, .fv-bg { will-change: transform; }
 
-/* entrance choreography */
-.fv-enter { animation: fvPopIn .55s cubic-bezier(.22,.61,.36,1) var(--in, .5s) both; }
-.fv-enter--hub { animation-name: fvHubIn; animation-duration: .65s; }
+/* entrance choreography — bottom-to-top, butter smooth */
+.fv-enter { animation: fvPopIn 2s cubic-bezier(.16,1,.3,1) var(--in, .5s) both; }
+.fv-enter--hub { animation-name: fvHubIn; animation-duration: 2.2s; }
 @keyframes fvPopIn {
-  from { opacity: 0; transform: translateY(16px) scale(.9); }
+  from { opacity: 0; transform: translateY(60px) scale(.92); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 @keyframes fvHubIn {
-  from { opacity: 0; transform: translateY(22px) scale(.84); }
+  from { opacity: 0; transform: translateY(80px) scale(.85); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
-.fv-orbit, .fv-particles { animation: fvFadeIn 1s ease .55s both; }
-@keyframes fvFadeIn { from { opacity: 0; } to { opacity: 1; } }
+.fv-orbit, .fv-particles { animation: fvFadeUp 2.4s cubic-bezier(.16,1,.3,1) .3s both; }
+@keyframes fvFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .fv-link {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: fvDraw .9s cubic-bezier(.4, 0, .2, 1) var(--ld, .7s) forwards;
+  animation: fvDraw 3.5s cubic-bezier(.16,1,.3,1) var(--ld, .7s) forwards;
 }
 @keyframes fvDraw { to { stroke-dashoffset: 0; } }
 
@@ -4346,3 +4394,20 @@ html.js .site-qr-btn:hover::after {
   100% { opacity: 0; transform: translateY(88px); }
 }
 
+
+
+
+/* --- Floating Animation for FABs --- */
+@keyframes fabFloating {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.whats-fab, .mail-fab {
+  animation: fabFloating 3s ease-in-out infinite !important;
+}
+
+.whats-fab:hover, .mail-fab:hover {
+  animation-play-state: paused !important;
+}
