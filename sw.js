@@ -10,7 +10,7 @@
    Bump VERSION below whenever site files change so every
    visitor gets the fresh copy on their next visit.
    ============================================================ */
-const VERSION = 'v31';
+const VERSION = 'v34';
 const PRECACHE = 'snrnest-pre-' + VERSION;
 const RUNTIME = 'snrnest-run-' + VERSION;
 

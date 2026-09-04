@@ -1807,15 +1807,15 @@
   const siteQrTile = $('#siteQrTile');
   const siteQrTarget = $('#siteQrTarget');
   if (siteQrTile && siteQrTarget) {
-    const shareableUrl = siteUrl();
-    if (!shareableUrl || typeof window.qrcode !== 'function') {
-      siteQrTile.hidden = true; // file:// or lib missing — never show an empty QR frame
+    const waUrl = whatsappUrl();
+    if (!waUrl || typeof window.qrcode !== 'function') {
+      siteQrTile.hidden = true; // no link to encode or lib missing
     } else {
       let siteQrRendered = false;
       const renderSiteQr = () => {
         if (siteQrRendered) return;
         siteQrRendered = true;
-        const svg = makeSiteQrSvg(3);
+        const svg = makeQrSvg(waUrl, 3);
         if (svg) siteQrTarget.innerHTML = svg;
         else siteQrTile.hidden = true;
       };
@@ -1836,16 +1836,8 @@
         window.setTimeout(renderSiteQr, 1200);
       }
       $('#siteQrBtn')?.addEventListener('click', () => {
-        const done = () => toast('Site link copied.', 'link', 'info');
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(shareableUrl).then(done).catch(() => {
-            fallbackCopy(shareableUrl);
-            done();
-          });
-        } else {
-          fallbackCopy(shareableUrl);
-          done();
-        }
+        window.open(waUrl, '_blank', 'noopener');
+        toast('Opening WhatsApp chat…', 'message-circle', 'info');
       });
     }
   }
@@ -2048,6 +2040,52 @@
       { threshold: 0.18, rootMargin: '0px 0px -40px 0px' }
     );
     containers.forEach((el) => txtIo.observe(el));
+  })();
+
+  /* ----------------------------------------------------------
+     Hero floating ecosystem visual (R16)
+     - desktop-only mouse parallax (large slow, small fast)
+     - pauses SMIL connection pulses under reduced motion
+  ---------------------------------------------------------- */
+  (function initHeroVisual() {
+    const stage = document.querySelector('.fv-stage');
+    if (!stage) return;
+
+    const linksSvg = stage.querySelector('.fv-links');
+    if (prefersReducedMotion && linksSvg && typeof linksSvg.pauseAnimations === 'function') {
+      linksSvg.pauseAnimations();
+    }
+
+    const canParallax = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!canParallax || prefersReducedMotion) return;
+
+    const layers = Array.prototype.slice.call(stage.querySelectorAll('[data-fx-depth]'));
+    if (!layers.length) return;
+
+    let raf = 0;
+    let nx = 0;
+    let ny = 0;
+
+    const apply = () => {
+      raf = 0;
+      for (const el of layers) {
+        const depth = parseFloat(el.getAttribute('data-fx-depth')) || 0;
+        el.style.transform = 'translate3d(' + (nx * depth).toFixed(2) + 'px,' + (ny * depth).toFixed(2) + 'px,0)';
+      }
+    };
+    const schedule = () => { if (!raf) raf = window.requestAnimationFrame(apply); };
+    const onMove = (e) => {
+      const r = stage.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      nx = Math.max(-1, Math.min(1, ((e.clientX - r.left) / r.width - 0.5) * 2));
+      ny = Math.max(-1, Math.min(1, ((e.clientY - r.top) / r.height - 0.5) * 2));
+      schedule();
+    };
+    const onLeave = () => { nx = 0; ny = 0; schedule(); };
+
+    // Magnetic parallax removed per user request
+    // stage.addEventListener('pointermove', onMove);
+    // stage.addEventListener('pointerleave', onLeave);
   })();
 
   /* ----------------------------------------------------------

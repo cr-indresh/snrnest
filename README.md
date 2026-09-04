@@ -10,7 +10,7 @@ No build step, no frameworks, no CDN calls — the site works fully offline.
 
 ## 0. Feature highlights
 
-- **Hero slider** — autoplay with per-dot progress, pause/play toggle, keyboard & touch friendly
+- **Hero floating ecosystem visual** — glass card with a central SNR NEST hub, orbiting People/Skills/Jobs/Business/Technology/Growth nodes, six floating service chips (BPO, Manpower, Website Development, Internship, Training, Interview Support), animated connection lines with travelling pulses, ambient particles and desktop-only mouse parallax (pure CSS/SVG, no photos, reduced-motion safe)
 - **Internship cards** with a full **Apply Now modal**: inline validation, resume upload (PDF/DOC ≤ 2 MB), message character counter
 - **Application reference numbers** (`SNR-…`) — shown on the success panel (tap-to-copy chip), in the My Applications tracker, and on the **printable receipt** (which now carries a **QR back to the site**)
 - **Draft autosave** — the apply **and** contact forms remember half-filled entries on the device and offer to restore them on return
@@ -39,7 +39,7 @@ No build step, no frameworks, no CDN calls — the site works fully offline.
 
 ```
 SNR-NEST-PROFESSIONAL-WEBSITE/
-├── index.html            ← homepage (hero slider, services & internships intros, statement, manpower, CTA)
+├── index.html            ← homepage (floating-ecosystem hero, services & internships intros, statement, CTA)
 ├── about.html            ← story, mission/vision, values, numbers, why-us
 ├── services.html         ← all 5 services as cards + engagement process
 ├── contact.html          ← contact cards, enquiry form, apply + tracker modals, QR tiles, vCard
@@ -59,7 +59,7 @@ SNR-NEST-PROFESSIONAL-WEBSITE/
 │   ├── tailwind.css      ← precompiled utilities (do not edit by hand)
 │   └── style.css         ← custom components & animations
 ├── js/
-│   └── script.js         ← nav dropdowns, slider, modals, forms, tracker, toasts
+│   └── script.js         ← nav dropdowns, hero parallax, modals, forms, tracker, toasts
 ├── images/
 │   ├── logo/             ← brand logo (SVG)
 │   ├── hero/             ← slider photos (1–4)
