@@ -1352,13 +1352,20 @@
     successNameEl: $('#internSuccessName'),
     successMsg: 'Application submitted. We will call you soon!',
     onSuccess: (form) => {
+      const role = (form.querySelector('[name="role"]') || {}).value || 'Internship';
+      const name = ((form.querySelector('[name="name"]') || {}).value || '').trim() || 'Anonymous';
+      const email = (form.querySelector('[name="email"]') || {}).value || '';
+      const phone = ((form.querySelector('[name="phone"]') || {}).value || '').trim();
+      const education = ((form.querySelector('[name="education"]') || {}).value || '').trim();
+      const msg = ((form.querySelector('[name="message"]') || {}).value || '').trim();
+      
+      const waText = `*New Internship Application*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n*Role:* ${role}\n*Education:* ${education}\n*Message:* ${msg}`;
+      const waUrl = 'https://wa.me/919632341836?text=' + encodeURIComponent(waText);
+      window.open(waUrl, '_blank');
+
       const app = {
         ref: makeRef(),
-        role: (form.querySelector('[name="role"]') || {}).value || 'Internship',
-        name: ((form.querySelector('[name="name"]') || {}).value || '').trim() || 'Anonymous',
-        email: (form.querySelector('[name="email"]') || {}).value || '',
-        phone: ((form.querySelector('[name="phone"]') || {}).value || '').trim(),
-        education: ((form.querySelector('[name="education"]') || {}).value || '').trim(),
+        role, name, email, phone, education,
         file: null,
         ts: Date.now(),
       };

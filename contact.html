@@ -327,7 +327,10 @@
                 <label for="contactWebsite">Leave this field empty</label>
                 <input id="contactWebsite" type="text" name="company_website" tabindex="-1" autocomplete="off" />
               </div>
-              <button type="submit" class="btn-primary w-full justify-center">Send Message<i aria-hidden="true" data-lucide="send" class="h-4 w-4"></i></button>
+              <div class="flex flex-col gap-3 sm:flex-row">
+                <button type="submit" class="btn-primary flex-1 justify-center">Send Message<i aria-hidden="true" data-lucide="send" class="h-4 w-4"></i></button>
+                <a href="mailto:praveen@snrnest.in" class="btn-secondary flex-1 justify-center">Send via Email<i aria-hidden="true" data-lucide="mail" class="h-4 w-4"></i></a>
+              </div>
             </form>
 
             <div id="contactSuccess" class="hidden py-6 text-center">
@@ -360,13 +363,6 @@
               <span class="qr-code-scan" aria-hidden="true"><i data-lucide="scan-line" class="h-4 w-4"></i></span>
             </button>
             <p class="qr-tile-caption">Scan to save our contact</p>
-          </div>
-          <div class="qr-tile" id="waQrTile">
-            <button type="button" id="waQrBtn" class="qr-code-btn qr-code-btn--wa" aria-label="QR code: scan to open a WhatsApp chat with SNR NEST, or activate to open WhatsApp in a new tab">
-              <span id="waQrTarget" class="qr-code-target" aria-hidden="true"></span>
-              <span class="qr-code-scan qr-code-scan--wa" aria-hidden="true"><i data-lucide="scan-line" class="h-4 w-4"></i></span>
-            </button>
-            <p class="qr-tile-caption">Scan to WhatsApp us</p>
           </div>
         </div>
       </div>
@@ -495,7 +491,7 @@
             <li><a href="mailto:praveen@snrnest.in" class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="mail" class="h-3.5 w-3.5"></i></span>praveen@snrnest.in</a></li>
             <li><a href="mailto:rangapraveend4@gmail.com" class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="mail" class="h-3.5 w-3.5"></i></span>rangapraveend4@gmail.com</a></li>
             <li><a href="tel:+919632341836" class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="phone" class="h-3.5 w-3.5"></i></span>+91 96323 41836</a></li>
-            <li><span class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="map-pin" class="h-3.5 w-3.5"></i></span>Bangalore, Karnataka, India</span></li>
+            <li><span class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="map-pin" class="h-3.5 w-3.5"></i></span>Hyderabad, Telangana, India</span></li>
             <li><span class="footer-contact"><span class="icon-tile !h-8 !w-8 !bg-white/5 !text-primary-400"><i aria-hidden="true" data-lucide="map-pin" class="h-3.5 w-3.5"></i></span>Hyderabad, Telangana, India</span></li>
           </ul>
        </div>
